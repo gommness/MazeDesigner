@@ -1,0 +1,48 @@
+\begin{functional}
+	\item \textbf{Dibujar \textit{espacios jugables}}\newline
+		El usuario, en el contexto de \textit{diseño} debe poder dibujar \textit{espacios jugables} en el canvas haciendo click en un punto del canvas y soltando el click en otro.
+		\begin{functional}
+			\item \textbf{Anexión de \textit{espacios jugables}}\newline
+				Si el conjunto \textbf{A} de los \textit{espacios jugables} que intersecan con el recién creado es no vacío, entonces se eliminarán los \textit{espacios jugables} pertenecientes a \textbf{A} y se creará un nuevo \textit{espacio jugable} resultante de la unión de todos los contenidos en \textbf{A} junto con el recién creado.
+			\item \textbf{Indexación de \textit{espacios jugables}}\newline
+				Todo \textit{espacio jugable} debe ser indexado por una estructura para su futura transformación en grafo.
+			\item \textbf{Vértices de un \textit{espacio jugable}}\newline
+				Para todo \textit{espacio jugable} deben definirse sus vértices en el canvas.
+			\item \textbf{Grid de coordenadas}
+				Los vértices de todo \textit{espacio jugable} deben pertenecer a un \textit{grid} de coordenadas.
+		\end{functional}
+	\item \textbf{Modificación de los \textit{espacios jugables}}\newline
+		El usuario debe poder modificar la posición de las aristas y los vértices de un \textit{espacio jugable} preexistente.
+	\item \textbf{Eliminación de \textit{espacios jugables}}\newline
+		El usuario debe poder extraer areas rectangulares de un \textit{espacio jugable}, de manera que el resultado respete la definición de \textit{espacio jugable}.
+	\item \textbf{Creación de vértices}\newline
+		El usuario debe poder crear un nuevo vértice en una arista.
+	\item \textbf{Eliminación de vértices}\newline
+		El usuario debe poder eliminar un vértice siempre y cuando sus dos vértices vecinos estén alineados.
+	\item \textbf{Crear un elemento bloqueador}\newline
+		El usuario debe poder crear un elemento bloqueador dibujando una línea en el canvas.
+		\begin{functional}
+			\item \textbf{Especificación del tipo de elemento bloqueador}\newline
+				El elemento bloqueador creado por defecto será de tipo bidireccional, pero el usuario debe poder especificar que sea de tipo unidireccional, en cuyo caso debe especificar en qué dirección tendrá efecto el bloqueo.
+			\item \textbf{Cálculo de vecindad al crear un elemento bloqueador}\newline
+				En el caso de que la creación de un elemento bloqueador divida un \textit{espacio jugable} en dos, se han de indexar estos dos nuevos \textit{espacios jugables} y se ha de definir su vecindad teniendo en cuenta el tipo de elemento bloqueador y sus condiciones de apertura.
+			\item \textbf{Eliminación de elementos bloqueadores inválidos}\newline
+				Si el elemento bloqueador que se desea crear no cumple con la definición de elemento bloqueador, este será eliminado del diseño.
+		\end{functional}
+	\item \textbf{Seleccionar un elemento bloqueador}\newline
+		El usuario debe poder seleccionar un elemento bloqueador preexistente del canvas.
+	\item \textbf{Eliminar un elemento bloqueador}\newline
+		El usuario debe poder eliminar un elemento bloqueador preexistente del canvas.
+	\item \textbf{Crear un elemento llave}\newline
+		El usuario debe poder crear un elemento llave, instanciando un tipo de llave preexistente, en el canvas.
+	\item \textbf{Seleccionar un elemento llave}\newline
+		El usuario debe poder seleccionar un elemento llave preexistente del canvas.
+	\item \textbf{Desplazar un elemento llave}\newline
+		El usuario debe poder desplazar un elemento llave preexistente dentro del propio canvas.
+	\item \textbf{Eliminar un elemento llave}\newline
+		El usuario debe poder eliminar un elemento llave preexistente del canvas.
+	\item \textbf{Zoom}\newline
+		El usuario debe poder acercar y alejar la vista que tiene del canvas.
+	\item \textbf{Desplazar vista}\newline
+		El usuario debe poder desplazar la vista que tiene del canvas.
+\end{functional}
