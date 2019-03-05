@@ -17,10 +17,8 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    key.cpp \
-    compositecondition.cpp \
-    simplecondition.cpp \
-    condition.cpp
+    condition.cpp \
+    key.cpp
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin
@@ -28,7 +26,5 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    key.h \
-    compositecondition.h \
-    simplecondition.h \
-    condition.h
+    condition.h \
+    key.h
