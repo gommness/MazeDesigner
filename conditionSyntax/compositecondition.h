@@ -6,8 +6,8 @@ class CompositeCondition
 {
 // required
 public:
-    enum Conector {EMPTY, AND, OR};
-    typedef QList<QPair<Conector, Condition>> QConditionsList;
+    enum Connector {EMPTY, AND, OR};
+    typedef QList<QPair<Connector, Condition>> QConditionsList;
 
 // members
 public:
@@ -22,7 +22,9 @@ public:
     QMap<QString, Key> getNameSpace();
     QString toString();
 private:
-    Conector parseConnector(const QString &conector);
+    Connector parseConnector(const QString &conector);
+    QConditionsList parseConditions(const QStringList &list);
+    QStringList customSplit(const QString &input);
 };
 
 #endif // COMPOSITECONDITION_H

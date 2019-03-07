@@ -25,10 +25,5 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{I}\relax\glsresetentrylist
 \glossentry{ieee}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{11}}}\glsgroupskip
-\glsgroupheading{W}\relax\glsresetentrylist
-\glossentry{wysiwyg}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{39}}}\relax\glsresetentrylist
-\glossentry{wytiwyg}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{39}}}%
+\glsXpageXglsnumberformat{}{2}}}%
 \end{theglossary}\glossarypostamble
