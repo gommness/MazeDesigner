@@ -6,9 +6,9 @@ name={IEEE},%
 sort={IEEE},%
 type={acronym},%
 first={Institute of Electrical and Electronics Engineers\glsspace (IEEE)},%
-firstplural={Institute of Electrical and Electronics Engineers\acrpluralsuffix \glsspace (IEEE\acrpluralsuffix )},%
+firstplural={Institute of Electrical and Electronics Engineerss\glsspace (IEEEs)},%
 text={IEEE},%
-plural={IEEE\acrpluralsuffix },%
+plural={IEEEs},%
 description={Institute of Electrical and Electronics Engineers},%
 descriptionplural={Institute of Electrical and Electronics Engineers\acrpluralsuffix },%
 symbol={\relax },%
@@ -88,79 +88,169 @@ parent={},%
 %
 }%
 }%
-\ifglsentryexists{wytiwyg}{}%
+\ifglsentryexists{acronimoo}{}%
 {%
-\gls@defglossaryentry{wytiwyg}%
+\gls@defglossaryentry{acronimoo}%
 {%
-name={WYTIWYG},%
-sort={WYTIWYG},%
-type={acronym},%
-first={What You Think Is What You Get\glsspace (WYTIWYG)},%
-firstplural={What You Think Is What You Get\acrpluralsuffix \glsspace (WYTIWYG\acrpluralsuffix )},%
-text={WYTIWYG},%
-plural={WYTIWYG\acrpluralsuffix },%
-description={What You Think Is What You Get},%
-descriptionplural={What You Think Is What You Get\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={What You Think Is What You Get},%
-longplural={What You Think Is What You Gets},%
-short={WYTIWYG},%
-shortplural={WYTIWYGs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{wysiwyg}{}%
-{%
-\gls@defglossaryentry{wysiwyg}%
-{%
-name={WYSIWYG},%
-sort={WYSIWYG},%
-type={acronym},%
-first={What You See Is What You Get\glsspace (WYSIWYG)},%
-firstplural={What You See Is What You Get\acrpluralsuffix \glsspace (WYSIWYG\acrpluralsuffix )},%
-text={WYSIWYG},%
-plural={WYSIWYG\acrpluralsuffix },%
-description={What You See Is What You Get},%
-descriptionplural={What You See Is What You Get\acrpluralsuffix },%
-symbol={\relax },%
-symbolplural={\relax },%
-user1={},%
-user2={},%
-user3={},%
-user4={},%
-user5={},%
-user6={},%
-long={What You See Is What You Get},%
-longplural={What You See Is What You Gets},%
-short={WYSIWYG},%
-shortplural={WYSIWYGs},%
-counter={page},%
-parent={},%
-%
-}%
-}%
-\ifglsentryexists{OPCST}{}%
-{%
-\gls@defglossaryentry{OPCST}%
-{%
-name={opción de estilo},%
-sort={opción de estilo},%
+name={acrónimo},%
+sort={acrónimo},%
 type={main},%
-first={opci\IeC {\'o}n de estilo},%
-firstplural={opciones de estilo},%
-text={opci\IeC {\'o}n de estilo},%
-plural={opciones de estilo},%
-description={Son los valores que modifican el funcionamiento del estilo. Se ponen entre corchetes y separadas por comas en el comando \textbackslash documentclass y antes de el nombre del estilo que irá entre llaves},%
-descriptionplural={Son los valores que modifican el funcionamiento del estilo. Se ponen entre corchetes y separadas por comas en el comando \textbackslash documentclass y antes de el nombre del estilo que irá entre llaves},%
+first={acr\IeC {\'o}nimo},%
+firstplural={acr\IeC {\'o}nimos},%
+text={acr\IeC {\'o}nimo},%
+plural={acr\IeC {\'o}nimos},%
+description={Sigla cuya configuración permite su pronunciación como una palabra; por ejemplo, ovni: objeto volador no identificado; TIC, tecnologías de la información y la comunicación},%
+descriptionplural={Sigla cuya configuración permite su pronunciación como una palabra; por ejemplo, ovni: objeto volador no identificado; TIC, tecnologías de la información y la comunicación},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{espacio-jugable}{}%
+{%
+\gls@defglossaryentry{espacio-jugable}%
+{%
+name={espacio jugable},%
+sort={espacio jugable},%
+type={main},%
+first={espacio jugable},%
+firstplural={espacios jugables},%
+text={espacio jugable},%
+plural={espacios jugables},%
+description={regiones de un nivel por las que el jugador podrá mover a su avatar},%
+descriptionplural={regiones de un nivel por las que el jugador podrá mover a su avatar},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{pantalla}{}%
+{%
+\gls@defglossaryentry{pantalla}%
+{%
+name={pantalla},%
+sort={pantalla},%
+type={main},%
+first={pantalla},%
+firstplural={pantallas},%
+text={pantalla},%
+plural={pantallas},%
+description={Regiones del \defn {diseño} que encapsulan los \defnpl {espacio jugable}. Un juego en tiempo de ejecución muestra solamente una de estas regiones},%
+descriptionplural={Regiones del \defn {diseño} que encapsulan los \defnpl {espacio jugable}. Un juego en tiempo de ejecución muestra solamente una de estas regiones},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{dead lock}{}%
+{%
+\gls@defglossaryentry{dead lock}%
+{%
+name={dead lock},%
+sort={dead lock},%
+type={main},%
+first={dead lock},%
+firstplural={dead locks},%
+text={dead lock},%
+plural={dead locks},%
+description={Estado de la exploración del grafo de un \defn {diseño} a partir del cual existen nodos que no serían accesibles si se continuara con dicha exploración},%
+descriptionplural={Estado de la exploración del grafo de un \defn {diseño} a partir del cual existen nodos que no serían accesibles si se continuara con dicha exploración},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{completable}{}%
+{%
+\gls@defglossaryentry{completable}%
+{%
+name={completable},%
+sort={completable},%
+type={main},%
+first={completable},%
+firstplural={completables},%
+text={completable},%
+plural={completables},%
+description={Característica propia de un diseño según la cual se cumplen las condiciones necesarias para que en la exploración de dicho \defn {diseño} no se puedan alcanzar \defnpl {dead lock}},%
+descriptionplural={Característica propia de un diseño según la cual se cumplen las condiciones necesarias para que en la exploración de dicho \defn {diseño} no se puedan alcanzar \defnpl {dead lock}},%
+symbol={\relax },%
+symbolplural={\relax },%
+user1={},%
+user2={},%
+user3={},%
+user4={},%
+user5={},%
+user6={},%
+long={},%
+longplural={},%
+short={},%
+shortplural={},%
+counter={page},%
+parent={},%
+%
+}%
+}%
+\ifglsentryexists{diseno}{}%
+{%
+\gls@defglossaryentry{diseno}%
+{%
+name={diseño},%
+sort={diseño},%
+type={main},%
+first={dise\IeC {\~n}o},%
+firstplural={dise\IeC {\~n}os},%
+text={dise\IeC {\~n}o},%
+plural={dise\IeC {\~n}os},%
+description={Conjunto de \defnpl {espacio jugable}, no necesariamente conexos, que representa la totalidad de los espacios virtuales de juego},%
+descriptionplural={Conjunto de \defnpl {espacio jugable}, no necesariamente conexos, que representa la totalidad de los espacios virtuales de juego},%
 symbol={\relax },%
 symbolplural={\relax },%
 user1={},%

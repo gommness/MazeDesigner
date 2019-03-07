@@ -25,11 +25,11 @@
 \begin{theglossary}\glossaryheader
 \glsgroupheading{A}\relax\glsresetentrylist
 \glossentry{acronimo}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{12}}}\glsgroupskip
+\glsXpageXglsnumberformat{}{3}}}\glsgroupskip
 \glsgroupheading{D}\relax\glsresetentrylist
 \glossentry{definicion}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{12}}}\glsgroupskip
-\glsgroupheading{O}\relax\glsresetentrylist
-\glossentry{OPCST}{\glossaryentrynumbers{\relax 
-\glsXpageXglsnumberformat{}{47}}}%
+\glsXpageXglsnumberformat{}{3}}}\glsgroupskip
+\glsgroupheading{E}\relax\glsresetentrylist
+\glossentry{espacio-jugable}{\glossaryentrynumbers{\relax 
+\glsXpageXglsnumberformat{}{3}}}%
 \end{theglossary}\glossarypostamble
