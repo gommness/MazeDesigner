@@ -10,60 +10,96 @@ CompositeCondition::CompositeCondition(const QString &input)
 
 bool CompositeCondition::Validate()
 {
-
-}
-
-void CompositeCondition::SetNameSpace(QMap<QString, Key>)
-{
-
-}
-
-QMap<QString, Key> CompositeCondition::getNameSpace()
-{
-
+    bool output = true;
+    for(int i = 0; i < conditions.length(); i++)
+        output &= conditions[i].second->validate();
+    return output;
 }
 
 QString CompositeCondition::toString()
 {
-
+    QString output = "CompositeCondition{";
+    for(int i=0; i<conditions.length(); i++) {
+        Connector aux = conditions[i].first;
+        if(aux == Connector::OR)
+            output += "OR";
+        else if(aux == Connector::AND)
+            output += "AND";
+        output += " " + conditions[i].second->toString() + " ";
+    }
+    return output + "}";
 }
 
-CompositeCondition::Connector CompositeCondition::parseConnector(const QString &conector)
+CompositeCondition::CompositeCondition(CompositeCondition::QConditionsList &list)
 {
+    conditions = list;
+}
 
+CompositeCondition::Connector CompositeCondition::parseConnector(const QString &connector)
+{
+    QString aux = connector.toUpper();
+    if(aux == "OR" || aux == "||"){
+        return Connector::OR;
+    } else if(aux == "AND" || aux == "&&"){
+        return Connector::AND;
+    }
+    return Connector::EMPTY;
 }
 
 CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QStringList &list){
+    int index = 0;
+    return parseConditions(list, index);
+}
+
+CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QStringList &list, int &index){
     QConditionsList output; // list of Connector-Condition.
-    Connector *connector;
+    Connector connector;
     Condition *condition;
-    QPair<Connector, Condition> pair = QPair<Connector, Condition>();
+    QPair<Connector, Condition*> pair = QPair<Connector, Condition*>();
 
-    connector = new Connector();
-    *connector = Connector::EMPTY;
-    condition = new Condition();
+    connector = Connector::EMPTY;
 
-    for(int i = 0; i < list.length(); i++){ // iterate throught the list of "words"
-        if(list[i] == "("){ // if it is a condition between parenthesis, then it is composite.
-            // create a composite condition
-        } else if(list[i] == ")"){ // if it is the end of a composite condition
-            // we'd end the creation of this composite condition
-            // then return it. BUT ALSO, we should somehow throw outside the
-            // index of the QStringList that we are at right now !!!!
-            // TODO do this last part
+    for(; index < list.length(); index++){ // iterate throught the list of "words"
+        if(list[index] == "("){ // if it is a condition between parenthesis, then it is composite.
+            // thus we should create a composite condition from the sublist of conditions between paranthesis
+            try{
+                QConditionsList subCompositeConditionList = parseConditions(list, index);
+                condition = new CompositeCondition(subCompositeConditionList);
+            } catch(ConditionError::Malformed &err){
+                for(int j = output.length()-1; j >= 0; j--)
+                    delete output[j].second;
+                throw err;
+            }
+        } else if(list[index] == ")"){ // if it is the end of a composite condition
+            return output; // we return the QConditionList that would make the CompositeCondition
+                           // that was inside the paranthesis
         } else {
             // create SimpleCondition
+            bool ok = false;
+            QString conditionString = list[index];
+            if(list[index] == "have")
+                index++;
+            list[index].toInt(&ok);
+            if(ok){
+                index++;
+                condition = new SimpleCondition(list[index-1], list[index]);
+            } else {
+                condition = new SimpleCondition("1", list[index]);
+            }
         }
-        // TODO create the condition, either simple condition or composite condition
-        //      then advance with the list until a connector is reached
 
-        pair.first = *connector;
-        pair.second = *condition;
+        pair.first = connector;
+        pair.second = condition;
         output.append(pair);
 
-        *connector = parseConnector(list[i]);
+        connector = parseConnector(list[index]);
+        if (connector == Connector::EMPTY){
+            delete condition;
+            for(int j = output.length()-1; j >= 0; j--)
+                delete output[j].second;
+            throw ConditionError::Malformed("malformed condition");
+        }
     }
-    delete connector;
     return output;
 }
 

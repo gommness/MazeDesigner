@@ -3,6 +3,12 @@
 
 // syntax: [have] [<number>] <item>
 
+SimpleCondition::SimpleCondition(QString number, QString key)
+{
+    name = key;
+    value = number;
+}
+
 SimpleCondition::SimpleCondition(QString condition)
 {
     QRegExp exp("[ ]");
@@ -30,8 +36,6 @@ SimpleCondition::SimpleCondition(QString string, QMap<QString, Key> *map) : Simp
 
 bool SimpleCondition::validate()
 {
-    if(!nameSpace)
-        throw ConditionError::MissingNameSpace();
     bool output = validateName();
     if(!output)
         throw ConditionError::UnknownIdentifier(name.toStdString());
@@ -41,25 +45,12 @@ bool SimpleCondition::validate()
     return output;
 }
 
-void SimpleCondition::setNameSpace(QMap<QString, Key> *map)
-{
-    nameSpace = map;
-}
-
-QMap<QString, Key> SimpleCondition::getNameSpace()
-{
-    if(nameSpace == nullptr)
-        return QMap<QString, Key>();
-    else
-        return QMap<QString, Key>(*nameSpace);
-}
-
 QString SimpleCondition::toString()
 {
     if(name != "")
-        return QString("Condition{ have " + value + name + "}");
+        return QString("SimpleCondition{ have " + value + name + "}");
     else
-        return QString("Condition{}");
+        return QString("SimpleCondition{}");
 }
 
 
