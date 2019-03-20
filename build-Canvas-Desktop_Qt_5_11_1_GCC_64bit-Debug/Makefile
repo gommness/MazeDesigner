@@ -228,6 +228,7 @@ DIST          = ../../Qt/5.11.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/spec_post.prf \
+		../Canvas/.qmake.stash \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -431,6 +432,7 @@ Makefile: ../Canvas/Canvas.pro ../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.co
 		../../Qt/5.11.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -624,6 +626,7 @@ Makefile: ../Canvas/Canvas.pro ../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.co
 ../../Qt/5.11.1/gcc_64/mkspecs/features/qt_config.prf:
 ../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../Qt/5.11.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../Qt/5.11.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../Qt/5.11.1/gcc_64/mkspecs/features/toolchain.prf:
 ../../Qt/5.11.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -805,6 +808,14 @@ moc_mainwindow.cpp: ../../Qt/5.11.1/gcc_64/include/QtWidgets/QMainWindow \
 		../../Qt/5.11.1/gcc_64/include/QtGui/qtouchdevice.h \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../Qt/5.11.1/gcc_64/include/QtGui/qicon.h \
+		../Canvas/canvas.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidget \
+		../../Qt/5.11.1/gcc_64/include/QtGui/QPen \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/QPaintEvent \
+		../../Qt/5.11.1/gcc_64/include/QtGui/QPainter \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qpainter.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qtextoption.h \
 		../Canvas/mainwindow.h \
 		moc_predefs.h \
 		../../Qt/5.11.1/gcc_64/bin/moc
@@ -916,6 +927,9 @@ moc_canvas.cpp: ../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidget \
 		../../Qt/5.11.1/gcc_64/include/QtGui/QPen \
 		../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h \
 		../../Qt/5.11.1/gcc_64/include/QtGui/QPaintEvent \
+		../../Qt/5.11.1/gcc_64/include/QtGui/QPainter \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qpainter.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qtextoption.h \
 		../Canvas/canvas.h \
 		moc_predefs.h \
 		../../Qt/5.11.1/gcc_64/bin/moc
@@ -1049,6 +1063,14 @@ main.o: ../Canvas/main.cpp ../Canvas/mainwindow.h \
 		../../Qt/5.11.1/gcc_64/include/QtGui/qtouchdevice.h \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../Qt/5.11.1/gcc_64/include/QtGui/qicon.h \
+		../Canvas/canvas.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidget \
+		../../Qt/5.11.1/gcc_64/include/QtGui/QPen \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/QPaintEvent \
+		../../Qt/5.11.1/gcc_64/include/QtGui/QPainter \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qpainter.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qtextoption.h \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/QApplication \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/qapplication.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1165,12 +1187,37 @@ mainwindow.o: ../Canvas/mainwindow.cpp ../Canvas/canvas.h \
 		../../Qt/5.11.1/gcc_64/include/QtGui/QPen \
 		../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h \
 		../../Qt/5.11.1/gcc_64/include/QtGui/QPaintEvent \
+		../../Qt/5.11.1/gcc_64/include/QtGui/QPainter \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qpainter.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qtextoption.h \
 		../Canvas/mainwindow.h \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/QMainWindow \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/qtabwidget.h \
 		../../Qt/5.11.1/gcc_64/include/QtGui/qicon.h \
-		ui_mainwindow.h
+		ui_mainwindow.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QVariant \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/QApplication \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qapplication.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qcoreapplication.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qeventloop.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qdesktopwidget.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qguiapplication.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qinputmethod.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/QMenuBar \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qmenubar.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qmenu.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qaction.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qactiongroup.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/QStatusBar \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qstatusbar.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/QToolBar \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qtoolbar.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/QLayout \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qlayout.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qlayoutitem.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qboxlayout.h \
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qgridlayout.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../Canvas/mainwindow.cpp
 
 canvas.o: ../Canvas/canvas.cpp ../Canvas/canvas.h \
@@ -1282,7 +1329,8 @@ canvas.o: ../Canvas/canvas.cpp ../Canvas/canvas.h \
 		../../Qt/5.11.1/gcc_64/include/QtGui/QPaintEvent \
 		../../Qt/5.11.1/gcc_64/include/QtGui/QPainter \
 		../../Qt/5.11.1/gcc_64/include/QtGui/qpainter.h \
-		../../Qt/5.11.1/gcc_64/include/QtGui/qtextoption.h
+		../../Qt/5.11.1/gcc_64/include/QtGui/qtextoption.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QDebug
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o canvas.o ../Canvas/canvas.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
