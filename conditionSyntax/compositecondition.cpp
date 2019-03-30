@@ -10,6 +10,7 @@ CompositeCondition::CompositeCondition(const QString &input)
 
 bool CompositeCondition::Validate()
 {
+    Condition::validate();
     bool output = true;
     for(int i = 0; i < conditions.length(); i++)
         output &= conditions[i].second->validate();
@@ -66,6 +67,7 @@ CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QS
                 QConditionsList subCompositeConditionList = parseConditions(list, index);
                 condition = new CompositeCondition(subCompositeConditionList);
             } catch(ConditionError::Malformed &err){
+                // if an exception is caught, we shall free all memory allocated within output and pass it through
                 for(int j = output.length()-1; j >= 0; j--)
                     delete output[j].second;
                 throw err;
@@ -73,25 +75,47 @@ CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QS
         } else if(list[index] == ")"){ // if it is the end of a composite condition
             return output; // we return the QConditionList that would make the CompositeCondition
                            // that was inside the paranthesis
-        } else {
-            // create SimpleCondition
+        } else { // create SimpleCondition
             bool ok = false;
             QString conditionString = list[index];
-            if(list[index] == "have")
+            if(list[index] == "have"){
                 index++;
+                if(index >= list.length()){
+                    // check that no Out Of Bounds happens
+                    for(int j = output.length()-1; j >= 0; j--)
+                        delete output[j].second;
+                    throw ConditionError::Malformed("Unexpected end of condition");
+                }
+            }
             list[index].toInt(&ok);
-            if(ok){
+            if(ok){ // if the simple condition had a number in it
                 index++;
+                if(index >= list.length()){
+                    // check that no Out Of Bounds happens
+                    for(int j = output.length()-1; j >= 0; j--)
+                        delete output[j].second;
+                    throw ConditionError::Malformed("Unexpected end of condition");
+                }
                 condition = new SimpleCondition(list[index-1], list[index]);
-            } else {
+            } else { // if it was a numberless simple condition
                 condition = new SimpleCondition("1", list[index]);
             }
         }
-
+        // now, prepare the pair to be inserted.
         pair.first = connector;
         pair.second = condition;
         output.append(pair);
-
+        // increment the index to check for either a connector or a end of parenthesis
+        index++;
+        if(index >= list.length()){
+            // check that no Out Of Bounds happens
+            for(int j = output.length()-1; j >= 0; j--)
+                delete output[j].second;
+            throw ConditionError::Malformed("Unexpected end of condition");
+        }
+        if(list[index] == ")") // if it is a ), then we'll exit the creation of this CompositeCondition
+            return output;
+        // if it was not a ")" the it has to be a connector. Otherwise we'll throw an exception.
         connector = parseConnector(list[index]);
         if (connector == Connector::EMPTY){
             delete condition;
@@ -99,6 +123,7 @@ CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QS
                 delete output[j].second;
             throw ConditionError::Malformed("malformed condition");
         }
+        // next index increment will happen within the loop body
     }
     return output;
 }

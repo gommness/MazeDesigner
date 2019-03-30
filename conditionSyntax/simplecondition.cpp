@@ -36,6 +36,7 @@ SimpleCondition::SimpleCondition(QString string, QMap<QString, Key> *map) : Simp
 
 bool SimpleCondition::validate()
 {
+    Condition::validate();
     bool output = validateName();
     if(!output)
         throw ConditionError::UnknownIdentifier(name.toStdString());
