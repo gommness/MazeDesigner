@@ -1,6 +1,8 @@
 #ifndef CANVAS_H
 #define CANVAS_H
 
+#include "grid.h"
+
 #include <QWidget>
 #include <QPen>
 #include <QPaintEvent>
@@ -34,8 +36,7 @@ public:
      */
     QString toString() const;
 
-    int8_t getGridSize() const;
-    void setGridSize(const int8_t &value);
+    const Grid getGrid() const;
 
 public slots:
     void setPen(const QPen &pen);
@@ -44,6 +45,7 @@ public slots:
 protected:
     void paintEvent(QPaintEvent * event) override;
     void mousePressEvent(QMouseEvent *event) override;
+    // void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
 
     /**
@@ -56,7 +58,6 @@ protected:
      * @brief render to be called only within the paintEvent. Renders all the polygons stored
      */
     void render();
-    QPoint nearestGridPoint(const QPoint & point) const;
 
 private:
     QList<QPolygon> polyList;
@@ -65,7 +66,7 @@ private:
     bool transformed;
     QPoint *start = nullptr;
     QPoint *end = nullptr;
-    int8_t gridSize = 1;
+    Grid grid;
 };
 
 #endif // CANVAS_H

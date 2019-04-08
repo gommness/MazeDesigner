@@ -1,6 +1,6 @@
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-03-11T17:35:21
+# Project created by QtCreator 2019-04-04T18:00:40
 #
 #-------------------------------------------------
 
@@ -8,7 +8,7 @@ QT       += core gui
 
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
-TARGET = Canvas
+TARGET = Keys
 TEMPLATE = app
 
 # The following define makes your compiler emit warnings if you use
@@ -27,17 +27,21 @@ CONFIG += c++11
 SOURCES += \
         main.cpp \
         mainwindow.cpp \
-    canvas.cpp \
-    grid.cpp \
-    roomcanvas.cpp \
-    room.cpp
+    colorlisteditor.cpp \
+    keynameeditor.cpp \
+    keyispowerupeditor.cpp \
+    keyrepository.cpp \
+    key.cpp \
+    keylistwidget.cpp
 
 HEADERS += \
         mainwindow.h \
-    canvas.h \
-    grid.h \
-    roomcanvas.h \
-    room.h
+    colorlisteditor.h \
+    keynameeditor.h \
+    keyispowerupeditor.h \
+    keyrepository.h \
+    key.h \
+    keylistwidget.h
 
 FORMS += \
         mainwindow.ui
