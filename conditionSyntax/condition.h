@@ -8,6 +8,8 @@
 class Condition
 {
 public:
+    QMap<QString, Key> *nameSpace = nullptr;
+
     Condition();
     virtual ~Condition();
     virtual bool validate();
@@ -16,5 +18,27 @@ public:
     virtual QString toString();
 private:
 };
+
+namespace  ConditionError {
+    class Malformed : public std::runtime_error {
+    public:
+        Malformed(const std::string& msg = "") : runtime_error(msg) {}
+    };
+
+    class SyntaxError : public Malformed{
+        public:
+        SyntaxError(const std::string& msg = "") : Malformed("Syntax Error: " + msg) {}
+    };
+
+    class MissingNameSpace : public Malformed{
+        public:
+        MissingNameSpace(const std::string& msg = "") : Malformed(msg) {}
+    };
+
+    class UnknownIdentifier : public Malformed{
+        public:
+        UnknownIdentifier(const std::string& msg = "") : Malformed(msg) {}
+    };
+}
 
 #endif // CONDITION_H
