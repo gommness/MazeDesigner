@@ -21,23 +21,24 @@ KeyListWidget::KeyListWidget(QWidget *parent) : QWidget(parent)
     this->removeButton = new QPushButton();
     this->removeButton->setText("remove key");
 
-    connect(createButton, &QPushButton::clicked, this, &KeyListWidget::createKey);
-    connect(removeButton, &QPushButton::clicked, this, &KeyListWidget::deleteKey);
-
     // this->repo << Key("key1") << Key("key2") << Key("key3"); // DELETEME
     this->table = new QTableWidget();
     table->setColumnCount(2);
     table->setHorizontalHeaderLabels(QStringList() << tr("key name") << tr("is power up"));
     table->verticalHeader()->setVisible(false);
     table->resize(150, 50);
-    KeyRepository rr = KeyRepository();
+    KeyRepository rr;
     rr << Key("key1") << Key("key2");
     this->load(rr);
 
+    QGridLayout *buttonsLayout = new QGridLayout;
     QGridLayout *layout = new QGridLayout;
 
-    layout->addWidget(createButton, 0, 0);
-    layout->addWidget(removeButton, 0, 1);
+    connectSignals();
+
+    buttonsLayout->addWidget(createButton, 0, 0);
+    buttonsLayout->addWidget(removeButton, 0, 1);
+    layout->addLayout(buttonsLayout, 0, 0);
     layout->addWidget(table, 1, 0);
     setLayout(layout);
 }
@@ -82,7 +83,7 @@ void KeyListWidget::createKey()
 {
     int rowCount = table->rowCount();
     table->insertRow(rowCount); // inserts new row at the bottom
-    Key key("new key"); // create a new key
+    Key key; // create a new key
     repo << key; // insert into the repo
 
     QTableWidgetItem *nameItem = new QTableWidgetItem(key.getName());
@@ -92,7 +93,7 @@ void KeyListWidget::createKey()
     table->setItem(rowCount, 0, nameItem);
     table->setItem(rowCount, 1, boolItem);
     table->selectRow(rowCount);
-    // TODO connect key for data update if it was necessary (but I don't think so)
+    table->resizeColumnToContents(0);
 }
 
 void KeyListWidget::deleteKey()
@@ -112,6 +113,30 @@ void KeyListWidget::deleteKey()
 
     QList<int> removeList = indexesToRemove.toList();
     std::sort(removeList.begin(), removeList.end());
-    for(int i = removeList.length()-1; i >= 0; i--)
+    for(int i = removeList.length()-1; i >= 0; i--){
         table->removeRow(removeList[i]);
+        repo.removeAt(i);
+    }
+    // qDebug() << repo.toString();
+}
+
+void KeyListWidget::onCellChanged(int row, int column)
+{
+    // we use row as index, thus consistency between the view's indexes and model's indexes
+    // emit cellChanged(row, keyname, value);
+    if(column == 0){
+        QString keyname = table->item(row, 0)->data(Qt::DisplayRole).toString();
+        repo[row].setName(keyname);
+    } else {
+        bool value = table->item(row, 1)->data(Qt::CheckStateRole).toBool();
+        repo[row].setPowerUp(value);
+    }
+}
+
+void KeyListWidget::connectSignals()
+{
+    connect(createButton, &QPushButton::clicked, this, &KeyListWidget::createKey);
+    connect(removeButton, &QPushButton::clicked, this, &KeyListWidget::deleteKey);
+    connect(table, &QTableWidget::cellChanged, this, &KeyListWidget::onCellChanged);
+    //connect(this, &KeyListWidget::cellChanged, &repo, &KeyRepository::onKeyChanged);
 }

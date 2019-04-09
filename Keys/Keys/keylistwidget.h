@@ -8,10 +8,7 @@
 
 /*
  * TODO:
- *      1. metodos para añadir y eliminar una llave de la lista
- *      2. el metodo para eliminar debe preguntar por confirmacion (?)
- *      3. conexion de las acciones de la vista con los datos del repositorio
- *      4.
+ *      - el metodo para eliminar debe preguntar por confirmacion (?)
  */
 
 class KeyListWidget : public QWidget
@@ -24,16 +21,20 @@ public:
     void load(const KeyRepository & repo);
 
 signals:
+    void cellChanged(const int & index, const QString & keyname, const bool& value);
 
 public slots:
     void createKey();
     void deleteKey();
+    void onCellChanged(int row, int column);
 
 private:
     QPushButton *createButton = nullptr;
     QPushButton *removeButton = nullptr;
     QTableWidget *table = nullptr;
     KeyRepository repo;
+
+    void connectSignals();
 };
 
 #endif // KEYLISTWIDGET_H

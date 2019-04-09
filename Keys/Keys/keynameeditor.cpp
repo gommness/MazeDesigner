@@ -14,6 +14,6 @@ QString KeyNameEditor::name() const
 
 void KeyNameEditor::setName(const QString & name)
 {
-    qDebug() << "setName called. name: " << name;
+    //qDebug() << "setName called. name: " << name;
     this->setText(name);
 }
