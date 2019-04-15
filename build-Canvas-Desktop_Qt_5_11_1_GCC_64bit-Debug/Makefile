@@ -55,7 +55,8 @@ SOURCES       = ../Canvas/main.cpp \
 		../Canvas/canvas.cpp \
 		../Canvas/grid.cpp \
 		../Canvas/roomcanvas.cpp \
-		../Canvas/room.cpp moc_mainwindow.cpp \
+		../Canvas/room.cpp \
+		../Canvas/shape.cpp moc_mainwindow.cpp \
 		moc_canvas.cpp \
 		moc_grid.cpp \
 		moc_roomcanvas.cpp
@@ -65,6 +66,7 @@ OBJECTS       = main.o \
 		grid.o \
 		roomcanvas.o \
 		room.o \
+		shape.o \
 		moc_mainwindow.o \
 		moc_canvas.o \
 		moc_grid.o \
@@ -262,12 +264,14 @@ DIST          = ../../Qt/5.11.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../Canvas/canvas.h \
 		../Canvas/grid.h \
 		../Canvas/roomcanvas.h \
-		../Canvas/room.h ../Canvas/main.cpp \
+		../Canvas/room.h \
+		../Canvas/shape.h ../Canvas/main.cpp \
 		../Canvas/mainwindow.cpp \
 		../Canvas/canvas.cpp \
 		../Canvas/grid.cpp \
 		../Canvas/roomcanvas.cpp \
-		../Canvas/room.cpp
+		../Canvas/room.cpp \
+		../Canvas/shape.cpp
 QMAKE_TARGET  = Canvas
 DESTDIR       = 
 TARGET        = Canvas
@@ -681,8 +685,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../Qt/5.11.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../Canvas/mainwindow.h ../Canvas/canvas.h ../Canvas/grid.h ../Canvas/roomcanvas.h ../Canvas/room.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../Canvas/main.cpp ../Canvas/mainwindow.cpp ../Canvas/canvas.cpp ../Canvas/grid.cpp ../Canvas/roomcanvas.cpp ../Canvas/room.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../Canvas/mainwindow.h ../Canvas/canvas.h ../Canvas/grid.h ../Canvas/roomcanvas.h ../Canvas/room.h ../Canvas/shape.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../Canvas/main.cpp ../Canvas/mainwindow.cpp ../Canvas/canvas.cpp ../Canvas/grid.cpp ../Canvas/roomcanvas.cpp ../Canvas/room.cpp ../Canvas/shape.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../Canvas/mainwindow.ui $(DISTDIR)/
 
 
@@ -1858,6 +1862,61 @@ room.o: ../Canvas/room.cpp ../Canvas/room.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qstringview.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qstringbuilder.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o room.o ../Canvas/room.cpp
+
+shape.o: ../Canvas/shape.cpp ../Canvas/shape.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/QPolygon \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qpolygon.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qtguiglobal.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qglobal.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qconfig.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qtcore-config.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qsysinfo.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qlogging.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qflags.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qatomic.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qmutex.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qnumeric.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qversiontagging.h \
+		../../Qt/5.11.1/gcc_64/include/QtGui/qtgui-config.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qvector.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qalgorithms.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qiterator.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qlist.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qrefcount.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qarraydata.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qhashfunctions.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstring.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qchar.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qbytearray.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qnamespace.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringliteral.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringview.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qpair.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qbytearraylist.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringlist.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qregexp.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qpoint.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qrect.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qmargins.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qsize.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QSet \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qset.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qhash.h
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o shape.o ../Canvas/shape.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_mainwindow.o moc_mainwindow.cpp

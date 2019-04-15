@@ -229,6 +229,7 @@ DIST          = ../../Qt/5.11.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/spec_post.prf \
+		../conditionSyntax/.qmake.stash \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -435,6 +436,7 @@ Makefile: ../conditionSyntax/ConditionParser.pro ../../Qt/5.11.1/gcc_64/mkspecs/
 		../../Qt/5.11.1/gcc_64/mkspecs/features/qt_config.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.conf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/spec_post.prf \
+		.qmake.stash \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/exclusive_builds.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/toolchain.prf \
 		../../Qt/5.11.1/gcc_64/mkspecs/features/default_pre.prf \
@@ -626,6 +628,7 @@ Makefile: ../conditionSyntax/ConditionParser.pro ../../Qt/5.11.1/gcc_64/mkspecs/
 ../../Qt/5.11.1/gcc_64/mkspecs/features/qt_config.prf:
 ../../Qt/5.11.1/gcc_64/mkspecs/linux-g++/qmake.conf:
 ../../Qt/5.11.1/gcc_64/mkspecs/features/spec_post.prf:
+.qmake.stash:
 ../../Qt/5.11.1/gcc_64/mkspecs/features/exclusive_builds.prf:
 ../../Qt/5.11.1/gcc_64/mkspecs/features/toolchain.prf:
 ../../Qt/5.11.1/gcc_64/mkspecs/features/default_pre.prf:
@@ -896,9 +899,9 @@ main.o: ../conditionSyntax/main.cpp ../../Qt/5.11.1/gcc_64/include/QtCore/QFile 
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/QSizePolicy \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QMetaEnum \
 		../conditionSyntax/simplecondition.h \
+		../conditionSyntax/condition.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QMap \
-		../conditionSyntax/key.h \
-		../conditionSyntax/condition.h
+		../conditionSyntax/key.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../conditionSyntax/main.cpp
 
 key.o: ../conditionSyntax/key.cpp ../conditionSyntax/key.h \
@@ -938,6 +941,7 @@ key.o: ../conditionSyntax/key.cpp ../conditionSyntax/key.h \
 
 compositecondition.o: ../conditionSyntax/compositecondition.cpp ../conditionSyntax/compositecondition.h \
 		../conditionSyntax/simplecondition.h \
+		../conditionSyntax/condition.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QString \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qstring.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qchar.h \
@@ -1003,11 +1007,11 @@ compositecondition.o: ../conditionSyntax/compositecondition.cpp ../conditionSynt
 		../../Qt/5.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../conditionSyntax/key.h \
-		../conditionSyntax/condition.h
+		../conditionSyntax/key.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o compositecondition.o ../conditionSyntax/compositecondition.cpp
 
 simplecondition.o: ../conditionSyntax/simplecondition.cpp ../conditionSyntax/simplecondition.h \
+		../conditionSyntax/condition.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QString \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qstring.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qchar.h \
@@ -1074,11 +1078,76 @@ simplecondition.o: ../conditionSyntax/simplecondition.cpp ../conditionSyntax/sim
 		../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		../conditionSyntax/key.h \
-		../conditionSyntax/condition.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QRegExp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o simplecondition.o ../conditionSyntax/simplecondition.cpp
 
-condition.o: ../conditionSyntax/condition.cpp ../conditionSyntax/condition.h
+condition.o: ../conditionSyntax/condition.cpp ../conditionSyntax/condition.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QString \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstring.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qchar.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qglobal.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qconfig.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qtcore-config.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qsystemdetection.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qprocessordetection.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qtypeinfo.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qsysinfo.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qlogging.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qflags.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qatomic.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qbasicatomic.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qgenericatomic.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qglobalstatic.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qmutex.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qnumeric.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qversiontagging.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qbytearray.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qrefcount.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qnamespace.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qarraydata.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringliteral.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringview.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringbuilder.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QMap \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qmap.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qiterator.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qlist.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qalgorithms.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qhashfunctions.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qpair.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qbytearraylist.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringlist.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qregexp.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qstringmatcher.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qdebug.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qhash.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qtextstream.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qiodevice.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qobject.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qcoreevent.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qscopedpointer.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qmetatype.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qobject_impl.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qlocale.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qvariant.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qshareddata.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qvector.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qpoint.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qset.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../conditionSyntax/key.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o condition.o ../conditionSyntax/condition.cpp
 
 ####### Install

@@ -30,14 +30,16 @@ SOURCES += \
     canvas.cpp \
     grid.cpp \
     roomcanvas.cpp \
-    room.cpp
+    room.cpp \
+    shape.cpp
 
 HEADERS += \
         mainwindow.h \
     canvas.h \
     grid.h \
     roomcanvas.h \
-    room.h
+    room.h \
+    shape.h
 
 FORMS += \
         mainwindow.ui

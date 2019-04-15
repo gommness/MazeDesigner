@@ -53,14 +53,21 @@ protected:
      * into the union of itself and the new polygon
      * @param poly the new polygon to add to the list
      */
-    void addPolygon(const QPolygon & poly);
+    void addPolygon(QPolygon * other);
+    void addHole(QPolygon * other);
+
+    void removePolygon(QPolygon *poly);
     /**
      * @brief render to be called only within the paintEvent. Renders all the polygons stored
      */
     void render();
 
 private:
-    QList<QPolygon> polyList;
+    void addToPolyList(QList<QPolygon> & list, QPolygon * other);
+
+    //QList<QPolygon> polyList;
+    //QList<QPolygon> holeList;
+    QPainterPath shapes;
     QPainter painter;
     QPen pen;
     bool transformed;

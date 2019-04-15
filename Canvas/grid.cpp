@@ -16,6 +16,7 @@ QPoint Grid::nearestPoint(const QPoint &point) const
     // get the x and y coords of the top-left corner of said cell.
     int x = size*(point.x()/size);
     int y = size*(point.y()/size);
+    qDebug() << "x vale: " << x << " y vale: " << y;
     // then we load the 4 points of the grid that make said quad into a list
     QList<QPoint> list;
     list.append(QPoint(x, y));
@@ -32,6 +33,19 @@ QPoint Grid::nearestPoint(const QPoint &point) const
             minDist = dist;
         }
     }
+    if(output.x() % size != 0){
+        if(output.x() % size > size/2)
+            output.setX(output.x() + size - (output.x()%size));
+        else
+            output.setX(output.x() - output.x()%size);
+    }
+    if(output.y() % size != 0){
+        if(output.y() % size > size/2)
+            output.setY(output.y() + size - (output.y()%size));
+        else
+            output.setY(output.y() - output.y()%size);
+    }
+    qDebug() << "point x vale: " << output.x() << " point y vale: " << output.y();
     return output;
 }
 
