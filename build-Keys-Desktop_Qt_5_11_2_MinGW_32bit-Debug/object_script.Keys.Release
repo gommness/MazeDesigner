@@ -1,0 +1,15 @@
+INPUT(
+./release\main.o
+./release\mainwindow.o
+./release\colorlisteditor.o
+./release\keynameeditor.o
+./release\keyispowerupeditor.o
+./release\keyrepository.o
+./release\key.o
+./release\keylistwidget.o
+./release\moc_mainwindow.o
+./release\moc_colorlisteditor.o
+./release\moc_keynameeditor.o
+./release\moc_keyispowerupeditor.o
+./release\moc_keylistwidget.o
+);
