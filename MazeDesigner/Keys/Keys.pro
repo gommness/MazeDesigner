@@ -9,7 +9,7 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Keys
-TEMPLATE = app
+TEMPLATE = lib
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -26,22 +26,22 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-        mainwindow.cpp \
     colorlisteditor.cpp \
     keynameeditor.cpp \
     keyispowerupeditor.cpp \
     keyrepository.cpp \
     key.cpp \
-    keylistwidget.cpp
+    keylistwidget.cpp \
+    keyeditorwidget.cpp
 
 HEADERS += \
-        mainwindow.h \
     colorlisteditor.h \
     keynameeditor.h \
     keyispowerupeditor.h \
     keyrepository.h \
     key.h \
-    keylistwidget.h
+    keylistwidget.h \
+    keyeditorwidget.h
 
 FORMS += \
         mainwindow.ui

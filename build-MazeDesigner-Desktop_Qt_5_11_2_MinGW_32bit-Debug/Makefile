@@ -28,7 +28,8 @@ MOVE          = move
 SUBTARGETS    =  \
 		sub-Canvas \
 		sub-Keys \
-		sub-ConditionParser
+		sub-ConditionParser \
+		sub-MazeDesignerGUI
 
 
 sub-Canvas-qmake_all:  FORCE
@@ -106,6 +107,31 @@ sub-ConditionParser-install_subtargets: FORCE
 sub-ConditionParser-uninstall_subtargets: FORCE
 	@if not exist ConditionParser\ mkdir ConditionParser\ & if not exist ConditionParser\ exit 1
 	cd ConditionParser\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\ConditionParser\ConditionParser.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
+sub-MazeDesignerGUI-qmake_all:  FORCE
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
+	cd MazeDesignerGUI\ && $(MAKE) -f Makefile qmake_all
+sub-MazeDesignerGUI: FORCE
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile
+sub-MazeDesignerGUI-make_first: FORCE
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile 
+sub-MazeDesignerGUI-all: FORCE
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile all
+sub-MazeDesignerGUI-clean: FORCE
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile clean
+sub-MazeDesignerGUI-distclean: FORCE
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile distclean
+sub-MazeDesignerGUI-install_subtargets: FORCE
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile install
+sub-MazeDesignerGUI-uninstall_subtargets: FORCE
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile uninstall
 
 Makefile: ../MazeDesigner/MazeDesigner.pro E:/Qt/5.11.2/mingw53_32/mkspecs/win32-g++/qmake.conf E:/Qt/5.11.2/mingw53_32/mkspecs/features/spec_pre.prf \
 		E:/Qt/5.11.2/mingw53_32/mkspecs/qdevice.pri \
@@ -459,16 +485,16 @@ E:/Qt/5.11.2/mingw53_32/mkspecs/features/lex.prf:
 qmake: FORCE
 	@$(QMAKE) -o Makefile ..\MazeDesigner\MazeDesigner.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug"
 
-qmake_all: sub-Canvas-qmake_all sub-Keys-qmake_all sub-ConditionParser-qmake_all FORCE
+qmake_all: sub-Canvas-qmake_all sub-Keys-qmake_all sub-ConditionParser-qmake_all sub-MazeDesignerGUI-qmake_all FORCE
 
-make_first: sub-Canvas-make_first sub-Keys-make_first sub-ConditionParser-make_first  FORCE
-all: sub-Canvas-all sub-Keys-all sub-ConditionParser-all  FORCE
-clean: sub-Canvas-clean sub-Keys-clean sub-ConditionParser-clean  FORCE
-distclean: sub-Canvas-distclean sub-Keys-distclean sub-ConditionParser-distclean  FORCE
+make_first: sub-Canvas-make_first sub-Keys-make_first sub-ConditionParser-make_first sub-MazeDesignerGUI-make_first  FORCE
+all: sub-Canvas-all sub-Keys-all sub-ConditionParser-all sub-MazeDesignerGUI-all  FORCE
+clean: sub-Canvas-clean sub-Keys-clean sub-ConditionParser-clean sub-MazeDesignerGUI-clean  FORCE
+distclean: sub-Canvas-distclean sub-Keys-distclean sub-ConditionParser-distclean sub-MazeDesignerGUI-distclean  FORCE
 	-$(DEL_FILE) Makefile
 	-$(DEL_FILE) .qmake.stash
-install_subtargets: sub-Canvas-install_subtargets sub-Keys-install_subtargets sub-ConditionParser-install_subtargets FORCE
-uninstall_subtargets: sub-Canvas-uninstall_subtargets sub-Keys-uninstall_subtargets sub-ConditionParser-uninstall_subtargets FORCE
+install_subtargets: sub-Canvas-install_subtargets sub-Keys-install_subtargets sub-ConditionParser-install_subtargets sub-MazeDesignerGUI-install_subtargets FORCE
+uninstall_subtargets: sub-Canvas-uninstall_subtargets sub-Keys-uninstall_subtargets sub-ConditionParser-uninstall_subtargets sub-MazeDesignerGUI-uninstall_subtargets FORCE
 
 sub-Canvas-debug:
 	@if not exist Canvas\ mkdir Canvas\ & if not exist Canvas\ exit 1
@@ -479,7 +505,10 @@ sub-Keys-debug:
 sub-ConditionParser-debug:
 	@if not exist ConditionParser\ mkdir ConditionParser\ & if not exist ConditionParser\ exit 1
 	cd ConditionParser\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\ConditionParser\ConditionParser.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile debug
-debug: sub-Canvas-debug sub-Keys-debug sub-ConditionParser-debug
+sub-MazeDesignerGUI-debug:
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile debug
+debug: sub-Canvas-debug sub-Keys-debug sub-ConditionParser-debug sub-MazeDesignerGUI-debug
 
 sub-Canvas-release:
 	@if not exist Canvas\ mkdir Canvas\ & if not exist Canvas\ exit 1
@@ -490,7 +519,10 @@ sub-Keys-release:
 sub-ConditionParser-release:
 	@if not exist ConditionParser\ mkdir ConditionParser\ & if not exist ConditionParser\ exit 1
 	cd ConditionParser\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\ConditionParser\ConditionParser.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile release
-release: sub-Canvas-release sub-Keys-release sub-ConditionParser-release
+sub-MazeDesignerGUI-release:
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile release
+release: sub-Canvas-release sub-Keys-release sub-ConditionParser-release sub-MazeDesignerGUI-release
 
 sub-Canvas-check:
 	@if not exist Canvas\ mkdir Canvas\ & if not exist Canvas\ exit 1
@@ -501,7 +533,10 @@ sub-Keys-check:
 sub-ConditionParser-check:
 	@if not exist ConditionParser\ mkdir ConditionParser\ & if not exist ConditionParser\ exit 1
 	cd ConditionParser\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\ConditionParser\ConditionParser.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile check
-check: sub-Canvas-check sub-Keys-check sub-ConditionParser-check
+sub-MazeDesignerGUI-check:
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile check
+check: sub-Canvas-check sub-Keys-check sub-ConditionParser-check sub-MazeDesignerGUI-check
 
 sub-Canvas-benchmark:
 	@if not exist Canvas\ mkdir Canvas\ & if not exist Canvas\ exit 1
@@ -512,7 +547,10 @@ sub-Keys-benchmark:
 sub-ConditionParser-benchmark:
 	@if not exist ConditionParser\ mkdir ConditionParser\ & if not exist ConditionParser\ exit 1
 	cd ConditionParser\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\ConditionParser\ConditionParser.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile benchmark
-benchmark: sub-Canvas-benchmark sub-Keys-benchmark sub-ConditionParser-benchmark
+sub-MazeDesignerGUI-benchmark:
+	@if not exist MazeDesignerGUI\ mkdir MazeDesignerGUI\ & if not exist MazeDesignerGUI\ exit 1
+	cd MazeDesignerGUI\ && ( if not exist Makefile $(QMAKE) -o Makefile E:\Users\Javier\Desktop\MazeDesigner\MazeDesigner\MazeDesignerGUI\MazeDesignerGUI.pro -spec win32-g++ "CONFIG+=debug" "CONFIG+=qml_debug" ) && $(MAKE) -f Makefile benchmark
+benchmark: sub-Canvas-benchmark sub-Keys-benchmark sub-ConditionParser-benchmark sub-MazeDesignerGUI-benchmark
 install:install_subtargets  FORCE
 
 uninstall: uninstall_subtargets FORCE

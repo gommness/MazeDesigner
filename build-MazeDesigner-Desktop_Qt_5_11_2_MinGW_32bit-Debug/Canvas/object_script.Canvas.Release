@@ -1,13 +1,13 @@
 INPUT(
-./release\main.o
-./release\mainwindow.o
 ./release\canvas.o
 ./release\grid.o
-./release\roomcanvas.o
+./release\main.o
+./release\mainwindow.o
 ./release\room.o
+./release\roomcanvas.o
 ./release\shape.o
-./release\moc_mainwindow.o
 ./release\moc_canvas.o
 ./release\moc_grid.o
+./release\moc_mainwindow.o
 ./release\moc_roomcanvas.o
 );

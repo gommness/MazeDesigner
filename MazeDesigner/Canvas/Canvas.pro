@@ -1,6 +1,12 @@
+# Created by and for Qt Creator This file was created for editing the project sources only.
+# You may attempt to use it for building too, by modifying this file here.
+
+#TARGET = Canvas
+
+
 #-------------------------------------------------
 #
-# Project created by QtCreator 2019-03-11T17:35:21
+# Project created by QtCreator 2019-04-04T18:00:40
 #
 #-------------------------------------------------
 
@@ -9,7 +15,7 @@ QT       += core gui
 greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = Canvas
-TEMPLATE = app
+TEMPLATE = lib
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -24,22 +30,26 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 CONFIG += c++11
 
-SOURCES += \
-        main.cpp \
-        mainwindow.cpp \
-    canvas.cpp \
-    grid.cpp \
-    roomcanvas.cpp \
-    room.cpp \
-    shape.cpp
+HEADERS = \
+   $$PWD/canvas.h \
+   $$PWD/grid.h \
+   $$PWD/mainwindow.h \
+   $$PWD/room.h \
+   $$PWD/roomcanvas.h \
+   $$PWD/shape.h \
+   $$PWD/ui_mainwindow.h
 
-HEADERS += \
-        mainwindow.h \
-    canvas.h \
-    grid.h \
-    roomcanvas.h \
-    room.h \
-    shape.h
+SOURCES = \
+   $$PWD/canvas.cpp \
+   $$PWD/grid.cpp \
+   $$PWD/main.cpp \
+   $$PWD/mainwindow.cpp \
+   $$PWD/room.cpp \
+   $$PWD/roomcanvas.cpp \
+   $$PWD/shape.cpp
+
+INCLUDEPATH = \
+    $$PWD/.
 
 FORMS += \
         mainwindow.ui
@@ -48,3 +58,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+#DEFINES = 
+

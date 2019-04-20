@@ -1,4 +1,4 @@
-#include "mainwindow.h"
+#include "keyeditorwidget.h"
 #include "keylistwidget.h"
 #include <QApplication>
 
