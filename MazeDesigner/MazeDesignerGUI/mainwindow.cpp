@@ -1,7 +1,5 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "../Canvas/canvas.h"
-#include "../Canvas/roomcanvas.h"
 #include "../Keys/keyeditorwidget.h"
 #include <QLabel>
 #include <QHBoxLayout>
@@ -20,8 +18,8 @@ MainWindow::MainWindow(QWidget *parent) :
     QVBoxLayout * editionLayout = new QVBoxLayout;
     // this piece will go in the graphical editor section of the application
     QTabWidget * designTabs = new QTabWidget;
-    Canvas * designCanvas = new Canvas;
-    RoomCanvas * roomCanvas = new RoomCanvas(designCanvas);
+    designCanvas = new Canvas;
+    roomCanvas = new RoomCanvas(designCanvas);
     //QLabel *designRoomRegions = new QLabel("label on top numer 1!", designCanvas);
     QLabel * designInstances = new QLabel("label on top number 2!", designCanvas);
     designTabs->addTab(designCanvas, "Canvas");

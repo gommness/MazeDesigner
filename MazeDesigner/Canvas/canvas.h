@@ -7,6 +7,7 @@
 #include <QPen>
 #include <QPaintEvent>
 #include <QPainter>
+#include <QScrollArea>
 
 class Canvas : public QWidget
 {
@@ -44,7 +45,7 @@ public slots:
 protected:
     void paintEvent(QPaintEvent * event) override;
     void mousePressEvent(QMouseEvent *event) override;
-    // void mouseMoveEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
 
     /**
@@ -66,6 +67,7 @@ private:
 
     //QList<QPolygon> polyList;
     //QList<QPolygon> holeList;
+    QScrollArea *scrollArea;
     QPainterPath shapes;
     QPainter painter;
     QPen pen;

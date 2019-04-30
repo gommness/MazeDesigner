@@ -20,7 +20,7 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
     bool isRoomOverlapping(const Room & room);
-
+    void deleteRoomsAt(const QPoint & point);
 private:
     Canvas *design;
     QList<Room> roomList;

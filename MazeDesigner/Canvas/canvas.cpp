@@ -10,6 +10,11 @@ Canvas::Canvas(QWidget *parent) : QWidget (parent), grid(this)
     setAutoFillBackground(true);
     //polyList = QList<QPolygon>();
     grid.setSize(32);
+    /*
+    scrollArea = new QScrollArea;
+    scrollArea->setBackgroundRole(QPalette::Dark);
+    scrollArea->setWidget(this);
+    */
     //painter.begin(this);
     //painter.setPen(QColor(0,0,0));
     //painter.setRenderHint(QPainter::Antialiasing);
@@ -78,8 +83,17 @@ void Canvas::paintEvent(QPaintEvent *event)
 
 void Canvas::mousePressEvent(QMouseEvent *event)
 {
+    qDebug() << __FUNCTION__ << " eventButton: " << event->button();
+    grid.mousePressEventHandler(event);
     delete start;
     start = new QPoint(grid.nearestPoint(event->pos()));
+}
+
+
+void Canvas::mouseMoveEvent(QMouseEvent *event)
+{
+    qDebug() << __FUNCTION__ << " eventButton: " << event->button();
+    grid.mouseMoveEventHandler(event);
 }
 
 /*
@@ -94,6 +108,8 @@ void Canvas::mouseMoveEvent(QMouseEvent *event){
 
 void Canvas::mouseReleaseEvent(QMouseEvent *event)
 {
+    qDebug() << __FUNCTION__ << " eventButton: " << event->button();
+    grid.mouseReleaseEventHandler(event);
     delete end;
     end = new QPoint(grid.nearestPoint(event->pos()));
     qDebug() << "recieved mouse elease event. end: " << end->x() << " " << end->y();
@@ -104,9 +120,9 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
         // while a QPolygon would have an extra 5th QPoint that equals to the first QPoint
         // By doing this, we build the rectangle as a polygon so that future extractions and subtractions are performed correctly
         qDebug() << "creando el poligono: " << rect;
-        if(event->button() & Qt::LeftButton){ // right click
+        if(event->button() & Qt::LeftButton){ // left click
             addPolygon(&rect);
-        } else if(event->button() & Qt::RightButton){ // left click
+        } else if(event->button() & Qt::RightButton){ // right click
             removePolygon(&rect);
         }
         update();

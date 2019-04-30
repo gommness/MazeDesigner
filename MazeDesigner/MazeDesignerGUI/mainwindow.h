@@ -3,6 +3,8 @@
 
 #include <QMainWindow>
 #include <QActionGroup>
+#include "../Canvas/canvas.h"
+#include "../Canvas/roomcanvas.h"
 
 namespace Ui {
 class MainWindow;
@@ -40,6 +42,9 @@ private:
     QAction * validateAct;
     QAction * exportAct;
     Ui::MainWindow *ui;
+
+    RoomCanvas * roomCanvas = nullptr;
+    Canvas * designCanvas = nullptr;
 };
 
 #endif // MAINWINDOW_H

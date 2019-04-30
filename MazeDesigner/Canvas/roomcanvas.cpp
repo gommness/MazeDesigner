@@ -1,4 +1,5 @@
 #include "roomcanvas.h"
+#include <QDebug>
 
 RoomCanvas::RoomCanvas(Canvas *design) {
     this->design = design;
@@ -7,8 +8,7 @@ RoomCanvas::RoomCanvas(Canvas *design) {
 
 void RoomCanvas::showEvent(QShowEvent *)
 {
-    if(!design->isVisible())
-        design->show();
+    design->show();
 }
 
 void RoomCanvas::paintEvent(QPaintEvent *)
@@ -30,12 +30,20 @@ void RoomCanvas::paintEvent(QPaintEvent *)
 
 void RoomCanvas::mousePressEvent(QMouseEvent *event)
 {
-    //delete start;
-    start = new QPoint(design->grid.nearestPoint(event->pos()));
+    delete start;
+    if(event->button() & Qt::LeftButton) // left click
+        start = new QPoint(design->grid.nearestPoint(event->pos()));
+    else if(event->button() & Qt::RightButton){ // right click
+        deleteRoomsAt(event->pos());
+        start = nullptr;
+    }
 }
 
 void RoomCanvas::mouseReleaseEvent(QMouseEvent *event)
 {
+    if(start == nullptr)
+        return;
+    delete end;
     end = new QPoint(design->grid.nearestPoint(event->pos()));
     if(start != end){
         QRect rect(*start, *end);
@@ -58,4 +66,17 @@ bool RoomCanvas::isRoomOverlapping(const Room &room)
             return true;
     }
     return false;
+}
+
+void RoomCanvas::deleteRoomsAt(const QPoint &point)
+{
+    bool flag = false; // will check if an update on the UI os necessary
+    for(int i = roomList.length()-1; i >= 0; i--){
+        if(roomList[i].contains(point, true)){
+            flag = true;
+            roomList.removeAt(i);
+        }
+    }
+    if(flag)
+        update();
 }
