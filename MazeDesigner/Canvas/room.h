@@ -7,10 +7,11 @@
 class Room : public QRect
 {
 public:
-    Room(QRect rect, QString name);
+    Room(QRect & rect, QString  name = "");
 
     QString getName() const;
     void setName(const QString &value);
+    int16_t getId() const;
 
 private:
     static int16_t ID;

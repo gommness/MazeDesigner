@@ -11,7 +11,6 @@
 class Canvas : public QWidget
 {
     Q_OBJECT
-
 public:
     /**
      * @brief Canvas constructor for the class. if parent is null, it creates a new window. Otherwise, the object constructed
@@ -74,6 +73,9 @@ private:
     QPoint *start = nullptr;
     QPoint *end = nullptr;
     Grid grid;
+
+
+friend class RoomCanvas;
 };
 
 #endif // CANVAS_H

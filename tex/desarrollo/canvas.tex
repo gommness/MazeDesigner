@@ -27,6 +27,6 @@ Para almacenar un objeto así en memoria, se plantearon iterativamente distintas
 		\item debido a la implementación de la clase QPolygon, los polígonos con agujeros no eran representados de forma correcta, pues todos los polígonos representados por dicha clase, por construcción, necesariamente tienen el grupo fundamental trivial. Esto representaría un problema más adelante con respecto a la funcionalidad 4.
 	\end{itemize}
 	\item[Lista de objetos de clase Shape] en la que Canvas contendría una lista de objetos de clase Shape, que heredara de la clase QPolygon, construidos mediante adición o substracción de rectángulos. Dicha clase modelaría también polígonos con agujeros, solucionando el principal problema de la implementación anterior.
-	El problema con ésta es que la algoritmia era demasiado costosa y complicada.
+	El problema con ésta es que la algoritmia era demasiado costosa y compleja.
 	\item[Objeto de clase QPainterPath] la implementación final que utilizaba una clase de QT que, con cierto esfuerzo, resolvía todos los problemas anteriores.
 \end{enumerate}

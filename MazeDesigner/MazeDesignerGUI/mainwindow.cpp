@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "../Canvas/canvas.h"
+#include "../Canvas/roomcanvas.h"
 #include "../Keys/keyeditorwidget.h"
 #include <QLabel>
 #include <QHBoxLayout>
@@ -20,10 +21,11 @@ MainWindow::MainWindow(QWidget *parent) :
     // this piece will go in the graphical editor section of the application
     QTabWidget * designTabs = new QTabWidget;
     Canvas * designCanvas = new Canvas;
-    QLabel *designRoomRegions = new QLabel("label on top numer 1!", designCanvas);
+    RoomCanvas * roomCanvas = new RoomCanvas(designCanvas);
+    //QLabel *designRoomRegions = new QLabel("label on top numer 1!", designCanvas);
     QLabel * designInstances = new QLabel("label on top number 2!", designCanvas);
     designTabs->addTab(designCanvas, "Canvas");
-    designTabs->addTab(designRoomRegions, "Rooms");
+    designTabs->addTab(roomCanvas, "Rooms");
     designTabs->addTab(designInstances, "Instances");
     /// README this has been tested and as a result, the widget classes that will have the canvas
     /// as their parent will have to actively update its parent when they themselves are updated

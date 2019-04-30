@@ -26,7 +26,6 @@ CONFIG += c++11
 
 SOURCES += \
         main.cpp \
-    colorlisteditor.cpp \
     keynameeditor.cpp \
     keyispowerupeditor.cpp \
     keyrepository.cpp \
@@ -35,7 +34,6 @@ SOURCES += \
     keyeditorwidget.cpp
 
 HEADERS += \
-    colorlisteditor.h \
     keynameeditor.h \
     keyispowerupeditor.h \
     keyrepository.h \
