@@ -16,6 +16,7 @@ public:
     void mouseMoveEventHandler(QMouseEvent* event);
     void mousePressEventHandler(QMouseEvent * event);
     void mouseReleaseEventHandler(QMouseEvent * event);
+    QPoint getOffset() const;
 
 
 protected:
@@ -27,8 +28,8 @@ private:
     int8_t size = 1;
     QPoint * previous = nullptr;
     QPoint * current = nullptr;
-    int64_t hOffset = 0;
-    int64_t vOffset = 0;
+    int hOffset = 0;
+    int vOffset = 0;
 
 };
 

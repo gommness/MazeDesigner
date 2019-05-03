@@ -12,11 +12,12 @@ Grid::Grid(const Grid &grid) : Grid(grid.parentWidget()) {}
 
 QPoint Grid::nearestPoint(const QPoint &point) const
 {
+    QPoint offset(hOffset, vOffset);
     // a point somewhere in the space will be inside a grid cell. That is, inside of a quad whose corners
     // are in-grid. By doing simple integer division and then multiplying by the size of a grid cell, we can
     // get the x and y coords of the top-left corner of said cell.
-    int x = size*(point.x()/size);
-    int y = size*(point.y()/size);
+    int x = size*((point.x()-hOffset)/size);
+    int y = size*((point.y()-vOffset)/size);
     // then we load the 4 points of the grid that make said quad into a list
     QList<QPoint> list;
     list.append(QPoint(x, y));
@@ -24,10 +25,10 @@ QPoint Grid::nearestPoint(const QPoint &point) const
     list.append(QPoint(x+size, y));
     list.append(QPoint(x+size, y+size));
     // and finally perform the classic iterative algorithm to find the nearest one
-    double minDist = pointDistance(point, list[0]);
+    double minDist = pointDistance(point-offset, list[0]);
     QPoint output = list[0];
     for(int i = 1; i < list.length(); i++){
-        double dist = pointDistance(point, list[i]);
+        double dist = pointDistance(point-offset, list[i]);
         if(dist < minDist){
             output = list[i];
             minDist = dist;
@@ -57,6 +58,7 @@ void Grid::updateOffset(const QPoint *from, const QPoint *to)
 {
     hOffset += to->x() - from->x();
     vOffset += to->y() - from->y();
+    update();
 }
 
 int8_t Grid::getSize() const
@@ -76,7 +78,7 @@ void Grid::paintEvent(QPaintEvent *){
     painter.setRenderHint(QPainter::Antialiasing);
     for(int x = hOffset % size; x < width(); x+=size)
         painter.drawLine(x, 0, x, height());
-    for(int y = vOffset & size; y < width(); y+=size)
+    for(int y = vOffset % size; y < width(); y+=size)
         painter.drawLine(0, y, width(), y);
 }
 
@@ -99,27 +101,35 @@ void Grid::mouseMoveEventHandler(QMouseEvent *event)
         qDebug() << ":(";
         return;
     }
-    else if(event->button() & Qt::MiddleButton){ // the mouse wheel is pressed
+    else { // the mouse wheel is pressed
         qDebug() << "middle click!";
         delete previous;
         previous = current;
         current = new QPoint(event->pos());
         updateOffset(previous, current);
-    } else {
-        qDebug() << "button: " << event->button();
     }
 }
 
 void Grid::mousePressEventHandler(QMouseEvent *event)
 {
     delete current;
-    current = new QPoint(event->pos());
+    if(event->button() & Qt::MiddleButton)
+        current = new QPoint(event->pos());
+    else
+        current = nullptr;
 }
 
-void Grid::mouseReleaseEventHandler(QMouseEvent *)
+void Grid::mouseReleaseEventHandler(QMouseEvent *event)
 {
-    delete current;
-    delete previous;
-    current = previous = nullptr;
+    if(event->button() & Qt::MiddleButton){
+        delete current;
+        delete previous;
+        current = previous = nullptr;
+    }
+}
+
+QPoint Grid::getOffset() const
+{
+    return QPoint(hOffset, vOffset);
 }
 

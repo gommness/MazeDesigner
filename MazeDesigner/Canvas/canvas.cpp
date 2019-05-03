@@ -67,7 +67,7 @@ QString Canvas::toString() const
 
 void Canvas::paintEvent(QPaintEvent *event)
 {
-    //grid.update();
+    //grid.update(); // child widget's update calls father's update!
     painter.begin(this);
     painter.setPen(QColor(0,0,0));
     painter.setRenderHint(QPainter::Antialiasing);
@@ -83,8 +83,8 @@ void Canvas::paintEvent(QPaintEvent *event)
 
 void Canvas::mousePressEvent(QMouseEvent *event)
 {
-    qDebug() << __FUNCTION__ << " eventButton: " << event->button();
     grid.mousePressEventHandler(event);
+    qDebug() << __FUNCTION__ << " eventButton: " << event->button();
     delete start;
     start = new QPoint(grid.nearestPoint(event->pos()));
 }
@@ -113,7 +113,7 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
     delete end;
     end = new QPoint(grid.nearestPoint(event->pos()));
     qDebug() << "recieved mouse elease event. end: " << end->x() << " " << end->y();
-    if(start != end && start->x() != end->x() && start->y() != end->y()){
+    if(start != nullptr && start != end && start->x() != end->x() && start->y() != end->y()){
         QPolygon rect = QRect(*start, *end).normalized();
         rect.append(*rect.begin());
         // this line is necessary because QRect is a vector of only 4 QPoints
@@ -171,7 +171,7 @@ void Canvas::removePolygon(QPolygon *other)
 void Canvas::render()
 {
     // render the polygons
-    painter.drawPath(shapes);
+    painter.drawPath(shapes.translated(grid.getOffset()));
     /*
     foreach(QPolygon poly, polyList){
         painter.drawPolygon(poly);

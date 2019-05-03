@@ -18,6 +18,7 @@ protected:
     void showEvent(QShowEvent* ) override;
     void paintEvent(QPaintEvent * event) override;
     void mousePressEvent(QMouseEvent *event) override;
+    void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
     bool isRoomOverlapping(const Room & room);
     void deleteRoomsAt(const QPoint & point);

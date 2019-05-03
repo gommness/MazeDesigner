@@ -19,7 +19,7 @@ void RoomCanvas::paintEvent(QPaintEvent *)
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setBackgroundMode(Qt::BGMode::TransparentMode);
     for(auto room = roomList.begin(); room != roomList.end(); room++)
-        painter.drawRect(*room);
+        painter.drawRect(room->translated(design->grid.getOffset()));
 
     /*
     delete start;
@@ -30,6 +30,7 @@ void RoomCanvas::paintEvent(QPaintEvent *)
 
 void RoomCanvas::mousePressEvent(QMouseEvent *event)
 {
+    design->grid.mousePressEventHandler(event);
     delete start;
     if(event->button() & Qt::LeftButton) // left click
         start = new QPoint(design->grid.nearestPoint(event->pos()));
@@ -39,8 +40,14 @@ void RoomCanvas::mousePressEvent(QMouseEvent *event)
     }
 }
 
+void RoomCanvas::mouseMoveEvent(QMouseEvent *event)
+{
+    design->grid.mouseMoveEventHandler(event);
+}
+
 void RoomCanvas::mouseReleaseEvent(QMouseEvent *event)
 {
+    design->grid.mouseReleaseEventHandler(event);
     if(start == nullptr)
         return;
     delete end;
