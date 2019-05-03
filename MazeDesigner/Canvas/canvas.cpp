@@ -2,6 +2,9 @@
 #include <QPainter>
 #include <QDebug>
 #include <QLineF>
+#include <cstdlib>
+
+#define UMBRAL 0.1
 
 Canvas::Canvas(QWidget *parent) : QWidget (parent), grid(this)
 {
@@ -9,7 +12,7 @@ Canvas::Canvas(QWidget *parent) : QWidget (parent), grid(this)
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
     //polyList = QList<QPolygon>();
-    grid.setSize(32);
+    grid.setSize(36);
     /*
     scrollArea = new QScrollArea;
     scrollArea->setBackgroundRole(QPalette::Dark);
@@ -69,8 +72,13 @@ void Canvas::paintEvent(QPaintEvent *event)
 {
     //grid.update(); // child widget's update calls father's update!
     painter.begin(this);
-    painter.setPen(QColor(0,0,0));
+    QPen pen;
+    pen.setColor(QColor(0,0,0));
+    pen.setWidth(4);
+    painter.setPen(pen);
+
     painter.setRenderHint(QPainter::Antialiasing);
+    painter.scale(grid.getScale(), grid.getScale());
     render();
     painter.end();
 
@@ -84,15 +92,13 @@ void Canvas::paintEvent(QPaintEvent *event)
 void Canvas::mousePressEvent(QMouseEvent *event)
 {
     grid.mousePressEventHandler(event);
-    qDebug() << __FUNCTION__ << " eventButton: " << event->button();
     delete start;
-    start = new QPoint(grid.nearestPoint(event->pos()));
+    start = new QPointF(grid.nearestPoint(event->pos()));
 }
 
 
 void Canvas::mouseMoveEvent(QMouseEvent *event)
 {
-    qDebug() << __FUNCTION__ << " eventButton: " << event->button();
     grid.mouseMoveEventHandler(event);
 }
 
@@ -108,13 +114,14 @@ void Canvas::mouseMoveEvent(QMouseEvent *event){
 
 void Canvas::mouseReleaseEvent(QMouseEvent *event)
 {
-    qDebug() << __FUNCTION__ << " eventButton: " << event->button();
     grid.mouseReleaseEventHandler(event);
     delete end;
-    end = new QPoint(grid.nearestPoint(event->pos()));
+    end = new QPointF(grid.nearestPoint(event->pos()));
     qDebug() << "recieved mouse elease event. end: " << end->x() << " " << end->y();
-    if(start != nullptr && start != end && start->x() != end->x() && start->y() != end->y()){
-        QPolygon rect = QRect(*start, *end).normalized();
+    if(start != nullptr && start != end
+            && std::abs(start->x() - end->x()) > UMBRAL
+            && std::abs(start->y() - end->y()) > UMBRAL){
+        QPolygonF rect = QRectF(*start, *end).normalized();
         rect.append(*rect.begin());
         // this line is necessary because QRect is a vector of only 4 QPoints
         // while a QPolygon would have an extra 5th QPoint that equals to the first QPoint
@@ -129,7 +136,7 @@ void Canvas::mouseReleaseEvent(QMouseEvent *event)
     }
 }
 
-void Canvas::addPolygon(QPolygon *other)
+void Canvas::addPolygon(QPolygonF *other)
 {
     QPainterPath adding;
     adding.addPolygon(*other);
@@ -138,7 +145,7 @@ void Canvas::addPolygon(QPolygon *other)
     //addToPolyList(polyList, other);
 }
 
-void Canvas::addHole(QPolygon *other)
+void Canvas::addHole(QPolygonF *other)
 {
     QPainterPath removing;
     removing.addPolygon(*other);
@@ -146,7 +153,7 @@ void Canvas::addHole(QPolygon *other)
     //addToPolyList(holeList, other);
 }
 
-void Canvas::removePolygon(QPolygon *other)
+void Canvas::removePolygon(QPolygonF *other)
 {
     QPainterPath removing;
     removing.addPolygon(*other);

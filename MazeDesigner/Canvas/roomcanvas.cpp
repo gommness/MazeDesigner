@@ -15,9 +15,13 @@ void RoomCanvas::paintEvent(QPaintEvent *)
 {
     design->update(); // we draw our design, then we'll drow aurselves
     QPainter painter(this);
-    painter.setPen(QColor(0,255,33)); //green color
+    QPen pen;
+    pen.setColor(QColor(0,255,33, 128));
+    pen.setWidth(4);
+    painter.setPen(pen); //green color
     painter.setRenderHint(QPainter::Antialiasing);
     painter.setBackgroundMode(Qt::BGMode::TransparentMode);
+    painter.scale(design->grid.getScale(), design->grid.getScale());
     for(auto room = roomList.begin(); room != roomList.end(); room++)
         painter.drawRect(room->translated(design->grid.getOffset()));
 
@@ -33,7 +37,7 @@ void RoomCanvas::mousePressEvent(QMouseEvent *event)
     design->grid.mousePressEventHandler(event);
     delete start;
     if(event->button() & Qt::LeftButton) // left click
-        start = new QPoint(design->grid.nearestPoint(event->pos()));
+        start = new QPointF(design->grid.nearestPoint(event->pos()));
     else if(event->button() & Qt::RightButton){ // right click
         deleteRoomsAt(event->pos());
         start = nullptr;
@@ -51,9 +55,9 @@ void RoomCanvas::mouseReleaseEvent(QMouseEvent *event)
     if(start == nullptr)
         return;
     delete end;
-    end = new QPoint(design->grid.nearestPoint(event->pos()));
+    end = new QPointF(design->grid.nearestPoint(event->pos()));
     if(start != end){
-        QRect rect(*start, *end);
+        QRectF rect(*start, *end);
         Room room(rect);
         if(!isRoomOverlapping(room)){
             roomList.append(room);
@@ -65,21 +69,26 @@ void RoomCanvas::mouseReleaseEvent(QMouseEvent *event)
     end = start = nullptr;
 }
 
+void RoomCanvas::wheelEvent(QWheelEvent *event)
+{
+    design->grid.wheelEvent(event);
+}
+
 bool RoomCanvas::isRoomOverlapping(const Room &room)
 {
     for(auto r = roomList.begin(); r != roomList.end(); r++){
-        QRect rect(r->intersected(room));
+        QRectF rect(r->intersected(room));
         if(rect.width() > 1 && rect.height() > 1) // both larger than 1 to avoid considering "lines" or "edges" a invalid intersection
             return true;
     }
     return false;
 }
 
-void RoomCanvas::deleteRoomsAt(const QPoint &point)
+void RoomCanvas::deleteRoomsAt(const QPointF &point)
 {
     bool flag = false; // will check if an update on the UI os necessary
     for(int i = roomList.length()-1; i >= 0; i--){
-        if(roomList[i].contains(point, true)){
+        if(roomList[i].contains(point)){
             flag = true;
             roomList.removeAt(i);
         }

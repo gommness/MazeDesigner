@@ -53,10 +53,10 @@ protected:
      * into the union of itself and the new polygon
      * @param poly the new polygon to add to the list
      */
-    void addPolygon(QPolygon * other);
-    void addHole(QPolygon * other);
+    void addPolygon(QPolygonF * other);
+    void addHole(QPolygonF * other);
 
-    void removePolygon(QPolygon *poly);
+    void removePolygon(QPolygonF *poly);
     /**
      * @brief render to be called only within the paintEvent. Renders all the polygons stored
      */
@@ -72,8 +72,8 @@ private:
     QPainter painter;
     QPen pen;
     bool transformed;
-    QPoint *start = nullptr;
-    QPoint *end = nullptr;
+    QPointF *start = nullptr;
+    QPointF *end = nullptr;
     Grid grid;
 
 

@@ -4,10 +4,10 @@
 #include <QRect>
 #include <QString>
 
-class Room : public QRect
+class Room : public QRectF
 {
 public:
-    Room(QRect & rect, QString  name = "");
+    Room(QRectF & rect, QString  name = "");
 
     QString getName() const;
     void setName(const QString &value);

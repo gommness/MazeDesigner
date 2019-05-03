@@ -2,7 +2,7 @@
 
 int16_t Room::ID = 0;
 
-Room::Room(QRect &rect, QString name) : QRect(rect), name(name)
+Room::Room(QRectF &rect, QString name) : QRectF(rect), name(name)
 {
     id = Room::ID++;
     if(name.isEmpty())

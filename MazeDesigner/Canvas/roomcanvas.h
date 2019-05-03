@@ -20,13 +20,14 @@ protected:
     void mousePressEvent(QMouseEvent *event) override;
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
+    void wheelEvent(QWheelEvent *event) override;
     bool isRoomOverlapping(const Room & room);
-    void deleteRoomsAt(const QPoint & point);
+    void deleteRoomsAt(const QPointF & point);
 private:
     Canvas *design;
     QList<Room> roomList;
-    QPoint * start = nullptr;
-    QPoint * end = nullptr;
+    QPointF * start = nullptr;
+    QPointF * end = nullptr;
 };
 
 #endif // ROOMCANVAS_H

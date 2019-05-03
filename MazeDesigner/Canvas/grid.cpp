@@ -2,6 +2,7 @@
 #include <QPainter>
 #include <QMouseEvent>
 #include <QDebug>
+#include <QtMath>
 
 Grid::Grid(QWidget * parent) : QWidget(parent)
 {
@@ -10,30 +11,44 @@ Grid::Grid(QWidget * parent) : QWidget(parent)
 
 Grid::Grid(const Grid &grid) : Grid(grid.parentWidget()) {}
 
-QPoint Grid::nearestPoint(const QPoint &point) const
+QPointF Grid::nearestPoint(const QPointF &point) const
 {
-    QPoint offset(hOffset, vOffset);
+    /// problema: recibimos coordenadas reales del widget y queremos obtener las coordenadas virtuales
+    /// de nuestro grid a las que se corresponden. Teniendo en cuenta que hay una transformación de escalado
+    /// y de offset
+    double dSize = static_cast<double>(size);
+    qreal invertedS = dSize/scale;
+    qreal directS = dSize*scale;
+    QPointF offset(hOffset, vOffset);
     // a point somewhere in the space will be inside a grid cell. That is, inside of a quad whose corners
     // are in-grid. By doing simple integer division and then multiplying by the size of a grid cell, we can
     // get the x and y coords of the top-left corner of said cell.
-    int x = size*((point.x()-hOffset)/size);
-    int y = size*((point.y()-vOffset)/size);
+    /// point.x() is the on-screen coord
+    /// we have to invertedScale the coord (i.e. if the scale is 0.5 then the logic point would be double the distance farther away)
+    /// offset is the amount of UNSCALED translation of the grid
+    /// point.x - offset is the
+    double x = dSize*(qFloor((point.x()/scale-hOffset)/dSize));
+    double y = dSize*(qFloor((point.y()/scale-vOffset)/dSize));
     // then we load the 4 points of the grid that make said quad into a list
-    QList<QPoint> list;
-    list.append(QPoint(x, y));
-    list.append(QPoint(x, y+size));
-    list.append(QPoint(x+size, y));
-    list.append(QPoint(x+size, y+size));
+    QList<QPointF> list;
+    list.append(QPointF(x, y));
+    list.append(QPointF(x, y+dSize));
+    list.append(QPointF(x+dSize, y));
+    list.append(QPointF(x+dSize, y+dSize));
     // and finally perform the classic iterative algorithm to find the nearest one
-    double minDist = pointDistance(point-offset, list[0]);
-    QPoint output = list[0];
+    double minDist = pointDistance(point/scale-offset, list[0]);
+    QPointF output = list[0];
+    qDebug() << "original point: " << point;
+    qDebug() << "x:" << x << "y:" << y;
     for(int i = 1; i < list.length(); i++){
-        double dist = pointDistance(point-offset, list[i]);
+        double dist = pointDistance(point/scale-offset, list[i]);
+        qDebug() << "point"<<i<<list[i]<<"distance:"<<dist;
         if(dist < minDist){
             output = list[i];
             minDist = dist;
         }
     }
+    /*
     if(output.x() % size != 0){
         if(output.x() % size > size/2)
             output.setX(output.x() + size - (output.x()%size));
@@ -46,18 +61,20 @@ QPoint Grid::nearestPoint(const QPoint &point) const
         else
             output.setY(output.y() - output.y()%size);
     }
+    */
+    qDebug() << "ouptut"<<output;
     return output;
 }
 
-double Grid::pointDistance(const QPoint &p1, const QPoint &p2)
+double Grid::pointDistance(const QPointF &p1, const QPointF &p2)
 {
     return QLineF(p1, p2).length();
 }
 
 void Grid::updateOffset(const QPoint *from, const QPoint *to)
 {
-    hOffset += to->x() - from->x();
-    vOffset += to->y() - from->y();
+    hOffset += (to->x() - from->x())/scale;
+    vOffset += (to->y() - from->y())/scale;
     update();
 }
 
@@ -74,12 +91,15 @@ void Grid::setSize(const int8_t &value)
 
 void Grid::paintEvent(QPaintEvent *){
     QPainter painter(this);
-    painter.setPen(QColor(200,200,200, 128)); // light grey and semi-transparent
+    painter.scale(scale, scale);
+    painter.setPen(QColor(0,0,0, 128)); // light grey and semi-transparent
     painter.setRenderHint(QPainter::Antialiasing);
-    for(int x = hOffset % size; x < width(); x+=size)
-        painter.drawLine(x, 0, x, height());
-    for(int y = vOffset % size; y < width(); y+=size)
-        painter.drawLine(0, y, width(), y);
+    double widthRatio = static_cast<double>(width())/scale;
+    double heightRatio = static_cast<double>(height())/scale;
+    for(int x = hOffset % size; x < widthRatio; x+=size)
+        painter.drawLine(x, 0, x, qCeil(heightRatio));
+    for(int y = vOffset % size; y < heightRatio; y+=size)
+        painter.drawLine(0, y, qCeil(widthRatio), y);
 }
 
 ///README: Current problem with the drag mechanic is that a mouseMoveEvent does not know which button triggered it
@@ -96,13 +116,10 @@ void Grid::paintEvent(QPaintEvent *){
 ///     4. panic attack: just lay down and cry for a couple of hours until a solution comes to mind
 void Grid::mouseMoveEventHandler(QMouseEvent *event)
 {
-    qDebug() << "event handled!!";
     if(current == nullptr){
-        qDebug() << ":(";
         return;
     }
     else { // the mouse wheel is pressed
-        qDebug() << "middle click!";
         delete previous;
         previous = current;
         current = new QPoint(event->pos());
@@ -128,8 +145,36 @@ void Grid::mouseReleaseEventHandler(QMouseEvent *event)
     }
 }
 
+void Grid::wheelEvent(QWheelEvent *event)
+{
+    QPoint numPixels = event->pixelDelta();
+    QPoint numDegrees = event->angleDelta() / 8;
+
+    if (!numPixels.isNull()) {
+        //scrollWithPixels(numPixels);
+    } else if (!numDegrees.isNull()) {
+        double deltaY = static_cast<double>(numDegrees.y());
+        qDebug() << "numSteps: " << deltaY;
+        if(deltaY > 0) { // wheel going upwards
+            if (scale <= 2)
+                scale *= 2;
+        } else if(deltaY < 0){ // wheel going downwards
+            if(scale >= 0.5)
+                scale /= 2;
+        }
+        qDebug() << "scale: "<< scale;
+        update();
+        //scrollWithDegrees(numSteps);
+    }
+}
+
 QPoint Grid::getOffset() const
 {
     return QPoint(hOffset, vOffset);
+}
+
+qreal Grid::getScale() const
+{
+    return scale;
 }
 
