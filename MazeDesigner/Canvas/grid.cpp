@@ -13,42 +13,49 @@ Grid::Grid(const Grid &grid) : Grid(grid.parentWidget()) {}
 
 QPointF Grid::nearestPoint(const QPointF &point) const
 {
-    /// problema: recibimos coordenadas reales del widget y queremos obtener las coordenadas virtuales
-    /// de nuestro grid a las que se corresponden. Teniendo en cuenta que hay una transformación de escalado
-    /// y de offset
     double dSize = static_cast<double>(size);
-    qreal invertedS = dSize/scale;
-    qreal directS = dSize*scale;
     QPointF offset(hOffset, vOffset);
     // a point somewhere in the space will be inside a grid cell. That is, inside of a quad whose corners
     // are in-grid. By doing simple integer division and then multiplying by the size of a grid cell, we can
     // get the x and y coords of the top-left corner of said cell.
-    /// point.x() is the on-screen coord
-    /// we have to invertedScale the coord (i.e. if the scale is 0.5 then the logic point would be double the distance farther away)
-    /// offset is the amount of UNSCALED translation of the grid
-    /// point.x - offset is the
+    /// {point.x()} is the on-screen coord. we have to undo the scaling
+    /// {point.x/scale} is the logic coord once the transformation is undone
+    /// {offset} is the amount of logic translation
+    /// thus, {point.x/scale - offset} is the logic coord of the input having the offset taken into acount
+    /// {qFloor({previousLine}/dSize)} would be the number of the selected cell
+    /// {dSize*{qFloor(...)}} would be the top-left corner of the cell containing the selected point
     double x = dSize*(qFloor((point.x()/scale-hOffset)/dSize));
     double y = dSize*(qFloor((point.y()/scale-vOffset)/dSize));
-    // then we load the 4 points of the grid that make said quad into a list
+    // thus, we now have x and y the logical coords of the top-left corner of the cell that contains the point
+    // then we load the 4 points of the grid that make said cell into a list
     QList<QPointF> list;
-    list.append(QPointF(x, y));
-    list.append(QPointF(x, y+dSize));
-    list.append(QPointF(x+dSize, y));
-    list.append(QPointF(x+dSize, y+dSize));
+    list.append(QPointF(x, y)); // top-left
+    list.append(QPointF(x, y+dSize)); // bottom-left
+    list.append(QPointF(x+dSize, y)); // top-right
+    list.append(QPointF(x+dSize, y+dSize)); // bottom-right
     // and finally perform the classic iterative algorithm to find the nearest one
-    double minDist = pointDistance(point/scale-offset, list[0]);
-    QPointF output = list[0];
-    qDebug() << "original point: " << point;
-    qDebug() << "x:" << x << "y:" << y;
-    for(int i = 1; i < list.length(); i++){
-        double dist = pointDistance(point/scale-offset, list[i]);
-        qDebug() << "point"<<i<<list[i]<<"distance:"<<dist;
-        if(dist < minDist){
+    double minDist = pointDistance(point/scale-offset, list[0]); // we initialize a distance with the first corner
+    //note that dist is calculated this way:
+    /// second point would be an in-grid point. No need to worry too much
+    /// first point is calculated as follows:
+    ///     the out-of-grid point whose coords are NOT logical
+    ///     inverted Scale its coords to make them logical
+    ///     then substract the offset to undo the translation of the grid
+    ///     and that is the logical point
+    QPointF output = list[0]; // and initialize the output to the corresponding QPoint
+    //qDebug() << "original point: " << point;
+    //qDebug() << "x:" << x << "y:" << y;
+    for(int i = 1; i < list.length(); i++){ // loop starts at 1 since the previous initialization was with index 0. No need to repeat
+        double dist = pointDistance(point/scale-offset, list[i]); // calculate dist, same as before
+        //qDebug() << "point"<<i<<list[i]<<"distance:"<<dist;
+        if(dist < minDist){ // if new min dist is found, update output and minDist
             output = list[i];
             minDist = dist;
         }
     }
     /*
+    // this obsolete code was done to force the elimination of the "lines" in the canvas. it is NOT needed
+    // but I'll leave it here just in case it becomes useful at some point
     if(output.x() % size != 0){
         if(output.x() % size > size/2)
             output.setX(output.x() + size - (output.x()%size));
@@ -62,7 +69,7 @@ QPointF Grid::nearestPoint(const QPointF &point) const
             output.setY(output.y() - output.y()%size);
     }
     */
-    qDebug() << "ouptut"<<output;
+    //qDebug() << "ouptut"<<output;
     return output;
 }
 
@@ -102,18 +109,6 @@ void Grid::paintEvent(QPaintEvent *){
         painter.drawLine(0, y, qCeil(widthRatio), y);
 }
 
-///README: Current problem with the drag mechanic is that a mouseMoveEvent does not know which button triggered it
-/// which means that if we click with middle button, move the cursor and release middle button, we'd only know
-/// that this action was performed helding the middle button during the release and press events
-/// furthermore, if we clicked 2 different mouse buttons and released them in different order, bad things could (and will) happen
-///
-/// possible solutions:
-///     1. state machine: the cheapest shit we could think of. Will probably be vulnerable to sigsevs if the order of clicks
-///        is not what we expect.
-///     2. EventFilters? Not wure how these could help us, but we might as well give them a try
-///     3. Mouse attention grab or mouse tracking. If we detected the middle click, maybe by using the mouse tracking stuff
-///        we could detect 100% when the middle is released (?)
-///     4. panic attack: just lay down and cry for a couple of hours until a solution comes to mind
 void Grid::mouseMoveEventHandler(QMouseEvent *event)
 {
     if(current == nullptr){
@@ -154,7 +149,7 @@ void Grid::wheelEvent(QWheelEvent *event)
         //scrollWithPixels(numPixels);
     } else if (!numDegrees.isNull()) {
         double deltaY = static_cast<double>(numDegrees.y());
-        qDebug() << "numSteps: " << deltaY;
+        //qDebug() << "numSteps: " << deltaY;
         if(deltaY > 0) { // wheel going upwards
             if (scale <= 2)
                 scale *= 2;
@@ -162,7 +157,7 @@ void Grid::wheelEvent(QWheelEvent *event)
             if(scale >= 0.5)
                 scale /= 2;
         }
-        qDebug() << "scale: "<< scale;
+        //qDebug() << "scale: "<< scale;
         update();
         //scrollWithDegrees(numSteps);
     }
