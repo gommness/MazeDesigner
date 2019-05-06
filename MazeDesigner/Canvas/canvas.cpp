@@ -3,14 +3,22 @@
 #include <QDebug>
 #include <QLineF>
 #include <cstdlib>
+#include <QSizePolicy>
+#include <QHBoxLayout>
 
 #define UMBRAL 0.1
 
 Canvas::Canvas(QWidget *parent) : QWidget (parent), grid(this)
 {
+    //this->setSizePolicy(QSizePolicy::Maximum);
     transformed = false;
     setBackgroundRole(QPalette::Base);
     setAutoFillBackground(true);
+    QHBoxLayout *aux = new QHBoxLayout;
+    aux->setMargin(0);
+    aux->addWidget(&grid);
+    this->setLayout(aux);
+
     //polyList = QList<QPolygon>();
     grid.setSize(36);
     /*
@@ -38,7 +46,7 @@ QSize Canvas::minimumSizeHint() const
 
 QSize Canvas::sizeHint() const
 {
-    return QSize(400, 200);
+    return QSize(4000, 2000);
 }
 
 void Canvas::setPen(const QPen &pen)

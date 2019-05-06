@@ -17,6 +17,7 @@ public:
     void mousePressEventHandler(QMouseEvent * event);
     void mouseReleaseEventHandler(QMouseEvent * event);
     void wheelEvent(QWheelEvent *event) override;
+    QSize sizeHint() const override;
     QPoint getOffset() const;
     qreal getScale() const;
 

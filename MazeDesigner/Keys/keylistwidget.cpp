@@ -28,7 +28,7 @@ KeyListWidget::KeyListWidget(QWidget *parent) : QWidget(parent)
     table->verticalHeader()->setVisible(false);
     table->resize(150, 50);
     KeyRepository rr;
-    rr << Key("key1") << Key("key2");
+    //rr << Key("key1") << Key("key2");
     this->load(rr);
 
     QGridLayout *buttonsLayout = new QGridLayout;

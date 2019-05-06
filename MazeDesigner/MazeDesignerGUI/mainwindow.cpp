@@ -1,6 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
-#include "../Keys/keyeditorwidget.h"
+#include "../Keys/keylistwidget.h"
 #include <QLabel>
 #include <QHBoxLayout>
 #include <QTabWidget>
@@ -39,21 +39,21 @@ MainWindow::MainWindow(QWidget *parent) :
     textTabs->addTab(textDoorEditor, "doorInfo"); // we need to create a more sofisticated widget to display door info
 
     // piece both the canvases and texts sections together
-    editionLayout->addWidget(designTabs);
-    editionLayout->addWidget(textTabs);
+    editionLayout->addWidget(designTabs,90);
+    editionLayout->addWidget(textTabs, 10);
 
     // the stacked widget contains the widgets that display info in tables
     // we will have to, somehow connect this widget with the designTabs from before
     // probably by inheriting from the class or connecting some slots to some signals (?)
     QStackedLayout * leftDisplay = new QStackedLayout;
-    KeyEditorWidget * keyEditor = new KeyEditorWidget;
+    KeyListWidget * keyList = new KeyListWidget;
     QLabel * roomsTableDisplay = new QLabel("I'm a place-holder!");
-    leftDisplay->addWidget(keyEditor);
+    leftDisplay->addWidget(keyList);
     leftDisplay->addWidget(roomsTableDisplay);
 
     //piece both layouts together into the whole application
-    mainLayout->addLayout(leftDisplay);
-    mainLayout->addLayout(editionLayout);
+    mainLayout->addLayout(leftDisplay,20);
+    mainLayout->addLayout(editionLayout,80);
 
 
     // now onto the less obvios stuff, such as the top, and bottom fillers AND the top menus

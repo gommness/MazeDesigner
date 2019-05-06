@@ -143,24 +143,30 @@ void Grid::mouseReleaseEventHandler(QMouseEvent *event)
 void Grid::wheelEvent(QWheelEvent *event)
 {
     QPoint numPixels = event->pixelDelta();
-    QPoint numDegrees = event->angleDelta() / 8;
+    QPoint numDegrees = event->angleDelta();
 
+    int deltaY = 0;
     if (!numPixels.isNull()) {
-        //scrollWithPixels(numPixels);
+        deltaY = numPixels.y();
     } else if (!numDegrees.isNull()) {
-        double deltaY = static_cast<double>(numDegrees.y());
-        //qDebug() << "numSteps: " << deltaY;
-        if(deltaY > 0) { // wheel going upwards
-            if (scale <= 2)
-                scale *= 2;
-        } else if(deltaY < 0){ // wheel going downwards
-            if(scale >= 0.5)
-                scale /= 2;
-        }
-        //qDebug() << "scale: "<< scale;
-        update();
-        //scrollWithDegrees(numSteps);
+        deltaY = numDegrees.y();
     }
+    //qDebug() << "numSteps: " << deltaY;
+    if(deltaY > 0) { // wheel going upwards
+        if (scale <= 2)
+            scale *= 2;
+    } else if(deltaY < 0){ // wheel going downwards
+        if(scale >= 0.5)
+            scale /= 2;
+    }
+    //qDebug() << "scale: "<< scale;
+    update();
+}
+
+QSize Grid::sizeHint() const
+{
+    //return parentWidget()->sizeHint();
+    return QSize(4000, 2000);
 }
 
 QPoint Grid::getOffset() const

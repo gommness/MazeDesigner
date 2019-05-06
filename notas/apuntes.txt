@@ -1,0 +1,45 @@
+Sobre la exportación a .room.yy:
+	1. Al crear una instancia, su name_id es random y podemos escoger el que queramos siempre y cuando sean caracteres alfa-numericos
+	2. los id's de los recursos de GMS2 son en realidad UUIDs (GUIDs al estar hecho GMS2 en C#, por ser de Microsoft). Para generarlos,
+	   podriamos usar la clase UUID de Qt
+	3. En la lista "CreationOrderIDs" hay que meter los UUIG de todas las instancias que hayamos colocado
+	4. las layers de instancias (que son las que nos interesan) todas tienen el mismo __type: "GMRInstanceLayer_Model:#..."
+	5. en el fichero del proyecto, al definir un recurso, en el campo key hay que poner el mismo UUID que el que dicho recurso tendra en su
+	   correspondiente fichero. Sin embargo, dentro del objeto JSON de "value", el id no parece coincidir con nada.
+	6. referente al punto 5: el campo ResourcePath, los separadores de directorios son '\\' tal cual.
+	7. en el fichero room.yy, a la hora de describir las instancias, hay un campo "m_originalParentID". si el obj_wall heredara de otro objeto,
+	   no se si habria que poner el UUID de dicho objeto ahi (?)
+	8. "name" y "name_with_no_file_rename" parece que deben tener el mismo valor (?)
+	9. "ObjId" debe coincidir con el UUID del objeto de GMS2, que tambien debe estar en el fichero del proyecto.
+
+
+
+
+DECISIONES DE DISEÑO POR IMPLEMENTAR:
+	1. la clase de MazeDesignerGUI deberia tener un objeto de clase GMS2Exporter para exportar los datos del diseño a ficheros .room.yy de
+	   Game Maker Studio 2.
+	   		1.1 dicha clase contendrá un puntero al Canvas y al RoomCanvas para extraer de ellos los datos sin necesidad de replicarlos
+	   		1.2 los datos que van a ser siempre iguales de las rooms, deberian ser copiados de un template de room.yy (incluido en el proyecto),
+	   			ahora bien, como debe ser un JSON en el cual hay que cambiar solo unos cuantos campos, merece la pena este acercamiento?
+	   			Como podemos hacerlo lo mas liviano posible?
+	   		1.3 antes de comenzar la exportación de los datos, se debe solicitar que se seleccione un proyecto de Game Maker Studio 2 valido
+	   		1.4 antes de comenzar la exportación de los datos, deberia aparecer una ventana emergente que solicitara el tamaño del grid de las
+	   			rooms del proyecto de GMS2. Por defecto podemos meter que serian 32. Ademas, en este formulario tambien hay que solicitar el
+	   			nombre del objeto que será tomado como sólido base del proyecto.
+
+	2. la clase MazeDesignerGUI deberia tener un objeto de clase DesignLoader para cargar y guardar los datos de un diseño
+			2.1 la clase deberia tener un puntero al Canvas, al RoomCanvas, al InstanceCanvas (nombre aun por decidir), al KeyRepository,
+				al RoomRepository (si lo hay) y al LockRepository (si lo hay) para inicializar sus datos o bien serializar sus datos
+			2.2 debe existir un metodo para leer los datos de un diseño a partir de un fichero, otro para escribir los mismos en un fichero que
+				luego pueda ser leido y otro para limpiar los datos del diseño actual.
+			2.3 El formato de guardado del diseño será un JSON debido a su legibilidad a menos que en el futuro se considere más conveniente
+				otro formato
+			2.4 Los datos fundamentales a serializar son:
+				2.4.1 los polígonos que conforman los espacios jugables
+				2.4.2 las Rooms (rectángulos con sus nombres) que conforman las pantallas
+				2.4.3 las llaves del KeyRepository
+				2.4.4 las instancias de las llaves (con sus coordenadas, nombre, id y tipo)
+				2.4.5 las instancias de las puertas (con sus coordenadas, nombre, id y condicion guardada como un String a lo bruto)
+
+PROBLEMA:
+	al añadir el widget del grid al layout dentro de Canvas, hay un offset que hay que arreglar. Añadir al layout del padre de canvas?
