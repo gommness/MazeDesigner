@@ -6,6 +6,16 @@ RoomCanvas::RoomCanvas(Canvas *design) {
     design->show();
 }
 
+void RoomCanvas::toJson(QJsonObject & json) const
+{
+
+}
+
+void RoomCanvas::fromJson(const QJsonObject &json)
+{
+
+}
+
 void RoomCanvas::showEvent(QShowEvent *)
 {
     design->show();

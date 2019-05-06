@@ -37,7 +37,8 @@ HEADERS = \
    $$PWD/room.h \
    $$PWD/roomcanvas.h \
    $$PWD/shape.h \
-   $$PWD/ui_mainwindow.h
+   $$PWD/ui_mainwindow.h \
+    instancecanvas.h
 
 SOURCES = \
    $$PWD/canvas.cpp \
@@ -46,7 +47,8 @@ SOURCES = \
    $$PWD/mainwindow.cpp \
    $$PWD/room.cpp \
    $$PWD/roomcanvas.cpp \
-   $$PWD/shape.cpp
+   $$PWD/shape.cpp \
+    instancecanvas.cpp
 
 INCLUDEPATH = \
     $$PWD/.

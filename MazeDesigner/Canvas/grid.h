@@ -20,13 +20,13 @@ public:
     QSize sizeHint() const override;
     QPoint getOffset() const;
     qreal getScale() const;
+    static double pointDistance(const QPointF& p1, const QPointF& p2);
 
 
 protected:
     void paintEvent(QPaintEvent *) override;
 
 private:
-    static double pointDistance(const QPointF& p1, const QPointF& p2);
     void updateOffset(const QPoint * from, const QPoint * to);
     int8_t size = 1;
     QPoint * previous = nullptr;

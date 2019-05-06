@@ -8,6 +8,7 @@
 #include <QPaintEvent>
 #include <QPainter>
 #include <QScrollArea>
+#include <QJsonObject>
 
 class Canvas : public QWidget
 {
@@ -38,6 +39,9 @@ public:
 
     const Grid getGrid() const;
 
+    void toJson(QJsonObject & json) const;
+    void fromJson(const QJsonObject & json);
+
 public slots:
     void setPen(const QPen &pen);
     void setTransformed(bool transformed);
@@ -67,7 +71,7 @@ private:
 
     //QList<QPolygon> polyList;
     //QList<QPolygon> holeList;
-    QScrollArea *scrollArea;
+    //QScrollArea *scrollArea;
     QPainterPath shapes;
     QPainter painter;
     QPen pen;
@@ -78,6 +82,7 @@ private:
 
 
 friend class RoomCanvas;
+
 };
 
 #endif // CANVAS_H

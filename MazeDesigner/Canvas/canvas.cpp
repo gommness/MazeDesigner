@@ -5,8 +5,15 @@
 #include <cstdlib>
 #include <QSizePolicy>
 #include <QHBoxLayout>
+#include <QVariant>
+#include <QJsonArray>
+#include <QJsonDocument>
+#include <stdexcept>
 
 #define UMBRAL 0.1
+#define POINTFORMAT "(%1 %2)"
+#define POINTREGEX "[() ]" // I hate regex
+#define JSONPOLYGONKEY "polygons"
 
 Canvas::Canvas(QWidget *parent) : QWidget (parent), grid(this)
 {
@@ -186,7 +193,15 @@ void Canvas::removePolygon(QPolygonF *other)
 void Canvas::render()
 {
     // render the polygons
+    // OPTIMIZEME translation not optimal but not going to bother FOR NOW
     painter.drawPath(shapes.translated(grid.getOffset()));
+    painter.fillPath(shapes.translated(grid.getOffset()), QBrush(QColor(200,200,200)));
+    //painter.drawPath(shapes.translated(grid.getOffset()));
+    /*
+    QList<QPolygonF> polys = shapes.toFillPolygons();
+    for(auto poly = polys.begin(); poly != polys.end(); poly++)
+        painter.drawPolygon(*poly);
+    */
     /*
     foreach(QPolygon poly, polyList){
         painter.drawPolygon(poly);
@@ -215,4 +230,55 @@ void Canvas::addToPolyList(QList<QPolygon> &list, QPolygon *other)
 const Grid Canvas::getGrid() const
 {
     return Grid(grid);
+}
+
+void Canvas::toJson(QJsonObject &json) const
+{
+    QList<QPolygonF> polys = shapes.toFillPolygons();
+    QJsonArray jsonPolygons; // the array jsonPolygons will represent the QPainterPath
+
+    for(auto poly = polys.begin(); poly != polys.end(); poly++){ // iterate through all the polygons
+        QJsonArray jsonPoints; // the array jsonPoints will represent a polygon
+        for(auto point = poly->begin(); point != poly->end(); point++){
+            // store each point of the polygon into a jsonArray
+            jsonPoints.append(QString(POINTFORMAT).arg(point->x()).arg(point->y()));
+        }
+        // store each polygon into a jsonArray
+        jsonPolygons.append(jsonPoints);
+    }
+    json.insert(JSONPOLYGONKEY, jsonPolygons); // insert the array of polygons into the json
+    // DELETEME debugging the correct formation of the json object!
+}
+
+void Canvas::fromJson(const QJsonObject &json)
+{
+    // if the json is malformed, such that it does not contain an array under the "polygons" key, then do nothing
+    if(!json.contains(JSONPOLYGONKEY) || !json[JSONPOLYGONKEY].isArray())
+        return;
+
+    QPainterPath aux = QPainterPath();
+    QJsonArray jsonArray = json[JSONPOLYGONKEY].toArray();
+    for(auto jsonPoly = jsonArray.begin(); jsonPoly != jsonArray.end(); jsonPoly++){ // iterate through polygons
+        if(jsonPoly->isArray()){ // if current item in array is another array, it must be an array of points, thus, a polygon
+            QJsonArray jsonPoints = jsonPoly->toArray();
+            QVector<QPointF> pointList;
+            for(auto jsonPoint = jsonPoints.begin(); jsonPoint != jsonPoints.end(); jsonPoint++){// iterate through points
+                if(jsonPoint->isString()){
+                    QRegExp regex(POINTREGEX);
+                    QStringList splitted = jsonPoint->toString().split(regex, QString::SplitBehavior::SkipEmptyParts);
+                    if(splitted.size() < 2)
+                        throw std::runtime_error("error while parsing point: "+jsonPoint->toString().toUtf8()); // we'll panic
+                    qreal x, y;
+
+                    x = splitted[0].toDouble();
+                    y = splitted[1].toDouble();
+                    pointList.append(QPointF(x,y));
+                    qDebug() << "making it here!"<<x<<y;
+                }
+            }
+            // at the end of this loop, we should have all points of a polygon inside pointList
+            aux.addPolygon(QPolygonF(pointList));
+        }
+    }
+    shapes = aux;
 }

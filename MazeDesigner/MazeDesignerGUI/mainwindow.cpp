@@ -8,6 +8,9 @@
 #include <QTextBlock>
 #include <QStackedLayout>
 
+#include <QDebug>
+#include <QJsonDocument>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -97,12 +100,25 @@ void MainWindow::newDesign()
 
 void MainWindow::openDesign()
 {
-
+    QJsonObject json;
+    Canvas other;
+    designCanvas->toJson(json);
+    QString str(QJsonDocument(json).toJson(QJsonDocument::Indented));
+    qDebug().noquote() << "original json: "<< str;
+    other.fromJson(json);
+    QJsonObject json2;
+    other.toJson(json2);
+    QString str2(QJsonDocument(json2).toJson(QJsonDocument::Indented));
+    qDebug().noquote() << "new json: "<< str2;
+    qDebug() << "are jsons equal?" << (str == str2);
 }
 
 void MainWindow::saveDesign()
 {
-
+    QJsonObject json;
+    designCanvas->toJson(json);
+    QString str(QJsonDocument(json).toJson(QJsonDocument::Indented));
+    qDebug().noquote() << "json: "<< str;
 }
 
 void MainWindow::saveAsDesign()
