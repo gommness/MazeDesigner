@@ -5,6 +5,7 @@
 #include <QActionGroup>
 #include "../Canvas/canvas.h"
 #include "../Canvas/roomcanvas.h"
+#include "../Keys/keyrepository.h"
 
 namespace Ui {
 class MainWindow;
@@ -45,6 +46,7 @@ private:
 
     RoomCanvas * roomCanvas = nullptr;
     Canvas * designCanvas = nullptr;
+    KeyRepository * keyRepo = nullptr;
 };
 
 #endif // MAINWINDOW_H

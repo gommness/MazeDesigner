@@ -1,4 +1,5 @@
 #include "keyrepository.h"
+#include <QJsonArray>
 
 KeyRepository &operator<<(KeyRepository &repo, const Key &val)
 {
@@ -30,6 +31,41 @@ QString KeyRepository::toString()
     for(int i = 0; i < length(); i++)
         output += this->operator[](i).toString() + " | ";
     return output;
+}
+
+void KeyRepository::writeJson(QJsonObject &json)
+{
+    json.insert(JSONKEYMAXID, Key::ID);
+    QJsonArray jsonArray;
+    for(auto key = begin(); key != end(); key++){
+        jsonArray.append(key->toJson());
+    }
+    json.insert(JSONKEYKEY, jsonArray);
+}
+
+void KeyRepository::readJson(const QJsonObject &json)
+{
+    KeyRepository aux;
+    int keyID = -1;
+
+    if(json.contains(JSONKEYMAXID) && json[JSONKEYMAXID].isDouble())
+        keyID = json[JSONKEYMAXID].toInt();
+    else
+        throw std::runtime_error("no MAX-ID found in jsonObject");
+
+    if(json.contains(JSONKEYKEY) && json[JSONKEYKEY].isArray()){
+        QJsonArray jsonArray = json[JSONKEYKEY].toArray();
+        for(auto jsonKey = jsonArray.begin(); jsonKey != jsonArray.end(); jsonKey++){
+            if(jsonKey->isObject()){
+                Key key(jsonKey->toObject());
+                aux.append(key);
+            }
+        }
+    }
+
+    Key::ID = keyID;
+    clear();
+    append(aux);
 }
 
 /*

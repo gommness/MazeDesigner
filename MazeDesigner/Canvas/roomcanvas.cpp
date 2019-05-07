@@ -7,7 +7,7 @@ RoomCanvas::RoomCanvas(Canvas *design) {
     design->show();
 }
 
-void RoomCanvas::toJson(QJsonObject & json) const
+void RoomCanvas::writeJson(QJsonObject & json) const
 {
     QJsonArray rooms;
     for(auto room = roomList.begin(); room != roomList.end(); room++){
@@ -16,7 +16,7 @@ void RoomCanvas::toJson(QJsonObject & json) const
     json.insert(JSONROOMKEY, rooms);
 }
 
-void RoomCanvas::fromJson(const QJsonObject &json)
+void RoomCanvas::readJson(const QJsonObject &json)
 {
     if(json.contains(JSONROOMKEY) && json[JSONROOMKEY].isArray()){
         QJsonArray jsonArray = json[JSONROOMKEY].toArray();

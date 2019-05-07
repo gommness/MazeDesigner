@@ -13,8 +13,8 @@ class RoomCanvas : public QWidget
     Q_OBJECT
 public:
     RoomCanvas(Canvas * design);
-    void toJson(QJsonObject & json) const;
-    void fromJson(const QJsonObject & json);
+    void writeJson(QJsonObject & json) const;
+    void readJson(const QJsonObject & json);
 
 protected:
     void showEvent(QShowEvent* ) override;

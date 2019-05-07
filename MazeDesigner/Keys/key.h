@@ -2,20 +2,26 @@
 #define KEY_H
 
 #include <QString>
+#include <QJsonObject>
 
 class Key
 {
 public:
     Key(const QString & name = "", const bool & value = false);
+    Key(const QJsonObject & json);
     QString getName() const;
     void setName(const QString & name);
     bool isPowerUp() const;
     void setPowerUp(const bool & value);
     QString toString();
+    QJsonObject toJson();
 private:
     static int ID;
+    int id;
     QString name;
     bool powerUp;
+
+friend class KeyRepository;
 };
 
 #endif // KEY_H

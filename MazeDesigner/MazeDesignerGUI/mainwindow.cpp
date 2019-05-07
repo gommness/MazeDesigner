@@ -49,7 +49,8 @@ MainWindow::MainWindow(QWidget *parent) :
     // we will have to, somehow connect this widget with the designTabs from before
     // probably by inheriting from the class or connecting some slots to some signals (?)
     QStackedLayout * leftDisplay = new QStackedLayout;
-    KeyListWidget * keyList = new KeyListWidget;
+    keyRepo = new KeyRepository;
+    KeyListWidget * keyList = new KeyListWidget(nullptr, keyRepo);
     QLabel * roomsTableDisplay = new QLabel("I'm a place-holder!");
     leftDisplay->addWidget(keyList);
     leftDisplay->addWidget(roomsTableDisplay);
@@ -102,12 +103,12 @@ void MainWindow::openDesign()
 {
     QJsonObject json;
     Canvas other;
-    designCanvas->toJson(json);
+    designCanvas->writeJson(json);
     QString str(QJsonDocument(json).toJson(QJsonDocument::Indented));
     qDebug().noquote() << "original json: "<< str;
-    other.fromJson(json);
+    other.readJson(json);
     QJsonObject json2;
-    other.toJson(json2);
+    other.writeJson(json2);
     QString str2(QJsonDocument(json2).toJson(QJsonDocument::Indented));
     qDebug().noquote() << "new json: "<< str2;
     qDebug() << "are jsons equal?" << (str == str2);
@@ -116,7 +117,7 @@ void MainWindow::openDesign()
 void MainWindow::saveDesign()
 {
     QJsonObject json;
-    designCanvas->toJson(json);
+    designCanvas->writeJson(json);
     QString str(QJsonDocument(json).toJson(QJsonDocument::Indented));
     qDebug().noquote() << "json: "<< str;
 }

@@ -5,7 +5,7 @@
 #include "keynameeditor.h"
 #include <QTableWidget>
 
-KeyListWidget::KeyListWidget(QWidget *parent) : QWidget(parent)
+KeyListWidget::KeyListWidget(QWidget *parent, KeyRepository * repo) : QWidget(parent), repo(repo)
 {
     QItemEditorFactory *factory = new QItemEditorFactory;
 
@@ -27,9 +27,9 @@ KeyListWidget::KeyListWidget(QWidget *parent) : QWidget(parent)
     table->setHorizontalHeaderLabels(QStringList() << tr("key name") << tr("is power up"));
     table->verticalHeader()->setVisible(false);
     table->resize(150, 50);
-    KeyRepository rr;
+    //KeyRepository rr;
     //rr << Key("key1") << Key("key2");
-    this->load(rr);
+    this->load();
 
     QGridLayout *buttonsLayout = new QGridLayout;
     QGridLayout *layout = new QGridLayout;
@@ -54,11 +54,12 @@ void KeyListWidget::load()
 {
     //table = new QTableWidget(repo.length(), 2);
     //table->resize(repo.length(), 2);
-
-    table->setRowCount(repo.length());
-    for (int i = 0; i < repo.length(); ++i) {
+    if(repo == nullptr)
+        return;
+    table->setRowCount(repo->length());
+    for (int i = 0; i < repo->length(); ++i) {
         //table->insertRow(table->rowCount()); // README this would work!! useful for update methods
-        Key key = repo.at(i);
+        Key key = repo->at(i);
 
         QTableWidgetItem *nameItem = new QTableWidgetItem(key.getName());
         QTableWidgetItem *boolItem = new QTableWidgetItem;
@@ -73,7 +74,7 @@ void KeyListWidget::load()
     //setWindowTitle(tr("String Editor Factory"));
 }
 
-void KeyListWidget::load(const KeyRepository & repo)
+void KeyListWidget::load(KeyRepository * repo)
 {
     this->repo = repo;
     load();
@@ -81,10 +82,12 @@ void KeyListWidget::load(const KeyRepository & repo)
 
 void KeyListWidget::createKey()
 {
+    if(repo == nullptr)
+        return;
     int rowCount = table->rowCount();
     table->insertRow(rowCount); // inserts new row at the bottom
     Key key; // create a new key
-    repo << key; // insert into the repo
+    *repo << key; // insert into the repo
 
     QTableWidgetItem *nameItem = new QTableWidgetItem(key.getName());
     QTableWidgetItem *boolItem = new QTableWidgetItem;
@@ -98,8 +101,8 @@ void KeyListWidget::createKey()
 
 void KeyListWidget::deleteKey()
 {
-    // TODO eliminar las rows de la vista
-    //      luego eliminar las llaves del repositorio de llaves
+    if(repo == nullptr)
+        return;
     QSet<int> indexesToRemove;
     QList<QTableWidgetSelectionRange> ranges = table->selectedRanges();
     for(int i = 0; i < ranges.length(); i++){
@@ -115,9 +118,8 @@ void KeyListWidget::deleteKey()
     std::sort(removeList.begin(), removeList.end());
     for(int i = removeList.length()-1; i >= 0; i--){
         table->removeRow(removeList[i]);
-        repo.removeAt(i);
+        repo->removeAt(i);
     }
-    // qDebug() << repo.toString();
 }
 
 void KeyListWidget::onCellChanged(int row, int column)
@@ -126,10 +128,10 @@ void KeyListWidget::onCellChanged(int row, int column)
     // emit cellChanged(row, keyname, value);
     if(column == 0){
         QString keyname = table->item(row, 0)->data(Qt::DisplayRole).toString();
-        repo[row].setName(keyname);
+        (*repo)[row].setName(keyname);
     } else {
         bool value = table->item(row, 1)->data(Qt::CheckStateRole).toBool();
-        repo[row].setPowerUp(value);
+        (*repo)[row].setPowerUp(value);
     }
 }
 

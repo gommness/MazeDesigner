@@ -15,10 +15,10 @@ class KeyListWidget : public QWidget
 {
     Q_OBJECT
 public:
-    explicit KeyListWidget(QWidget *parent = nullptr);
+    explicit KeyListWidget(QWidget *parent = nullptr, KeyRepository * repo = nullptr);
     ~KeyListWidget();
     void load();
-    void load(const KeyRepository & repo);
+    void load(KeyRepository * repo);
 
 signals:
     void cellChanged(const int & index, const QString & keyname, const bool& value);
@@ -32,7 +32,7 @@ private:
     QPushButton *createButton = nullptr;
     QPushButton *removeButton = nullptr;
     QTableWidget *table = nullptr;
-    KeyRepository repo;
+    KeyRepository *repo;
 
     void connectSignals();
 };

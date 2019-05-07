@@ -43,8 +43,8 @@ public:
 
     const Grid getGrid() const;
 
-    void toJson(QJsonObject & json) const;
-    void fromJson(const QJsonObject & json);
+    void writeJson(QJsonObject & json) const;
+    void readJson(const QJsonObject & json);
 
 public slots:
     void setPen(const QPen &pen);

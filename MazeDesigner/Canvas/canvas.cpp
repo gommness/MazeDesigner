@@ -229,7 +229,7 @@ const Grid Canvas::getGrid() const
     return Grid(grid);
 }
 
-void Canvas::toJson(QJsonObject &json) const
+void Canvas::writeJson(QJsonObject &json) const
 {
     QList<QPolygonF> polys = shapes.toFillPolygons();
     QJsonArray jsonPolygons; // the array jsonPolygons will represent the QPainterPath
@@ -247,7 +247,7 @@ void Canvas::toJson(QJsonObject &json) const
     // DELETEME debugging the correct formation of the json object!
 }
 
-void Canvas::fromJson(const QJsonObject &json)
+void Canvas::readJson(const QJsonObject &json)
 {
     // if the json is malformed, such that it does not contain an array under the "polygons" key, then do nothing
     if(!json.contains(JSONPOLYGONKEY) || !json[JSONPOLYGONKEY].isArray())
