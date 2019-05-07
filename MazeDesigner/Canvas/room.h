@@ -4,12 +4,13 @@
 #include <QRect>
 #include <QString>
 #include <QJsonObject>
-//#define JSONROOMKEY "rooms"
+
 
 class Room : public QRectF
 {
 public:
     Room(QRectF & rect, QString  name = "");
+    Room(){}
 
     QString getName() const;
     void setName(const QString &value);

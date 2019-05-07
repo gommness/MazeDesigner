@@ -1,5 +1,6 @@
 #include "roomcanvas.h"
 #include <QDebug>
+#include <QJsonArray>
 
 RoomCanvas::RoomCanvas(Canvas *design) {
     this->design = design;
@@ -8,12 +9,28 @@ RoomCanvas::RoomCanvas(Canvas *design) {
 
 void RoomCanvas::toJson(QJsonObject & json) const
 {
-
+    QJsonArray rooms;
+    for(auto room = roomList.begin(); room != roomList.end(); room++){
+        rooms.append(room->toJson());
+    }
+    json.insert(JSONROOMKEY, rooms);
 }
 
 void RoomCanvas::fromJson(const QJsonObject &json)
 {
-
+    if(json.contains(JSONROOMKEY) && json[JSONROOMKEY].isArray()){
+        QJsonArray jsonArray = json[JSONROOMKEY].toArray();
+        QList<Room> aux;
+        for(auto jsonRoom = jsonArray.begin(); jsonRoom != jsonArray.end(); jsonRoom++){
+            if(jsonRoom->isObject()){
+                Room room;
+                room.fromJson(jsonRoom->toObject());
+                aux.append(room);
+            }
+        }
+        //roomList.clear();
+        roomList = aux;
+    }
 }
 
 void RoomCanvas::showEvent(QShowEvent *)

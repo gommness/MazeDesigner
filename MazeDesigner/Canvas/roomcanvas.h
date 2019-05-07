@@ -6,7 +6,7 @@
 
 #include <QWidget>
 
-
+#define JSONROOMKEY "rooms"
 
 class RoomCanvas : public QWidget
 {
