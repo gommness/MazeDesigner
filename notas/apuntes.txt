@@ -44,4 +44,4 @@ DECISIONES DE DISEÑO POR IMPLEMENTAR:
 			3.1 debemos obligar a que el usuario coloque un "token" de comienzo para saber desde donde se realizaría la exploración.
 
 PROBLEMA:
-	
+	en canvas.c, leer README de la linea 279 (sobre liberar memoria)

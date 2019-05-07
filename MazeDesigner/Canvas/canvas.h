@@ -10,6 +10,10 @@
 #include <QScrollArea>
 #include <QJsonObject>
 
+#define POINTFORMAT "(%1 %2)"
+#define POINTSPLITREGEX "[() ]"
+#define JSONPOLYGONKEY "polygons"
+
 class Canvas : public QWidget
 {
     Q_OBJECT

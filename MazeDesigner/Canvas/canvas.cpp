@@ -11,9 +11,6 @@
 #include <stdexcept>
 
 #define UMBRAL 0.1
-#define POINTFORMAT "(%1 %2)"
-#define POINTREGEX "[() ]" // I hate regex
-#define JSONPOLYGONKEY "polygons"
 
 Canvas::Canvas(QWidget *parent) : QWidget (parent), grid(this)
 {
@@ -264,21 +261,21 @@ void Canvas::fromJson(const QJsonObject &json)
             QVector<QPointF> pointList;
             for(auto jsonPoint = jsonPoints.begin(); jsonPoint != jsonPoints.end(); jsonPoint++){// iterate through points
                 if(jsonPoint->isString()){
-                    QRegExp regex(POINTREGEX);
+                    // split the string into 2 doubles
+                    QRegExp regex(POINTSPLITREGEX);
                     QStringList splitted = jsonPoint->toString().split(regex, QString::SplitBehavior::SkipEmptyParts);
-                    if(splitted.size() < 2)
+                    if(splitted.size() < 2) // if there is less than 2 doubles, it ain't no point pal!
                         throw std::runtime_error("error while parsing point: "+jsonPoint->toString().toUtf8()); // we'll panic
                     qreal x, y;
-
                     x = splitted[0].toDouble();
                     y = splitted[1].toDouble();
-                    pointList.append(QPointF(x,y));
-                    qDebug() << "making it here!"<<x<<y;
+                    pointList.append(QPointF(x,y)); // create the point at last!
                 }
             }
             // at the end of this loop, we should have all points of a polygon inside pointList
             aux.addPolygon(QPolygonF(pointList));
         }
     }
+    //README do we have to free memory????
     shapes = aux;
 }

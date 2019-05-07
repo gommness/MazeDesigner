@@ -3,6 +3,8 @@
 
 #include <QRect>
 #include <QString>
+#include <QJsonObject>
+//#define JSONROOMKEY "rooms"
 
 class Room : public QRectF
 {
@@ -11,12 +13,14 @@ public:
 
     QString getName() const;
     void setName(const QString &value);
-    int16_t getId() const;
+    int32_t getId() const;
+    QJsonObject toJson() const;
+    void fromJson(const QJsonObject & json);
 
 private:
     static int16_t ID;
     QString name;
-    int16_t id;
+    int32_t id;
 };
 
 #endif // ROOM_H
