@@ -21,13 +21,16 @@ MainWindow::MainWindow(QWidget *parent) :
     QVBoxLayout * editionLayout = new QVBoxLayout;
     // this piece will go in the graphical editor section of the application
     QTabWidget * designTabs = new QTabWidget;
+    keyRepo = new KeyRepository;
+    KeyListWidget * keyList = new KeyListWidget(nullptr, keyRepo);
     designCanvas = new Canvas;
     roomCanvas = new RoomCanvas(designCanvas);
+    instanceCanvas = new InstanceCanvas(designCanvas, keyList);
     //QLabel *designRoomRegions = new QLabel("label on top numer 1!", designCanvas);
-    QLabel * designInstances = new QLabel("label on top number 2!", designCanvas);
+    //QLabel * designInstances = new QLabel("label on top number 2!", designCanvas);
     designTabs->addTab(designCanvas, "Canvas");
     designTabs->addTab(roomCanvas, "Rooms");
-    designTabs->addTab(designInstances, "Instances");
+    designTabs->addTab(instanceCanvas, "Instances");
     /// README this has been tested and as a result, the widget classes that will have the canvas
     /// as their parent will have to actively update its parent when they themselves are updated
     /// this is no big deal since I had to code said classes anyways, but is nice to have
@@ -49,8 +52,6 @@ MainWindow::MainWindow(QWidget *parent) :
     // we will have to, somehow connect this widget with the designTabs from before
     // probably by inheriting from the class or connecting some slots to some signals (?)
     QStackedLayout * leftDisplay = new QStackedLayout;
-    keyRepo = new KeyRepository;
-    KeyListWidget * keyList = new KeyListWidget(nullptr, keyRepo);
     QLabel * roomsTableDisplay = new QLabel("I'm a place-holder!");
     leftDisplay->addWidget(keyList);
     leftDisplay->addWidget(roomsTableDisplay);
@@ -102,8 +103,8 @@ void MainWindow::newDesign()
 void MainWindow::openDesign()
 {
     QJsonObject json;
-    Canvas other;
-    designCanvas->writeJson(json);
+    KeyRepository other;
+    keyRepo->writeJson(json);
     QString str(QJsonDocument(json).toJson(QJsonDocument::Indented));
     qDebug().noquote() << "original json: "<< str;
     other.readJson(json);
@@ -118,6 +119,8 @@ void MainWindow::saveDesign()
 {
     QJsonObject json;
     designCanvas->writeJson(json);
+    roomCanvas->writeJson(json);
+    keyRepo->writeJson(json);
     QString str(QJsonDocument(json).toJson(QJsonDocument::Indented));
     qDebug().noquote() << "json: "<< str;
 }

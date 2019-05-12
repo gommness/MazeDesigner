@@ -7,6 +7,7 @@
 
 #define JSONKEYKEY "keys"
 #define JSONKEYMAXID "MAX-ID"
+#define JSONKEYREPOKEY "key-repository"
 
 class KeyRepository : public QList<Key>, public QObject
 {

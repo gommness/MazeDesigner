@@ -35,26 +35,32 @@ QString KeyRepository::toString()
 
 void KeyRepository::writeJson(QJsonObject &json)
 {
-    json.insert(JSONKEYMAXID, Key::ID);
+    QJsonObject wrapper;
+    wrapper.insert(JSONKEYMAXID, Key::ID);
     QJsonArray jsonArray;
     for(auto key = begin(); key != end(); key++){
         jsonArray.append(key->toJson());
     }
-    json.insert(JSONKEYKEY, jsonArray);
+    wrapper.insert(JSONKEYKEY, jsonArray);
+    json.insert(JSONKEYREPOKEY, wrapper);
 }
 
 void KeyRepository::readJson(const QJsonObject &json)
 {
     KeyRepository aux;
-    int keyID = -1;
-
-    if(json.contains(JSONKEYMAXID) && json[JSONKEYMAXID].isDouble())
-        keyID = json[JSONKEYMAXID].toInt();
+    int keyID;
+    QJsonObject innerJson;
+    if(json.contains(JSONKEYREPOKEY) && json[JSONKEYREPOKEY].isObject())
+        innerJson = json[JSONKEYREPOKEY].toObject();
+    else
+        throw std::runtime_error("no key-repository key found in jsonObject");
+    if(innerJson.contains(JSONKEYMAXID) && innerJson[JSONKEYMAXID].isDouble())
+        keyID = innerJson[JSONKEYMAXID].toInt();
     else
         throw std::runtime_error("no MAX-ID found in jsonObject");
 
-    if(json.contains(JSONKEYKEY) && json[JSONKEYKEY].isArray()){
-        QJsonArray jsonArray = json[JSONKEYKEY].toArray();
+    if(innerJson.contains(JSONKEYKEY) && innerJson[JSONKEYKEY].isArray()){
+        QJsonArray jsonArray = innerJson[JSONKEYKEY].toArray();
         for(auto jsonKey = jsonArray.begin(); jsonKey != jsonArray.end(); jsonKey++){
             if(jsonKey->isObject()){
                 Key key(jsonKey->toObject());

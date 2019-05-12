@@ -15,6 +15,8 @@ public:
     RoomCanvas(Canvas * design);
     void writeJson(QJsonObject & json) const;
     void readJson(const QJsonObject & json);
+    QSize minimumSizeHint() const override;
+    QSize sizeHint() const override;
 
 protected:
     void showEvent(QShowEvent* ) override;

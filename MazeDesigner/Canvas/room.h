@@ -10,13 +10,13 @@ class Room : public QRectF
 {
 public:
     Room(QRectF & rect, QString  name = "");
-    Room(){}
+    Room(const QJsonObject & json);
 
     QString getName() const;
     void setName(const QString &value);
     int32_t getId() const;
     QJsonObject toJson() const;
-    void fromJson(const QJsonObject & json);
+    //void fromJson();
 
 private:
     static int16_t ID;

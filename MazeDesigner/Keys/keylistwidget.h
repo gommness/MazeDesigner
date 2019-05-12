@@ -19,6 +19,7 @@ public:
     ~KeyListWidget();
     void load();
     void load(KeyRepository * repo);
+    const Key & selectedKey();
 
 signals:
     void cellChanged(const int & index, const QString & keyname, const bool& value);

@@ -80,6 +80,15 @@ void KeyListWidget::load(KeyRepository * repo)
     load();
 }
 
+const Key & KeyListWidget::selectedKey()
+{
+    QList<QTableWidgetItem*> list = table->selectedItems();
+    if(repo == nullptr || list.size() == 0)
+        return Key::invalidKey();
+    QTableWidgetItem * item = list[0];
+    return repo->at(item->row());
+}
+
 void KeyListWidget::createKey()
 {
     if(repo == nullptr)
@@ -118,7 +127,7 @@ void KeyListWidget::deleteKey()
     std::sort(removeList.begin(), removeList.end());
     for(int i = removeList.length()-1; i >= 0; i--){
         table->removeRow(removeList[i]);
-        repo->removeAt(i);
+        repo->removeAt(removeList[i]);
     }
 }
 

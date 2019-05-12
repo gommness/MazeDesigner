@@ -38,11 +38,17 @@ SOURCES += \
         ../Keys/keyispowerupeditor.cpp \
         ../Keys/keynameeditor.cpp \
         ../Keys/keyrepository.cpp \
+    instancecanvas.cpp \
+    doorinstance.cpp \
+    keyinstance.cpp
 
 HEADERS += \
         mainwindow.h \
         ../Canvas/*.h \
-        ../Keys/*.h
+        ../Keys/*.h \
+    instancecanvas.h \
+    doorinstance.h \
+    keyinstance.h
 
 FORMS += \
         mainwindow.ui
@@ -51,3 +57,6 @@ FORMS += \
 qnx: target.path = /tmp/$${TARGET}/bin
 else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
+
+DISTFILES += \
+    ../key.png

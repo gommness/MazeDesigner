@@ -86,6 +86,7 @@ private:
 
 
 friend class RoomCanvas;
+friend class InstanceCanvas;
 
 };
 

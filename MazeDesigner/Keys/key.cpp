@@ -33,9 +33,20 @@ Key::Key(const QJsonObject &json)
         throw std::runtime_error("no power-up value for key in jsonObject");
 }
 
+Key &Key::invalidKey()
+{
+    static Key output(-1);
+    return output;
+}
+
 QString Key::getName() const
 {
     return name;
+}
+
+bool Key::isValid() const
+{
+    return (id >= 0);
 }
 
 void Key::setName(const QString &name)
@@ -67,5 +78,10 @@ QJsonObject Key::toJson()
     output.insert("name", name);
     output.insert("power-up", powerUp);
     return output;
+}
+
+Key::Key(int id)
+{
+    this->id = id;
 }
 

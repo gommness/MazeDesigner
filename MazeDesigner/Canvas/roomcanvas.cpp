@@ -23,9 +23,7 @@ void RoomCanvas::readJson(const QJsonObject &json)
         QList<Room> aux;
         for(auto jsonRoom = jsonArray.begin(); jsonRoom != jsonArray.end(); jsonRoom++){
             if(jsonRoom->isObject()){
-                Room room;
-                room.fromJson(jsonRoom->toObject());
-                aux.append(room);
+                aux.append(Room(jsonRoom->toObject()));
             }
         }
         //roomList.clear();
@@ -33,9 +31,20 @@ void RoomCanvas::readJson(const QJsonObject &json)
     }
 }
 
+QSize RoomCanvas::minimumSizeHint() const
+{
+    return design->minimumSizeHint();
+}
+
+QSize RoomCanvas::sizeHint() const
+{
+    return design->sizeHint();
+}
+
 void RoomCanvas::showEvent(QShowEvent *)
 {
     design->show();
+    update();
 }
 
 void RoomCanvas::paintEvent(QPaintEvent *)
@@ -66,7 +75,7 @@ void RoomCanvas::mousePressEvent(QMouseEvent *event)
     if(event->button() & Qt::LeftButton) // left click
         start = new QPointF(design->grid.nearestPoint(event->pos()));
     else if(event->button() & Qt::RightButton){ // right click
-        deleteRoomsAt(event->pos());
+        deleteRoomsAt(design->grid.nearestPoint(event->pos()));
         start = nullptr;
     }
 }
