@@ -15,6 +15,7 @@ private:
     static int ID;
     int id;
     QPolygonF area;
+friend class InstanceCanvas;
 };
 
 #endif // DOORINSTANCE_H

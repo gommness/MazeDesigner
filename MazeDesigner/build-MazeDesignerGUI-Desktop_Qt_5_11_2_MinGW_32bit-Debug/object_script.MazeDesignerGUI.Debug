@@ -12,6 +12,9 @@ INPUT(
 ./debug\keyispowerupeditor.o
 ./debug\keynameeditor.o
 ./debug\keyrepository.o
+./debug\instancecanvas.o
+./debug\doorinstance.o
+./debug\keyinstance.o
 ./debug\moc_mainwindow.o
 ./debug\moc_canvas.o
 ./debug\moc_grid.o

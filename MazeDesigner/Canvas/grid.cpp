@@ -11,7 +11,7 @@ Grid::Grid(QWidget * parent) : QWidget(parent)
 
 Grid::Grid(const Grid &grid) : Grid(grid.parentWidget()) {}
 
-QPointF Grid::nearestPoint(const QPointF &point, qreal gridOffsetted) const
+QPointF Grid::nearestPoint(const QPointF &point) const
 {
     double dSize = static_cast<double>(size);
     QPointF offset(hOffset, vOffset);
@@ -24,8 +24,8 @@ QPointF Grid::nearestPoint(const QPointF &point, qreal gridOffsetted) const
     /// thus, {point.x/scale - offset} is the logic coord of the input having the offset taken into acount
     /// {qFloor({previousLine}/dSize)} would be the number of the selected cell
     /// {dSize*{qFloor(...)}} would be the top-left corner of the cell containing the selected point
-    double x = dSize*(qFloor(((point.x()+gridOffsetted)/scale-hOffset)/dSize));
-    double y = dSize*(qFloor(((point.y()+gridOffsetted)/scale-vOffset)/dSize));
+    double x = dSize*(qFloor(((point.x())/scale-hOffset)/dSize));
+    double y = dSize*(qFloor(((point.y())/scale-vOffset)/dSize));
     // thus, we now have x and y the logical coords of the top-left corner of the cell that contains the point
     // then we load the 4 points of the grid that make said cell into a list
     QList<QPointF> list;
@@ -33,6 +33,9 @@ QPointF Grid::nearestPoint(const QPointF &point, qreal gridOffsetted) const
     list.append(QPointF(x, y+dSize)); // bottom-left
     list.append(QPointF(x+dSize, y)); // top-right
     list.append(QPointF(x+dSize, y+dSize)); // bottom-right
+
+    for(auto a = list.begin(); a != list.end(); a++)
+        qDebug() << *a;
     // and finally perform the classic iterative algorithm to find the nearest one
     double minDist = pointDistance(point/scale-offset, list[0]); // we initialize a distance with the first corner
     //note that dist is calculated this way:
@@ -70,7 +73,31 @@ QPointF Grid::nearestPoint(const QPointF &point, qreal gridOffsetted) const
     }
     */
     //qDebug() << "ouptut"<<output;
-    return output + QPointF(gridOffsetted, gridOffsetted);
+    return output;
+}
+
+QPointF Grid::centerOfCellAt(const QPointF &point) const
+{
+    QPointF output = this->nearestPoint(point);
+    qreal halfSize = size/2;
+    if(output.x() >= point.x()){ // snapped-point is right of point
+        if(output.y() >= point.y()){ // snapped-point is below of point
+            output.setX(output.x()-halfSize);
+            output.setY(output.y()-halfSize);
+        } else { // snapped-point is above of point
+            output.setX(output.x()-halfSize);
+            output.setY(output.y()+halfSize);
+        }
+    } else { // snapped-point is left of point
+        if(output.y() >= point.y()){ // snapped-point is below of point
+            output.setX(output.x()+halfSize);
+            output.setY(output.y()-halfSize);
+        } else { // snapped-point is above of point
+            output.setX(output.x()+halfSize);
+            output.setY(output.y()+halfSize);
+        }
+    }
+    return output;
 }
 
 double Grid::pointDistance(const QPointF &p1, const QPointF &p2)

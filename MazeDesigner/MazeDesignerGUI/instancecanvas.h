@@ -21,9 +21,9 @@ protected:
     void mouseMoveEvent(QMouseEvent *event) override;
     void mouseReleaseEvent(QMouseEvent *event) override;
     void wheelEvent(QWheelEvent *event) override;
-    void createStartPoint(const QPointF *point);
+    void createStartPoint(QPointF *point);
     void startCreatingDoor(QPointF *point);
-    void createKeyInstance(const QPointF *point);
+    void createKeyInstance(QPointF *point);
     void destroyAt(const QPointF *point);
 
 private:

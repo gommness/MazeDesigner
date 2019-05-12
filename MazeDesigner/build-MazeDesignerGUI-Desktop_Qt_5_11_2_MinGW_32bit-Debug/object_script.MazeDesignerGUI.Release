@@ -12,6 +12,9 @@ INPUT(
 ./release\keyispowerupeditor.o
 ./release\keynameeditor.o
 ./release\keyrepository.o
+./release\instancecanvas.o
+./release\doorinstance.o
+./release\keyinstance.o
 ./release\moc_mainwindow.o
 ./release\moc_canvas.o
 ./release\moc_grid.o

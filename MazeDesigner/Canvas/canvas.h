@@ -10,6 +10,7 @@
 #include <QScrollArea>
 #include <QJsonObject>
 
+#define UMBRAL 0.1
 #define POINTFORMAT "(%1 %2)"
 #define POINTSPLITREGEX "[() ]"
 #define JSONPOLYGONKEY "polygons"

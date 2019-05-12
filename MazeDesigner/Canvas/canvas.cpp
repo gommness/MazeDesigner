@@ -10,8 +10,6 @@
 #include <QJsonDocument>
 #include <stdexcept>
 
-#define UMBRAL 0.1
-
 Canvas::Canvas(QWidget *parent) : QWidget (parent), grid(this)
 {
     //this->setSizePolicy(QSizePolicy::Maximum);

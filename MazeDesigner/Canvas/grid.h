@@ -10,7 +10,8 @@ class Grid : public QWidget
 public:
     Grid(QWidget * parent);
     Grid(const Grid & grid);
-    QPointF nearestPoint(const QPointF& other, qreal gridOffsetted = 0) const;
+    QPointF nearestPoint(const QPointF& other) const;
+    QPointF centerOfCellAt(const QPointF& point) const;
     int8_t getSize() const;
     void setSize(const int8_t &value);
     void mouseMoveEventHandler(QMouseEvent* event);
