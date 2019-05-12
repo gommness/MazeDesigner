@@ -44,6 +44,11 @@ QString Key::getName() const
     return name;
 }
 
+int Key::getId() const
+{
+    return id;
+}
+
 bool Key::isValid() const
 {
     return (id >= 0);

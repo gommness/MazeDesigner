@@ -12,6 +12,7 @@ public:
     Grid(const Grid & grid);
     QPointF nearestPoint(const QPointF& other) const;
     QPointF centerOfCellAt(const QPointF& point) const;
+    QPointF adapted(const QPointF & point) const;
     int8_t getSize() const;
     void setSize(const int8_t &value);
     void mouseMoveEventHandler(QMouseEvent* event);

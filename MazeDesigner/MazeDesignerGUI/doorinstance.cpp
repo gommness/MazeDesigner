@@ -28,3 +28,40 @@ bool DoorInstance::contains(const QPointF &point) const
     return area.containsPoint(point, Qt::FillRule::OddEvenFill);
 }
 
+DoorInstance DoorInstance::fromJson(const QJsonObject &json)
+{
+    int id;
+    QLineF line;
+    if(json.contains("ID") && json["ID"].isDouble()){
+        id = json["ID"].toInt();
+    } else {
+        throw std::runtime_error("no id found for door instance in jsonObject");
+    }
+
+    if(json.contains("point1") && json["point1"].isString()
+            && json.contains("point2") && json["point2"].isString()){
+        QPointF p1 = json::parsePoint(json["point1"].toString());
+        QPointF p2 = json::parsePoint(json["point2"].toString());;
+        line = QLineF(p1, p2);
+    } else {
+        throw std::runtime_error("missing points for door instance in jsonObject");
+    }
+    TODO("desserialize the door conditions when they are implemented");
+    return DoorInstance(id, line);
+}
+
+QJsonObject DoorInstance::toJson() const
+{
+    QJsonObject output;
+    output.insert("ID", id);
+    output.insert("point1", QString(POINTFORMAT).arg(p1().x()).arg(p1().y()));
+    output.insert("point2", QString(POINTFORMAT).arg(p2().x()).arg(p2().y()));
+    TODO("serialize the door conditions when they are implemented");
+    return output;
+}
+
+DoorInstance::DoorInstance(int id, QLineF &line) : QLineF (line)
+{
+    this->id = id;
+}
+

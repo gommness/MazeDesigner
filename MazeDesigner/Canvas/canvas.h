@@ -9,10 +9,8 @@
 #include <QPainter>
 #include <QScrollArea>
 #include <QJsonObject>
+#include "../Common/common.h"
 
-#define UMBRAL 0.1
-#define POINTFORMAT "(%1 %2)"
-#define POINTSPLITREGEX "[() ]"
 #define JSONPOLYGONKEY "polygons"
 
 class Canvas : public QWidget
@@ -43,6 +41,8 @@ public:
     QString toString() const;
 
     const Grid getGrid() const;
+
+    bool contains(const QPointF & point) const;
 
     void writeJson(QJsonObject & json) const;
     void readJson(const QJsonObject & json);

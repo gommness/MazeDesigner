@@ -227,6 +227,11 @@ const Grid Canvas::getGrid() const
     return Grid(grid);
 }
 
+bool Canvas::contains(const QPointF &point) const
+{
+    return shapes.contains(point);
+}
+
 void Canvas::writeJson(QJsonObject &json) const
 {
     QList<QPolygonF> polys = shapes.toFillPolygons();
@@ -260,6 +265,7 @@ void Canvas::readJson(const QJsonObject &json)
             for(auto jsonPoint = jsonPoints.begin(); jsonPoint != jsonPoints.end(); jsonPoint++){// iterate through points
                 if(jsonPoint->isString()){
                     // split the string into 2 doubles
+                    /*
                     QRegExp regex(POINTSPLITREGEX);
                     QStringList splitted = jsonPoint->toString().split(regex, QString::SplitBehavior::SkipEmptyParts);
                     if(splitted.size() < 2) // if there is less than 2 doubles, it ain't no point pal!
@@ -268,6 +274,8 @@ void Canvas::readJson(const QJsonObject &json)
                     x = splitted[0].toDouble();
                     y = splitted[1].toDouble();
                     pointList.append(QPointF(x,y)); // create the point at last!
+                    */
+                    pointList.append(json::parsePoint(jsonPoint->toString()));
                 }
             }
             // at the end of this loop, we should have all points of a polygon inside pointList

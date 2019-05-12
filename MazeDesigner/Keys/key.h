@@ -11,6 +11,7 @@ public:
     Key(const QJsonObject & json);
     static Key & invalidKey();
     QString getName() const;
+    int getId() const;
     bool isValid() const;
     void setName(const QString & name);
     bool isPowerUp() const;

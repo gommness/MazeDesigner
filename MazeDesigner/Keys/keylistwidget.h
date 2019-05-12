@@ -36,6 +36,7 @@ private:
     KeyRepository *repo;
 
     void connectSignals();
+friend class InstanceCanvas;
 };
 
 #endif // KEYLISTWIDGET_H

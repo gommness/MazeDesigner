@@ -22,7 +22,7 @@ void RoomCanvas::readJson(const QJsonObject &json)
         QJsonArray jsonArray = json[JSONROOMKEY].toArray();
         QList<Room> aux;
         for(auto jsonRoom = jsonArray.begin(); jsonRoom != jsonArray.end(); jsonRoom++){
-            if(jsonRoom->isObject()){
+            if(jsonRoom->isObject()){ // no else so that if there is a non-obj entry, we don't freak out
                 aux.append(Room(jsonRoom->toObject()));
             }
         }

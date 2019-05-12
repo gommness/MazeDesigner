@@ -79,9 +79,10 @@ QPointF Grid::nearestPoint(const QPointF &point) const
 QPointF Grid::centerOfCellAt(const QPointF &point) const
 {
     QPointF output = this->nearestPoint(point);
+    QPointF p = adapted(point);
     qreal halfSize = size/2;
-    if(output.x() >= point.x()){ // snapped-point is right of point
-        if(output.y() >= point.y()){ // snapped-point is below of point
+    if(output.x() >= p.x()){ // snapped-point is right of point
+        if(output.y() >= p.y()){ // snapped-point is below of point
             output.setX(output.x()-halfSize);
             output.setY(output.y()-halfSize);
         } else { // snapped-point is above of point
@@ -89,7 +90,7 @@ QPointF Grid::centerOfCellAt(const QPointF &point) const
             output.setY(output.y()+halfSize);
         }
     } else { // snapped-point is left of point
-        if(output.y() >= point.y()){ // snapped-point is below of point
+        if(output.y() >= p.y()){ // snapped-point is below of point
             output.setX(output.x()+halfSize);
             output.setY(output.y()-halfSize);
         } else { // snapped-point is above of point
@@ -98,6 +99,11 @@ QPointF Grid::centerOfCellAt(const QPointF &point) const
         }
     }
     return output;
+}
+
+QPointF Grid::adapted(const QPointF &point) const
+{
+    return QPointF(point.x()/scale - hOffset, point.y()/scale - vOffset);
 }
 
 double Grid::pointDistance(const QPointF &p1, const QPointF &p2)

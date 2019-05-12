@@ -33,6 +33,30 @@ QString KeyRepository::toString()
     return output;
 }
 
+bool KeyRepository::contains(const QString & keyname) const
+{
+    for(auto key = begin(); key != end(); key++)
+        if(key->getName() == keyname)
+            return true;
+    return false;
+}
+
+bool KeyRepository::contains(int ID) const
+{
+    for(auto key = begin(); key != end(); key++)
+        if(key->getId() == ID)
+            return true;
+    return false;
+}
+
+const Key &KeyRepository::keyWithId(int ID) const
+{
+    for(auto key = begin(); key != end(); key++)
+        if(key->getId() == ID)
+            return *key;
+    return Key::invalidKey();
+}
+
 void KeyRepository::writeJson(QJsonObject &json)
 {
     QJsonObject wrapper;
