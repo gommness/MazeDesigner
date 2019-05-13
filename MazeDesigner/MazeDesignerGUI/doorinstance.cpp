@@ -41,7 +41,7 @@ DoorInstance DoorInstance::fromJson(const QJsonObject &json)
     if(json.contains("point1") && json["point1"].isString()
             && json.contains("point2") && json["point2"].isString()){
         QPointF p1 = json::parsePoint(json["point1"].toString());
-        QPointF p2 = json::parsePoint(json["point2"].toString());;
+        QPointF p2 = json::parsePoint(json["point2"].toString());
         line = QLineF(p1, p2);
     } else {
         throw std::runtime_error("missing points for door instance in jsonObject");

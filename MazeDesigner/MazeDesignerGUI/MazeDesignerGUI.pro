@@ -38,6 +38,7 @@ SOURCES += \
         ../Keys/keyispowerupeditor.cpp \
         ../Keys/keynameeditor.cpp \
         ../Keys/keyrepository.cpp \
+        ../Common/common.cpp \
     instancecanvas.cpp \
     doorinstance.cpp \
     keyinstance.cpp

@@ -45,6 +45,7 @@ private:
     QAction * exportAct;
     Ui::MainWindow *ui;
 
+    KeyListWidget * keyListWidget = nullptr;
     RoomCanvas * roomCanvas = nullptr;
     InstanceCanvas * instanceCanvas = nullptr;
     Canvas * designCanvas = nullptr;

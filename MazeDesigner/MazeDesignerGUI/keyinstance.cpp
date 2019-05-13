@@ -42,7 +42,8 @@ KeyInstance KeyInstance::fromJson(const QJsonObject &json, const KeyRepository &
     } else {
         throw std::runtime_error("no coords for key instance found in jsonObject");
     }
-    KeyInstance output(model, coords);
+    KeyInstance output(jsonId, model, coords);
+    return output;
 }
 
 QJsonObject KeyInstance::toJson()
@@ -64,7 +65,7 @@ KeyInstance::KeyInstance(int id, const Key &model, const qreal &x, const qreal &
     this->id = id;
 }
 
-KeyInstance::KeyInstance(int id, const Key &model, const QPointF &point) : QRectF(point.x()-8,point.y()-8,16,16),
+KeyInstance::KeyInstance(int id, const Key &model, const QPointF &point) : QRectF(point.x(),point.y(),16,16),
     model(model)
 {
     this->id = id;

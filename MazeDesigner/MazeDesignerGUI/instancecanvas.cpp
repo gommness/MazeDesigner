@@ -269,5 +269,5 @@ bool InstanceCanvas::isPlaceEmptyForKey(const QPointF &point)
 
 bool InstanceCanvas::isPlaceEmptyForToken(const QPointF &point)
 {
-    return startToken->contains(point);
+    return startToken == nullptr || startToken->contains(point);
 }

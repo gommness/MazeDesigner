@@ -22,10 +22,10 @@ MainWindow::MainWindow(QWidget *parent) :
     // this piece will go in the graphical editor section of the application
     QTabWidget * designTabs = new QTabWidget;
     keyRepo = new KeyRepository;
-    KeyListWidget * keyList = new KeyListWidget(nullptr, keyRepo);
+    keyListWidget = new KeyListWidget(nullptr, keyRepo);
     designCanvas = new Canvas;
     roomCanvas = new RoomCanvas(designCanvas);
-    instanceCanvas = new InstanceCanvas(designCanvas, keyList);
+    instanceCanvas = new InstanceCanvas(designCanvas, keyListWidget);
     //QLabel *designRoomRegions = new QLabel("label on top numer 1!", designCanvas);
     //QLabel * designInstances = new QLabel("label on top number 2!", designCanvas);
     designTabs->addTab(designCanvas, "Canvas");
@@ -53,7 +53,7 @@ MainWindow::MainWindow(QWidget *parent) :
     // probably by inheriting from the class or connecting some slots to some signals (?)
     QStackedLayout * leftDisplay = new QStackedLayout;
     QLabel * roomsTableDisplay = new QLabel("I'm a place-holder!");
-    leftDisplay->addWidget(keyList);
+    leftDisplay->addWidget(keyListWidget);
     leftDisplay->addWidget(roomsTableDisplay);
 
     //piece both layouts together into the whole application
@@ -103,8 +103,8 @@ void MainWindow::newDesign()
 void MainWindow::openDesign()
 {
     QJsonObject json;
-    KeyRepository other;
-    keyRepo->writeJson(json);
+    InstanceCanvas other(designCanvas, keyListWidget);
+    instanceCanvas->writeJson(json);
     QString str(QJsonDocument(json).toJson(QJsonDocument::Indented));
     qDebug().noquote() << "original json: "<< str;
     other.readJson(json);
