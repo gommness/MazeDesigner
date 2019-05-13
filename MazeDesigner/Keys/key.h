@@ -18,6 +18,7 @@ public:
     void setPowerUp(const bool & value);
     QString toString();
     QJsonObject toJson();
+    bool operator ==(const Key & key) const;
 private:
     Key(int id);
     static int ID;

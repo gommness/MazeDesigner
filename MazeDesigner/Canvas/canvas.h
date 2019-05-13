@@ -16,6 +16,8 @@
 class Canvas : public QWidget
 {
     Q_OBJECT
+signals:
+    void destroySpace(const QPolygonF & destroyed);
 public:
     /**
      * @brief Canvas constructor for the class. if parent is null, it creates a new window. Otherwise, the object constructed

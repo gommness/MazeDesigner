@@ -13,7 +13,12 @@ Sobre la exportación a .room.yy:
 	9. "ObjId" debe coincidir con el UUID del objeto de GMS2, que tambien debe estar en el fichero del proyecto.
 
 TODO:
-	1. la clase KeyInstance deberia heredar de QRectF en lugar de QPointF para tener un área sobre el que hacer click
+	DONE - la clase KeyInstance deberia heredar de QRectF en lugar de QPointF para tener un área sobre el que hacer click
+	DONE - al destruir un modelo de llave, hay que destruir todas las instancias de llaves que existan. Probablemente usando una señal y un slot
+	DONE - al eliminar parte del espacio de juego, hay que eliminar las llaves y startToken que pudiera haber dentro. señal + slot probablemente
+	- hay que hacer la seleccion de instancias y carga de sus datos a consola en el instanceCanvas
+		- las señales de seleccion estan creadas y emitidas, hay que realizar las conexiones pertinentes a los widgets que cargan los datos y tal y cual
+	- hay que crear la listView para los datos de las rooms cuando se entre en roomCanvas
 
 
 DECISIONES DE DISEÑO POR IMPLEMENTAR:
@@ -39,9 +44,9 @@ DECISIONES DE DISEÑO POR IMPLEMENTAR:
 				DONE 2.4.1 los polígonos que conforman los espacios jugables
 				DONE 2.4.2 las Rooms (rectángulos con sus nombres) que conforman las pantallas
 				DONE 2.4.3 las llaves del KeyRepository
-				2.4.4 las instancias de las llaves (con sus coordenadas, nombre, id y tipo)
-				2.4.5 las instancias de las puertas (con sus coordenadas, nombre, id y condicion guardada como un String a lo bruto)
-				2.4.6 la instancia del token de comienzo (con sus coordenadas)
+				DONE 2.4.4 las instancias de las llaves (con sus coordenadas, nombre, id y tipo)
+				DONE 2.4.5 las instancias de las puertas (con sus coordenadas, nombre, id y condicion guardada como un String a lo bruto)
+				DONE 2.4.6 la instancia del token de comienzo (con sus coordenadas)
 
 	3. La clase InstanceCanvas:
 			3.1 debemos obligar a que el usuario coloque un "token" de comienzo para saber desde donde se realizaría la exploración.

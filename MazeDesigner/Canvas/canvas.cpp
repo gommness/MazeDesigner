@@ -165,6 +165,7 @@ void Canvas::addHole(QPolygonF *other)
 
 void Canvas::removePolygon(QPolygonF *other)
 {
+    emit destroySpace(*other);
     QPainterPath removing;
     removing.addPolygon(*other);
     shapes = shapes.subtracted(removing).simplified();

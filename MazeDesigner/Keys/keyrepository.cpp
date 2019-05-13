@@ -17,6 +17,13 @@ KeyRepository::KeyRepository()
 
 }
 
+void KeyRepository::removeAt(int i)
+{
+    // notify that the i-th key is going to be deleted to whoever is connected
+    emit keyDeleted((*this)[i]);
+    QList::removeAt(i); // then actually delete the key
+}
+
 KeyRepository &KeyRepository::operator=(const KeyRepository &other)
 {
     this->clear();

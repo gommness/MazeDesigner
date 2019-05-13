@@ -16,6 +16,10 @@
 
 class InstanceCanvas : public QWidget
 {
+    Q_OBJECT
+signals:
+    void selectKey(const KeyInstance & key);
+    void selectDoor(const DoorInstance & door);
 public:
     /**
      * @brief InstanceCanvas creates a Canvas for placing the instances. A base design canvas and the widget containing the list
@@ -96,6 +100,10 @@ protected:
      * @return true if there is a key in that place
      */
     bool isPlaceEmptyForKey(const QPointF &point);
+
+    KeyInstance * keyAt(const QPointF &point);
+
+    DoorInstance * doorAt(const QPointF &point);
     /**
      * @brief isPlaceEmptyForToken check whether a place in space holds an instance of the startToken
      * @param point the point of space to check for
@@ -103,13 +111,15 @@ protected:
      */
     bool isPlaceEmptyForToken(const QPointF &point);
 
+protected slots:
+    void onKeyModelDeleted(const Key & model);
+    void onSpaceDestroyed(const QPolygonF & poly);
 private:
     Canvas * design;
     KeyListWidget * keyList;
     QList<KeyInstance*> keys;
     QList<DoorInstance*> doors;
     QRectF * startToken = nullptr;
-    DoorInstance * selectedDoor = nullptr;
     QPointF * start = nullptr;
     QPointF * end = nullptr;
 };

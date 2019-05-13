@@ -2,7 +2,10 @@
 #include <QApplication>
 #include <QJsonArray>
 
-InstanceCanvas::InstanceCanvas(Canvas * design, KeyListWidget * list) : design(design), keyList(list) {}
+InstanceCanvas::InstanceCanvas(Canvas * design, KeyListWidget * list) : design(design), keyList(list) {
+    connect(keyList->repo, &KeyRepository::keyDeleted, this, &InstanceCanvas::onKeyModelDeleted);
+    connect(design, &Canvas::destroySpace, this, &InstanceCanvas::onSpaceDestroyed);
+}
 
 void InstanceCanvas::writeJson(QJsonObject &json) const
 {
@@ -169,9 +172,17 @@ void InstanceCanvas::mousePressEvent(QMouseEvent *event)
             startCreatingDoor(point); // start the creation of a door
         } else { // if no keyboard key is being held
             // TODO check if an already existing element was clicked and then show their info in console!!!
-            QPointF point = design->grid.centerOfCellAt(event->pos());
-            if(isPlaceEmptyForKey(point)) // if there is no other key in that point
+            KeyInstance * key = keyAt(design->grid.adapted(event->pos())); // try to find a key at specific cursor point
+            DoorInstance * door = doorAt(design->grid.adapted(event->pos())); // try to find a door at specific cursor point
+            if(key != nullptr || door != nullptr){ // if there is a selection
+                if(key != nullptr) // if there is a key in the selected point
+                    emit selectKey(*key);
+                else if(door != nullptr) // if there is a door in the selected point
+                    emit selectDoor(*door);
+            } else { // if there is no selection, then we create a key
+                QPointF point = design->grid.centerOfCellAt(event->pos());
                 createKeyInstance(point); // create a key
+            }
         }
     } else if(event->button() & Qt::RightButton){ // if it was a right click, destruction will happen
         QPointF point = design->grid.adapted(event->pos()); // we adapt the event position for grid transformations
@@ -267,7 +278,47 @@ bool InstanceCanvas::isPlaceEmptyForKey(const QPointF &point)
     return true; // if no key's area contains the point, then yes, the place is empty
 }
 
+KeyInstance *InstanceCanvas::keyAt(const QPointF &point)
+{
+    for(auto key = keys.begin(); key != keys.end(); key++)
+        if((*key)->contains(point)) // if one key's area contains the point, then no, the place is not empty
+            return *key;
+    return nullptr; // if no key's area contains the point, then yes, the place is empty
+}
+
+DoorInstance *InstanceCanvas::doorAt(const QPointF &point)
+{
+    for(auto door = doors.begin(); door != doors.end(); door++)
+        if((*door)->contains(point)) // if one key's area contains the point, then no, the place is not empty
+            return *door;
+    return nullptr; // if no key's area contains the point, then yes, the place is empty
+}
+
 bool InstanceCanvas::isPlaceEmptyForToken(const QPointF &point)
 {
     return startToken == nullptr || startToken->contains(point);
+}
+
+void InstanceCanvas::onKeyModelDeleted(const Key &model)
+{
+    for(int i = keys.size()-1; i >= 0; i--){
+        if(keys[i]->model == model){
+            delete keys[i];
+            keys.removeAt(i);
+        }
+    }
+}
+
+void InstanceCanvas::onSpaceDestroyed(const QPolygonF &poly)
+{
+    for(int i = keys.size()-1; i >= 0; i--){
+        if(poly.containsPoint(keys[i]->center(), Qt::FillRule::OddEvenFill)){
+            delete keys[i];
+            keys.removeAt(i);
+        }
+    }
+    if(startToken != nullptr && poly.containsPoint(startToken->center(), Qt::FillRule::OddEvenFill)){
+        delete startToken;
+        startToken = nullptr;
+    }
 }

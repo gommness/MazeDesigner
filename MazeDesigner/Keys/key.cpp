@@ -85,6 +85,11 @@ QJsonObject Key::toJson()
     return output;
 }
 
+bool Key::operator ==(const Key &key) const
+{
+    return this->id == key.id;
+}
+
 Key::Key(int id)
 {
     this->id = id;
