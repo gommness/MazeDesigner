@@ -34,8 +34,6 @@ QPointF Grid::nearestPoint(const QPointF &point) const
     list.append(QPointF(x+dSize, y)); // top-right
     list.append(QPointF(x+dSize, y+dSize)); // bottom-right
 
-    for(auto a = list.begin(); a != list.end(); a++)
-        qDebug() << *a;
     // and finally perform the classic iterative algorithm to find the nearest one
     double minDist = pointDistance(point/scale-offset, list[0]); // we initialize a distance with the first corner
     //note that dist is calculated this way:

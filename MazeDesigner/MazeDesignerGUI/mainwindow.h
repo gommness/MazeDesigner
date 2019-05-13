@@ -3,6 +3,12 @@
 
 #include <QMainWindow>
 #include <QActionGroup>
+#include <QLabel>
+#include <QHBoxLayout>
+#include <QTabWidget>
+#include <QTextEdit>
+#include <QTextBlock>
+#include <QStackedLayout>
 #include "../Canvas/canvas.h"
 #include "../Canvas/roomcanvas.h"
 #include "instancecanvas.h"
@@ -34,6 +40,9 @@ private slots:
     void exportDesign();
 
 private:
+    void saveFile(const QString & str);
+    void deleteDesign();
+    void setUp();
     void createActions();
     void createMenus();
     QMenu * fileMenu;
@@ -45,6 +54,21 @@ private:
     QAction * exportAct;
     Ui::MainWindow *ui;
 
+    QString filename;
+
+    QHBoxLayout * mainLayout = nullptr;
+    QVBoxLayout * editionLayout = nullptr;
+    QTabWidget * textTabs = nullptr;
+    QTextEdit * textDoorEditor = nullptr;
+    QTextEdit * console = nullptr;
+    QStackedLayout * leftDisplay = nullptr;
+    QLabel * roomsTableDisplay = nullptr;
+    QWidget *widget = nullptr;
+    QWidget *topFiller = nullptr;
+    QWidget *bottomFiller = nullptr;
+    QVBoxLayout *layout = nullptr;
+
+    QTabWidget * designTabs = nullptr;
     KeyListWidget * keyListWidget = nullptr;
     RoomCanvas * roomCanvas = nullptr;
     InstanceCanvas * instanceCanvas = nullptr;

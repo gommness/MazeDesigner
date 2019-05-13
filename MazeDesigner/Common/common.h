@@ -8,7 +8,7 @@
 #define POINTFORMAT "(%1 %2)"
 #define POINTSPLITREGEX "[() ]"
 
-#define TODO(x) printf("TODO (%s line %d) : %s", __FILE__, __LINE__, x)
+#define TODO(x) printf("TODO (%s line %d) : %s\n", __FILE__, __LINE__, x)
 
 namespace json {
     /**
