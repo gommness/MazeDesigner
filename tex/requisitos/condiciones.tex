@@ -1,16 +1,14 @@
 \item \textbf{Edición de condiciones de apertura}\newline
 	Cuando el usuario haya seleccionado un elemento bloqueador, debe ser capaz de describir las condiciones bajo las cuales este se abrirá. Dicha descripción debe ser escrita siguiendo la sintaxis de un lenguaje.
 	\begin{functional}
+		\item \textbf{sintaxis del lenguaje}\newline
+			el lenguaje en el que se especifican las condiciones debe seguir la siguiente sintaxis:
+			\lstinputlisting[language=Prolog]{requisitos/syntaxDef.pl}
+			donde la cláusula item puede ser cualquier cadena de caracteres del espacio de nombres de llaves.
 		\item \textbf{Condición vacía}\newline
-			El lenguaje para la descripción de condiciones debe admitir a condición vacía.
-		\item \textbf{Condición simple}\newline
-			El lenguaje para la descripción de condiciones debe admitir condiciones simples, compuestas por un único requisito para la apertura
-		\item \textbf{Operadores lógicos}\newline
-			El lenguaje para la descripción de condiciones debe reconocer conectores formados por operadores lógicos
-		\item \textbf{Condiciones compuestas}\newline
-			El lenguaje para la descripción de condiciones debe admitir condiciones compuestas, formadas conectando condiciones (simples o compuestas) con operadores lógicos
+			La condición vacía del lenguaje se interpreta como una satisfacible siempre.
 		\item \textbf{Orden de precedencia}\newline
-			El lenguaje para la descripción de condiciones debe respetar el orden de precedencia habitual: resolución del contenido de los paréntesis primero y conexión de izquierda a derecha.
+			A la hora de evaluar una expresión del lenguaje, se debe respetar el orden de precedencia habitual: resolución del contenido de los paréntesis primero y conexión de izquierda a derecha.
 	\end{functional}
 \item \textbf{Sintetización de condiciones}\newline
-	El sistema debe ser capaz de sintetizar las condiciones escritas por el usuario, siguiendo la sintaxis del lenguaje de descripción de condiciones, en clases compatibles con las aristas de los grafos, para inducir en estos una exploración condicionada.
+	El sistema debe ser capaz de sintetizar las condiciones escritas por el usuario, siguiendo la sintaxis del lenguaje de descripción de condiciones, en clases compatibles con las aristas de un grafo, para inducir en estos una exploración condicionada.

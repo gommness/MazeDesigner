@@ -41,7 +41,9 @@ SOURCES += \
         ../Common/common.cpp \
     instancecanvas.cpp \
     doorinstance.cpp \
-    keyinstance.cpp
+    keyinstance.cpp \
+    selectableinstance.cpp \
+    roomlistwidget.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -49,7 +51,9 @@ HEADERS += \
         ../Keys/*.h \
     instancecanvas.h \
     doorinstance.h \
-    keyinstance.h
+    keyinstance.h \
+    selectableinstance.h \
+    roomlistwidget.h
 
 FORMS += \
         mainwindow.ui

@@ -21,14 +21,11 @@ KeyListWidget::KeyListWidget(QWidget *parent, KeyRepository * repo) : QWidget(pa
     this->removeButton = new QPushButton();
     this->removeButton->setText("remove key");
 
-    // this->repo << Key("key1") << Key("key2") << Key("key3"); // DELETEME
     this->table = new QTableWidget();
     table->setColumnCount(2);
     table->setHorizontalHeaderLabels(QStringList() << tr("key name") << tr("is power up"));
     table->verticalHeader()->setVisible(false);
     table->resize(150, 50);
-    //KeyRepository rr;
-    //rr << Key("key1") << Key("key2");
     this->load();
 
     QGridLayout *buttonsLayout = new QGridLayout;

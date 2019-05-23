@@ -2,29 +2,30 @@
 \BOOKMARK [1][-]{section.1.1}{Motivaci\363n}{chapter.1}% 2
 \BOOKMARK [1][-]{section.1.2}{Objetivos}{chapter.1}% 3
 \BOOKMARK [1][-]{section.1.3}{Estructura}{chapter.1}% 4
-\BOOKMARK [1][-]{section.1.4}{Glosario, acr\363nimos y definiciones}{chapter.1}% 5
-\BOOKMARK [2][-]{subsection.1.4.1}{Glosario}{section.1.4}% 6
-\BOOKMARK [2][-]{subsection.1.4.2}{Acronimos}{section.1.4}% 7
-\BOOKMARK [2][-]{subsection.1.4.3}{Definiciones}{section.1.4}% 8
-\BOOKMARK [0][-]{chapter.2}{Estado del arte}{}% 9
-\BOOKMARK [1][-]{section.2.1}{Dise\361o Gr\341fico}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.2}{Dise\361o L\363gico}{chapter.2}% 11
-\BOOKMARK [0][-]{chapter.3}{Requisitos}{}% 12
-\BOOKMARK [1][-]{section.3.1}{Requisitos funcionales}{chapter.3}% 13
-\BOOKMARK [2][-]{subsection.3.1.1}{Requisitos de persistencia}{section.3.1}% 14
-\BOOKMARK [2][-]{subsection.3.1.2}{Requisitos de contexto}{section.3.1}% 15
-\BOOKMARK [2][-]{subsection.3.1.3}{Requisitos del canvas}{section.3.1}% 16
-\BOOKMARK [2][-]{subsection.3.1.4}{Requisitos de llaves}{section.3.1}% 17
-\BOOKMARK [2][-]{subsection.3.1.5}{Requisitos de condiciones de apertura}{section.3.1}% 18
-\BOOKMARK [2][-]{subsection.3.1.6}{Requisitos de comprobaci\363n de la completitud}{section.3.1}% 19
-\BOOKMARK [2][-]{subsection.3.1.7}{Requisitos de conexi\363n con Game Maker Studio 2}{section.3.1}% 20
-\BOOKMARK [1][-]{section.3.2}{Requisitos no funcionales}{chapter.3}% 21
-\BOOKMARK [0][-]{chapter.4}{Dise\361o}{}% 22
-\BOOKMARK [0][-]{chapter.5}{Desarrollo}{}% 23
-\BOOKMARK [0][-]{chapter.6}{Integraci\363n, pruebas y resultados}{}% 24
-\BOOKMARK [0][-]{chapter.7}{Conclusiones y trabajo futuro}{}% 25
-\BOOKMARK [1][-]{section.7.1}{Conclusiones}{chapter.7}% 26
-\BOOKMARK [1][-]{section.7.2}{Trabajo futuro}{chapter.7}% 27
-\BOOKMARK [0][-]{chapter*.12}{Bibliograf\355a}{}% 28
-\BOOKMARK [0][-]{section*.13}{Definiciones}{}% 29
-\BOOKMARK [0][-]{section*.15}{Acr\363nimos}{}% 30
+\BOOKMARK [0][-]{chapter.2}{Estado del Arte}{}% 5
+\BOOKMARK [1][-]{section.2.1}{Dise\361o Gr\341fico}{chapter.2}% 6
+\BOOKMARK [1][-]{section.2.2}{Dise\361o L\363gico}{chapter.2}% 7
+\BOOKMARK [1][-]{section.2.3}{Motores y Entornos}{chapter.2}% 8
+\BOOKMARK [1][-]{section.2.4}{Conclusiones}{chapter.2}% 9
+\BOOKMARK [0][-]{chapter.3}{An\341lisis de Requisitos}{}% 10
+\BOOKMARK [1][-]{section.3.1}{Requisitos funcionales}{chapter.3}% 11
+\BOOKMARK [2][-]{subsection.3.1.1}{Requisitos de persistencia}{section.3.1}% 12
+\BOOKMARK [2][-]{subsection.3.1.2}{Requisitos de contexto}{section.3.1}% 13
+\BOOKMARK [2][-]{subsection.3.1.3}{Requisitos del canvas}{section.3.1}% 14
+\BOOKMARK [2][-]{subsection.3.1.4}{Requisitos de llaves}{section.3.1}% 15
+\BOOKMARK [2][-]{subsection.3.1.5}{Requisitos de condiciones de apertura}{section.3.1}% 16
+\BOOKMARK [2][-]{subsection.3.1.6}{Requisitos de comprobaci\363n de la completitud}{section.3.1}% 17
+\BOOKMARK [2][-]{subsection.3.1.7}{Requisitos de conexi\363n con Game Maker Studio 2}{section.3.1}% 18
+\BOOKMARK [1][-]{section.3.2}{Requisitos no funcionales}{chapter.3}% 19
+\BOOKMARK [0][-]{chapter.4}{Dise\361o}{}% 20
+\BOOKMARK [1][-]{section.4.1}{MazeDesigner GUI}{chapter.4}% 21
+\BOOKMARK [0][-]{chapter.5}{Desarrollo}{}% 22
+\BOOKMARK [1][-]{section.5.1}{Canvas}{chapter.5}% 23
+\BOOKMARK [1][-]{section.5.2}{Llaves}{chapter.5}% 24
+\BOOKMARK [0][-]{chapter.6}{Integraci\363n, pruebas y resultados}{}% 25
+\BOOKMARK [0][-]{chapter.7}{Conclusiones y trabajo futuro}{}% 26
+\BOOKMARK [1][-]{section.7.1}{Conclusiones}{chapter.7}% 27
+\BOOKMARK [1][-]{section.7.2}{Trabajo futuro}{chapter.7}% 28
+\BOOKMARK [0][-]{chapter*.12}{Bibliograf\355a}{}% 29
+\BOOKMARK [0][-]{section*.13}{Definiciones}{}% 30
+\BOOKMARK [0][-]{section*.15}{Acr\363nimos}{}% 31

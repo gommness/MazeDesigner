@@ -5,8 +5,9 @@
 #include <QPolygonF>
 #include <QJsonObject>
 #include "../Common/common.h"
+#include "selectableinstance.h"
 
-class DoorInstance : public QLineF
+class DoorInstance : public QLineF, public SelectableInstance
 {
 public:
     /**
@@ -14,6 +15,8 @@ public:
      * @param line the line to perform the construction
      */
     DoorInstance(QLineF & line);
+    ~DoorInstance() override {}
+    QString instanceInfo() const override;
     /**
      * @brief contains checks whether the given point is contained within what is considered the area of the door. That is,
      * if the point is close enough to the door

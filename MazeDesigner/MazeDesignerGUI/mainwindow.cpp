@@ -56,6 +56,7 @@ void MainWindow::openDesign()
     QJsonObject jObj = jDoc.object();
     designCanvas->readJson(jObj);
     roomCanvas->readJson(jObj);
+    roomListWidget->load();
     keyRepo->readJson(jObj);
     keyListWidget->load();
     instanceCanvas->readJson(jObj);
@@ -120,6 +121,14 @@ void MainWindow::exportDesign()
 
 }
 
+void MainWindow::selectDesignTab(int index)
+{
+    if(index == 1)
+        leftDisplay->setCurrentIndex(1);
+    else
+        leftDisplay->setCurrentIndex(0);
+}
+
 void MainWindow::saveFile(const QString &str)
 {
     if(str.isEmpty())
@@ -171,6 +180,7 @@ void MainWindow::deleteDesign()
 
     designTabs = nullptr;
     keyListWidget = nullptr;
+    roomListWidget = nullptr;
     roomCanvas = nullptr;
     instanceCanvas = nullptr;
     designCanvas = nullptr;
@@ -188,6 +198,7 @@ void MainWindow::setUp()
     keyListWidget = new KeyListWidget(nullptr, keyRepo);
     designCanvas = new Canvas;
     roomCanvas = new RoomCanvas(designCanvas);
+    roomListWidget = new RoomListWidget(nullptr, roomCanvas);
     instanceCanvas = new InstanceCanvas(designCanvas, keyListWidget);
     //QLabel *designRoomRegions = new QLabel("label on top numer 1!", designCanvas);
     //QLabel * designInstances = new QLabel("label on top number 2!", designCanvas);
@@ -215,9 +226,8 @@ void MainWindow::setUp()
     // we will have to, somehow connect this widget with the designTabs from before
     // probably by inheriting from the class or connecting some slots to some signals (?)
     leftDisplay = new QStackedLayout;
-    roomsTableDisplay = new QLabel("I'm a place-holder!");
     leftDisplay->addWidget(keyListWidget);
-    leftDisplay->addWidget(roomsTableDisplay);
+    leftDisplay->addWidget(roomListWidget);
 
     //piece both layouts together into the whole application
     mainLayout->addLayout(leftDisplay,20);
@@ -240,6 +250,8 @@ void MainWindow::setUp()
     layout->addLayout(mainLayout,2000);
     layout->addWidget(bottomFiller);
     widget->setLayout(layout);
+
+    connectSignals();
 }
 
 void MainWindow::createActions()
@@ -286,4 +298,9 @@ void MainWindow::createMenus()
     fileMenu->addSeparator();
     fileMenu->addAction(validateAct);
     fileMenu->addAction(exportAct);
+}
+
+void MainWindow::connectSignals()
+{
+    connect(designTabs, &QTabWidget::currentChanged, this, &MainWindow::selectDesignTab);
 }

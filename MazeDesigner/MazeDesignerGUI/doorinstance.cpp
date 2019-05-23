@@ -23,6 +23,14 @@ DoorInstance::DoorInstance(QLineF &line) : QLineF (line)
     area = QPolygonF(poly);
 }
 
+QString DoorInstance::instanceInfo() const
+{
+    QString output;
+    output += "door " + QString::number(id) + " with condition: {}";
+    TODO("insertar el string de la condicion en la puerta cuando este implementado");
+    return output;
+}
+
 bool DoorInstance::contains(const QPointF &point) const
 {
     return area.containsPoint(point, Qt::FillRule::OddEvenFill);

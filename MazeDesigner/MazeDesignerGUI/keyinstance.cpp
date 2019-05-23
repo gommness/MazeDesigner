@@ -16,6 +16,13 @@ KeyInstance::KeyInstance(const Key &model, const QPointF & point) : QRectF(point
     id = KeyInstance::ID;
 }
 
+QString KeyInstance::instanceInfo() const
+{
+    QString output;
+    output += "key " + QString::number(id) + " instance of " + model.getName();
+    return output;
+}
+
 KeyInstance KeyInstance::fromJson(const QJsonObject &json, const KeyRepository & repo)
 {
     int jsonId;

@@ -11,7 +11,7 @@
 \documentclass[epsbased,copyright,final,printable,covers,extendedindex,firstnumbered,tfg,gnuplot]{tfgtfmthesisuam}
 
 \advisor{Carlos Aguirre}
-\levelin{Ingeniería de Textos}
+\levelin{Ingeniería Informática}
 \title{Herramienta de diseño de juegos tipo mazmorra para Gamemaker Studio 2}
 \subtitle{}
 \author{Javier Gómez}
@@ -19,7 +19,7 @@
 \copyrightdate{3 de Noviembre de 2017}
 
 \dedication{}
-\famouscite{Lo peor es cuando has terminado un capítulo\\y la máquina de escribir no aplaude. \\[0.1em] \begin{flushright}Orson Welles\end{flushright}}
+\famouscite{A game isn’t something that can be made by one person alone. Well, it’s possible that a really hard-working game creator could finish a game all alone, but even then he would still need a player. \\Games grow and mature when they’re created, played, and conveyed over and over. \\[0.1em] \begin{flushright}Shigesato Itoi\end{flushright}}
 % \prefacefile{inicio/prefacio}
 % \ackfile{inicio/agradecimientos}
 \resumenfile{inicio/resumen}
@@ -41,6 +41,7 @@
 \graphicsdir{img}
 \logosdir{img}
 \codesdir{codes}
+\usepackage{fancyvrb}
 
 \begin{document}
 \show\newdefinition
@@ -49,13 +50,14 @@
 	\section{Motivación\label{SEC:MOTIVACION}}{introduccion/motivacion}
 	\section{Objetivos\label{SEC:OBJETIVOS}}{introduccion/objetivos}
 	\section{Estructura\label{SEC:ESTRUCTURA}}{introduccion/estructura}
-	\section{Glosario, acrónimos y definiciones\label{SEC:GLOSARIO}}{glosario/glosario}
 	
-\chapter{Estado del arte\label{CAP:ESTADODELARTE}}{estadodelarte/introduccion}
+\chapter{Estado del Arte\label{CAP:ESTADODELARTE}}{estadodelarte/introduccion}
 	\section{Diseño Gráfico\label{SEC:DISENOGRAFICO}}{estadodelarte/grafico}
 	\section{Diseño Lógico\label{SEC:DISENOLOGICO}}{estadodelarte/logico}
+	\section{Motores y Entornos\label{SEC:MOTORESYENTORNOS}}{estadodelarte/motoresyentornos}
+	\section{Conclusiones\label{SEC:ESTADODELARTECONCLUSIONES}}{estadodelarte/conclusiones}
 	
-\chapter{Requisitos\label{CAP:REQUISITOS}}{requisitos/introduccion}
+\chapter{Análisis de Requisitos\label{CAP:REQUISITOS}}{requisitos/introduccion}
 	\section{Requisitos funcionales\label{SEC:REQUISITOSFUNCIONALES}}{requisitos/funcionales}
 		\begin{functional}
 		\subsection{Requisitos de persistencia\label{SUBSEC:REQPERSISTENCIA}}{requisitos/persistencia}
@@ -69,11 +71,11 @@
 	\section{Requisitos no funcionales\label{SEC:REQUISITOSNOFUNCIONALES}}{requisitos/nofuncionales}
 	
 \chapter{Diseño\label{CAP:DISENO}}{diseno/introduccion}
-	\subsection{MazeDesigner GUI\label{SUBSEC:GUI}}{diseno/mazedesignergui}
+	\section{MazeDesigner GUI\label{SUBSEC:GUI}}{diseno/mazedesignergui}
 
 \chapter{Desarrollo\label{CAP:DESARROLLO}}{desarrollo/introduccion}
-	\subsection{Canvas\label{SUBSEC:DEVCANVAS}}{desarrollo/canvas}
-	\subsection{Canvas\label{SUBSEC:DEVLLAVES}}{desarrollo/llaves}
+	\section{Canvas\label{SUBSEC:DEVCANVAS}}{desarrollo/canvas}
+	\section{Llaves\label{SUBSEC:DEVLLAVES}}{desarrollo/llaves}
 
 \chapter{Integración, pruebas y resultados\label{CAP:INTEGRACIONPRUEBASYRESULTADOS}}{integracionpruebasresultados/introduccion}
 

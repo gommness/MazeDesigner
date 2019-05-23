@@ -6,8 +6,9 @@
 #include "../Keys/key.h"
 #include "../Keys/keyrepository.h"
 #include "../Common/common.h"
+#include "selectableinstance.h"
 
-class KeyInstance : public QRectF
+class KeyInstance : public QRectF, public SelectableInstance
 {
 public:
     /**
@@ -25,6 +26,8 @@ public:
      * @param point the point in space where the key instance will be created
      */
     KeyInstance(const Key & model, const QPointF & point);
+    ~KeyInstance() override {}
+    QString instanceInfo() const override;
     /**
      * @brief fromJson creates a KeyInstance from a json object holding its information and the keyRepository
      * that holds all the key models. Necessary for obtaining the true Key model from its id.

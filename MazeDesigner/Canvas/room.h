@@ -14,12 +14,13 @@ public:
      * @param rect the rectangle that is the area of the room
      * @param name the name of the room. if empty, it will generate a auto-name based on id
      */
-    Room(QRectF & rect, QString  name = "");
+    Room(QRectF & rect, QString  name = "", bool exportRoom = true);
     /**
      * @brief Room creates a room from a json object that holds the information
      * @param json the json object that represents the room
      */
     Room(const QJsonObject & json);
+    static Room & invalidRoom();
     /**
      * @brief getName retrieves the name of the room
      * @return the name of the room
@@ -41,10 +42,15 @@ public:
      */
     QJsonObject toJson() const;
     //void fromJson();
+    bool isValid() const;
+    bool isExportable() const;
+    void setExportable(bool exp);
 
 private:
+    Room(int id);
     static int16_t ID;
     QString name;
+    bool exportRoom;
     int32_t id;
 };
 

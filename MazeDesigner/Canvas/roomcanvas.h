@@ -38,6 +38,12 @@ public:
      */
     QSize sizeHint() const override;
 
+    QList<Room> & getRooms();
+
+signals:
+    void roomCreated(const Room & room);
+    void roomDestroyed(const Room & room);
+    void roomSelected(const Room & room);
 protected:
     /**
      * @brief showEvent performs the show event
@@ -69,6 +75,7 @@ protected:
      * @param event
      */
     void wheelEvent(QWheelEvent *event) override;
+    Room * roomAt(const QPointF & point);
     /**
      * @brief isRoomOverlapping checks whether a room is overlapping with another room
      * @param room the room to check for overlaps
@@ -83,8 +90,10 @@ protected:
 private:
     Canvas *design;
     QList<Room> roomList;
+    Room * selected = nullptr;
     QPointF * start = nullptr;
     QPointF * end = nullptr;
 };
 
 #endif // ROOMCANVAS_H
+

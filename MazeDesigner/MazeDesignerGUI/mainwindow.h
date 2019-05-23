@@ -12,6 +12,7 @@
 #include "../Canvas/canvas.h"
 #include "../Canvas/roomcanvas.h"
 #include "instancecanvas.h"
+#include "roomlistwidget.h"
 #include "../Keys/keyrepository.h"
 
 namespace Ui {
@@ -39,12 +40,15 @@ private slots:
     void validateDesign();
     void exportDesign();
 
+    void selectDesignTab(int index);
+
 private:
     void saveFile(const QString & str);
     void deleteDesign();
     void setUp();
     void createActions();
     void createMenus();
+    void connectSignals();
     QMenu * fileMenu;
     QAction * newAct;
     QAction * openAct;
@@ -70,6 +74,7 @@ private:
 
     QTabWidget * designTabs = nullptr;
     KeyListWidget * keyListWidget = nullptr;
+    RoomListWidget * roomListWidget = nullptr;
     RoomCanvas * roomCanvas = nullptr;
     InstanceCanvas * instanceCanvas = nullptr;
     Canvas * designCanvas = nullptr;

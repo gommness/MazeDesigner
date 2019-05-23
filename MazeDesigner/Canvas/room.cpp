@@ -3,11 +3,11 @@
 
 int16_t Room::ID = 0;
 
-Room::Room(QRectF &rect, QString name) : QRectF(rect), name(name)
+Room::Room(QRectF &rect, QString name, bool exportRoom) : QRectF(rect), name(name), exportRoom(exportRoom)
 {
     id = Room::ID++;
-    if(name.isEmpty())
-        name = "new_room" + QString(id);
+    if(this->name.isEmpty())
+        this->name = "new_room_" + QString::number(id);
 }
 
 Room::Room(const QJsonObject &json)
@@ -54,6 +54,17 @@ Room::Room(const QJsonObject &json)
     if(point1.isNull() || point2.isNull())
         throw std::runtime_error("invalid point for room in jsonObject");
     this->setCoords(point1.x(), point1.y(), point2.x(), point2.y());
+
+    if(json.contains("export") && json["export"].isBool())
+        this->exportRoom = json["export"].toBool();
+    else
+        this->exportRoom = false;
+}
+
+Room &Room::invalidRoom()
+{
+    static Room output(-1);
+    return output;
 }
 
 QString Room::getName() const
@@ -80,7 +91,28 @@ QJsonObject Room::toJson() const
     getCoords(&x1, &y1, &x2, &y2);
     output.insert("point1", QString(POINTFORMAT).arg(x1).arg(y1));
     output.insert("point2", QString(POINTFORMAT).arg(x2).arg(y2));
+    output.insert("export", exportRoom);
     return output;
+}
+
+bool Room::isValid() const
+{
+    return (id >= 0);
+}
+
+bool Room::isExportable() const
+{
+    return exportRoom;
+}
+
+void Room::setExportable(bool exp)
+{
+    exportRoom = exp;
+}
+
+Room::Room(int id)
+{
+    this->id = id;
 }
 
 /*

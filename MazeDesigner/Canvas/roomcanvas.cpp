@@ -60,6 +60,12 @@ void RoomCanvas::paintEvent(QPaintEvent *)
     painter.scale(design->grid.getScale(), design->grid.getScale());
     for(auto room = roomList.begin(); room != roomList.end(); room++)
         painter.drawRect(room->translated(design->grid.getOffset()));
+    if(selected != nullptr){
+        pen.setColor(QColor(255,255,0,128));
+        pen.setWidth(6);
+        painter.setPen(pen);
+        painter.drawRect(selected->translated(design->grid.getOffset()));
+    }
 
     /*
     delete start;
@@ -72,11 +78,23 @@ void RoomCanvas::mousePressEvent(QMouseEvent *event)
 {
     design->grid.mousePressEventHandler(event);
     delete start;
-    if(event->button() & Qt::LeftButton) // left click
-        start = new QPointF(design->grid.nearestPoint(event->pos()));
+    if(event->button() & Qt::LeftButton){ // left click
+        Room * room = roomAt(design->grid.adapted(event->pos()));
+        if(room != nullptr){
+            selected = room;
+            emit roomSelected(*room);
+            start = nullptr;
+        } else {
+            selected = nullptr;
+            emit roomSelected(Room::invalidRoom());
+            start = new QPointF(design->grid.nearestPoint(event->pos()));
+        }
+    }
     else if(event->button() & Qt::RightButton){ // right click
-        deleteRoomsAt(design->grid.nearestPoint(event->pos()));
+        deleteRoomsAt(design->grid.adapted(event->pos()));
         start = nullptr;
+        selected = nullptr;
+        emit roomSelected(Room::invalidRoom());
     }
 }
 
@@ -97,6 +115,9 @@ void RoomCanvas::mouseReleaseEvent(QMouseEvent *event)
         Room room(rect);
         if(!isRoomOverlapping(room)){
             roomList.append(room);
+            selected = &roomList.last();
+            emit roomCreated(room);
+            emit roomSelected(room);
             update();
         }
     }
@@ -108,6 +129,14 @@ void RoomCanvas::mouseReleaseEvent(QMouseEvent *event)
 void RoomCanvas::wheelEvent(QWheelEvent *event)
 {
     design->grid.wheelEvent(event);
+}
+
+Room *RoomCanvas::roomAt(const QPointF &point)
+{
+    for(auto room = roomList.begin(); room != roomList.end(); room++)
+        if(room->contains(point))
+            return &(*room); // LOL I never thought I'd see this &(*(something))  as something necessary
+    return nullptr;
 }
 
 bool RoomCanvas::isRoomOverlapping(const Room &room)
@@ -126,9 +155,19 @@ void RoomCanvas::deleteRoomsAt(const QPointF &point)
     for(int i = roomList.length()-1; i >= 0; i--){
         if(roomList[i].contains(point)){
             flag = true;
+            if(selected == &roomList[i]){
+                selected = nullptr;
+                emit roomSelected(Room::invalidRoom());
+            }
+            emit roomDestroyed(roomList[i]);
             roomList.removeAt(i);
         }
     }
     if(flag)
         update();
+}
+
+QList<Room> &RoomCanvas::getRooms()
+{
+    return roomList;
 }
