@@ -16,6 +16,11 @@ KeyInstance::KeyInstance(const Key &model, const QPointF & point) : QRectF(point
     id = KeyInstance::ID;
 }
 
+QPolygonF KeyInstance::boundPolygon() const
+{
+    return QPolygonF(*this);
+}
+
 QString KeyInstance::instanceInfo() const
 {
     QString output;

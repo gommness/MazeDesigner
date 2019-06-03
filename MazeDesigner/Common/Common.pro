@@ -9,7 +9,7 @@ QT       -= gui
 TARGET = Common
 TEMPLATE = lib
 
-DEFINES += COMMON_LIBRARY
+DEFINES += COMMON_LIBRARY CUSTOMDEBUG
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings

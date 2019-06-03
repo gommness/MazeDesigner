@@ -1,0 +1,786 @@
+24 May 2019 16:16:44.350 INFO  Arara - Welcome to arara!
+24 May 2019 16:16:44.353 INFO  Arara - Processing file 'tfgtfmthesisuam.tex', please wait.
+24 May 2019 16:16:44.354 INFO  DirectiveExtractor - Reading directives from tfgtfmthesisuam.tex.
+24 May 2019 16:16:44.355 TRACE DirectiveExtractor - Directive found in line 1 with clean: {files: [tfgtfmthesisuam.aux, tfgtfmthesisuam.idx, tfgtfmthesisuam.ilg, tfgtfmthesisuam.ind, tfgtfmthesisuam.bbl, tfgtfmthesisuam.bcf, tfgtfmthesisuam.blg, tfgtfmthesisuam.run.xml, tfgtfmthesisuam.fdb_latexmk, tfgtfmthesisuam.fls, tfgtfmthesisuam.loe, tfgtfmthesisuam.lof, tfgtfmthesisuam.lol, tfgtfmthesisuam.lot, tfgtfmthesisuam.ltb, tfgtfmthesisuam.out, tfgtfmthesisuam.toc, tfgtfmthesisuam.upa, tfgtfmthesisuam.upb, tfgtfmthesisuam.acn, tfgtfmthesisuam.acr, tfgtfmthesisuam.alg, tfgtfmthesisuam.glg, tfgtfmthesisuam.glo, tfgtfmthesisuam.gls, tfgtfmthesisuam.glsdefs, tfgtfmthesisuam.idx,  tfgtfmthesisuam.ilg, tfgtfmthesisuam.xdy, tfgtfmthesisuam.loa, tfgtfmthesisuam.gnuploterrors , tfgtfmthesisuam.mw, tfgtfmthesisuam.fdb_latexmk ]}.
+24 May 2019 16:16:44.396 TRACE DirectiveExtractor - Directive found in line 2 with pdflatex: {shell: yes}.
+24 May 2019 16:16:44.396 TRACE DirectiveExtractor - Directive found in line 3 with makeglossaries.
+24 May 2019 16:16:44.397 TRACE DirectiveExtractor - Directive found in line 4 with makeindex: {style: tfgtfmthesisuam.ist }.
+24 May 2019 16:16:44.397 TRACE DirectiveExtractor - Directive found in line 6 with pdflatex: {shell: yes}.
+24 May 2019 16:16:44.398 TRACE DirectiveExtractor - Directive found in line 7 with pdflatex: {shell: yes}.
+24 May 2019 16:16:44.398 TRACE DirectiveExtractor - Directive found in line 8 with clean: {files: [tfgtfmthesisuam.aux, tfgtfmthesisuam.idx, tfgtfmthesisuam.ilg, tfgtfmthesisuam.ind, tfgtfmthesisuam.bbl, tfgtfmthesisuam.bcf, tfgtfmthesisuam.blg, tfgtfmthesisuam.run.xml, tfgtfmthesisuam.fdb_latexmk, tfgtfmthesisuam.fls, tfgtfmthesisuam.loe, tfgtfmthesisuam.lof, tfgtfmthesisuam.lol, tfgtfmthesisuam.lot, tfgtfmthesisuam.ltb, tfgtfmthesisuam.out, tfgtfmthesisuam.toc, tfgtfmthesisuam.upa, tfgtfmthesisuam.upb, tfgtfmthesisuam.acn, tfgtfmthesisuam.acr, tfgtfmthesisuam.alg, tfgtfmthesisuam.glg, tfgtfmthesisuam.glo, tfgtfmthesisuam.gls, tfgtfmthesisuam.glsdefs, tfgtfmthesisuam.idx,  tfgtfmthesisuam.ilg, tfgtfmthesisuam.xdy, tfgtfmthesisuam.loa, tfgtfmthesisuam.gnuploterrors , tfgtfmthesisuam.mw, tfgtfmthesisuam.fdb_latexmk ]}.
+24 May 2019 16:16:44.404 INFO  DirectiveParser - Parsing directives.
+24 May 2019 16:16:44.406 INFO  TaskDeployer - Deploying tasks into commands.
+24 May 2019 16:16:44.406 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.494 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.498 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.502 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.505 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.508 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.512 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.514 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.518 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.520 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.522 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.525 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.527 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.529 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.532 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.534 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.539 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.541 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.543 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.545 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.547 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.549 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.551 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.553 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.555 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.557 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.559 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.561 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.562 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.564 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.567 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.570 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.572 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.574 TRACE TaskDeployer - Task 'pdflatex' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.579 TRACE TaskDeployer - Task 'makeglossaries' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.581 TRACE TaskDeployer - Task 'makeindex' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.583 TRACE TaskDeployer - Task 'pdflatex' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.586 TRACE TaskDeployer - Task 'pdflatex' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.589 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.591 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.592 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.594 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.596 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.598 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.600 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.601 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.603 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.605 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.607 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.609 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.610 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.612 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.613 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.615 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.616 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.618 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.619 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.621 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.622 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.624 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.626 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.627 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.628 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.630 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.633 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.635 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.637 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.638 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.640 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.642 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.643 TRACE TaskDeployer - Task 'clean' found in '/usr/share/texlive/texmf-dist/scripts/arara/rules'.
+24 May 2019 16:16:44.645 INFO  CommandTrigger - Ready to run commands.
+24 May 2019 16:16:44.645 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.645 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.aux"
+24 May 2019 16:16:44.698 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.698 TRACE CommandTrigger - 
+24 May 2019 16:16:44.698 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.699 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.699 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.idx"
+24 May 2019 16:16:44.700 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.700 TRACE CommandTrigger - 
+24 May 2019 16:16:44.700 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.700 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.700 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.ilg"
+24 May 2019 16:16:44.701 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.701 TRACE CommandTrigger - 
+24 May 2019 16:16:44.701 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.701 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.701 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.ind"
+24 May 2019 16:16:44.702 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.702 TRACE CommandTrigger - 
+24 May 2019 16:16:44.702 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.702 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.702 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.bbl"
+24 May 2019 16:16:44.703 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.703 TRACE CommandTrigger - 
+24 May 2019 16:16:44.703 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.704 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.704 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.bcf"
+24 May 2019 16:16:44.704 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.705 TRACE CommandTrigger - 
+24 May 2019 16:16:44.705 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.705 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.705 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.blg"
+24 May 2019 16:16:44.706 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.706 TRACE CommandTrigger - 
+24 May 2019 16:16:44.706 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.706 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.706 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.run.xml"
+24 May 2019 16:16:44.706 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.707 TRACE CommandTrigger - 
+24 May 2019 16:16:44.707 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.707 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.707 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.fdb_latexmk"
+24 May 2019 16:16:44.708 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.708 TRACE CommandTrigger - 
+24 May 2019 16:16:44.708 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.708 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.708 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.fls"
+24 May 2019 16:16:44.709 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.709 TRACE CommandTrigger - 
+24 May 2019 16:16:44.709 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.709 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.709 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.loe"
+24 May 2019 16:16:44.710 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.710 TRACE CommandTrigger - 
+24 May 2019 16:16:44.710 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.710 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.710 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.lof"
+24 May 2019 16:16:44.717 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.718 TRACE CommandTrigger - 
+24 May 2019 16:16:44.718 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.718 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.718 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.lol"
+24 May 2019 16:16:44.721 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.721 TRACE CommandTrigger - 
+24 May 2019 16:16:44.721 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.721 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.721 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.lot"
+24 May 2019 16:16:44.722 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.722 TRACE CommandTrigger - 
+24 May 2019 16:16:44.722 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.722 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.722 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.ltb"
+24 May 2019 16:16:44.723 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.723 TRACE CommandTrigger - 
+24 May 2019 16:16:44.723 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.724 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.724 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.out"
+24 May 2019 16:16:44.724 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.724 TRACE CommandTrigger - 
+24 May 2019 16:16:44.725 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.725 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.725 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.toc"
+24 May 2019 16:16:44.725 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.726 TRACE CommandTrigger - 
+24 May 2019 16:16:44.726 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.726 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.726 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.upa"
+24 May 2019 16:16:44.728 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.728 TRACE CommandTrigger - 
+24 May 2019 16:16:44.728 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.728 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.729 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.upb"
+24 May 2019 16:16:44.729 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.729 TRACE CommandTrigger - 
+24 May 2019 16:16:44.730 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.730 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.730 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.acn"
+24 May 2019 16:16:44.730 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.731 TRACE CommandTrigger - 
+24 May 2019 16:16:44.731 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.731 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.731 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.acr"
+24 May 2019 16:16:44.732 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.732 TRACE CommandTrigger - 
+24 May 2019 16:16:44.732 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.732 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.732 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.alg"
+24 May 2019 16:16:44.733 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.733 TRACE CommandTrigger - 
+24 May 2019 16:16:44.733 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.733 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.733 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.glg"
+24 May 2019 16:16:44.735 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.735 TRACE CommandTrigger - 
+24 May 2019 16:16:44.735 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.735 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.735 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.glo"
+24 May 2019 16:16:44.736 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.736 TRACE CommandTrigger - 
+24 May 2019 16:16:44.736 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.736 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.736 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.gls"
+24 May 2019 16:16:44.737 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.737 TRACE CommandTrigger - 
+24 May 2019 16:16:44.737 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.737 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.737 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.glsdefs"
+24 May 2019 16:16:44.738 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.738 TRACE CommandTrigger - 
+24 May 2019 16:16:44.738 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.738 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.738 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.idx"
+24 May 2019 16:16:44.739 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.739 TRACE CommandTrigger - 
+24 May 2019 16:16:44.739 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.739 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.739 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.ilg"
+24 May 2019 16:16:44.740 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.740 TRACE CommandTrigger - 
+24 May 2019 16:16:44.740 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.740 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.740 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.xdy"
+24 May 2019 16:16:44.741 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.741 TRACE CommandTrigger - 
+24 May 2019 16:16:44.741 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.741 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.741 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.loa"
+24 May 2019 16:16:44.742 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.742 TRACE CommandTrigger - 
+24 May 2019 16:16:44.742 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.742 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.742 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.gnuploterrors"
+24 May 2019 16:16:44.743 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.743 TRACE CommandTrigger - 
+24 May 2019 16:16:44.743 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.743 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.743 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.mw"
+24 May 2019 16:16:44.743 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.743 TRACE CommandTrigger - 
+24 May 2019 16:16:44.744 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.744 INFO  CommandTrigger - Running 'CleaningTool'.
+24 May 2019 16:16:44.744 TRACE CommandTrigger - Command: rm -f "tfgtfmthesisuam.fdb_latexmk"
+24 May 2019 16:16:44.744 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:44.744 TRACE CommandTrigger - 
+24 May 2019 16:16:44.744 INFO  CommandTrigger - 'CleaningTool' was successfully executed.
+24 May 2019 16:16:44.744 INFO  CommandTrigger - Running 'PDFLaTeX'.
+24 May 2019 16:16:44.744 TRACE CommandTrigger - Command: pdflatex   --shell-escape   "tfgtfmthesisuam.tex"
+24 May 2019 16:16:46.791 TRACE CommandTrigger - Output logging:
+24 May 2019 16:16:46.791 TRACE CommandTrigger - This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex)
+ \write18 enabled.
+entering extended mode
+(./tfgtfmthesisuam.tex
+LaTeX2e <2017-04-15>
+Babel <3.18> and hyphenation patterns for 84 language(s) loaded.
+(/usr/share/texmf/tex/latex/tfgtfmthesisuam/tfgtfmthesisuam.cls
+Document Class: tfgtfmthesisuam 2018/06/01 v3.0 tfgtfmthesisuam class (EA)
+Class: tfgtfmthesisuam v3.0 <2018/06/01> (Eloy Anguiano)
+(/usr/share/texlive/texmf-dist/tex/latex/base/book.cls
+Document Class: book 2014/09/29 v1.4h Standard LaTeX document class
+(/usr/share/texlive/texmf-dist/tex/latex/base/bk10.clo))
+(/usr/share/texlive/texmf-dist/tex/latex/base/inputenc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/utf8.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/t1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/ot1enc.dfu)
+(/usr/share/texlive/texmf-dist/tex/latex/base/omsenc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty
+(/usr/share/texlive/texmf-dist/tex/generic/babel/switch.def)
+(/usr/share/texlive/texmf-dist/tex/generic/babel-spanish/spanish.ldf
+(/usr/share/texlive/texmf-dist/tex/generic/babel/babel.def
+(/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def))))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsmath.sty
+For additional information on amsmath, use the `?' option.
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amstext.sty
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsgen.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsbsy.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/amsmath/amsopn.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/fancyhdr/fancyhdr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fancybox/fancybox.sty
+Style option: `fancybox' v1.4 <2010/05/15> (tvz)
+) (/usr/share/texlive/texmf-dist/tex/latex/caption/caption.sty
+(/usr/share/texlive/texmf-dist/tex/latex/caption/caption3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/keyval.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.sty
+****************************************
+* Local config file subfigure.cfg used *
+****************************************
+(/usr/share/texlive/texmf-dist/tex/latex/subfigure/subfigure.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/tocloft/tocloft.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/float/float.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.sty
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstmisc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/listings/listings.cfg))
+(/usr/share/texlive/texmf-dist/tex/latex/cite/cite.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/color.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-def/pdftex.def))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgf.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfrcs.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-common-lists.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfutil-latex.def
+(/usr/share/texlive/texmf-dist/tex/latex/ms/everyshi.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfrcs.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/basiclayer/pgfcore.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphicx.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/graphics.sty
+(/usr/share/texlive/texmf-dist/tex/latex/graphics/trig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/graphics-cfg/graphics.cfg)))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/systemlayer/pgfsys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeysfiltered.code.t
+ex)) (/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgf.cfg)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-pdftex.def
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsys-common-pdf.de
+f)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsyssoftpath.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/systemlayer/pgfsysprotocol.code.
+tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcore.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathcalc.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathutil.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathparser.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.basic.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.trigonomet
+ric.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.random.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.comparison
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.base.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.round.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.misc.code.
+tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfunctions.integerari
+thmetics.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmathfloat.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepoints.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathconstruct.
+code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathusage.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorescopes.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoregraphicstate.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransformation
+s.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorequick.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreobjects.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepathprocessing
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorearrows.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreshade.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreimage.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoreexternal.code.
+tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorelayers.code.te
+x)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcoretransparency.c
+ode.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/basiclayer/pgfcorepatterns.code.
+tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleshapes.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduleplot.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-0-65
+.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/compatibility/pgfcomp-version-1-18
+.sty)) (/usr/share/texlive/texmf-dist/tex/latex/algorithm2e/algorithm2e.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ifthen.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/ifoddpage/ifoddpage.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/xspace.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/relsize/relsize.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/pgfplots/pgfplots.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.revision.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/frontendlayer/tikz.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgffor.sty
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfkeys.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfkeys.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/math/pgfmath.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgffor.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/math/pgfmath.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/tikz.code.tex
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplothandlers
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmodulematrix.code.tex
+)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarytopaths.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscore.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgfplotssysgeneric.code
+.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgfplotslibrary.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_loader.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryfpu.code.tex
+)
+Package pgfplots: loading complementary arithmetics for your pgf version...
+
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgflibraryfpu.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/oldpgfcompatib/pgfplotsoldp
+gfsupp_pgfmathfloat.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructure.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotslists
+tructureext.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsarray
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsmatri
+x.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/numtable/pgfplotstableshare
+d.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/liststructure/pgfplotsdeque
+.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.code.te
+x
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsbinary.data.co
+de.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotsutil.verb.code
+.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/libs/pgflibrarypgfplots.sur
+fshading.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/sys/pgflibrarypgfplots.surf
+shading.pgfsys-pdftex.def)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolormap.code.
+tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/util/pgfplotscolor.code.tex
+))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsstackedplots.code.t
+ex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsplothandlers.code.t
+ex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplothandler.cod
+e.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsmeshplotimage.code.
+tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.scaling.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotscoordprocessing.cod
+e.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.errorbars.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.markers.code.tex
+) (/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplotsticks.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgfplots/pgfplots.paths.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/modules/pgfmoduledecorations.cod
+e.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathmorphing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathmorphing.code.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarydecorations.pathreplacing.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/decorations/pgflibrary
+decorations.pathreplacing.code.tex)))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryplotmarks.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryplotmarks.co
+de.tex))) (/usr/share/texlive/texmf-dist/tex/latex/pgfgantt/pgfgantt.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryarrows.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibraryarrows.code.
+tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarybackgrounds.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarycalc.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypatterns.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/pgflibrarypatterns.cod
+e.tex))
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibrarypositioning.code.tex)
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/frontendlayer/tikz/libraries/tik
+zlibraryshapes.geometric.code.tex
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/libraries/shapes/pgflibraryshape
+s.geometric.code.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/pgf/utilities/pgfcalendar.sty
+(/usr/share/texlive/texmf-dist/tex/generic/pgf/utilities/pgfcalendar.code.tex))
+) (/usr/share/texlive/texmf-dist/tex/latex/gnuplottex/gnuplottex.sty
+(/usr/share/texlive/texmf-dist/tex/latex/moreverb/moreverb.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/verbatim.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/catchfile.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/infwarerr.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ltxcmds.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/etexcmds.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifluatex.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries.sty
+(/usr/share/texlive/texmf-dist/tex/latex/xkeyval/xkeyval.sty
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkeyval.tex
+(/usr/share/texlive/texmf-dist/tex/generic/xkeyval/xkvutils.tex)))
+(/usr/share/texlive/texmf-dist/tex/latex/mfirstuc/mfirstuc.sty
+(/usr/share/texlive/texmf-dist/tex/latex/etoolbox/etoolbox.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/textcase/textcase.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/xfor/xfor.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/substr/substr.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/datatool/datatool-fp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp.sty
+`Fixed Point Package', Version 0.8, April 2, 1995 (C) Michael Mehlich
+(/usr/share/texlive/texmf-dist/tex/latex/fp/defpattern.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-basic.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-addons.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-snap.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-exp.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-trigo.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-pas.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-random.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eqn.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-upn.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/fp/fp-eval.sty))))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/base/glossaries-compatible-
+307.sty) (/usr/share/texlive/texmf-dist/tex/latex/tracklang/tracklang.sty
+(/usr/share/texlive/texmf-dist/tex/generic/tracklang/tracklang.tex))
+(/usr/share/texlive/texmf-dist/tex/latex/translator/translator.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries-spanish/glossaries-spanish.
+ldf
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries-spanish/glossaries-spanish-
+utf8.ldf))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-hypernav.st
+y) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-list.sty
+) (/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-long.sty
+(/usr/share/texlive/texmf-dist/tex/latex/tools/longtable.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-super.sty
+(/usr/share/texlive/texmf-dist/tex/latex/supertabular/supertabular.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/glossaries/styles/glossary-tree.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/tools/calc.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/alltt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/makeidx.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/base/textcomp.sty
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.def
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1enc.dfu)))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/times.sty)
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/ifpdf.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/wrapfig/wrapfig.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/eurosym/eurosym.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/tools/multicol.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/multirow/multirow.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/filecontents/filecontents.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-hyperref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/hobsub-generic.sty))
+(/usr/share/texlive/texmf-dist/tex/generic/ifxetex/ifxetex.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/auxhook.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/kvoptions.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/hyperref.cfg)
+(/usr/share/texlive/texmf-dist/tex/latex/url/url.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/hpdftex.def
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/rerunfilecheck.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/twoopt.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/cleveref/cleveref.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/morewrites/morewrites.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3.sty
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/expl3-code.tex)
+(/usr/share/texlive/texmf-dist/tex/latex/l3kernel/l3pdfmode.def))
+(/usr/share/texlive/texmf-dist/tex/latex/morewrites/primargs.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/etex-pkg/etex.sty
+
+Package etex Warning: Extended allocation already in use.
+(etex)                etex.sty code will not be used.
+(etex)                To force etex package to load, add
+(etex)                \RequirePackage{etex}
+(etex)                at the start of the document.
+
+) (/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fmtcount.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcprefix.sty
+(/usr/share/texlive/texmf-dist/tex/latex/fmtcount/fcnumparser.sty)))
+(/usr/share/texlive/texmf-dist/tex/latex/datetime/datetime-defaults.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/datetime/dt-spanish.def))
+(/usr/share/texlive/texmf-dist/tex/latex/lipsum/lipsum.sty)
+Colors defined
+
+LaTeX Warning: Overwriting file `./tfgtfmthesisuam.ist'.
+
+
+LaTeX Warning: Tab has been converted to Blank Space.
+
+
+Writing index file tfgtfmthesisuam.idx
+) (/usr/share/texlive/texmf-dist/tex/latex/fancyvrb/fancyvrb.sty
+Style option: `fancyvrb' v2.7a, with DG/SPQR fixes, and firstline=lastline fix 
+<2008/02/07> (tvz))
+
+LaTeX Warning: Unused global option(s):
+    [makeidx].
+
+No file tfgtfmthesisuam.aux.
+(/usr/share/texlive/texmf-dist/tex/latex/base/ts1cmr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/t1txss.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/caption/ltcaption.sty)
+(/usr/share/texlive/texmf-dist/tex/context/base/mkii/supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+) (/usr/share/texlive/texmf-dist/tex/latex/oberdiek/epstopdf-base.sty
+(/usr/share/texlive/texmf-dist/tex/latex/oberdiek/grfext.sty)
+(/usr/share/texlive/texmf-dist/tex/latex/latexconfig/epstopdf-sys.cfg))
+ABD: EveryShipout initializing macros
+Package pgfplots notification 'compat/show suggested version=true': you might b
+enefit from \pgfplotsset{compat=1.15} (current compat level: 1.13).
+
+(/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
+(/usr/share/texlive/texmf-dist/tex/generic/oberdiek/gettitlestring.sty))
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd)
+Underfull \vbox (badness 10000) has occurred while \output is active
+Overfull \hbox (433.18774pt too wide) has occurred while \output is active
+[]
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Underfull \hbox (badness 10000) has occurred while \output is active
+[]
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Overfull \hbox (268.87672pt too wide) has occurred while \output is active
+[]
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Overfull \hbox (73.48502pt too wide) has occurred while \output is active
+[]
+(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/t1pxss.fd)
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 46.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
+(Font)              size <5> substituted on input line 46.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 46.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/t1pxr.fd)
+(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txss.fd) [1{/var/lib/texmf/
+fonts/map/pdftex/updmap/pdftex.map} </usr/share/texmf/tex/latex/tfgtfmthesisuam
+/logoUAMw.png> </usr/share/texmf/tex/latex/tfgtfmthesisuam/campusEx.png> </usr/
+share/texmf/tex/latex/tfgtfmthesisuam/epsfoto.png>] (./tfgtfmthesisuam.mw)
+[2] (./tfgtfmthesisuam.mw) [3 </usr/share/texmf/tex/latex/tfgtfmthesisuam/logoE
+PS.png (PNG copy)> </usr/share/texmf/tex/latex/tfgtfmthesisuam/logoUAM.png>]
+(./tfgtfmthesisuam.mw) [4] (./tfgtfmthesisuam.mw) [5] (./tfgtfmthesisuam.mw)
+[6] (./tfgtfmthesisuam.mw) (./inicio/resumen.tex)
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+[7] (./tfgtfmthesisuam.mw) [8] (./tfgtfmthesisuam.mw) (./inicio/abstract.tex)
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+[9] (./tfgtfmthesisuam.mw) [10] (./tfgtfmthesisuam.mw)
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+[11] (./tfgtfmthesisuam.mw) [12] (./tfgtfmthesisuam.mw)
+
+Package hyperref Warning: old ltb file detected, not used; run LaTeX again.
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+[13] (./tfgtfmthesisuam.mw) [14] (./tfgtfmthesisuam.mw)
+Cap\'{\i }tulo 1.
+(./introduccion/introduccion.tex) (./introduccion/motivacion.tex
+Underfull \hbox (badness 10000) in paragraph at lines 1--2
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 3--7
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.7 
+     [1] (./tfgtfmthesisuam.mw)) (./introduccion/objetivos.tex
+Begining enumeration
+Ending enumeration
+) (./introduccion/estructura.tex
+Begining enumeration
+
+Underfull \vbox (badness 10000) has occurred while \output is active
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.4 	\item \textbf
+                  {Estado del arte} donde detallaremos tecnología existente...
+[2] (./tfgtfmthesisuam.mw)
+Ending enumeration
+)
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.53 ...{Estado del Arte\label{CAP:ESTADODELARTE}}
+                                                  {estadodelarte/introduccion}
+[3] (./tfgtfmthesisuam.mw)pdfTeX warning (ext4): destination with the same iden
+tifier (name{page.4}) has been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.53 ...{Estado del Arte\label{CAP:ESTADODELARTE}}
+                                                  {estadodelarte/introduccion}
+[4] (./tfgtfmthesisuam.mw)
+Cap\'{\i }tulo 2.
+(./estadodelarte/introduccion.tex) (./estadodelarte/metroidvanias.tex
+
+! Package glossaries Error: Glossary entry `exploracion-lineal' has not been de
+fined.
+
+See the glossaries package documentation for explanation.
+Type  H <return>  for immediate help.
+ ...                                              
+                                                  
+l.3 ...ar términos como \dfn{exploracion-lineal},
+                                                   \dfn{exploracion-ramifica...
+
+? 
+! Emergency stop.
+ ...                                              
+                                                  
+l.3 ...ar términos como \dfn{exploracion-lineal},
+                                                   \dfn{exploracion-ramifica...
+
+!  ==> Fatal error occurred, no output PDF file produced!
+Transcript written on tfgtfmthesisuam.log.
+
+24 May 2019 16:16:46.792 WARN  CommandTrigger - 'PDFLaTeX' returned an error status.
+24 May 2019 16:16:46.792 INFO  Arara - Done.

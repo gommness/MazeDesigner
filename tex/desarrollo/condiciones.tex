@@ -1,0 +1,27 @@
+Durante esta etapa se han desarrollado los módulos de condiciones y de exploración del diseño.
+
+El módulo de condiciones tiene como objetivo leer una cadena de caracteres y, si sigue la sintaxis definida en el apéndice \ref{CAP:APCONDICIONES}, entonces se creará un objeto de tipo condición. Este objeto se utilizará más adelante en el módulo de exploración y debe ser capaz de comprobar si la condición que representa puede ser satisfecha dado un \dfn{inventario}, imponiendo una lista de objetos consumidos al ser satisfecha.
+Nótese que el conjunto de conectivos lógicos admitidos por el lenguaje (\textit{or} y \textit{and}) no es un conjunto funcionalmente completo, esto es, utilizando solamente esos dos conectivos, no se pueden replicar otros como un conectivo \textit{not}. Es decir, en la sintaxis no es posible poner como condición que no se tenga un objeto para poder ser satisfecha. En otras palabras, durante toda una exploración, el número de condiciones satisfechas es no decreciente.
+
+En cuanto al módulo de exploración, se plantearon los siguientes problemas a resolver:
+\begin{enumerate}
+	\item construcción del grafo dirigido que representa al diseño, en el que las puertas son aristas y las regiones conexas del diseño son nodos.
+	\item definir las acciones que se deben poder tomar para explorar dicho grafo.
+	\item definir las condiciones de finalización de una exploración.
+	\item definir una heurística para poder explorar el grafo de manera inteligente y reducir así el tiempo de exploración en los mejores casos.
+	\item en caso de que el diseño no fuera correcto, devolver de alguna forma la cadena de acciones que el jugador podría tomar para acabar atascado.
+\end{enumerate}
+
+El primero de estos problemas se resuelve obteniendo un objeto poligonal que es el diseño habiendo sustraido las puertas. Desde este punto podemos extraer las regiones conexas que quedan, que serán los nodos. Y para determinar las aristas del grafo dirigido, se han de emplear de nuevo las locaclizaciones de las puertas:
+para cada una de ellas, se toma un punto \textit{A} que se encuentre inmediatamente en la dirección y sentido del vector normal de la puerta y otro punto \textit{B} que se encuentre en la misma dirección pero de sentido opuesto.
+El nodo creado a partir de la región que contenga al punto \textit{A} quedará unido por una arista al nodo creado a partir de la región que contenga al punto \textit{B} y viceversa (recordemos que las aristas son direccionales). Dichas aristas tienen las condiciones definidas en la puerta para ser atravesadas en una exploración. Nótese que de esta forma se crean siempre dos aristas entre nodos adyacentes pero no tienen por qué compartir condiciones para ser atravesadas. Además, es posible que un nodo sea adyacente de sí mismo.
+
+El segundo de estos problemas queda determinado por la lista de objetos consumidos para satisfacer una condición que imponen las aristas. La propia exploración, en lugar de simular un agente que simplemente se traslada de nodo a nodo, hace simplificaciones del grafo a explorar cuando las condiciones de las puertas a atravesar son satisfechas: si las condiciones para viajar de un nodo a otro han sido ambas satisfacidas (se ha recolectado un nuevo \dfn{power-up} o dicha puerta ya ha sido atravesada) entonces ambos nodos se unen en uno solo.
+
+
+La tercera condición se deduce de esto último: un diseño no es correcto si llegado un punto, no se pueden tomar acciones que no hubieran sido intentadas ya y el grafo que se ha ido reduciendo consta de más de un nodo. Por contra, un diseño es correcto si cualquier exploración del mismo resulta en que el grafo se simplifica hasta ser un único nodo.
+
+Para el cuarto problema, buscamos una heurística que reduzca el tiempo del mejor caso, en el que el diseño no es correcto. Ya que el peor caso es aquel en el que sí es correcto y por tanto se realizan todas las exploraciones posibles.
+Para esta heurística, entonces, buscamos una según la cual el explorador sea un derrochador: que malgaste el mayor número de llaves de manera que se desbloqueen el menor número de nodos nuevos y que no priorice la recolección de objetos, en especial la de aquellos que son de tipo \dfn{power-up}
+
+Finalmente, el último problema se reduce a deshacer los pasos tomados por una exploración con la que se concluye que el diseño es incorrecto, listando los objetos recolectados y las puertas abiertas, en el orden en el que se hicieron dichas acciones.

@@ -1,6 +1,7 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 #include "../Keys/keylistwidget.h"
+#include "../Common/common.h"
 #include <QFileDialog>
 
 #include <QDebug>
@@ -10,6 +11,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+    TODO("testing");
     ui->setupUi(this);
     setUp();
 

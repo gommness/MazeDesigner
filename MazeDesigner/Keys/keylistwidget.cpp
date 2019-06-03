@@ -60,7 +60,11 @@ void KeyListWidget::load()
 
         QTableWidgetItem *nameItem = new QTableWidgetItem(key.getName());
         QTableWidgetItem *boolItem = new QTableWidgetItem;
-        boolItem->setData(Qt::CheckStateRole, key.isPowerUp());
+        if(key.isPowerUp())
+            boolItem->setData(Qt::CheckStateRole, Qt::CheckState::Checked);
+        else
+            boolItem->setData(Qt::CheckStateRole, Qt::CheckState::Unchecked);
+        //boolItem->setData(Qt::CheckStateRole, key.isPowerUp());
 
         table->setItem(i, 0, nameItem);
         table->setItem(i, 1, boolItem);
@@ -97,7 +101,10 @@ void KeyListWidget::createKey()
 
     QTableWidgetItem *nameItem = new QTableWidgetItem(key.getName());
     QTableWidgetItem *boolItem = new QTableWidgetItem;
-    boolItem->setData(Qt::CheckStateRole, key.isPowerUp());
+    if(key.isPowerUp())
+        boolItem->setData(Qt::CheckStateRole, Qt::CheckState::Checked);
+    else
+        boolItem->setData(Qt::CheckStateRole, Qt::CheckState::Unchecked);
     // obtain representable key info and then update the table info with it!!
     table->setItem(rowCount, 0, nameItem);
     table->setItem(rowCount, 1, boolItem);

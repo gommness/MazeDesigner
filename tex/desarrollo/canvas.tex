@@ -1,3 +1,5 @@
+En esta etapa se desarrolla gran parte del módulo del Canvas, que será el núcleo de los módulos de la aplicación destinados al diseño de los \dfnpl{espacio-jugable}. Las clases más destacables en este módulo son Canvas y Grid.
+
 La implementación de la clase Canvas atiende a las siguientes funcionalidades:
 \begin{enumerate}
 	\item detección e interpretación del input de un usuario para añadir o eliminar rectángulos del espacio jugable.
@@ -8,23 +10,23 @@ La implementación de la clase Canvas atiende a las siguientes funcionalidades:
 
 La primera de estas funcionalidades se lleva a cabo detectando inputs del ratón sobre el Canvas. Un input válido se interpreta como la acción de pulsar una tecla del ratón, a la que llamamos comienzo, el movimiento del ratón y la acción de soltar dicha tecla del ratón, a la que llamaremos final.
 Las coordenadas del comienzo y del final determinan las coordenadas de las dos esquinas opuestas del rectángulo que describe el usuario con el input, siempre y cuando dicho rectángulo tenga área mayor que cero. Estas coordenadas, sin embargo, se deben rectificar para que el rectángulo se ajuste a la rejilla.
-La clase Grid representa dicha rejilla y, mediante el método \textit{nearestPoint}, permite, dado un punto, determinar las coordenadas del punto de la rejilla más próximo a este. Haciendo uso de esto, la clase Canvas puede ajustar los rectángulos descritos por el usuario a la rejilla.
+La clase Grid representa dicha rejilla y, mediante métodos como \textit{nearestPoint}, permite, dado un punto, determinar las coordenadas del punto de la rejilla. Haciendo uso de esto, la clase Canvas puede ajustar los rectángulos descritos por el usuario a la rejilla.
 La distinción de adición o eliminación de dicho rectángulo se llevaba a cabo teniendo en cuenta qué tecla del ratón fuera pulsada.
 
 La segunda de estas funcionalidades va intrínsecamente ligada a la tercera.
-Atendiendo a la definición de un espacio jugable, éste debe ser un conjunto de polígonos que puedan tener agujeros (es decir, cuyo grupo fundamental no sea necesariamente el trivial). Nótese que, debido a la construcción de los espacios jugables, son uniones finitas de rectángulos (de hecho, pertenecen a una sigma-álgebra)
-Para almacenar un objeto así en memoria, se plantearon iterativamente distintas implementaciones atendiendo a los problemas emergentes:
+Como decisión de diseño respecto a los \dfnpl{espacio-jugable}, deben ser un conjunto de polígonos, con ángulos de 90 o 270 grados, que puedan tener agujeros (es decir, cuyo grupo fundamental no sea necesariamente el trivial). Nótese que, debido a la construcción de los espacios jugables, son uniones finitas de rectángulos.
+Para almacenar un objeto así en memoria, se plantearon iterativamente distintas implementaciones atendiendo a los problemas que planteaban las iteraciones previas:
 \begin{enumerate}
 	\item[Lista de objetos de clase QRect] en la que Canvas contendría una lista de rectángulos. Los problemas de esta implementación son:
 	\begin{itemize}
-		\item A la hora de almacenar, o bien la información podía resultar redundante (si un vértice de un rectángulo quedaba contenido en otro) o bien las operaciones a realizar para evitar esto cada vez que se añadía o eliminaba un rectángulo acababan siendo demasiado costosas
-		\item A la hora de renderizar el espacio jugable, los rectángulos podían solaparse unos con otros. Además que la renderización de tantos rectángulos por separado podía llegar a ser demasiado pesada y en definitiva, visualmente quedaba una representación que podía llegar a ser confusa para diseños con geometrías más complejas
-		\item atendiendo a la cuarta funcionalidad, la operación para extraer las regiones de esta lista de rectángulos independientes era excesivamente costosa
+		\item A la hora de almacenar, o bien la información podía resultar redundante (si un vértice de un rectángulo quedaba contenido en otro) o bien las operaciones a realizar para evitar esto cada vez que se añadía o eliminaba un rectángulo acababan siendo demasiado costosas computacionalmente.
+		\item A la hora de renderizar el espacio jugable, los rectángulos podían solaparse unos con otros. Además que la renderización de tantos rectángulos por separado podía llegar a ser demasiado pesada y en definitiva, visualmente quedaba una representación que podía llegar a ser confusa para diseños con geometrías más complejas.
+		\item atendiendo a la cuarta funcionalidad, la operación para extraer las regiones de esta lista de rectángulos independientes era excesivamente costosa.
 	\end{itemize}
 	\item[Lista de objetos de clase QPolygon] en la que Canvas contendría una lista de polígonos, construidos mediante adición (unión) o substracción de rectángulos. La principal ventaja de esta implementación era que las áreas conexas del espacio jugable quedaban representadas por un único polígono. Los problemas de esta implementación son:
 	\begin{itemize}
-		\item A la hora de añadir un nuevo rectángulo al espacio jugable, había que realizar tantas uniones entre polígonos como el número de polígonos del espacio jugable intersecaran con el nuevo rectángulo. Lo cual resultaba costoso
-		\item debido a la implementación de la clase QPolygon, los polígonos con agujeros no eran representados de forma correcta, pues todos los polígonos representados por dicha clase, por construcción, necesariamente tienen el grupo fundamental trivial. Esto representaría un problema más adelante con respecto a la funcionalidad 4.
+		\item A la hora de añadir un nuevo rectángulo al espacio jugable, había que realizar tantas uniones entre polígonos como el número de polígonos del espacio jugable intersecaran con el nuevo rectángulo. Lo cual resultaba computacionalmente costoso.
+		\item debido a la implementación de la clase QPolygon, los polígonos con agujeros no eran representados de forma correcta, pues todos los polígonos representados por dicha clase, por construcción, necesariamente tienen el grupo fundamental trivial (es decir, no pueden tener agujeros o en otras palabras, son convexos en el plano). Esto representaría un problema más adelante con respecto a la funcionalidad 4.
 	\end{itemize}
 	\item[Lista de objetos de clase Shape] en la que Canvas contendría una lista de objetos de clase Shape, que heredara de la clase QPolygon, construidos mediante adición o substracción de rectángulos. Dicha clase modelaría también polígonos con agujeros, solucionando el principal problema de la implementación anterior.
 	El problema con ésta es que la algoritmia era demasiado costosa y compleja.

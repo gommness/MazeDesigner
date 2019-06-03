@@ -18,7 +18,7 @@ TODO:
 	DONE - al eliminar parte del espacio de juego, hay que eliminar las llaves y startToken que pudiera haber dentro. señal + slot probablemente
 	- hay que hacer la seleccion de instancias y carga de sus datos a consola en el instanceCanvas
 		- las señales de seleccion estan creadas y emitidas, hay que realizar las conexiones pertinentes a los widgets que cargan los datos y tal y cual
-	- hay que crear la listView para los datos de las rooms cuando se entre en roomCanvas
+	DONE - hay que crear la listView para los datos de las rooms cuando se entre en roomCanvas
 
 
 DECISIONES DE DISEÑO POR IMPLEMENTAR:

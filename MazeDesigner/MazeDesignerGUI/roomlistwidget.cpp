@@ -47,7 +47,10 @@ void RoomListWidget::load()
 
         QTableWidgetItem *nameItem = new QTableWidgetItem(room.getName());
         QTableWidgetItem *boolItem = new QTableWidgetItem;
-        boolItem->setData(Qt::CheckStateRole, room.isExportable());
+        if(room.isExportable())
+            boolItem->setData(Qt::CheckStateRole, Qt::CheckState::Checked);
+        else
+            boolItem->setData(Qt::CheckStateRole, Qt::CheckState::Unchecked);
 
         table->setItem(i, 0, nameItem);
         table->setItem(i, 1, boolItem);
@@ -95,7 +98,10 @@ void RoomListWidget::onRoomCreated(const Room &room)
 
     QTableWidgetItem *nameItem = new QTableWidgetItem(room.getName());
     QTableWidgetItem *boolItem = new QTableWidgetItem;
-    boolItem->setData(Qt::CheckStateRole, room.isExportable());
+    if(room.isExportable())
+        boolItem->setData(Qt::CheckStateRole, Qt::CheckState::Checked);
+    else
+        boolItem->setData(Qt::CheckStateRole, Qt::CheckState::Unchecked);
     // obtain representable key info and then update the table info with it!!
     table->setItem(rowCount, 0, nameItem);
     table->setItem(rowCount, 1, boolItem);

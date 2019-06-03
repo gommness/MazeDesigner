@@ -1,0 +1,15 @@
+Con cada módulo, se han realizado pruebas unitarias que aseguran la correcta ejecución del código, no solo a nivel íntegro de la aplicación, en tanto a que no haya errores técnicos que cierren el programa, sino también a nivel de usuario, en tanto a que cada módulo hace las operaciones que se esperan de él y cómo se esperan de él.
+
+Para el módulo del Canvas, se han realizado pruebas de añadir y eliminar espacios tanto del interior como de los bordes del diseño, a distintas ampliaciones del Grid y habiéndolo trasladado tanto hacia coordenadas negativas como a positivas. También se ha intentado eliminar espacios donde no había antes, se ha intentado añadir y eliminar espacios con área cero (puntos y líneas) y se ha comprobado que el funcionamiento de la creación y eliminación de espacios es el esperado.
+Con respecto a las adiciones siguientes a este módulo, se ha comprobado que no se pueden definir habitaciones con intersección no vacía y que se eliminan como cabe esperar. la creación de las mismas funciona también correctamente tal y como sucede con el Canvas.
+A la hora de instanciar llaves, puertas y el token de comienzo, se ha comprobado que solamente se pueden instanciar en el interior de un \dfn{espacio-jugable}, que las instancias creadas pueden ser efectivamente eliminadas y que no se pueden colocar dos instancias en la misma posición.
+
+En el módulo de las llaves, se ha comprobado que se pueden crear y eliminar modelos de llaves correctamente y que estos cambios en la interfaz se ven reflejados en los modelos que hay en memoria. Se ha probado a eliminar una llave sin seleccionar ninguna, a eliminar varias a la vez, a crear llaves con el mismo nombre y a realizar cambios sobre ellas.
+
+En el módulo de condiciones se ha comprobado que solamente se admiten condiciones que cumplen con la sintaxis definida en el apéndice \ref{CAP:APCONDICIONES} y que estas, sean simples o compuestas, pueden ser validadas, y pueden comprobar si son satisfacibles dado un inventario, así como devuelven correctamente tantas lista con los objetos a consumir en caso de poder ser satisfacibles como posibilidades hay para ser satisfechas.
+
+En el módulo de persistencia se ha comprobado que los datos guardados y esos mismos datos posteriormente cargados de fichero coinciden.
+
+En la exportación se ha comprobado que se generan ficheros .yy de acuerdo a la estructura de proyecto de \textit{Game Maker Studio 2}, creándolos cuando el proyecto en cuestión no los tiene y editándolos en caso contrario, sin sobreescribir ningún dato innecesariamente del proyecto.
+
+En el módulo de exploración se ha comprobado con diseños incorrectos que el programa puede detectar los fallos y devuelve la secuencia de acciones a tomar para replicar el problema. También se ha comprobado que el programa detecta cuando un diseño es correcto.

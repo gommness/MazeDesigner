@@ -16,6 +16,7 @@ public:
      */
     DoorInstance(QLineF & line);
     ~DoorInstance() override {}
+    QPolygonF boundPolygon() const override;
     QString instanceInfo() const override;
     /**
      * @brief contains checks whether the given point is contained within what is considered the area of the door. That is,

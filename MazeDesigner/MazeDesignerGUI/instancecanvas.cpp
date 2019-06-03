@@ -156,6 +156,13 @@ void InstanceCanvas::paintEvent(QPaintEvent *event)
         // TODO maybe replace the ellipse of the token with an image
         painter.drawEllipse(startToken->translated(design->grid.getOffset()));
     }
+
+    if(selected != nullptr){
+        pen.setColor(QColor(255,255,0,128));
+        pen.setWidth(2);
+        painter.setPen(pen);
+        painter.drawPolygon(selected->boundPolygon().translated(design->grid.getOffset()));
+    }
 }
 
 void InstanceCanvas::mousePressEvent(QMouseEvent *event)
@@ -175,10 +182,13 @@ void InstanceCanvas::mousePressEvent(QMouseEvent *event)
             KeyInstance * key = keyAt(design->grid.adapted(event->pos())); // try to find a key at specific cursor point
             DoorInstance * door = doorAt(design->grid.adapted(event->pos())); // try to find a door at specific cursor point
             if(key != nullptr || door != nullptr){ // if there is a selection
-                if(key != nullptr) // if there is a key in the selected point
-                    emit selectKey(*key);
-                else if(door != nullptr) // if there is a door in the selected point
-                    emit selectDoor(*door);
+                if(key != nullptr){ // if there is a key in the selected point
+                    selected = key;
+                }
+                else if(door != nullptr){ // if there is a door in the selected point
+                    selected = door;
+                }
+                emit select(*selected);
             } else { // if there is no selection, then we create a key
                 QPointF point = design->grid.centerOfCellAt(event->pos());
                 createKeyInstance(point); // create a key
@@ -211,6 +221,8 @@ void InstanceCanvas::mouseReleaseEvent(QMouseEvent *event)
             (!(std::abs(start->x()-end.x()) < UMBRAL) != !(std::abs(start->y()-end.y()) < UMBRAL))){
         QLineF line(*start, end);
         doors.append(new DoorInstance(line));
+        selected = doors.last();
+        emit select(*selected);
     }
     delete start;
     start = nullptr;
@@ -239,8 +251,11 @@ void InstanceCanvas::createKeyInstance(QPointF &point)
     if(!design->contains(point))
         return;
     const Key &model = keyList->selectedKey();
-    if(model.isValid()) // if there was indeed a selected key
+    if(model.isValid()){ // if there was indeed a selected key
         keys.append(new KeyInstance(model, point.x(), point.y()));
+        selected = keys.last();
+        emit select(*selected);
+    }
 }
 
 void InstanceCanvas::destroyAt(const QPointF *point)
@@ -256,6 +271,10 @@ void InstanceCanvas::destroyAt(const QPointF *point)
     // destroy key if it is under the point
     for(int i = keys.size()-1; i >= 0; i--){
         if(keys[i]->contains(*point)){
+            if(selected == keys[i]){
+                selected = nullptr;
+                emit clearSelection();
+            }
             delete keys[i];
             keys.removeAt(i);
         }
@@ -263,6 +282,10 @@ void InstanceCanvas::destroyAt(const QPointF *point)
     // destroy door if it is under the point
     for(int i = doors.size()-1; i >= 0; i--){
         if(doors[i]->contains(*point)){
+            if(selected == doors[i]){
+                selected = nullptr;
+                emit clearSelection();
+            }
             delete doors[i];
             doors.removeAt(i);
         }

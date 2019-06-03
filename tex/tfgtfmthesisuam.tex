@@ -22,11 +22,11 @@
 \famouscite{A game isn’t something that can be made by one person alone. Well, it’s possible that a really hard-working game creator could finish a game all alone, but even then he would still need a player. \\Games grow and mature when they’re created, played, and conveyed over and over. \\[0.1em] \begin{flushright}Shigesato Itoi\end{flushright}}
 % \prefacefile{inicio/prefacio}
 % \ackfile{inicio/agradecimientos}
-\resumenfile{inicio/resumen}
-\abstractfile{inicio/abstract}
+\resumenfile{inicio/resumen} %TODO
+\abstractfile{inicio/abstract} %TODO
 
-\keywords{Algunas}
-\palabrasclave{Otras}
+\keywords{Algunas} %TODO
+\palabrasclave{Otras} %TODO
 
 \coverdata
 {
@@ -41,23 +41,29 @@
 \graphicsdir{img}
 \logosdir{img}
 \codesdir{codes}
-\usepackage{fancyvrb}
+%\usepackage[nomain]{glossaries}
+\makeglossaries
+\loadglsentries{estructura/glosario}
 
 \begin{document}
-\show\newdefinition
 
-\chapter{Introducción\label{CAP:INTRODUCCION}{introduccion/introduccion}}
+\chapter{Introducción\label{CAP:INTRODUCCION}}{introduccion/introduccion}
+	%TODO meter capturas de los videojuegos citados
 	\section{Motivación\label{SEC:MOTIVACION}}{introduccion/motivacion}
 	\section{Objetivos\label{SEC:OBJETIVOS}}{introduccion/objetivos}
 	\section{Estructura\label{SEC:ESTRUCTURA}}{introduccion/estructura}
 	
 \chapter{Estado del Arte\label{CAP:ESTADODELARTE}}{estadodelarte/introduccion}
+	%TODO meter capturas a los juegos de tipo metroidvania
+	\section{Videojuegos de tipo Mazmorra\label{SEC:METROIDVANIAS}}{estadodelarte/metroidvanias}
 	\section{Diseño Gráfico\label{SEC:DISENOGRAFICO}}{estadodelarte/grafico}
 	\section{Diseño Lógico\label{SEC:DISENOLOGICO}}{estadodelarte/logico}
 	\section{Motores y Entornos\label{SEC:MOTORESYENTORNOS}}{estadodelarte/motoresyentornos}
+	\section{C++ y Qt\label{SEC:C++QT}}{estadodelarte/cpp}
 	\section{Conclusiones\label{SEC:ESTADODELARTECONCLUSIONES}}{estadodelarte/conclusiones}
 	
-\chapter{Análisis de Requisitos\label{CAP:REQUISITOS}}{requisitos/introduccion}
+\chapter{Definición del proyecto\label{CAP:REQUISITOS}}{requisitos/introduccion}
+	\section{Alcance\label{SEC:ALCANCE}}{requisitos/alcance}
 	\section{Requisitos funcionales\label{SEC:REQUISITOSFUNCIONALES}}{requisitos/funcionales}
 		\begin{functional}
 		\subsection{Requisitos de persistencia\label{SUBSEC:REQPERSISTENCIA}}{requisitos/persistencia}
@@ -65,22 +71,39 @@
 		\subsection{Requisitos del canvas\label{SUBSEC:REQCANVAS}}{requisitos/canvas}
 		\subsection{Requisitos de llaves\label{SUBSEC:REQLLAVES}}{requisitos/llaves}
 		\subsection{Requisitos de condiciones de apertura\label{SUBSEC:REQCONDICIONES}}{requisitos/condiciones}
-		\subsection{Requisitos de comprobación de la completitud\label{SUBSEC:REQCOMPLETITUD}}{requisitos/completitud}
+		\subsection{Requisitos de comprobación de la corrección\label{SUBSEC:REQCOMPLETITUD}}{requisitos/completitud}
 		\subsection{Requisitos de conexión con Game Maker Studio 2\label{SUBSEC:REQCONEXION}}{requisitos/conexion}
 		\end{functional}
-	\section{Requisitos no funcionales\label{SEC:REQUISITOSNOFUNCIONALES}}{requisitos/nofuncionales}
+	\section{Requisitos no funcionales\label{SEC:REQUISITOSNOFUNCIONALES}}{requisitos/nofuncionales} %TODO
 	
-\chapter{Diseño\label{CAP:DISENO}}{diseno/introduccion}
-	\section{MazeDesigner GUI\label{SUBSEC:GUI}}{diseno/mazedesignergui}
+\chapter{Diseño\label{CAP:DISENO}}{diseno/introduccion} %TODO
+	\section{Tecnologías y Estándares\label{SEC:TECNOLOGIAS}}{diseno/tecnologias} %TODO
+		\subsection{Qt\label{SUBSEC:QT}}{diseno/Qt}
+		\subsection{JSON\label{SUBSEC:JSON}}{diseno/json}
+		\subsection{git\label{SUBSEC:GIT}}{diseno/git}
+		\subsection{Game Maker Studio 2\label{SUBSEC:GMS2}}{diseno/GMS2}
+	\section{Módulos y Clases\label{SEC:MODULOS}}{diseno/modulos} %TODO
 
 \chapter{Desarrollo\label{CAP:DESARROLLO}}{desarrollo/introduccion}
-	\section{Canvas\label{SUBSEC:DEVCANVAS}}{desarrollo/canvas}
-	\section{Llaves\label{SUBSEC:DEVLLAVES}}{desarrollo/llaves}
+	\section{Entornos de desarrollo\label{SEC:ENTORNOS}}{desarrollo/entornos}
+	\section{Desarrollo de los módulos\label{SEC:DEVMODULOS}}
+		\subsection{Canvas\label{SUBSEC:DEVCANVAS}}{desarrollo/canvas}
+		\subsection{Llaves, habitaciones y persistencia\label{SUBSEC:DEVLLAVES}}{desarrollo/llaves}%TODO
+		\subsection{Interfaz gráfica\label{SUBSEC:DEVGUI}}{desarrollo/gui} %TODO
+		\subsection{Condiciones y exploración del diseño\label{SUBSEC:CONDICIONES}}{desarrollo/condiciones} %TODO
 
 \chapter{Integración, pruebas y resultados\label{CAP:INTEGRACIONPRUEBASYRESULTADOS}}{integracionpruebasresultados/introduccion}
+	%TODO meter capturas de pantalla de las pruebas realizadas
+	\section{Pruebas unitarias\label{SEC:PRUEBASUNITARIAS}}{integracionpruebasresultados/unitarias}
+	\section{Pruebas de integración\label{SEC:PRUEBASINTEGRACION}}{integracionpruebasresultados/integracion}
+	\section{Resultados\label{SEC:RESULTADOS}}{integracionpruebasresultados/resultados}
 
 \chapter{Conclusiones y trabajo futuro\label{CAP:CONCLUSIONES}}{conclusiones/introduccion}
 	\section{Conclusiones\label{SEC:CONCLUSIONES}}{conclusiones/conclusiones}
 	\section{Trabajo futuro\label{SEC:TRABAJOFUTURO}}{conclusiones/trabajofuturo}
+
+\appendix
+
+\chapter{Definición de la sintaxis de condiciones\label{CAP:APCONDICIONES}}{apendices/condiciones}
 
 \end{document}

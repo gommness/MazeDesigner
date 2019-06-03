@@ -23,6 +23,11 @@ DoorInstance::DoorInstance(QLineF &line) : QLineF (line)
     area = QPolygonF(poly);
 }
 
+QPolygonF DoorInstance::boundPolygon() const
+{
+    return QPolygonF(area);
+}
+
 QString DoorInstance::instanceInfo() const
 {
     QString output;

@@ -21,8 +21,8 @@ QT_BEGIN_MOC_NAMESPACE
 QT_WARNING_PUSH
 QT_WARNING_DISABLE_DEPRECATED
 struct qt_meta_stringdata_InstanceCanvas_t {
-    QByteArrayData data[13];
-    char stringdata0[121];
+    QByteArrayData data[11];
+    char stringdata0[112];
 };
 #define QT_MOC_LITERAL(idx, ofs, len) \
     Q_STATIC_BYTE_ARRAY_DATA_HEADER_INITIALIZER_WITH_OFFSET(len, \
@@ -32,24 +32,21 @@ struct qt_meta_stringdata_InstanceCanvas_t {
 static const qt_meta_stringdata_InstanceCanvas_t qt_meta_stringdata_InstanceCanvas = {
     {
 QT_MOC_LITERAL(0, 0, 14), // "InstanceCanvas"
-QT_MOC_LITERAL(1, 15, 9), // "selectKey"
-QT_MOC_LITERAL(2, 25, 0), // ""
-QT_MOC_LITERAL(3, 26, 11), // "KeyInstance"
-QT_MOC_LITERAL(4, 38, 3), // "key"
-QT_MOC_LITERAL(5, 42, 10), // "selectDoor"
-QT_MOC_LITERAL(6, 53, 12), // "DoorInstance"
-QT_MOC_LITERAL(7, 66, 4), // "door"
-QT_MOC_LITERAL(8, 71, 17), // "onKeyModelDeleted"
-QT_MOC_LITERAL(9, 89, 3), // "Key"
-QT_MOC_LITERAL(10, 93, 5), // "model"
-QT_MOC_LITERAL(11, 99, 16), // "onSpaceDestroyed"
-QT_MOC_LITERAL(12, 116, 4) // "poly"
+QT_MOC_LITERAL(1, 15, 6), // "select"
+QT_MOC_LITERAL(2, 22, 0), // ""
+QT_MOC_LITERAL(3, 23, 18), // "SelectableInstance"
+QT_MOC_LITERAL(4, 42, 4), // "inst"
+QT_MOC_LITERAL(5, 47, 14), // "clearSelection"
+QT_MOC_LITERAL(6, 62, 17), // "onKeyModelDeleted"
+QT_MOC_LITERAL(7, 80, 3), // "Key"
+QT_MOC_LITERAL(8, 84, 5), // "model"
+QT_MOC_LITERAL(9, 90, 16), // "onSpaceDestroyed"
+QT_MOC_LITERAL(10, 107, 4) // "poly"
 
     },
-    "InstanceCanvas\0selectKey\0\0KeyInstance\0"
-    "key\0selectDoor\0DoorInstance\0door\0"
-    "onKeyModelDeleted\0Key\0model\0"
-    "onSpaceDestroyed\0poly"
+    "InstanceCanvas\0select\0\0SelectableInstance\0"
+    "inst\0clearSelection\0onKeyModelDeleted\0"
+    "Key\0model\0onSpaceDestroyed\0poly"
 };
 #undef QT_MOC_LITERAL
 
@@ -68,19 +65,19 @@ static const uint qt_meta_data_InstanceCanvas[] = {
 
  // signals: name, argc, parameters, tag, flags
        1,    1,   34,    2, 0x06 /* Public */,
-       5,    1,   37,    2, 0x06 /* Public */,
+       5,    0,   37,    2, 0x06 /* Public */,
 
  // slots: name, argc, parameters, tag, flags
-       8,    1,   40,    2, 0x09 /* Protected */,
-      11,    1,   43,    2, 0x09 /* Protected */,
+       6,    1,   38,    2, 0x09 /* Protected */,
+       9,    1,   41,    2, 0x09 /* Protected */,
 
  // signals: parameters
     QMetaType::Void, 0x80000000 | 3,    4,
-    QMetaType::Void, 0x80000000 | 6,    7,
+    QMetaType::Void,
 
  // slots: parameters
-    QMetaType::Void, 0x80000000 | 9,   10,
-    QMetaType::Void, QMetaType::QPolygonF,   12,
+    QMetaType::Void, 0x80000000 | 7,    8,
+    QMetaType::Void, QMetaType::QPolygonF,   10,
 
        0        // eod
 };
@@ -91,8 +88,8 @@ void InstanceCanvas::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
         InstanceCanvas *_t = static_cast<InstanceCanvas *>(_o);
         Q_UNUSED(_t)
         switch (_id) {
-        case 0: _t->selectKey((*reinterpret_cast< const KeyInstance(*)>(_a[1]))); break;
-        case 1: _t->selectDoor((*reinterpret_cast< const DoorInstance(*)>(_a[1]))); break;
+        case 0: _t->select((*reinterpret_cast< const SelectableInstance(*)>(_a[1]))); break;
+        case 1: _t->clearSelection(); break;
         case 2: _t->onKeyModelDeleted((*reinterpret_cast< const Key(*)>(_a[1]))); break;
         case 3: _t->onSpaceDestroyed((*reinterpret_cast< const QPolygonF(*)>(_a[1]))); break;
         default: ;
@@ -100,15 +97,15 @@ void InstanceCanvas::qt_static_metacall(QObject *_o, QMetaObject::Call _c, int _
     } else if (_c == QMetaObject::IndexOfMethod) {
         int *result = reinterpret_cast<int *>(_a[0]);
         {
-            using _t = void (InstanceCanvas::*)(const KeyInstance & );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&InstanceCanvas::selectKey)) {
+            using _t = void (InstanceCanvas::*)(const SelectableInstance & );
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&InstanceCanvas::select)) {
                 *result = 0;
                 return;
             }
         }
         {
-            using _t = void (InstanceCanvas::*)(const DoorInstance & );
-            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&InstanceCanvas::selectDoor)) {
+            using _t = void (InstanceCanvas::*)();
+            if (*reinterpret_cast<_t *>(_a[1]) == static_cast<_t>(&InstanceCanvas::clearSelection)) {
                 *result = 1;
                 return;
             }
@@ -153,17 +150,16 @@ int InstanceCanvas::qt_metacall(QMetaObject::Call _c, int _id, void **_a)
 }
 
 // SIGNAL 0
-void InstanceCanvas::selectKey(const KeyInstance & _t1)
+void InstanceCanvas::select(const SelectableInstance & _t1)
 {
     void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
     QMetaObject::activate(this, &staticMetaObject, 0, _a);
 }
 
 // SIGNAL 1
-void InstanceCanvas::selectDoor(const DoorInstance & _t1)
+void InstanceCanvas::clearSelection()
 {
-    void *_a[] = { nullptr, const_cast<void*>(reinterpret_cast<const void*>(&_t1)) };
-    QMetaObject::activate(this, &staticMetaObject, 1, _a);
+    QMetaObject::activate(this, &staticMetaObject, 1, nullptr);
 }
 QT_WARNING_POP
 QT_END_MOC_NAMESPACE

@@ -18,8 +18,9 @@ class InstanceCanvas : public QWidget
 {
     Q_OBJECT
 signals:
-    void selectKey(const KeyInstance & key);
-    void selectDoor(const DoorInstance & door);
+    void select(const SelectableInstance & inst);
+    //void selectDoor(const DoorInstance & door);
+    void clearSelection();
 public:
     /**
      * @brief InstanceCanvas creates a Canvas for placing the instances. A base design canvas and the widget containing the list
@@ -119,6 +120,7 @@ private:
     KeyListWidget * keyList;
     QList<KeyInstance*> keys;
     QList<DoorInstance*> doors;
+    SelectableInstance * selected = nullptr;
     QRectF * startToken = nullptr;
     QPointF * start = nullptr;
     QPointF * end = nullptr;

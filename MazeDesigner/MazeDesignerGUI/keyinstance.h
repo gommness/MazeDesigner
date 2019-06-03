@@ -27,6 +27,7 @@ public:
      */
     KeyInstance(const Key & model, const QPointF & point);
     ~KeyInstance() override {}
+    QPolygonF boundPolygon() const override;
     QString instanceInfo() const override;
     /**
      * @brief fromJson creates a KeyInstance from a json object holding its information and the keyRepository

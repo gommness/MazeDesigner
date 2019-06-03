@@ -1,0 +1,13 @@
+En esta etapa se han integrado todas las componentes las unas con las otras, dejando componentes vacías que serían sustituídas en la etapa siguiente.
+
+En la interfaz gráfica, se siguieron las maquetas planteadas, dividiendo el área de trabajo en 3 zonas, con tamaños diferentes atendiendo a su función e importancia a la hora de trabajar en el diseño.
+
+Se construyó el sistema de los cambios de contexto mediante el uso de pestañas como elemento gráfico. Los elementos renderizados en el área que se correspondería con el canvas deben gestionar su propia renderización, aunque esta sea dentro de otra componente.
+
+Además de la creación de la propia interfaz gráfica del usuario, se han implementado las acciones generales de la aplicación como el guardar los datos de todos los elementos en un fichero, cargar un diseño desde fichero y la creación de un nuevo diseño sin contenido sobre el que poder trabajar.
+
+Se han proporcionado interfaces de comunicación entre los distintos módulos y componentes gráficas a través del mecanismo de huecos y señales (\textit{slots and signals}) de Qt.
+
+También en esta etapa se ha desarrollado el módulo que se encarga de exportar el diseño al motor \textit{Game Maker Studio 2} para continuar con el desarrollo del juego en esa herramienta.
+
+Finalmente, se han realizado pruebas de consistencia entre las distintas componentes, que involucraban, por ejemplo, que cambios ocasionados en una componente afectaran a otra. Por ejemplo, al eliminar espacio de juego del canvas, si hubiera alguna llave en dicho espacio eliminado, esta tendría que ser eliminada también. Otro ejemplo es que al eliminar un modelo de llave, todas las llaves instanciadas con ese modelo deberían ser eliminadas a su vez.
