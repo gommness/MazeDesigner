@@ -1,0 +1,30 @@
+Los módulos que componen la aplicación atienden a las distintas áreas de los requisitos funcionales, cada uno cubriendo varios de ellos. Estos módulos son:
+\begin{itemize}
+	\item \textbf{Llaves} que se encarga de cubrir todas las funcionalidades descritas en la subsección \ref{SUBSEC:REQLLAVES}.
+	\item \textbf{Habitaciones} que se encarga de cubrir las funcionalidades descritas en la subsección \ref{SUBSEC:REQCONEXION} a excepción del requisito \ref{PARTICULAR:REQUISITO31}.
+	\item \textbf{Canvas} que se encarga de cubrir todas las funcionalidades descritas en la subsección \ref{SUBSEC:REQCANVAS}. Para esto se han desarrollado 4 submódulos:
+	\begin{itemize}
+		\item \textbf{Grid} que se encarga de la gestión espacial del módulo, esto es, traduce coordenadas del cursor obtenidas a través del sistema de eventos de Qt a coordenadas lógicas del diseño, aplicando transformaciones de desplazamiento y de zoom.
+		\item \textbf{Design Canvas} que se encarga de todas las funcionalidades referentes a la creación de \dfnpl{espacio-jugable}. Este submódulo depende del submódulo Grid.
+		\item \textbf{Room Canvas} que permite la declaración de ciertas regiones del diseño como \dfnpl{pantalla}. Este submódulo depende del módulo Habitaciones así como del submódulo Grid.
+		\item \textbf{Instance Canvas} que permite la instanciación de modelos de llaves en el canvas, así como la de puertas y de un token de comienzo a que sirve como punto de partida para la exploración. Este submódulo depende del módulo Llaves así como del submódulo Grid.
+	\end{itemize}
+	\item \textbf{Condiciones} que se encarga de cubrir las funcionalidades descritas en la subsección \ref{SUBSEC:REQCONDICIONES}.
+	\item \textbf{Exportación} que se encarga de cubrir la funcionalidad del requisito \ref{PARTICULAR:REQUISITO31}.
+	\item \textbf{Exploración} que se encarga de cubrir las funcionalidades descritas en la subsección \ref{SUBSEC:REQCOMPLETITUD}. Este módulo depende de los módulos Canvas, Condiciones y Llaves.
+	\item \textbf{Interfaz Gráfica} que se encarga de integrar todos los módulos en una interfaz de usuario, manifestando las funcionalidades del resto de módulos. Así mismo, la interfaz cumple con las funcionalidades descritas en la subsección \ref{SUBSEC:REQCONTEXTO}.
+\end{itemize}
+
+Las funcionalidades de la subsección \ref{SUBSEC:REQPERSISTENCIA} son cubiertas a través de los módulos Canvas, Llaves, Habitaciones y Condiciones.
+
+El esquema representando todos estos módulos junto con sus dependencias se puede observar en la figura \ref{FIG:DISENO:MODULOS}.
+El diagrama de clases se puede observar en la figura \ref{FIG:DISENO:CLASES}.
+
+\begin{figure}{FIG:DISENO:MODULOS}{Diagrama representando los módulos desarrollados, las clases que éstos contienen y las dependencias entre ellos.}
+	\image{15cm}{}{imagenes/diagrama-modulos}
+\end{figure}
+
+%hecho con la herramienta visual paradigm: https://online.visual-paradigm.com/w/phbtpcnw/diagrams.jsp#diagram:proj=0&id=1
+\begin{figure}{FIG:DISENO:CLASES}{Diagrama de clases del proyecto.}
+	\image{16cm}{}{imagenes/diagrama-clases}
+\end{figure}

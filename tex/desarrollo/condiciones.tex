@@ -16,12 +16,16 @@ El primero de estos problemas se resuelve obteniendo un objeto poligonal que es 
 para cada una de ellas, se toma un punto \textit{A} que se encuentre inmediatamente en la dirección y sentido del vector normal de la puerta y otro punto \textit{B} que se encuentre en la misma dirección pero de sentido opuesto.
 El nodo creado a partir de la región que contenga al punto \textit{A} quedará unido por una arista al nodo creado a partir de la región que contenga al punto \textit{B} y viceversa (recordemos que las aristas son direccionales). Dichas aristas tienen las condiciones definidas en la puerta para ser atravesadas en una exploración. Nótese que de esta forma se crean siempre dos aristas entre nodos adyacentes pero no tienen por qué compartir condiciones para ser atravesadas. Además, es posible que un nodo sea adyacente de sí mismo.
 
+%TODO poner esquemas que expliquen esto, que es lo que tiene mas chicha
 El segundo de estos problemas queda determinado por la lista de objetos consumidos para satisfacer una condición que imponen las aristas. La propia exploración, en lugar de simular un agente que simplemente se traslada de nodo a nodo, hace simplificaciones del grafo a explorar cuando las condiciones de las puertas a atravesar son satisfechas: si las condiciones para viajar de un nodo a otro han sido ambas satisfacidas (se ha recolectado un nuevo \dfn{power-up} o dicha puerta ya ha sido atravesada) entonces ambos nodos se unen en uno solo.
+Este método presenta una complicación, y es que si desde el nodo A se puede ir al nodo B sin coste y desde el nodo B se puede ir al nodo C sin coste, hay que deducir que desde el nodo A se puede también ir al nodo C sin coste. Adicionalmente, si desde el nodo C se puede ir al nodo A sin coste, entonces los tres nodos pueden unirse en un único nodo Z. Si entre ellos hubiera transiciones con coste, entonces Z tendría aristas dirigidas hacia Z con dicho coste.
 
-
+%TODO poner esquemas que muestren cuando un diseño no es valido y cuando si
 La tercera condición se deduce de esto último: un diseño no es correcto si llegado un punto, no se pueden tomar acciones que no hubieran sido intentadas ya y el grafo que se ha ido reduciendo consta de más de un nodo. Por contra, un diseño es correcto si cualquier exploración del mismo resulta en que el grafo se simplifica hasta ser un único nodo.
 
 Para el cuarto problema, buscamos una heurística que reduzca el tiempo del mejor caso, en el que el diseño no es correcto. Ya que el peor caso es aquel en el que sí es correcto y por tanto se realizan todas las exploraciones posibles.
 Para esta heurística, entonces, buscamos una según la cual el explorador sea un derrochador: que malgaste el mayor número de llaves de manera que se desbloqueen el menor número de nodos nuevos y que no priorice la recolección de objetos, en especial la de aquellos que son de tipo \dfn{power-up}
 
 Finalmente, el último problema se reduce a deshacer los pasos tomados por una exploración con la que se concluye que el diseño es incorrecto, listando los objetos recolectados y las puertas abiertas, en el orden en el que se hicieron dichas acciones.
+
+%TODO poner ejemplos de cuando un diseño+grafo es válido y cuando no. Y de los pasos que tomaría la exploración en cada caso

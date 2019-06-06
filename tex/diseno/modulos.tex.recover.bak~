@@ -1,0 +1,4 @@
+Los módulos que componen la aplicación atienden a las distintas áreas de los requisitos funcionales, cada uno cubriendo varios de ellos. Estos módulos son:
+\begin{itemize}
+	\item \textbf{Canvas} que se encarga de cubrir todas las funcionalidades descritas en la subsección \ref{}
+\end{itemize}

@@ -46,15 +46,13 @@
 \loadglsentries{estructura/glosario}
 
 \begin{document}
-
+%TODO prefacio, resumen y abstract!!!
 \chapter{Introducción\label{CAP:INTRODUCCION}}{introduccion/introduccion}
-	%TODO meter capturas de los videojuegos citados
 	\section{Motivación\label{SEC:MOTIVACION}}{introduccion/motivacion}
 	\section{Objetivos\label{SEC:OBJETIVOS}}{introduccion/objetivos}
 	\section{Estructura\label{SEC:ESTRUCTURA}}{introduccion/estructura}
 	
 \chapter{Estado del Arte\label{CAP:ESTADODELARTE}}{estadodelarte/introduccion}
-	%TODO meter capturas a los juegos de tipo metroidvania
 	\section{Videojuegos de tipo Mazmorra\label{SEC:METROIDVANIAS}}{estadodelarte/metroidvanias}
 	\section{Diseño Gráfico\label{SEC:DISENOGRAFICO}}{estadodelarte/grafico}
 	\section{Diseño Lógico\label{SEC:DISENOLOGICO}}{estadodelarte/logico}
@@ -74,23 +72,36 @@
 		\subsection{Requisitos de comprobación de la corrección\label{SUBSEC:REQCOMPLETITUD}}{requisitos/completitud}
 		\subsection{Requisitos de conexión con Game Maker Studio 2\label{SUBSEC:REQCONEXION}}{requisitos/conexion}
 		\end{functional}
-	\section{Requisitos no funcionales\label{SEC:REQUISITOSNOFUNCIONALES}}{requisitos/nofuncionales} %TODO
+	\section{Requisitos no funcionales\label{SEC:REQUISITOSNOFUNCIONALES}}{requisitos/nofuncionales}
+		\begin{nonfunctional}
+			\subsection{Requisitos de sistemas\label{SUBSEC:REQSISTEMA}}{requisitos/sistema}
+		\end{nonfunctional}
+	%TODO meter maquetas???
 	
 \chapter{Diseño\label{CAP:DISENO}}{diseno/introduccion} %TODO
-	\section{Tecnologías y Estándares\label{SEC:TECNOLOGIAS}}{diseno/tecnologias} %TODO
+	\section{Tecnologías y Estándares\label{SEC:TECNOLOGIAS}}{diseno/tecnologias}
 		\subsection{Qt\label{SUBSEC:QT}}{diseno/Qt}
 		\subsection{JSON\label{SUBSEC:JSON}}{diseno/json}
 		\subsection{git\label{SUBSEC:GIT}}{diseno/git}
 		\subsection{Game Maker Studio 2\label{SUBSEC:GMS2}}{diseno/GMS2}
-	\section{Módulos y Clases\label{SEC:MODULOS}}{diseno/modulos} %TODO
+	%TODO diagrama de clases
+	\section{Módulos y Clases\label{SEC:MODULOS}}{diseno/modulos}
 
+%TODO en general revisar este capitulo poniendo referencias a donde sea necesario
 \chapter{Desarrollo\label{CAP:DESARROLLO}}{desarrollo/introduccion}
 	\section{Entornos de desarrollo\label{SEC:ENTORNOS}}{desarrollo/entornos}
 	\section{Desarrollo de los módulos\label{SEC:DEVMODULOS}}
+		%TODO meter imagenes que ilustren las descripciones realizadas
+		%TODO revisar esta subseccion, quiza entre demasiado en detalle??
 		\subsection{Canvas\label{SUBSEC:DEVCANVAS}}{desarrollo/canvas}
-		\subsection{Llaves, habitaciones y persistencia\label{SUBSEC:DEVLLAVES}}{desarrollo/llaves}%TODO
-		\subsection{Interfaz gráfica\label{SUBSEC:DEVGUI}}{desarrollo/gui} %TODO
-		\subsection{Condiciones y exploración del diseño\label{SUBSEC:CONDICIONES}}{desarrollo/condiciones} %TODO
+		%TODO revisar subseccion. habria que poner alguna referencia a los requisitos?
+		\subsection{Llaves, habitaciones y persistencia\label{SUBSEC:DEVLLAVES}}{desarrollo/llaves}
+		%TODO si pongo maquetas, he de enlazarlas en algun lugar de esta subseccion
+		%TODO aqui hablo por primera vez del sistema de señales y slots de Qt. quiza deba crear un apendice?
+		\subsection{Interfaz gráfica\label{SUBSEC:DEVGUI}}{desarrollo/gui}
+		%TODO revisar
+		%TODO en el interior hay TODOS marcados
+		\subsection{Condiciones y exploración del diseño\label{SUBSEC:CONDICIONES}}{desarrollo/condiciones}
 
 \chapter{Integración, pruebas y resultados\label{CAP:INTEGRACIONPRUEBASYRESULTADOS}}{integracionpruebasresultados/introduccion}
 	%TODO meter capturas de pantalla de las pruebas realizadas
@@ -105,5 +116,6 @@
 \appendix
 
 \chapter{Definición de la sintaxis de condiciones\label{CAP:APCONDICIONES}}{apendices/condiciones}
+%TODO crear un apendice explicando el sistema de señales y slots de Qt?
 
 \end{document}

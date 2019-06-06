@@ -1,10 +1,11 @@
 En esta etapa se desarrollaron los módulos de Llaves, de Habitaciones atendiendo a las necesidades de las funcionalidades de persistencia y se extiende el módulo del Canvas para que integre la instanciación de llaves, la creación de habitaciones y la colocación de puertas.
 
-El módulo de llaves consta de una clase KeyRepository que se encarga de la gestión de las llaves (objetos de la clase Key) a nivel lógico y de la clase KeyListWidget que es una interfaz gráfica a través de la cual el usuario interactua con el KeyRepository creando nuevas llaves, eliminando llaves anteriormente creadas y modificando llaves ya existentes.
-De manera similar se contruye el módulo de Habitaciones, sin embargo, la creación y eliminación de éstas se hace a través de una interfaz que se construye de manera similar al Canvas. Para la edición del nombre de las habitaciones y de una propiedad que determinará si la habitación va a ser exportada o no, se ha desarrollado una interfaz gráfica a parte similar a la de las llaves.
+El módulo de llaves consta de una clase KeyRepository que se encarga de la gestión de las llaves (objetos de la clase Key) a nivel lógico y de la clase KeyListWidget que es una interfaz gráfica a través de la cual el usuario interactua con un objeto de la clase KeyRepository creando nuevas llaves, eliminando llaves anteriormente creadas y modificando llaves ya existentes.
+
+De manera similar se contruye el módulo de Habitaciones, sin embargo, la creación y eliminación de éstas se hace a través de una interfaz que se implementa de forma parecida al Canvas. Para la edición del nombre de las habitaciones y de una propiedad que determinará si la habitación va a ser exportada o no, se ha desarrollado una interfaz gráfica a parte similar a la de las llaves.
 
 El módulo del Canvas se extiende atendiendo a los dos nuevos módulos creados.
-Con una nueva clase, que depende del Canvas y del Grid, se permite la definición de habitaciones seleccionando una región del diseño.
-Con otra clase también que depende también del Canvas y del Grid, se permite la instanciación de los modelos de llaves (que se definen con el módulo de llaves) en el diseño, así como la colocación de un token de comienzo y las puertas, que ambos elementos se utilizarán más adelante en el módulo de exploración.
+Con una nueva clase (RoomCanvas), que depende del Canvas y del Grid, se permite la definición de habitaciones seleccionando una región del diseño.
+Con otra clase (InstanceCanvas) que también depende también del Canvas y del Grid, se permite la instanciación de los modelos de llaves (que se definen con el módulo de llaves) en el diseño, así como la colocación de un token de comienzo y las puertas, que ambos elementos se utilizarán más adelante en el módulo de exploración.
 
 También durante esta etapa, en cada una de las clases creadas y modificadas se implementan módulos para la propia representación en JSON y la interpretación de un objeto JSON para extraer sus datos, logrando así métodos necesarios y suficientes para las funcionalidades de persistencia.
