@@ -12,9 +12,13 @@ INPUT(
 ./release\keyispowerupeditor.o
 ./release\keynameeditor.o
 ./release\keyrepository.o
+./release\common.o
 ./release\instancecanvas.o
 ./release\doorinstance.o
 ./release\keyinstance.o
+./release\selectableinstance.o
+./release\roomlistwidget.o
+./release\exporter.o
 ./release\moc_mainwindow.o
 ./release\moc_canvas.o
 ./release\moc_grid.o
@@ -23,4 +27,7 @@ INPUT(
 ./release\moc_keyispowerupeditor.o
 ./release\moc_keylistwidget.o
 ./release\moc_keynameeditor.o
+./release\moc_keyrepository.o
+./release\moc_instancecanvas.o
+./release\moc_roomlistwidget.o
 );

@@ -3,16 +3,21 @@
 
 #include "../Common/common.h"
 #include "../Canvas/canvas.h"
+#include "../Canvas/roomcanvas.h"
+#include <QJsonDocument>
+
+#define TEMPLATEPATH "../roomTemplate.yy"
 
 class Exporter
 {
 public:
     Exporter();
     void load(QFile *project);
-    void exportDesign(const Canvas & canvas) const;
+    void exportDesign(const Canvas & canvas, const RoomCanvas & roomCanvas) const;
 private:
-    QFile * project;
+    static const QJsonDocument roomTemplate;
 
+    QFile * project;
     QJsonObject objWall;
     QString objWallName = "obj_wall";
 };

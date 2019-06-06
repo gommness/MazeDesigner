@@ -12,9 +12,13 @@ INPUT(
 ./debug\keyispowerupeditor.o
 ./debug\keynameeditor.o
 ./debug\keyrepository.o
+./debug\common.o
 ./debug\instancecanvas.o
 ./debug\doorinstance.o
 ./debug\keyinstance.o
+./debug\selectableinstance.o
+./debug\roomlistwidget.o
+./debug\exporter.o
 ./debug\moc_mainwindow.o
 ./debug\moc_canvas.o
 ./debug\moc_grid.o
@@ -23,4 +27,7 @@ INPUT(
 ./debug\moc_keyispowerupeditor.o
 ./debug\moc_keylistwidget.o
 ./debug\moc_keynameeditor.o
+./debug\moc_keyrepository.o
+./debug\moc_instancecanvas.o
+./debug\moc_roomlistwidget.o
 );
