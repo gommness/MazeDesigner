@@ -12,7 +12,7 @@ MAKEFILE      = Makefile
 
 CC            = gcc
 CXX           = g++
-DEFINES       = -DCOMMON_LIBRARY -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_CORE_LIB
+DEFINES       = -DCOMMON_LIBRARY -DCUSTOMDEBUG -DQT_DEPRECATED_WARNINGS -DQT_QML_DEBUG -DQT_CORE_LIB
 CFLAGS        = -pipe -g -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 CXXFLAGS      = -pipe -g -std=gnu++11 -Wall -W -D_REENTRANT -fPIC $(DEFINES)
 INCPATH       = -I../Common -I. -I../../../Qt/5.11.1/gcc_64/include -I../../../Qt/5.11.1/gcc_64/include/QtCore -I. -I../../../Qt/5.11.1/gcc_64/mkspecs/linux-g++

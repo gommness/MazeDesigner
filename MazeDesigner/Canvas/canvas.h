@@ -59,9 +59,11 @@ public:
     void writeJson(QJsonObject & json) const;
     /**
      * @brief readJson initializes its information from a canvas representation in a json object
-     * @param json the json object to parse
+     * @param json th+operation()e json object to parse
      */
     void readJson(const QJsonObject & json);
+
+    QPainterPath getDesign() const;
 
 public slots:
     /**
@@ -145,6 +147,7 @@ private:
 
 friend class RoomCanvas;
 friend class InstanceCanvas;
+friend class Exporter;
 
 };
 

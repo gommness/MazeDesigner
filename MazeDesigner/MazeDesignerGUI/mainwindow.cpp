@@ -2,6 +2,7 @@
 #include "ui_mainwindow.h"
 #include "../Keys/keylistwidget.h"
 #include "../Common/common.h"
+#include "exporter.h"
 #include <QFileDialog>
 
 #include <QDebug>
@@ -120,7 +121,16 @@ void MainWindow::validateDesign()
 
 void MainWindow::exportDesign()
 {
-
+    /// README ok so there is this weird bug that freezes the app if the currently selected tab is not the main design tab
+    /// it probably has to be something with widget inheritance, so, in order to avoid it (I know it won't be pretty) we will
+    /// set the current tab to 0, which will not freeze the app, save the file, then restore the current tab to what it was before
+    /// I'm sorry but not really, this is kinda stupid
+    int index = designTabs->tabBar()->currentIndex();
+    designTabs->tabBar()->setCurrentIndex(0);
+    QString filename = QFileDialog::getOpenFileName(this, tr("Select project"), "", tr("GameMaker Studio 2 project(*.yyp);;All Files(*)"));
+    Exporter::exportDesign(filename, *designCanvas, *roomCanvas);
+    designTabs->tabBar()->setCurrentIndex(index);
+    designCanvas->update();
 }
 
 void MainWindow::selectDesignTab(int index)

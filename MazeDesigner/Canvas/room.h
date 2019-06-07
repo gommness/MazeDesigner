@@ -41,6 +41,7 @@ public:
      * @return the json object representation of the room
      */
     QJsonObject toJson() const;
+
     //void fromJson();
     bool isValid() const;
     bool isExportable() const;

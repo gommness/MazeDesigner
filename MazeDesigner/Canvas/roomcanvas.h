@@ -93,6 +93,8 @@ private:
     Room * selected = nullptr;
     QPointF * start = nullptr;
     QPointF * end = nullptr;
+
+    friend class Exporter;
 };
 
 #endif // ROOMCANVAS_H

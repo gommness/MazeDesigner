@@ -66,4 +66,11 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 DISTFILES += \
-    ../key.png
+    ../key.png \
+    ../res/solidInstanceTemplate.json \
+    ../res/roomResourceTemplate.json \
+    ../res/roomTemplate.yy \
+    ../res/obj_wall/obj_wall.yy \
+    ../res/spr_wall/990f4d0f-c443-4406-9216-dbc6bbf5ccf6.png \
+    ../res/spr_wall/spr_wall.yy \
+    ../res/spr_wall/layers/990f4d0f-c443-4406-9216-dbc6bbf5ccf6/a6ae5f8f-dceb-4020-8bae-4c34b10d97ca.png
