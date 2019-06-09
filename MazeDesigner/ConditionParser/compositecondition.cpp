@@ -1,11 +1,42 @@
 #include "compositecondition.h"
+#include <QJsonArray>
 
-CompositeCondition::CompositeCondition(const QString &input)
+CompositeCondition::CompositeCondition(const QString &input, KeyRepository * repo)
 {
+    this->keyRepo = repo;
     QStringList list = CompositeCondition::customSplit(input);
-    conditions = parseConditions(list);
+    conditions = parseConditions(list, repo);
     // first condition in the QConditionsList will have the empty connector. the rest would have the corresponding connector
     // keep in mind that a Condition can be either a CompositeCondition or a SimpleCondition.
+}
+
+CompositeCondition::CompositeCondition(const QJsonObject &jObj, KeyRepository * repo)
+{
+    this->keyRepo = repo;
+
+    if(jObj.contains("empty") && jObj["empty"].isBool()){
+        if(jObj["empty"].toBool()){
+            *this = CompositeCondition::emptyCondition();
+            return;
+        }
+    } else {
+        throw std::runtime_error("malformed condition");
+    }
+
+    if(jObj.contains("satisfiable") && jObj["satisfiable"].isBool()){
+        this->satisfiable = jObj["satisfiable"].toBool();
+    } else {
+        this->satisfiable = true;
+    }
+
+    if(jObj.contains("condition") && jObj["condition"].isString()){
+        QStringList cond = jObj["condition"].toString().split(" ");
+        if(cond.length() < 2)
+            throw std::runtime_error("malformed condition");
+        *this = CompositeCondition(jObj["condition"].toString(), repo);
+    } else {
+        throw std::runtime_error("malformed condition");
+    }
 }
 
 CompositeCondition::~CompositeCondition()
@@ -16,7 +47,7 @@ CompositeCondition::~CompositeCondition()
     conditions.clear();
 }
 
-bool CompositeCondition::Validate()
+bool CompositeCondition::validate() const
 {
     Condition::validate();
     bool output = true;
@@ -25,9 +56,9 @@ bool CompositeCondition::Validate()
     return output;
 }
 
-QString CompositeCondition::toString()
+QString CompositeCondition::toString() const
 {
-    QString output = "CompositeCondition{";
+    QString output = "";
     for(int i=0; i<conditions.length(); i++) {
         Connector aux = conditions[i].first;
         if(aux == Connector::OR)
@@ -36,11 +67,56 @@ QString CompositeCondition::toString()
             output += "AND";
         output += " " + conditions[i].second->toString() + " ";
     }
-    return output + "}";
+    return output;
 }
 
-CompositeCondition::CompositeCondition(CompositeCondition::QConditionsList &list)
+const CompositeCondition &CompositeCondition::emptyCondition()
 {
+    static const CompositeCondition output("");
+    return output;
+}
+
+bool CompositeCondition::isSatisfiable() const
+{
+    if(isEmpty())
+        return true;
+    bool satisfiable = true;
+    if(conditions.length() > 0)
+        satisfiable = conditions[0].second->isSatisfiable();
+
+    for(auto condition = conditions.begin(); condition != conditions.end(); condition++){
+        if(condition->first == Connector::EMPTY)
+            satisfiable = condition->second->isSatisfiable();
+        else if(condition->first == Connector::OR)
+            satisfiable |= condition->second->isSatisfiable();
+        else
+            satisfiable &= condition->second->isSatisfiable();
+    }
+    return satisfiable;
+}
+
+QJsonObject CompositeCondition::toJson() const
+{
+    QJsonObject output;
+    output.insert("empty", isEmpty());
+    output.insert("satisfiable", isSatisfiable());
+    output.insert("condition", toString());
+    return output;
+}
+
+bool CompositeCondition::isEmpty() const
+{
+    return *this == CompositeCondition::emptyCondition();
+}
+
+bool CompositeCondition::operator ==(const CompositeCondition &other) const
+{
+    return this->conditions == other.conditions;
+}
+
+CompositeCondition::CompositeCondition(CompositeCondition::QConditionsList &list, KeyRepository * repo)
+{
+    keyRepo = repo;
     conditions = list;
 }
 
@@ -55,12 +131,12 @@ CompositeCondition::Connector CompositeCondition::parseConnector(const QString &
     return Connector::EMPTY;
 }
 
-CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QStringList &list){
+CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QStringList &list, KeyRepository * repo){
     int index = 0;
-    return parseConditions(list, index);
+    return parseConditions(list, index, repo);
 }
 
-CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QStringList &list, int &index){
+CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QStringList &list, int &index, KeyRepository * repo){
     QConditionsList output; // list of Connector-Condition.
     Connector connector;
     Condition *condition;
@@ -73,7 +149,7 @@ CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QS
             // thus we should create a composite condition from the sublist of conditions between paranthesis
             try{
                 QConditionsList subCompositeConditionList = parseConditions(list, index);
-                condition = new CompositeCondition(subCompositeConditionList);
+                condition = new CompositeCondition(subCompositeConditionList, repo);
             } catch(ConditionError::Malformed &err){
                 // if an exception is caught, we shall free all memory allocated within output and pass it through
                 for(int j = output.length()-1; j >= 0; j--)
@@ -104,9 +180,9 @@ CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QS
                         delete output[j].second;
                     throw ConditionError::Malformed("Unexpected end of condition");
                 }
-                condition = new SimpleCondition(list[index-1], list[index]);
+                condition = new SimpleCondition(list[index-1], list[index], repo);
             } else { // if it was a numberless simple condition
-                condition = new SimpleCondition("1", list[index]);
+                condition = new SimpleCondition("1", list[index], repo);
             }
         }
         // now, prepare the pair to be inserted.
@@ -175,18 +251,20 @@ CompositeCondition::QConditionsList CompositeCondition::parseConditions(const QS
 QStringList CompositeCondition::customSplit(const QString &input)
 {
     QStringList output;
-    QStringList splittedList = input.split(QRegExp("[ ]"), QString::SkipEmptyParts);
+    QStringList splittedList = input.split(QRegExp("\\s+"), QString::SkipEmptyParts);
     foreach( QString word, splittedList){
-        QString cleansedWord(word);
-        cleansedWord.remove(QRegExp("[)()]")); // cleansed word would be the word but removing all "(" and ")" in it if they existed
-
-        if(word.front() == "(") // if the word started with (, add it as a string to the output
-            output.append("(");
-
-        output.append(cleansedWord); // add the cleansed word
-
-        if(word.back() == ")") // if the word ended with ), add it as a string to the output
-            output.append(")");
+        QStringList cleansedWord = word.split(QRegExp("\\b"));
+        //cleansedWord.remove(QRegExp("[)(]")); // cleansed word would be the word but removing all "(" and ")" in it if they existed
+        for(auto str = cleansedWord.begin(); str != cleansedWord.end(); str++){
+            if(str->contains("()")) // if it contains the empty expresion, thus, the empty condition, we just won't include it
+                continue;
+            else if(str->contains("("))
+                output.append("(");
+            else if(str->contains(")"))
+                output.append(")");
+            else
+                output.append(*str);
+        }
     }
     return output;
 }

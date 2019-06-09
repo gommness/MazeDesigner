@@ -84,7 +84,7 @@ void InstanceCanvas::readJson(const QJsonObject &json)
         QJsonArray jsonArray = jsonInstances[JSONINSTANCESDOORSKEY].toArray();
         for(auto jsonDoor = jsonArray.begin(); jsonDoor != jsonArray.end(); jsonDoor++){
             if(jsonDoor->isObject()) // no else so that if there is a non-obj entry, we don't freak out
-                doors.append(new DoorInstance(DoorInstance::fromJson(jsonDoor->toObject())));
+                doors.append(new DoorInstance(jsonDoor->toObject()));
         }
     } else {
         throw std::runtime_error("no "+QString(JSONINSTANCESDOORSKEY).toUtf8()+" key found in jsonObject");
@@ -141,7 +141,8 @@ void InstanceCanvas::paintEvent(QPaintEvent *event)
 
     // drawing doors
     for(auto door = doors.begin(); door != doors.end(); door++){
-        painter.drawLine((*door)->translated(design->grid.getOffset()));
+        (*door)->drawSelf(painter, design->grid.getOffset());
+        //painter.drawLine((*door)->translated(design->grid.getOffset()));
         //painter.drawPolygon((*door)->area.translated(design->grid.getOffset()));
     }
 

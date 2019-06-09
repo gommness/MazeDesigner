@@ -6,21 +6,21 @@ DoorInstance::DoorInstance(QLineF &line) : QLineF (line)
 {
     DoorInstance::ID++;
     id = DoorInstance::ID;
-    QVector<QPointF> poly;
-    QLineF normal = line.normalVector();
-    // normalVector, despite the name, returns a orthogonal line starting at the same point as line
-    // thus, we need to translate that normalLines to the origin, maintaining the vector
-    normal.setP1(QPointF(0,0));
-    normal.setP2(normal.p2()-line.p1());
-    // then adjust the length of the line for area purposes
-    normal.setLength(4);
-    // and finally construct the polygon surrounding the line
-    poly.append(line.p1()+normal.p2());
-    poly.append(line.p2()+normal.p2());
-    normal.setLength(-4); // we invert the length here to capture the other side
-    poly.append(line.p2()+normal.p2());
-    poly.append(line.p1()+normal.p2());
-    area = QPolygonF(poly);
+    area = lineArea(line);
+}
+
+DoorInstance::DoorInstance(DoorInstance &other) : QLineF (other)
+{
+    id = other.id;
+    area = other.area;
+    condition1 = other.condition1;
+    condition2 = other.condition2;
+}
+
+DoorInstance::~DoorInstance()
+{
+    delete condition1;
+    delete condition2;
 }
 
 QPolygonF DoorInstance::boundPolygon() const
@@ -41,7 +41,7 @@ bool DoorInstance::contains(const QPointF &point) const
     return area.containsPoint(point, Qt::FillRule::OddEvenFill);
 }
 
-DoorInstance DoorInstance::fromJson(const QJsonObject &json)
+DoorInstance::DoorInstance(const QJsonObject &json)
 {
     int id;
     QLineF line;
@@ -59,8 +59,21 @@ DoorInstance DoorInstance::fromJson(const QJsonObject &json)
     } else {
         throw std::runtime_error("missing points for door instance in jsonObject");
     }
-    TODO("desserialize the door conditions when they are implemented");
-    return DoorInstance(id, line);
+
+    if(json.contains("condition1") && json["condition1"].isObject()){
+        condition1 = new CompositeCondition(json["condition1"].toObject());
+    } else {
+        throw std::runtime_error("missing condition for door instance in jsonObject");
+    }
+    if(json.contains("condition2") && json["condition2"].isObject()){
+        condition2 = new CompositeCondition(json["condition2"].toObject());
+    } else {
+        delete condition1;
+        throw std::runtime_error("missing condition for door instance in jsonObject");
+    }
+    this->id = id;
+    this->setPoints(line.p1(), line.p2());
+    this->area = lineArea(line);
 }
 
 QJsonObject DoorInstance::toJson() const
@@ -69,12 +82,81 @@ QJsonObject DoorInstance::toJson() const
     output.insert("ID", id);
     output.insert("point1", QString(POINTFORMAT).arg(p1().x()).arg(p1().y()));
     output.insert("point2", QString(POINTFORMAT).arg(p2().x()).arg(p2().y()));
-    TODO("serialize the door conditions when they are implemented");
+    output.insert("condition1", condition1->toJson());
+    output.insert("condition2", condition2->toJson());
     return output;
+}
+
+QPair<QPointF, QPointF> DoorInstance::separation() const
+{
+    QPair<QPointF, QPointF> output;
+    QLineF normal(normalVector());
+    //translate normal to (0,0) so it acts as a vector
+    normal.setP1(QPointF(0,0));
+    normal.setP2(normal.p2()-this->p1());
+
+    normal.setLength(8);
+    output.first = center()+normal.p2();
+    normal.setLength(-8);
+    output.second = center()+normal.p2();
+    return output;
+}
+
+CompositeCondition DoorInstance::getCondition1() const
+{
+    if(condition1 != nullptr)
+        return *condition1;
+    else
+        return CompositeCondition::emptyCondition();
+}
+
+CompositeCondition DoorInstance::getCondition2() const
+{
+    if(condition2 != nullptr)
+        return *condition2;
+    else
+        return CompositeCondition::emptyCondition();
+}
+
+void DoorInstance::drawSelf(QPainter &painter, QPointF offset) const
+{
+
+    painter.drawLine(this->translated(offset));
+    QPair<QPointF, QPointF> points = separation();
+    QPointF areaPoint(4,8);
+    QRectF bound(points.first-areaPoint, points.first+areaPoint);
+    painter.drawText(bound, Qt::AlignCenter, "A");
+    bound = QRectF(points.second-areaPoint, points.second+areaPoint);
+    painter.drawText(bound, Qt::AlignCenter, "B");
+}
+
+void DoorInstance::setConditions(CompositeCondition &cond1, CompositeCondition &cond2)
+{
+    condition1 = new CompositeCondition(cond1);
+    condition2 = new CompositeCondition(cond2);
 }
 
 DoorInstance::DoorInstance(int id, QLineF &line) : QLineF (line)
 {
     this->id = id;
+}
+
+QPolygonF DoorInstance::lineArea(QLineF line)
+{
+    QVector<QPointF> poly;
+    QLineF normal = line.normalVector();
+    // normalVector, despite the name, returns a orthogonal line starting at the same point as line
+    // thus, we need to translate that normalLines to the origin, maintaining the vector
+    normal.setP1(QPointF(0,0));
+    normal.setP2(normal.p2()-line.p1());
+    // then adjust the length of the line for area purposes
+    normal.setLength(4);
+    // and finally construct the polygon surrounding the line
+    poly.append(line.p1()+normal.p2());
+    poly.append(line.p2()+normal.p2());
+    normal.setLength(-4); // we invert the length here to capture the other side
+    poly.append(line.p2()+normal.p2());
+    poly.append(line.p1()+normal.p2());
+    return QPolygonF(poly);
 }
 

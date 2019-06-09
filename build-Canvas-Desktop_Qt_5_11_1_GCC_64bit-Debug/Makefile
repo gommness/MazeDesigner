@@ -859,6 +859,10 @@ moc_canvas.cpp: ../MazeDesigner/Canvas/grid.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../MazeDesigner/Common/common.h \
+		../MazeDesigner/Common/common_global.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QPointF \
 		../MazeDesigner/Canvas/canvas.h \
 		moc_predefs.h \
 		../../Qt/5.11.1/gcc_64/bin/moc
@@ -1096,6 +1100,10 @@ moc_mainwindow.cpp: ../../Qt/5.11.1/gcc_64/include/QtWidgets/QMainWindow \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../MazeDesigner/Common/common.h \
+		../MazeDesigner/Common/common_global.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QPointF \
 		../MazeDesigner/Canvas/mainwindow.h \
 		moc_predefs.h \
 		../../Qt/5.11.1/gcc_64/bin/moc
@@ -1220,6 +1228,10 @@ moc_roomcanvas.cpp: ../MazeDesigner/Canvas/canvas.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../MazeDesigner/Common/common.h \
+		../MazeDesigner/Common/common_global.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QPointF \
 		../MazeDesigner/Canvas/room.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QRect \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QString \
@@ -1368,7 +1380,10 @@ canvas.o: ../MazeDesigner/Canvas/canvas.cpp ../MazeDesigner/Canvas/canvas.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../MazeDesigner/Common/common.h \
+		../MazeDesigner/Common/common_global.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QPointF \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QLineF \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/QSizePolicy \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/QHBoxLayout \
@@ -1622,6 +1637,10 @@ main.o: ../MazeDesigner/Canvas/main.cpp ../MazeDesigner/Canvas/mainwindow.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../MazeDesigner/Common/common.h \
+		../MazeDesigner/Common/common_global.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QPointF \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/QApplication \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/qapplication.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qcoreapplication.h \
@@ -1750,6 +1769,10 @@ mainwindow.o: ../MazeDesigner/Canvas/mainwindow.cpp ../MazeDesigner/Canvas/canva
 		../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../MazeDesigner/Common/common.h \
+		../MazeDesigner/Common/common_global.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QPointF \
 		../MazeDesigner/Canvas/mainwindow.h \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/QMainWindow \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/qmainwindow.h \
@@ -1901,7 +1924,11 @@ room.o: ../MazeDesigner/Canvas/room.cpp ../MazeDesigner/Canvas/room.h \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/QScrollArea \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/qscrollarea.h \
 		../../Qt/5.11.1/gcc_64/include/QtWidgets/qabstractscrollarea.h \
-		../../Qt/5.11.1/gcc_64/include/QtWidgets/qframe.h
+		../../Qt/5.11.1/gcc_64/include/QtWidgets/qframe.h \
+		../MazeDesigner/Common/common.h \
+		../MazeDesigner/Common/common_global.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QPointF
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o room.o ../MazeDesigner/Canvas/room.cpp
 
 roomcanvas.o: ../MazeDesigner/Canvas/roomcanvas.cpp ../MazeDesigner/Canvas/roomcanvas.h \
@@ -2024,10 +2051,13 @@ roomcanvas.o: ../MazeDesigner/Canvas/roomcanvas.cpp ../MazeDesigner/Canvas/roomc
 		../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../MazeDesigner/Common/common.h \
+		../MazeDesigner/Common/common_global.h \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
+		../../Qt/5.11.1/gcc_64/include/QtCore/QPointF \
 		../MazeDesigner/Canvas/room.h \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QRect \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QString \
-		../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
 		../../Qt/5.11.1/gcc_64/include/QtCore/QJsonArray \
 		../../Qt/5.11.1/gcc_64/include/QtCore/qjsonarray.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o roomcanvas.o ../MazeDesigner/Canvas/roomcanvas.cpp

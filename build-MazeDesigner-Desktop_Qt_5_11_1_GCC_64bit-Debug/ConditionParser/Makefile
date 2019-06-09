@@ -51,12 +51,10 @@ OBJECTS_DIR   = ./
 ####### Files
 
 SOURCES       = ../../MazeDesigner/ConditionParser/main.cpp \
-		../../MazeDesigner/ConditionParser/key.cpp \
 		../../MazeDesigner/ConditionParser/compositecondition.cpp \
 		../../MazeDesigner/ConditionParser/simplecondition.cpp \
 		../../MazeDesigner/ConditionParser/condition.cpp 
 OBJECTS       = main.o \
-		key.o \
 		compositecondition.o \
 		simplecondition.o \
 		condition.o
@@ -248,11 +246,9 @@ DIST          = ../../../Qt/5.11.1/gcc_64/mkspecs/features/spec_pre.prf \
 		../../../Qt/5.11.1/gcc_64/mkspecs/features/exceptions.prf \
 		../../../Qt/5.11.1/gcc_64/mkspecs/features/yacc.prf \
 		../../../Qt/5.11.1/gcc_64/mkspecs/features/lex.prf \
-		../../MazeDesigner/ConditionParser/ConditionParser.pro ../../MazeDesigner/ConditionParser/key.h \
-		../../MazeDesigner/ConditionParser/compositecondition.h \
+		../../MazeDesigner/ConditionParser/ConditionParser.pro ../../MazeDesigner/ConditionParser/compositecondition.h \
 		../../MazeDesigner/ConditionParser/simplecondition.h \
 		../../MazeDesigner/ConditionParser/condition.h ../../MazeDesigner/ConditionParser/main.cpp \
-		../../MazeDesigner/ConditionParser/key.cpp \
 		../../MazeDesigner/ConditionParser/compositecondition.cpp \
 		../../MazeDesigner/ConditionParser/simplecondition.cpp \
 		../../MazeDesigner/ConditionParser/condition.cpp
@@ -665,8 +661,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.11.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../../MazeDesigner/ConditionParser/key.h ../../MazeDesigner/ConditionParser/compositecondition.h ../../MazeDesigner/ConditionParser/simplecondition.h ../../MazeDesigner/ConditionParser/condition.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../MazeDesigner/ConditionParser/main.cpp ../../MazeDesigner/ConditionParser/key.cpp ../../MazeDesigner/ConditionParser/compositecondition.cpp ../../MazeDesigner/ConditionParser/simplecondition.cpp ../../MazeDesigner/ConditionParser/condition.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../MazeDesigner/ConditionParser/compositecondition.h ../../MazeDesigner/ConditionParser/simplecondition.h ../../MazeDesigner/ConditionParser/condition.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../../MazeDesigner/ConditionParser/main.cpp ../../MazeDesigner/ConditionParser/compositecondition.cpp ../../MazeDesigner/ConditionParser/simplecondition.cpp ../../MazeDesigner/ConditionParser/condition.cpp $(DISTDIR)/
 
 
 clean: compiler_clean 
@@ -900,43 +896,12 @@ main.o: ../../MazeDesigner/ConditionParser/main.cpp ../../../Qt/5.11.1/gcc_64/in
 		../../MazeDesigner/ConditionParser/simplecondition.h \
 		../../MazeDesigner/ConditionParser/condition.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QMap \
-		../../MazeDesigner/ConditionParser/key.h
+		../../MazeDesigner/Keys/key.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Keys/keyrepository.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o main.o ../../MazeDesigner/ConditionParser/main.cpp
-
-key.o: ../../MazeDesigner/ConditionParser/key.cpp ../../MazeDesigner/ConditionParser/key.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/QString \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qstring.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qchar.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qglobal.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qconfig-bootstrapped.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qconfig.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qtcore-config.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qsystemdetection.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qprocessordetection.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qcompilerdetection.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qtypeinfo.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qsysinfo.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qlogging.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qflags.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qbasicatomic.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_bootstrap.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qgenericatomic.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_cxx11.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_msvc.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qglobalstatic.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qmutex.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qnumeric.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qversiontagging.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qbytearray.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qrefcount.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qnamespace.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qarraydata.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringliteral.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringalgorithms.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringview.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringbuilder.h
-	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o key.o ../../MazeDesigner/ConditionParser/key.cpp
 
 compositecondition.o: ../../MazeDesigner/ConditionParser/compositecondition.cpp ../../MazeDesigner/ConditionParser/compositecondition.h \
 		../../MazeDesigner/ConditionParser/simplecondition.h \
@@ -1006,7 +971,12 @@ compositecondition.o: ../../MazeDesigner/ConditionParser/compositecondition.cpp 
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../MazeDesigner/ConditionParser/key.h
+		../../MazeDesigner/Keys/key.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Keys/keyrepository.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QObject
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o compositecondition.o ../../MazeDesigner/ConditionParser/compositecondition.cpp
 
 simplecondition.o: ../../MazeDesigner/ConditionParser/simplecondition.cpp ../../MazeDesigner/ConditionParser/simplecondition.h \
@@ -1076,7 +1046,12 @@ simplecondition.o: ../../MazeDesigner/ConditionParser/simplecondition.cpp ../../
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../MazeDesigner/ConditionParser/key.h \
+		../../MazeDesigner/Keys/key.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Keys/keyrepository.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QObject \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QRegExp
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o simplecondition.o ../../MazeDesigner/ConditionParser/simplecondition.cpp
 
@@ -1146,7 +1121,12 @@ condition.o: ../../MazeDesigner/ConditionParser/condition.cpp ../../MazeDesigner
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
-		../../MazeDesigner/ConditionParser/key.h
+		../../MazeDesigner/Keys/key.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Keys/keyrepository.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QObject
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o condition.o ../../MazeDesigner/ConditionParser/condition.cpp
 
 ####### Install

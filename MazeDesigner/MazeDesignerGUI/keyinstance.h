@@ -49,6 +49,7 @@ public:
      * @return the id of the object
      */
     int getId();
+    QString toString() const;
     const Key model;
 private:
     /**

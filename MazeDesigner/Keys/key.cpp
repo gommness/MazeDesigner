@@ -71,9 +71,9 @@ void Key::setPowerUp(const bool &value)
     this->powerUp = value;
 }
 
-QString Key::toString()
+QString Key::toString() const
 {
-    return QString("keyname " + name + " power up: " + powerUp);
+    return QString("id "+QString::number(id)+" keyname " + name + " power up: " + powerUp);
 }
 
 QJsonObject Key::toJson()

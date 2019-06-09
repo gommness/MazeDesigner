@@ -4,18 +4,22 @@
 #include <QLineF>
 #include <QPolygonF>
 #include <QJsonObject>
+#include <QPainter>
 #include "../Common/common.h"
+#include "../ConditionParser/compositecondition.h"
 #include "selectableinstance.h"
 
-class DoorInstance : public QLineF, public SelectableInstance
+class DoorInstance : public QObject, public QLineF, public SelectableInstance
 {
+    Q_OBJECT
 public:
     /**
      * @brief DoorInstance constructs a DoorInstance from a line. the id is incrementaly auto-given
      * @param line the line to perform the construction
      */
     DoorInstance(QLineF & line);
-    ~DoorInstance() override {}
+    DoorInstance(DoorInstance & other);
+    ~DoorInstance() override;
     QPolygonF boundPolygon() const override;
     QString instanceInfo() const override;
     /**
@@ -30,12 +34,20 @@ public:
      * @param json the json to parse
      * @return the doorInstance represented by the json
      */
-    static DoorInstance fromJson(const QJsonObject & json);
+    DoorInstance(const QJsonObject & json);
     /**
      * @brief toJson creates a QJsonObject holding the information if the object
      * @return said JsonObject
      */
     QJsonObject toJson() const;
+
+    QPair<QPointF, QPointF> separation() const;
+    CompositeCondition getCondition1() const;
+    CompositeCondition getCondition2() const;
+    void drawSelf(QPainter & painter, QPointF offset) const;
+
+public slots:
+    void setConditions(CompositeCondition & cond1, CompositeCondition & cond2);
 
 private:
     /**
@@ -45,10 +57,14 @@ private:
      */
     DoorInstance(int id, QLineF & line);
 
-    //TODO add the condition to the door
+    static QPolygonF lineArea(QLineF line);
+
+
     static int ID;
     int id;
     QPolygonF area;
+    CompositeCondition *condition1;
+    CompositeCondition *condition2;
 friend class InstanceCanvas;
 };
 

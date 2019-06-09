@@ -3,20 +3,28 @@
 
 #include <QString>
 #include <QMap>
-#include "key.h"
+#include "../Keys/key.h"
+#include "../Keys/keyrepository.h"
 
 class Condition
 {
 public:
-    QMap<QString, Key> *nameSpace = nullptr;
+    KeyRepository *keyRepo = nullptr;
 
-    Condition();
+    Condition(bool sat = true, KeyRepository * repo = nullptr);
     virtual ~Condition() {}
-    virtual bool validate();
-    virtual void setNameSpace(QMap<QString, Key> *map);
-    virtual QMap<QString, Key> getNameSpace();
-    virtual QString toString() = 0;
-private:
+    virtual bool validate() const;
+    virtual bool isSatisfiable() const;
+    static const Condition & emptyCondition();
+    static const Condition & unsatCondition();
+    virtual bool isEmpty() const;
+    virtual void setKeyRepository(KeyRepository *map);
+    virtual KeyRepository * getNameSpace();
+    virtual QString toString() const;
+    virtual bool operator ==(const Condition & other) const;
+    virtual QJsonObject toJson() const;
+protected:
+    bool satisfiable = true;
 };
 
 namespace  ConditionError {

@@ -148,7 +148,7 @@ private:
 friend class RoomCanvas;
 friend class InstanceCanvas;
 friend class Exporter;
-
+friend class DesignGraph;
 };
 
 #endif // CANVAS_H

@@ -72,6 +72,12 @@ int KeyInstance::getId()
     return id;
 }
 
+QString KeyInstance::toString() const
+{
+    QString output = QString("KEY{")+QString::number(id)+", ("+model.toString()+")}";
+    return output;
+}
+
 KeyInstance::KeyInstance(int id, const Key &model, const qreal &x, const qreal &y) : QRectF(x-8,y-8,16,16), model(model)
 {
     this->id = id;

@@ -16,7 +16,7 @@ public:
     void setName(const QString & name);
     bool isPowerUp() const;
     void setPowerUp(const bool & value);
-    QString toString();
+    QString toString() const;
     QJsonObject toJson();
     bool operator ==(const Key & key) const;
 private:

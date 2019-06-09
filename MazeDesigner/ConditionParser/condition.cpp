@@ -1,26 +1,58 @@
 #include "condition.h"
 
-Condition::Condition(){
-    nameSpace = new QMap<QString, Key>();
-}
+Condition::Condition(bool sat, KeyRepository * repo) : keyRepo(repo), satisfiable(sat) {}
 
-bool Condition::validate()
+bool Condition::validate() const
 {
-    if(!nameSpace)
+    if(!keyRepo)
         throw ConditionError::MissingNameSpace();
     return true;
 }
 
-void Condition::setNameSpace(QMap<QString, Key> *map)
+bool Condition::isSatisfiable() const
 {
-    nameSpace = map;
+    return satisfiable;
 }
 
-QMap<QString, Key> Condition::getNameSpace()
+const Condition &Condition::emptyCondition()
 {
-    if(nameSpace == nullptr)
-        return QMap<QString, Key>();
-    else
-        return QMap<QString, Key>(*nameSpace);
+    const static Condition output;
+    return output;
+}
+
+const Condition &Condition::unsatCondition()
+{
+    static const Condition output(false);
+    return output;
+}
+
+bool Condition::isEmpty() const
+{
+    return *this == Condition::emptyCondition();
+}
+
+void Condition::setKeyRepository(KeyRepository *map)
+{
+    keyRepo = map;
+}
+
+KeyRepository * Condition::getNameSpace()
+{
+    return keyRepo;
+}
+
+QString Condition::toString() const
+{
+    return QString("{Condition EMPTY}");
+}
+
+bool Condition::operator ==(const Condition &other) const
+{
+    return this->satisfiable == other.satisfiable;
+}
+
+QJsonObject Condition::toJson() const
+{
+    return QJsonObject();
 }
 

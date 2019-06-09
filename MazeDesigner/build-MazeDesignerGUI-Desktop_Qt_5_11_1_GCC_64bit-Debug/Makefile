@@ -64,6 +64,9 @@ SOURCES       = ../MazeDesignerGUI/main.cpp \
 		../Keys/keynameeditor.cpp \
 		../Keys/keyrepository.cpp \
 		../Common/common.cpp \
+		../ConditionParser/condition.cpp \
+		../ConditionParser/simplecondition.cpp \
+		../ConditionParser/compositecondition.cpp \
 		../MazeDesignerGUI/instancecanvas.cpp \
 		../MazeDesignerGUI/doorinstance.cpp \
 		../MazeDesignerGUI/keyinstance.cpp \
@@ -79,6 +82,7 @@ SOURCES       = ../MazeDesignerGUI/main.cpp \
 		moc_keynameeditor.cpp \
 		moc_keyrepository.cpp \
 		moc_instancecanvas.cpp \
+		moc_doorinstance.cpp \
 		moc_roomlistwidget.cpp
 OBJECTS       = main.o \
 		mainwindow.o \
@@ -94,6 +98,9 @@ OBJECTS       = main.o \
 		keynameeditor.o \
 		keyrepository.o \
 		common.o \
+		condition.o \
+		simplecondition.o \
+		compositecondition.o \
 		instancecanvas.o \
 		doorinstance.o \
 		keyinstance.o \
@@ -110,6 +117,7 @@ OBJECTS       = main.o \
 		moc_keynameeditor.o \
 		moc_keyrepository.o \
 		moc_instancecanvas.o \
+		moc_doorinstance.o \
 		moc_roomlistwidget.o
 DIST          = ../key.png \
 		../res/solidInstanceTemplate.json \
@@ -323,6 +331,9 @@ DIST          = ../key.png \
 		../Keys/keynameeditor.h \
 		../Keys/keyrepository.h \
 		../Keys/ui_mainwindow.h \
+		../ConditionParser/compositecondition.h \
+		../ConditionParser/condition.h \
+		../ConditionParser/simplecondition.h \
 		../MazeDesignerGUI/instancecanvas.h \
 		../MazeDesignerGUI/doorinstance.h \
 		../MazeDesignerGUI/keyinstance.h \
@@ -342,6 +353,9 @@ DIST          = ../key.png \
 		../Keys/keynameeditor.cpp \
 		../Keys/keyrepository.cpp \
 		../Common/common.cpp \
+		../ConditionParser/condition.cpp \
+		../ConditionParser/simplecondition.cpp \
+		../ConditionParser/compositecondition.cpp \
 		../MazeDesignerGUI/instancecanvas.cpp \
 		../MazeDesignerGUI/doorinstance.cpp \
 		../MazeDesignerGUI/keyinstance.cpp \
@@ -761,8 +775,8 @@ distdir: FORCE
 	@test -d $(DISTDIR) || mkdir -p $(DISTDIR)
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.11.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
-	$(COPY_FILE) --parents ../MazeDesignerGUI/mainwindow.h ../Canvas/canvas.h ../Canvas/grid.h ../Canvas/mainwindow.h ../Canvas/room.h ../Canvas/roomcanvas.h ../Canvas/shape.h ../Canvas/ui_mainwindow.h ../Keys/key.h ../Keys/keyeditorwidget.h ../Keys/keyispowerupeditor.h ../Keys/keylistwidget.h ../Keys/keynameeditor.h ../Keys/keyrepository.h ../Keys/ui_mainwindow.h ../MazeDesignerGUI/instancecanvas.h ../MazeDesignerGUI/doorinstance.h ../MazeDesignerGUI/keyinstance.h ../MazeDesignerGUI/selectableinstance.h ../MazeDesignerGUI/roomlistwidget.h ../MazeDesignerGUI/exporter.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../MazeDesignerGUI/main.cpp ../MazeDesignerGUI/mainwindow.cpp ../Canvas/canvas.cpp ../Canvas/grid.cpp ../Canvas/room.cpp ../Canvas/roomcanvas.cpp ../Canvas/shape.cpp ../Keys/keylistwidget.cpp ../Keys/key.cpp ../Keys/keyeditorwidget.cpp ../Keys/keyispowerupeditor.cpp ../Keys/keynameeditor.cpp ../Keys/keyrepository.cpp ../Common/common.cpp ../MazeDesignerGUI/instancecanvas.cpp ../MazeDesignerGUI/doorinstance.cpp ../MazeDesignerGUI/keyinstance.cpp ../MazeDesignerGUI/selectableinstance.cpp ../MazeDesignerGUI/roomlistwidget.cpp ../MazeDesignerGUI/exporter.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../MazeDesignerGUI/mainwindow.h ../Canvas/canvas.h ../Canvas/grid.h ../Canvas/mainwindow.h ../Canvas/room.h ../Canvas/roomcanvas.h ../Canvas/shape.h ../Canvas/ui_mainwindow.h ../Keys/key.h ../Keys/keyeditorwidget.h ../Keys/keyispowerupeditor.h ../Keys/keylistwidget.h ../Keys/keynameeditor.h ../Keys/keyrepository.h ../Keys/ui_mainwindow.h ../ConditionParser/compositecondition.h ../ConditionParser/condition.h ../ConditionParser/simplecondition.h ../MazeDesignerGUI/instancecanvas.h ../MazeDesignerGUI/doorinstance.h ../MazeDesignerGUI/keyinstance.h ../MazeDesignerGUI/selectableinstance.h ../MazeDesignerGUI/roomlistwidget.h ../MazeDesignerGUI/exporter.h $(DISTDIR)/
+	$(COPY_FILE) --parents ../MazeDesignerGUI/main.cpp ../MazeDesignerGUI/mainwindow.cpp ../Canvas/canvas.cpp ../Canvas/grid.cpp ../Canvas/room.cpp ../Canvas/roomcanvas.cpp ../Canvas/shape.cpp ../Keys/keylistwidget.cpp ../Keys/key.cpp ../Keys/keyeditorwidget.cpp ../Keys/keyispowerupeditor.cpp ../Keys/keynameeditor.cpp ../Keys/keyrepository.cpp ../Common/common.cpp ../ConditionParser/condition.cpp ../ConditionParser/simplecondition.cpp ../ConditionParser/compositecondition.cpp ../MazeDesignerGUI/instancecanvas.cpp ../MazeDesignerGUI/doorinstance.cpp ../MazeDesignerGUI/keyinstance.cpp ../MazeDesignerGUI/selectableinstance.cpp ../MazeDesignerGUI/roomlistwidget.cpp ../MazeDesignerGUI/exporter.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../MazeDesignerGUI/mainwindow.ui $(DISTDIR)/
 
 
@@ -794,9 +808,9 @@ compiler_moc_predefs_clean:
 moc_predefs.h: ../../../Qt/5.11.1/gcc_64/mkspecs/features/data/dummy.cpp
 	g++ -pipe -g -std=gnu++11 -Wall -W -dM -E -o moc_predefs.h ../../../Qt/5.11.1/gcc_64/mkspecs/features/data/dummy.cpp
 
-compiler_moc_header_make_all: moc_mainwindow.cpp moc_canvas.cpp moc_grid.cpp moc_mainwindow.cpp moc_roomcanvas.cpp moc_keyeditorwidget.cpp moc_keyispowerupeditor.cpp moc_keylistwidget.cpp moc_keynameeditor.cpp moc_keyrepository.cpp moc_instancecanvas.cpp moc_roomlistwidget.cpp
+compiler_moc_header_make_all: moc_mainwindow.cpp moc_canvas.cpp moc_grid.cpp moc_mainwindow.cpp moc_roomcanvas.cpp moc_keyeditorwidget.cpp moc_keyispowerupeditor.cpp moc_keylistwidget.cpp moc_keynameeditor.cpp moc_keyrepository.cpp moc_instancecanvas.cpp moc_doorinstance.cpp moc_roomlistwidget.cpp
 compiler_moc_header_clean:
-	-$(DEL_FILE) moc_mainwindow.cpp moc_canvas.cpp moc_grid.cpp moc_mainwindow.cpp moc_roomcanvas.cpp moc_keyeditorwidget.cpp moc_keyispowerupeditor.cpp moc_keylistwidget.cpp moc_keynameeditor.cpp moc_keyrepository.cpp moc_instancecanvas.cpp moc_roomlistwidget.cpp
+	-$(DEL_FILE) moc_mainwindow.cpp moc_canvas.cpp moc_grid.cpp moc_mainwindow.cpp moc_roomcanvas.cpp moc_keyeditorwidget.cpp moc_keyispowerupeditor.cpp moc_keylistwidget.cpp moc_keynameeditor.cpp moc_keyrepository.cpp moc_instancecanvas.cpp moc_doorinstance.cpp moc_roomlistwidget.cpp
 moc_mainwindow.cpp: ../../../Qt/5.11.1/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qmainwindow.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qtwidgetsglobal.h \
@@ -963,6 +977,9 @@ moc_mainwindow.cpp: ../../../Qt/5.11.1/gcc_64/include/QtWidgets/QMainWindow \
 		../../../Qt/5.11.1/gcc_64/include/QtGui/QPolygonF \
 		../MazeDesignerGUI/doorinstance.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QLineF \
+		../ConditionParser/compositecondition.h \
+		../ConditionParser/simplecondition.h \
+		../ConditionParser/condition.h \
 		../Keys/keylistwidget.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QTableWidget \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qtablewidget.h \
@@ -2169,6 +2186,9 @@ moc_instancecanvas.cpp: ../../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/5.11.1/gcc_64/include/QtGui/QPolygonF \
 		../MazeDesignerGUI/doorinstance.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QLineF \
+		../ConditionParser/compositecondition.h \
+		../ConditionParser/simplecondition.h \
+		../ConditionParser/condition.h \
 		../Keys/keylistwidget.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QTableWidget \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qtablewidget.h \
@@ -2195,6 +2215,121 @@ moc_instancecanvas.cpp: ../../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidget \
 		moc_predefs.h \
 		../../../Qt/5.11.1/gcc_64/bin/moc
 	/home/javier/Qt/5.11.1/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/javier/Qt/5.11.1/gcc_64/mkspecs/linux-g++ -I/home/javier/MazeDesigner/MazeDesigner/MazeDesignerGUI -I/home/javier/Qt/5.11.1/gcc_64/include -I/home/javier/Qt/5.11.1/gcc_64/include/QtWidgets -I/home/javier/Qt/5.11.1/gcc_64/include/QtGui -I/home/javier/Qt/5.11.1/gcc_64/include/QtCore -I. -IE:/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IE:/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IE:/Qt/Tools/mingw530_32/i686-w64-mingw32/include -IE:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IE:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IE:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ../MazeDesignerGUI/instancecanvas.h -o moc_instancecanvas.cpp
+
+moc_doorinstance.cpp: ../../../Qt/5.11.1/gcc_64/include/QtCore/QLineF \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qline.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/QPolygonF \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpolygon.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qtguiglobal.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qtgui-config.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringliteral.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qrect.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmargins.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsize.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/QPainter \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpainter.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qwindowdefs.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qfontmetrics.h \
+		../Common/common.h \
+		../Common/common_global.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QPointF \
+		../ConditionParser/compositecondition.h \
+		../ConditionParser/simplecondition.h \
+		../ConditionParser/condition.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QString \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QMap \
+		../Keys/key.h \
+		../Keys/keyrepository.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QObject \
+		../MazeDesignerGUI/selectableinstance.h \
+		../MazeDesignerGUI/doorinstance.h \
+		moc_predefs.h \
+		../../../Qt/5.11.1/gcc_64/bin/moc
+	/home/javier/Qt/5.11.1/gcc_64/bin/moc $(DEFINES) --include ./moc_predefs.h -I/home/javier/Qt/5.11.1/gcc_64/mkspecs/linux-g++ -I/home/javier/MazeDesigner/MazeDesigner/MazeDesignerGUI -I/home/javier/Qt/5.11.1/gcc_64/include -I/home/javier/Qt/5.11.1/gcc_64/include/QtWidgets -I/home/javier/Qt/5.11.1/gcc_64/include/QtGui -I/home/javier/Qt/5.11.1/gcc_64/include/QtCore -I. -IE:/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include -IE:/Qt/Tools/mingw530_32/lib/gcc/i686-w64-mingw32/5.3.0/include-fixed -IE:/Qt/Tools/mingw530_32/i686-w64-mingw32/include -IE:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++ -IE:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/i686-w64-mingw32 -IE:/Qt/Tools/mingw530_32/i686-w64-mingw32/include/c++/backward ../MazeDesignerGUI/doorinstance.h -o moc_doorinstance.cpp
 
 moc_roomlistwidget.cpp: ../../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qwidget.h \
@@ -2534,6 +2669,9 @@ main.o: ../MazeDesignerGUI/main.cpp ../MazeDesignerGUI/mainwindow.h \
 		../../../Qt/5.11.1/gcc_64/include/QtGui/QPolygonF \
 		../MazeDesignerGUI/doorinstance.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QLineF \
+		../ConditionParser/compositecondition.h \
+		../ConditionParser/simplecondition.h \
+		../ConditionParser/condition.h \
 		../Keys/keylistwidget.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QTableWidget \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qtablewidget.h \
@@ -2731,6 +2869,9 @@ mainwindow.o: ../MazeDesignerGUI/mainwindow.cpp ../MazeDesignerGUI/mainwindow.h 
 		../../../Qt/5.11.1/gcc_64/include/QtGui/QPolygonF \
 		../MazeDesignerGUI/doorinstance.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QLineF \
+		../ConditionParser/compositecondition.h \
+		../ConditionParser/simplecondition.h \
+		../ConditionParser/condition.h \
 		../Keys/keylistwidget.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QTableWidget \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qtablewidget.h \
@@ -2768,13 +2909,15 @@ mainwindow.o: ../MazeDesignerGUI/mainwindow.cpp ../MazeDesignerGUI/mainwindow.h 
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qstatusbar.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QToolBar \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qtoolbar.h \
-		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QFileDialog \
-		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qfiledialog.h \
+		../MazeDesignerGUI/exporter.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonDocument \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsondocument.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QDir \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qdir.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qfileinfo.h \
-		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qdialog.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonDocument \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsondocument.h
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QFileDialog \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qfiledialog.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qdialog.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../MazeDesignerGUI/mainwindow.cpp
 
 canvas.o: ../Canvas/canvas.cpp ../Canvas/canvas.h \
@@ -4706,6 +4849,232 @@ common.o: ../Common/common.cpp ../Common/common.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QStringList
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o common.o ../Common/common.cpp
 
+condition.o: ../ConditionParser/condition.cpp ../ConditionParser/condition.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QString \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringliteral.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QMap \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../Keys/key.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../Keys/keyrepository.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QObject
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o condition.o ../ConditionParser/condition.cpp
+
+simplecondition.o: ../ConditionParser/simplecondition.cpp ../ConditionParser/simplecondition.h \
+		../ConditionParser/condition.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QString \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringliteral.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QMap \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../Keys/key.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../Keys/keyrepository.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QObject \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QRegExp
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o simplecondition.o ../ConditionParser/simplecondition.cpp
+
+compositecondition.o: ../ConditionParser/compositecondition.cpp ../ConditionParser/compositecondition.h \
+		../ConditionParser/simplecondition.h \
+		../ConditionParser/condition.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QString \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstring.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qchar.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qglobal.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qconfig-bootstrapped.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qconfig.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtcore-config.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsystemdetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qprocessordetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcompilerdetection.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtypeinfo.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsysinfo.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlogging.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qflags.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbasicatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_bootstrap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qgenericatomic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_cxx11.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qatomic_msvc.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qglobalstatic.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmutex.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qnumeric.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qversiontagging.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbytearray.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qrefcount.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qnamespace.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qarraydata.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringliteral.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringalgorithms.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringview.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringbuilder.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QMap \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qiterator.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qalgorithms.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qhashfunctions.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qpair.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qbytearraylist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringlist.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qregexp.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstringmatcher.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtextstream.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcoreevent.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmetatype.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvarlengtharray.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontainerfwd.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qlocale.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvariant.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qvector.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qpoint.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qset.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../Keys/key.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
+		../Keys/keyrepository.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QObject
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o compositecondition.o ../ConditionParser/compositecondition.cpp
+
 instancecanvas.o: ../MazeDesignerGUI/instancecanvas.cpp ../MazeDesignerGUI/instancecanvas.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qwidget.h \
@@ -4841,6 +5210,9 @@ instancecanvas.o: ../MazeDesignerGUI/instancecanvas.cpp ../MazeDesignerGUI/insta
 		../../../Qt/5.11.1/gcc_64/include/QtGui/QPolygonF \
 		../MazeDesignerGUI/doorinstance.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QLineF \
+		../ConditionParser/compositecondition.h \
+		../ConditionParser/simplecondition.h \
+		../ConditionParser/condition.h \
 		../Keys/keylistwidget.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QTableWidget \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qtablewidget.h \
@@ -4929,33 +5301,62 @@ doorinstance.o: ../MazeDesignerGUI/doorinstance.cpp ../MazeDesignerGUI/doorinsta
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QJsonObject \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonobject.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonvalue.h \
-		../Common/common.h \
-		../Common/common_global.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qdebug.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qhash.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qmap.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qtextstream.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qiodevice.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/QPainter \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpainter.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qscopedpointer.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpixmap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpaintdevice.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qwindowdefs.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qobjectdefs_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qwindowdefs_win.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qcolor.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qrgb.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qrgba64.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qshareddata.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qhash.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qcoreevent.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qscopedpointer.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qmetatype.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qvarlengtharray.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontainerfwd.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qobject_impl.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qimage.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpixelformat.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qtransform.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qmatrix.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qregion.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qdatastream.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qiodevice.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpainterpath.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qtextoption.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qbrush.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qfontinfo.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qfont.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qfontmetrics.h \
+		../Common/common.h \
+		../Common/common_global.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QDebug \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qdebug.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qmap.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qtextstream.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qlocale.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qvariant.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qshareddata.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qset.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qcontiguouscache.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/qsharedpointer_impl.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QPointF \
-		../MazeDesignerGUI/selectableinstance.h \
-		../../../Qt/5.11.1/gcc_64/include/QtCore/QString
+		../ConditionParser/compositecondition.h \
+		../ConditionParser/simplecondition.h \
+		../ConditionParser/condition.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QString \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QMap \
+		../Keys/key.h \
+		../Keys/keyrepository.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QObject \
+		../MazeDesignerGUI/selectableinstance.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o doorinstance.o ../MazeDesignerGUI/doorinstance.cpp
 
 keyinstance.o: ../MazeDesignerGUI/keyinstance.cpp ../MazeDesignerGUI/keyinstance.h \
@@ -5432,6 +5833,9 @@ moc_keyrepository.o: moc_keyrepository.cpp
 
 moc_instancecanvas.o: moc_instancecanvas.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_instancecanvas.o moc_instancecanvas.cpp
+
+moc_doorinstance.o: moc_doorinstance.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_doorinstance.o moc_doorinstance.cpp
 
 moc_roomlistwidget.o: moc_roomlistwidget.cpp 
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o moc_roomlistwidget.o moc_roomlistwidget.cpp

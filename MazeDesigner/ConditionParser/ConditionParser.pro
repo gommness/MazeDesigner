@@ -17,7 +17,6 @@ DEFINES += QT_DEPRECATED_WARNINGS
 
 SOURCES += \
         main.cpp \
-    key.cpp \
     compositecondition.cpp \
     simplecondition.cpp \
     condition.cpp
@@ -28,7 +27,6 @@ else: unix:!android: target.path = /opt/$${TARGET}/bin
 !isEmpty(target.path): INSTALLS += target
 
 HEADERS += \
-    key.h \
     compositecondition.h \
     simplecondition.h \
     condition.h

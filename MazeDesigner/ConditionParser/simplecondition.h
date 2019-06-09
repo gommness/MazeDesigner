@@ -14,17 +14,21 @@ private:
 
 /// methods
 public:
-    SimpleCondition(QString number, QString key);
-    SimpleCondition(QString string);
-    SimpleCondition(QString string, QMap<QString, Key> *map);
-    bool validate();
+    SimpleCondition(QString number, QString key, KeyRepository * repo = nullptr, bool sat = true);
+    SimpleCondition(QString string, KeyRepository * repo = nullptr, bool sat = true);
+    SimpleCondition(const QJsonObject & jObj, KeyRepository * repo = nullptr);
+    bool validate() const override;
+    bool operator ==(const SimpleCondition & cond) const;
+    static const SimpleCondition & emptyCondition();
+    static const SimpleCondition & unsatCondition();
+    bool isEmpty() const override;
     //void setNameSpace(QMap<QString, Key> *map);
     //QMap<QString, Key> getNameSpace();
-    QString toString();
-
+    QString toString() const override;
+    QJsonObject toJson() const override;
 private:
-    bool validateName();
-    bool validateValue();
+    bool validateName() const;
+    bool validateValue() const;
 };
 
 #endif // CONDITION_H

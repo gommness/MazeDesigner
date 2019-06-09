@@ -16,15 +16,21 @@ private:
 
 // methods
 public:
-    CompositeCondition(const QString &input);
-    ~CompositeCondition();
-    bool Validate();
-    QString toString();
+    CompositeCondition(const QString &input, KeyRepository * repo = nullptr);
+    CompositeCondition(const QJsonObject & jobj, KeyRepository * repo = nullptr);
+    ~CompositeCondition() override;
+    bool validate() const override;
+    QString toString() const override;
+    static const CompositeCondition & emptyCondition();
+    bool isEmpty() const override;
+    bool isSatisfiable() const override;
+    QJsonObject toJson() const override;
+    bool operator ==(const CompositeCondition & other) const;
 private:
-    CompositeCondition(QConditionsList &list);
+    CompositeCondition(QConditionsList &list, KeyRepository * repo = nullptr);
     static Connector parseConnector(const QString &conector);
-    static QConditionsList parseConditions(const QStringList &list);
-    static QConditionsList parseConditions(const QStringList &list, int &index);
+    static QConditionsList parseConditions(const QStringList &list, KeyRepository * repo = nullptr);
+    static QConditionsList parseConditions(const QStringList &list, int &index, KeyRepository * repo = nullptr);
     static QStringList customSplit(const QString &input);
 };
 

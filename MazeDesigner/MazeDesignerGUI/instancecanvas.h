@@ -124,6 +124,8 @@ private:
     QRectF * startToken = nullptr;
     QPointF * start = nullptr;
     QPointF * end = nullptr;
+
+    friend class DesignGraph;
 };
 
 #endif // INSTANCECANVAS_H

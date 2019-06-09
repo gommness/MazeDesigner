@@ -3,7 +3,6 @@
 #include <QDebug>
 #include <QtTest/QTest>
 #include "simplecondition.h"
-#include "key.h"
 
 #define VERIFY(a) fprintf(stdout, "test of line %d yields: %d\n", __LINE__, a)
 

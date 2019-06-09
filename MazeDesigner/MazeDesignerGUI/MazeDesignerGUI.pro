@@ -39,6 +39,9 @@ SOURCES += \
         ../Keys/keynameeditor.cpp \
         ../Keys/keyrepository.cpp \
         ../Common/common.cpp \
+        ../ConditionParser/condition.cpp \
+        ../ConditionParser/simplecondition.cpp \
+        ../ConditionParser/compositecondition.cpp \
     instancecanvas.cpp \
     doorinstance.cpp \
     keyinstance.cpp \
@@ -50,6 +53,7 @@ HEADERS += \
         mainwindow.h \
         ../Canvas/*.h \
         ../Keys/*.h \
+        ../ConditionParser/*.h \
     instancecanvas.h \
     doorinstance.h \
     keyinstance.h \
