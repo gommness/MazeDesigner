@@ -1,20 +1,20 @@
 Para el desarrollo del módulo de llaves se ha comenzado definiendo una arquitectura \dfn{modelo-vista-controlador}. El modelo representa las llaves, que serán en sí mismos modelos que podrán instanciarse más adelante. La vista es la interfaz gráfica (ver figura \ref{FIG:DEV:TABLALLAVES}) con la que el usuario puede crear, eliminar y modificar modelos de llaves gracias al controlador, que es una componente lógica.
 
-Después de esto, se ha desarrollado un módulo similar para los \dfnpl{nivel}. En éste la vista está compuesta por una componente de lista como se puede observar en la figura \ref{SBFIG:DEV:TABLANIVELES} y una componente que forma parte de un \textit{canvas} como se ilustra en la figura \ref{SBFIG:DEV:CANVASNIVELES}.
-La componente de lista sirve para editar propiedades de los \dfnpl{nivel}, como es el nombre y si es un nivel que será exportado o no. Mientras que la componente del \textit{canvas} sirve para la declaración de qué regiones del diseño conforman los \dfnpl{nivel}.
-Tal y como se ilustra en la figura \ref{FIG:DEV:VISTANIVELES}, se pueden declarar niveles rectangulares que no intersequen de igual forma que en el \textit{canvas} se crean los \dfnpl{espacio-jugable} (descrito en la subseccion \ref{SUBSEC:DEVCANVAS}). También se puede eliminar uno de estos \dfnpl{nivel} haciendo click derecho dentro de él.finalmente se puede seleccionar uno con click izquierdo, quedando resaltado tanto en el \textit{canvas} como en la tabla.
-
-Finalmente, se ha integrado un \textit{sub-canvas} que permite colocar instancias de los modelos de las llaves en el diseño, así como instanciar puertas y un token que simboliza la posición inicial del jugador. Junto a esto, se ha implementado una interfaz de texto básica en la consola inferior de la aplicación que muestra la información de las instancias seleccionadas.
-Todo esto se puede ver reflejado en las figuras \ref{FIG:DEV:INSTANCIALLAVES} y \ref{FIG:DEV:INSTANCIAOTROS}.
-
 \begin{figure}{FIG:DEV:TABLALLAVES}{Interfaz utilizada para creación, eliminación y edición de los modelos de llaves.}
 	\image{10cm}{}{capturas/captura-menu-llaves}
 \end{figure}
+
+Después de esto, se ha desarrollado un módulo similar para los \dfnpl{nivel}. En éste la vista está compuesta por una componente de lista como se puede observar en la figura \ref{SBFIG:DEV:TABLANIVELES} y una componente que forma parte de un \textit{canvas} como se ilustra en la figura \ref{SBFIG:DEV:CANVASNIVELES}.
+La componente de lista sirve para editar propiedades de los \dfnpl{nivel}, como es el nombre y si es un nivel que será exportado o no. Mientras que la componente del \textit{canvas} sirve para la declaración de qué regiones del diseño conforman los \dfnpl{nivel}.
+Tal y como se ilustra en la figura \ref{FIG:DEV:VISTANIVELES}, se pueden declarar niveles rectangulares que no intersequen de igual forma que en el \textit{canvas} se crean los \dfnpl{espacio-jugable} (descrito en la subseccion \ref{SUBSEC:DEVCANVAS}). También se puede eliminar uno de estos \dfnpl{nivel} haciendo click derecho dentro de él.finalmente se puede seleccionar uno con click izquierdo, quedando resaltado tanto en el \textit{canvas} como en la tabla.
 
 \begin{figure}{FIG:DEV:VISTANIVELES}{la interfaz para interactuar con el controlador de \dfnpl{nivel} se compone de dos partes.}
 	\subfigure[SBFIG:DEV:TABLANIVELES]{En esta interfaz, el usuario puede editar los datos de un \dfn{nivel} ya creado.}{\image{5cm}{}{capturas/captura-tabla-niveles}} \quad
 	\subfigure[SBFIG:DEV:CANVASNIVELES]{En esta interfaz el usuario puede crear, eliminar y seleccionar \dfnpl{nivel}. Los niveles declarados son los rectángulos de color verde. El nivel seleccionado es el rectángulo resaltado en color amarillo.}{\image{5cm}{}{capturas/captura-room-canvas}}
 \end{figure}
+
+Finalmente, se ha integrado un \textit{sub-canvas} que permite colocar instancias de los modelos de las llaves en el diseño, así como instanciar puertas y un token que simboliza la posición inicial del jugador. Junto a esto, se ha implementado una interfaz de texto básica en la consola inferior de la aplicación que muestra la información de las instancias seleccionadas.
+Todo esto se puede ver reflejado en las figuras \ref{FIG:DEV:INSTANCIALLAVES} y \ref{FIG:DEV:INSTANCIAOTROS}.
 
 \begin{figure}{FIG:DEV:INSTANCIALLAVES}{Se permite que el usuario instancie modelos de llaves. Como se puede observar, cuando se selecciona una llave se resalta con un rectángulo amarillo.}
 	\image{12cm}{}{capturas/captura-instanciacion-llaves}

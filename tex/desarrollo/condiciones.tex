@@ -1,6 +1,84 @@
 Durante esta etapa se han desarrollado los módulos de condiciones y de exploración del diseño.
 
-El módulo de condiciones tiene como objetivo leer una cadena de caracteres y, si sigue la sintaxis definida en el apéndice \ref{CAP:APCONDICIONES}, entonces se creará un objeto de tipo condición. Este objeto se utilizará más adelante en el módulo de exploración y debe ser capaz de comprobar si la condición que representa puede ser satisfecha dado un \dfn{inventario}, imponiendo una lista de objetos consumidos al ser satisfecha.
+El módulo de condiciones tiene como objetivo leer una cadena de caracteres y, si sigue la sintaxis definida en el apéndice \ref{CAP:APCONDICIONES}, entonces se creará un objeto de tipo condición. Este objeto se utilizará más adelante en el módulo de exploración. Las condiciones pueden no ser satisfacibles, la condición vacía (que siempre es satisfacible) o una condición compuesta.
+
+En cuanto al módulo de la exploración del diseño, se debe formalizar el problema para poder realizar una búsqueda informada hasta alcanzar alguna solución.
+
+El primer paso es convertir los \dfnpl{espacio-jugable} del diseño en un grafo equivalente, de manera que dicho grafo representa el diseño lógico implícito que hay en el diseño. Una representación de esta operación se ilustra en la figura \ref{FIG:EXP:DESIGNTOGRAPH}.
+
+\begin{figure}{FIG:EXP:DESIGNTOGRAPH}{En esta figura se muestra como sería la conversión de un diseño a un grafo, si las condiciones en ambas puertas fueran la vacía en una dirección y tener una llave en la otra.}
+	\subfigure[SBFIG:EXP:DESIGNTOGRAPHDESIGN]{Este sería un posible diseño construido en la aplicación.}{\image{6cm}{}{capturas/captura-diseno}} \quad
+	\subfigure[SBFIG:EXP:DESIGNTOGRAPHGRAPH]{Esta sería la abstracción lógica implícita en el diseño.}{\image{6cm}{}{capturas/captura-grafo-disenno-1}}
+\end{figure}
+
+El \dfn{grafo-dirigido} generado por el diseño está formado por una serie de nodos y aristas.\newline
+
+Los nodos son construidos a partir de las regiones conexas del diseño, que contienen referencias a las llaves que estuvieran contenidas en dichas regiones.\newline
+
+Las aristas se construyen por pares a partir de las puertas, conectan dos nodos de forma unidireccional y poseen una condición.
+
+
+Una vez se ha logrado dicha transformación se formaliza el problema de la siguiente forma:
+
+\begin{itemize}
+	\item Se dice que un nodo \textbf{A es vecino de un nodo B} si existe una arista que une B con A en esa misma dirección.
+	
+	\item La \textbf{relación de vecindad no es recíproca}, es decir, no es suficiente que A sea vecino de B para afirmar que B es vecino de A.
+	
+	\item Se define un \textbf{estado de búsqueda} como un grafo del diseño, que posee una serie de nodos, aristas que conectan dichos nodos, un nodo actual en el que se encontraría el jugador y un inventario con todos los objetos que ha recolectado.
+	
+	\item Se define una \textbf{acción} como una manipulación de un estado de búsqueda, ya sea moviendo el nodo actual a alguno de sus vecinos o extrayendo un objeto del nodo actual para almacenarlo en el inventario.
+	
+	\item Se define \textbf{el coste de viaje de una arista} como la lista de los objetos consumibles que han de emplearse para satisfacer la condición que dicha arista posee.
+	
+	\item Se define la \textbf{operación de viajar} desde un nodo A hasta un nodo B como la acción de mover el nodo actual de un estado desde A hasta B a través de una arista, asumiendo el coste de viaje de la misma.
+	
+	\item Se define \textbf{exploración} como una sucesión de acciones.
+	
+	\item Se define que la \textbf{puerta que une A con B está abierta} en esa dirección si se ha realizado una operación de viajar desde A hasta B y, en ese caso, el coste de la arista que une A con B pasa a ser la lista vacía.
+	
+	\item Dado un conjunto de nodos ${A_1, A_2, ..., A_n}$ tales que la puerta que une $A_i$ con $A_{i+1}$ está abierta para todo i desde 1 hasta n-1 y la puerta que une $A_n$ con $A_1$ está también abierta, se define la operación de \textbf{unión de nodos} como aquella que convierte el conjunto de esos n nodos en un único nodo B. todas las aristas que unían cada uno de los nodos $A_i$ (con i desde 1 hasta n) con otros nodos (que no pertenecen al conjunto de los $A_i$) ahora unen B con dichos nodos. Las aristas que unían $A_i$ con $A_{i+1}$ desaparecen, pero toda arista que unía $A_j$ con $A_k$ (para $j \not= k+1$ y $k \not= j+1$ por ser puertas abiertas) tal que el coste no es la lista vacía, se conservan, conectando ahora B con el propio B (ver figura \ref{FIG:EXP:FUSION}).
+	
+	\item Se dice que una exploración es \textbf{correcta} si la serie de acciones que la define concluye convirtiendo el grafo en un único nodo.
+	
+	\item Se dice que una exploración es \textbf{incorrecta} si la serie de acciones que la define concluye en un estado de operaciones en el que no hay más acciones disponibles.
+	
+	\item Se dice que un diseño es \textbf{correcto} si todas las posibles exploraciones son correctas. De lo contrario, decimos que un diseño es \textbf{incorrecto}.
+\end{itemize}
+
+\begin{figure}{FIG:EXP:FUSION}{En esta figura se ilustra la operación de unión de nodos. Las sub-figuras \ref{SBFIG:EXP:FUSION11} y \ref{SBFIG:EXP:FUSION12} muestran un ejemplo básico mientras que las sub-figuras \ref{SBFIG:EXP:FUSION21} y \ref{SBFIG:EXP:FUSION22} muestran un ejemplo más completo}
+	\subfigure[SBFIG:EXP:FUSION11]{El caso básico en el que dos nodos están conectados por aristas con la condición vacía.}{\image{6cm}{}{capturas/fusion-ejemplo-1-1}} \quad
+	\subfigure[SBFIG:EXP:FUSION12]{el caso \ref{SBFIG:EXP:FUSION11} se reduce a este grafo.}{\image{6cm}{}{capturas/fusion-ejemplo-1-2}} \quad
+	\subfigure[SBFIG:EXP:FUSION21]{Un caso más complejo en el que varios nodos están conectados por aristas con la condición vacía formando un bucle, condición necesaria y suficiente para poder realizar la operación de unión.}{\image{6cm}{}{capturas/fusion-ejemplo-2-1}} \quad
+	\subfigure[SBFIG:EXP:FUSION22]{el caso \ref{SBFIG:EXP:FUSION21} se reduce a este grafo.}{\image{6cm}{}{capturas/fusion-ejemplo-2-2}} \quad
+\end{figure}
+
+Con estas formalizaciones, se puede realizar una búsqueda \dfn{A-estrella} para determinar si el diseño creado por el usuario es correcto o no.
+
+Nótese que el token de comienzo colocado según se expone en la subsección \ref{SUBSEC:DEVLLAVES} es imprescindible para la exploración, pues al comienzo de la misma se ha de determinar cual empieza siendo el nodo actual.
+Dado que demostrar que el diseño es correcto siempre tiene la complejidad máxima de la exploración, interesa desarrollar una función \dfn{heuristica} que permita encontrar exploraciones incorrectas, si las hubiera, tan pronto como fuera posible.
+Es por eso que se escoge una función \dfn{heuristica} derrochadora, que evalúe mejor estados en los que el jugador tiene pocos objetos en su inventario y en los que los nodos accesibles posean también pocas llaves, ya que esto provoca que tenga menos opciones para explorar y se maximizan las probabilidades de quedar atrapado o de dejar inaccesible algún área del diseño.
+
+De esto se extrae una condición necesaria pero no suficiente para que el diseño sea correcto:
+para dos nodos A y B cualquiera del grafo del diseño, debe existir un camino que, ignorando las condiciones de las aristas, una A con B y viceversa.\newline
+
+Un ejemplo de un diseño incorrecto debido a no cumplir esta condición sería el mostrado en la figura \ref{FIG:EXP:EJEMPLOCONDICION}.
+
+\begin{figure}{FIG:EXP:EJEMPLOCONDICION}{En esta figura se ilustra un ejemplo de diseño que no cumple con la condición necesaria para ser un diseño correcto.}
+	\subfigure[SBFIG:EXP:DISENOCONDICION]{Esta sub-figura muestra el diseño del que se hace la abstracción lógica implícita. Nótese que a priori es el mismo diseño que el expuesto en la figura \ref{FIG:EXP:DESIGNTOGRAPH} a excepción de las condiciones que se asignan a las puertas.}{\image{6cm}{}{capturas/captura-diseno}} \quad
+	\subfigure[SBFIG:EXP:GRAFOCONDICION]{Esta sub-figura muestra la abstracción lógica implícita en el diseño de la sub-figura \ref{SBFIG:EXP:DISENOCONDICION}. Como se puede observar, no existe ningún camino que una el nodo B con el nodo A ni tampoco existe ninguno que una el nodo C con el nodo A. Bastaría con que el jugador llegara a dicho nodo para que su progreso quedara bloqueado.}{\image{6cm}{}{capturas/captura-condicion-incumplida}}
+\end{figure}
+
+Finalmente, si se encuentra una exploración incorrecta, se indica en el \textit{canvas}, mediante un camino en rojo, las acciones que podría tomar un jugador para quedar atrapado o dejar un área inaccesible. Tal y como se ilustra en la figura \ref{FIG:EXP:EJEMPLOS}.
+
+\begin{figure}{FIG:EXP:EJEMPLOS}{En esta figura se ilustra un diseño incorrecto y cómo la aplicación muestra al usuario la exploración que podría realizar el jugador que resulta en que un área (la que se encuentra al sur) queda completamente inaccesible.}
+	\subfigure[SBFIG:EXP:EJEMPLODISENO]{Este sería el diseño construido por el usuario.}{\image{6cm}{}{capturas/captura-diseno}} \quad
+	\subfigure[SBFIG:EXP:EJEMPLOGRAFO]{Esta sería la abstracción lógica implícita en el diseño creado por el usuario.}{\image{6cm}{}{capturas/captura-grafo-disenno-1}}
+	\subfigure[SBFIG:EXP:EJEMPLOCAMINO]{En esta sub-figura se ilustra cómo se muestra al usuario que su diseño es incorrecto y la exploración que sirve como prueba. En este caso el diseño es incorrecto porque, en una exploración, se consume la única llave de la que se dispone para abrir la puerta del este, ya que tras eso, no hay forma de obtener otra llave para abrir la puerta del sur, quedando el área del sur inaccesible permanentemente.}{\image{6cm}{}{capturas/captura-camino-erroneo}}
+\end{figure}
+
+\begin{comment}
+
 Nótese que el conjunto de conectivos lógicos admitidos por el lenguaje (\textit{or} y \textit{and}) no es un conjunto funcionalmente completo, esto es, utilizando solamente esos dos conectivos, no se pueden replicar otros como un conectivo \textit{not}. Es decir, en la sintaxis no es posible poner como condición que no se tenga un objeto para poder ser satisfecha. En otras palabras, durante toda una exploración, el número de condiciones satisfechas es no decreciente.
 
 En cuanto al módulo de exploración, se plantearon los siguientes problemas a resolver:
@@ -29,3 +107,4 @@ Para esta heurística, entonces, buscamos una según la cual el explorador sea u
 Finalmente, el último problema se reduce a deshacer los pasos tomados por una exploración con la que se concluye que el diseño es incorrecto, listando los objetos recolectados y las puertas abiertas, en el orden en el que se hicieron dichas acciones.
 
 %TODO poner ejemplos de cuando un diseño+grafo es válido y cuando no. Y de los pasos que tomaría la exploración en cada caso
+\end{comment}

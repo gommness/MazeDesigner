@@ -20,19 +20,19 @@
 
 \newdefinition{editor-de-niveles}{editor de niveles}{editores de niveles}{Herramienta utilizada por los motores de videojuegos para colocar las instancias que constituyen un escenario del juego}
   
-\newdefinition{pantalla}{pantalla}{pantallas}{Regiones del \dfn{diseño} que encapsulan los \dfnpl{espacio jugable}. Un juego en tiempo de ejecución muestra solamente una de estas regiones}
+\newdefinition{pantalla}{pantalla}{pantallas}{Regiones del \dfn{diseno} que encapsulan los \dfnpl{espacio-jugable}. Un juego en tiempo de ejecución muestra solamente una de estas regiones}
 
-\newdefinition{dead-lock}{dead lock}{dead locks}{Estado de la exploración del grafo de un \dfn{diseño} a partir del cual existen nodos que dejan de ser accesibles aunque se continuara con dicha exploración}
+\newdefinition{dead-lock}{dead lock}{dead locks}{Estado de la exploración del grafo de un \dfn{diseno} a partir del cual existen nodos que dejan de ser accesibles aunque se continuara con dicha exploración}
 
-\newdefinition{completable}{completable}{completables}{Característica propia de un diseño según la cual se cumplen las condiciones necesarias para que en la exploración de dicho \dfn{diseño} no se puedan alcanzar \dfnpl{dead lock}}
+\newdefinition{completable}{completable}{completables}{Característica propia de un diseño según la cual se cumplen las condiciones necesarias para que en la exploración de dicho \dfn{diseno} no se puedan alcanzar \dfnpl{dead lock}}
 
-\newdefinition{diseno}{diseño}{diseños}{Conjunto de \dfnpl{espacio jugable}, no necesariamente conexos, que representa la totalidad de los espacios virtuales de juego}
+\newdefinition{diseno}{diseño}{diseños}{Conjunto de \dfnpl{espacio-jugable}, no necesariamente conexos, que representa la totalidad de los espacios virtuales de juego}
 
 \newdefinition{pipeline}{pipeline}{pipelines}{Conjunto de fases que componen el desarrollo de un producto software. Dichas fases se disponen de manera secuencial, estableciendo una cadena de dependencias}
 
 \newdefinition{inventario}{inventario}{inventarios}{conjunto de instancias lógicas, como llaves o \dfnpl{power-up}, recolectadas durante una exploración}
 
-\newdefinition{grafo}{grado}{grafos}{estructura abstracta representada por un conjunto de nodos y un conjunto de conexiones entre ellos. A estas conexiones se las denomina aristas}
+\newdefinition{grafo}{grafo}{grafos}{estructura abstracta representada por un conjunto de nodos y un conjunto de conexiones entre ellos. A estas conexiones se las denomina aristas}
 
 \newdefinition{grafo-dirigido}{grafo dirigido}{grafos dirigidos}{categoría de \dfnpl{grafo} en los cuales, la relación de conexión entre nodos no es recíproca. Es decir, un nodo A puede estar conectado con un nodo B pero no necesariamente se cumple que dicho nodo B esté conectado al nodo A, porque la dirección de la arista que los conecta es desde A hasta B}
 
@@ -45,3 +45,11 @@
 \newdefinition{programacion-funcional}{programación funcional}{programaciones funcionales}{Paradigma de programación declarativo que se basa en modelar el problema con una serie de funciones matemáticas}
 
 \newdefinition{modelo-vista-controlador}{modelo-vista-controlador}{modelos-vistas-controladores}{arquitectura formada por tres componentes que interactuan entre si. El modelo representa la estructura de los datos, la vista la interfaz con la cual se accede al controlador, que se encarga de modificar datos que siguen la estructura del modelo}
+
+\newdefinition{A-estrella}{\textit{A-estrella}}{\textit{A-estrellas}}{algoritmo de búsqueda que encuentra el camino de menor coste entre un estado y otro dentro del espacio de búsqueda. El coste de los caminos se define según una \dfn{heuristica}}
+
+\newdefinition{heuristica}{heurística}{heurísticas}{función escalar que recibe un estado del espacio de búsqueda y devuelve un número mayor que cero}
+
+\newdefinition{trigger}{\textit{trigger}}{\textit{triggers}}{patrón de diseño que modela una consecuencia arbitraria de la realización de alguna acción, ya sea atravesar un cierto área u obtener un cierto objeto}
+
+\newdefinition{warp}{\textit{warp}}{\textit{warps}}{patrón de diseño que modela la conexión de dos espacios distantes a través de una mecánica como el teletransporte}
