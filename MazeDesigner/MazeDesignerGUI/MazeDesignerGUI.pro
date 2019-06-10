@@ -47,7 +47,9 @@ SOURCES += \
     keyinstance.cpp \
     selectableinstance.cpp \
     roomlistwidget.cpp \
-    exporter.cpp
+    exporter.cpp \
+    console.cpp \
+    doorconditionconsole.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -59,7 +61,9 @@ HEADERS += \
     keyinstance.h \
     selectableinstance.h \
     roomlistwidget.h \
-    exporter.h
+    exporter.h \
+    console.h \
+    doorconditionconsole.h
 
 FORMS += \
         mainwindow.ui

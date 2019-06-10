@@ -1,9 +1,10 @@
 #include "compositecondition.h"
 #include <QJsonArray>
 
-CompositeCondition::CompositeCondition(const QString &input, KeyRepository * repo)
+CompositeCondition::CompositeCondition(const QString &input, KeyRepository * repo, bool sat)
 {
     this->keyRepo = repo;
+    satisfiable = sat;
     QStringList list = CompositeCondition::customSplit(input);
     conditions = parseConditions(list, repo);
     // first condition in the QConditionsList will have the empty connector. the rest would have the corresponding connector
@@ -41,7 +42,7 @@ CompositeCondition::CompositeCondition(const QJsonObject &jObj, KeyRepository * 
 
 CompositeCondition::~CompositeCondition()
 {
-    for(int i = conditions.length(); i >= 0; i--){
+    for(int i = conditions.length()-1; i >= 0; i--){
         delete conditions[i].second;
     }
     conditions.clear();

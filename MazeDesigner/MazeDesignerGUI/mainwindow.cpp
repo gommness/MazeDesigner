@@ -141,6 +141,11 @@ void MainWindow::selectDesignTab(int index)
         leftDisplay->setCurrentIndex(0);
 }
 
+void MainWindow::selectConditionTab()
+{
+    textTabs->setCurrentIndex(1);
+}
+
 void MainWindow::saveFile(const QString &str)
 {
     if(str.isEmpty())
@@ -224,14 +229,15 @@ void MainWindow::setUp()
 
     // this piece will go in the text display section of the application
     textTabs = new QTabWidget;
-    textDoorEditor = new QTextEdit;
-    console = new QTextEdit;
+    textDoorEditor = new DoorConditionConsole(textTabs, keyRepo);
+    console = new Console(textTabs);
     console->setReadOnly(true);
     textTabs->addTab(console, "console");
     textTabs->addTab(textDoorEditor, "doorInfo"); // we need to create a more sofisticated widget to display door info
+    textTabs->setMaximumSize(QSize(1200,200));
 
     // piece both the canvases and texts sections together
-    editionLayout->addWidget(designTabs,90);
+    editionLayout->addWidget(designTabs, 90);
     editionLayout->addWidget(textTabs, 10);
 
     // the stacked widget contains the widgets that display info in tables
@@ -315,4 +321,9 @@ void MainWindow::createMenus()
 void MainWindow::connectSignals()
 {
     connect(designTabs, &QTabWidget::currentChanged, this, &MainWindow::selectDesignTab);
+    connect(instanceCanvas, &InstanceCanvas::select, console, &Console::onSelectInstance);
+    connect(instanceCanvas, &InstanceCanvas::clearSelection, console, &Console::onClearSelection);
+    connect(instanceCanvas, &InstanceCanvas::selectDoor, textDoorEditor, &DoorConditionConsole::onDoorSelected);
+    connect(instanceCanvas, &InstanceCanvas::clearSelection, textDoorEditor, &DoorConditionConsole::onClearSelection);
+    connect(instanceCanvas, &InstanceCanvas::selectDoor, this, &MainWindow::selectConditionTab);
 }

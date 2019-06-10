@@ -20,7 +20,9 @@ SOURCES += \
     inventory.cpp \
     regionnode.cpp \
     designgraph.cpp \
-    explorationtree.cpp
+    explorationtree.cpp \
+    ../Keys/*.cpp \
+    ../ConditionParser/*.cpp \
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

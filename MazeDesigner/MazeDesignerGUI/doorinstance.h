@@ -22,6 +22,7 @@ public:
     ~DoorInstance() override;
     QPolygonF boundPolygon() const override;
     QString instanceInfo() const override;
+    QPointF instancePosition() const override;
     /**
      * @brief contains checks whether the given point is contained within what is considered the area of the door. That is,
      * if the point is close enough to the door
@@ -42,12 +43,14 @@ public:
     QJsonObject toJson() const;
 
     QPair<QPointF, QPointF> separation() const;
-    CompositeCondition getCondition1() const;
-    CompositeCondition getCondition2() const;
+    SimpleCondition getCondition1() const;
+    SimpleCondition getCondition2() const;
     void drawSelf(QPainter & painter, QPointF offset) const;
 
 public slots:
-    void setConditions(CompositeCondition & cond1, CompositeCondition & cond2);
+    void onCondition1Changed(SimpleCondition & cond);
+    void onCondition2Changed(SimpleCondition & cond);
+    //void setConditions(CompositeCondition & cond1, CompositeCondition & cond2);
 
 private:
     /**
@@ -63,9 +66,10 @@ private:
     static int ID;
     int id;
     QPolygonF area;
-    CompositeCondition *condition1;
-    CompositeCondition *condition2;
+    SimpleCondition *condition1 = nullptr;
+    SimpleCondition *condition2 = nullptr;
 friend class InstanceCanvas;
+friend class DoorConditionConsole;
 };
 
 #endif // DOORINSTANCE_H

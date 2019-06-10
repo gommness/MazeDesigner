@@ -31,9 +31,20 @@ QPolygonF DoorInstance::boundPolygon() const
 QString DoorInstance::instanceInfo() const
 {
     QString output;
-    output += "door " + QString::number(id) + " with condition: {}";
+    QString c1, c2;
+    if(condition1 != nullptr)
+        c1 = condition1->toString();
+    if(condition2 != nullptr)
+        c2 = condition2->toString();
+    output += "door " + QString::number(id) + " with condition\nfrom A to B:{"+c1+
+            "}\nfrom B to A:{"+c2+"}";
     TODO("insertar el string de la condicion en la puerta cuando este implementado");
     return output;
+}
+
+QPointF DoorInstance::instancePosition() const
+{
+    return this->center();
 }
 
 bool DoorInstance::contains(const QPointF &point) const
@@ -61,12 +72,12 @@ DoorInstance::DoorInstance(const QJsonObject &json)
     }
 
     if(json.contains("condition1") && json["condition1"].isObject()){
-        condition1 = new CompositeCondition(json["condition1"].toObject());
+        condition1 = new SimpleCondition(json["condition1"].toObject());
     } else {
         throw std::runtime_error("missing condition for door instance in jsonObject");
     }
     if(json.contains("condition2") && json["condition2"].isObject()){
-        condition2 = new CompositeCondition(json["condition2"].toObject());
+        condition2 = new SimpleCondition(json["condition2"].toObject());
     } else {
         delete condition1;
         throw std::runtime_error("missing condition for door instance in jsonObject");
@@ -102,20 +113,20 @@ QPair<QPointF, QPointF> DoorInstance::separation() const
     return output;
 }
 
-CompositeCondition DoorInstance::getCondition1() const
+SimpleCondition DoorInstance::getCondition1() const
 {
     if(condition1 != nullptr)
         return *condition1;
     else
-        return CompositeCondition::emptyCondition();
+        return SimpleCondition::emptyCondition();
 }
 
-CompositeCondition DoorInstance::getCondition2() const
+SimpleCondition DoorInstance::getCondition2() const
 {
     if(condition2 != nullptr)
         return *condition2;
     else
-        return CompositeCondition::emptyCondition();
+        return SimpleCondition::emptyCondition();
 }
 
 void DoorInstance::drawSelf(QPainter &painter, QPointF offset) const
@@ -125,15 +136,21 @@ void DoorInstance::drawSelf(QPainter &painter, QPointF offset) const
     QPair<QPointF, QPointF> points = separation();
     QPointF areaPoint(4,8);
     QRectF bound(points.first-areaPoint, points.first+areaPoint);
-    painter.drawText(bound, Qt::AlignCenter, "A");
+    painter.drawText(bound.translated(offset), Qt::AlignCenter, "A");
     bound = QRectF(points.second-areaPoint, points.second+areaPoint);
-    painter.drawText(bound, Qt::AlignCenter, "B");
+    painter.drawText(bound.translated(offset), Qt::AlignCenter, "B");
 }
 
-void DoorInstance::setConditions(CompositeCondition &cond1, CompositeCondition &cond2)
+void DoorInstance::onCondition1Changed(SimpleCondition &cond)
 {
-    condition1 = new CompositeCondition(cond1);
-    condition2 = new CompositeCondition(cond2);
+    delete condition1;
+    condition1 = new SimpleCondition(cond);
+}
+
+void DoorInstance::onCondition2Changed(SimpleCondition &cond)
+{
+    delete condition2;
+    condition2 = new SimpleCondition(cond);
 }
 
 DoorInstance::DoorInstance(int id, QLineF &line) : QLineF (line)

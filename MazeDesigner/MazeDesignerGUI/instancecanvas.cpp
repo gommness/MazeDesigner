@@ -156,8 +156,22 @@ void InstanceCanvas::paintEvent(QPaintEvent *event)
     if(startToken != nullptr){
         // TODO maybe replace the ellipse of the token with an image
         painter.drawEllipse(startToken->translated(design->grid.getOffset()));
+        // now we draw the error path if there is one
+        if(path.length() > 0){
+            pen.setColor(QColor(255,0,0,128));
+            pen.setWidth(2);
+            painter.setPen(pen);
+            QPainterPath errorPath(startToken->center());
+            for(auto item = path.begin(); item != path.end(); item++){
+                errorPath.lineTo((*item)->instancePosition());
+                //errorPath.addPolygon((*item)->boundPolygon());
+                //errorPath.lineTo((*item)->instancePosition());
+            }
+            painter.drawPath(errorPath.translated(design->grid.getOffset()));
+        }
     }
 
+    // drawing bounding rectangle of the selected instance to highlight it
     if(selected != nullptr){
         pen.setColor(QColor(255,255,0,128));
         pen.setWidth(2);
@@ -168,6 +182,7 @@ void InstanceCanvas::paintEvent(QPaintEvent *event)
 
 void InstanceCanvas::mousePressEvent(QMouseEvent *event)
 {
+    //path.clear();
     design->grid.mousePressEventHandler(event); // tell the grid
 
     if(event->buttons() & Qt::LeftButton){ // if it was a left click, creation will happen
@@ -188,7 +203,12 @@ void InstanceCanvas::mousePressEvent(QMouseEvent *event)
                 }
                 else if(door != nullptr){ // if there is a door in the selected point
                     selected = door;
+                    emit selectDoor(*door);
                 }
+                //DELETEME {
+                path.append(selected);
+                update();
+                //DELETEME }
                 emit select(*selected);
             } else { // if there is no selection, then we create a key
                 QPointF point = design->grid.centerOfCellAt(event->pos());
@@ -196,6 +216,7 @@ void InstanceCanvas::mousePressEvent(QMouseEvent *event)
             }
         }
     } else if(event->button() & Qt::RightButton){ // if it was a right click, destruction will happen
+        path.clear(); // DELETEME
         QPointF point = design->grid.adapted(event->pos()); // we adapt the event position for grid transformations
         destroyAt(&point); // and destroy all elements under said point
     }
@@ -223,6 +244,7 @@ void InstanceCanvas::mouseReleaseEvent(QMouseEvent *event)
         QLineF line(*start, end);
         doors.append(new DoorInstance(line));
         selected = doors.last();
+        emit selectDoor(*doors.last());
         emit select(*selected);
     }
     delete start;

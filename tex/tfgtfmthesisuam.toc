@@ -34,16 +34,16 @@
 \contentsline {section}{\numberline {5.2}Desarrollo de los m\IeC {\'o}dulos}{21}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Canvas}{22}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Llaves, habitaciones y persistencia}{23}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Interfaz gr\IeC {\'a}fica}{24}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Condiciones y exploraci\IeC {\'o}n del dise\IeC {\~n}o}{24}{subsection.5.2.4}
-\contentsline {chapter}{\numberline {6}Integraci\IeC {\'o}n, pruebas y resultados}{27}{chapter.6}
-\contentsline {section}{\numberline {6.1}Pruebas unitarias}{27}{section.6.1}
-\contentsline {section}{\numberline {6.2}Pruebas de integraci\IeC {\'o}n}{28}{section.6.2}
-\contentsline {section}{\numberline {6.3}Resultados}{28}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusiones y trabajo futuro}{29}{chapter.7}
-\contentsline {section}{\numberline {7.1}Conclusiones}{29}{section.7.1}
-\contentsline {section}{\numberline {7.2}Trabajo futuro}{29}{section.7.2}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{32}{chapter*.18}
-\contentsline {chapter}{Definiciones}{33}{section*.19}
-\contentsline {part}{Ap\IeC {\'e}ndices}{35}{part.1}
-\contentsline {chapter}{\numberline {A}Definici\IeC {\'o}n de la sintaxis de condiciones}{37}{appendix.Alph1}
+\contentsline {subsection}{\numberline {5.2.3}Interfaz gr\IeC {\'a}fica}{23}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Condiciones y exploraci\IeC {\'o}n del dise\IeC {\~n}o}{26}{subsection.5.2.4}
+\contentsline {chapter}{\numberline {6}Integraci\IeC {\'o}n, pruebas y resultados}{31}{chapter.6}
+\contentsline {section}{\numberline {6.1}Pruebas unitarias}{31}{section.6.1}
+\contentsline {section}{\numberline {6.2}Pruebas de integraci\IeC {\'o}n}{32}{section.6.2}
+\contentsline {section}{\numberline {6.3}Resultados}{32}{section.6.3}
+\contentsline {chapter}{\numberline {7}Conclusiones y trabajo futuro}{33}{chapter.7}
+\contentsline {section}{\numberline {7.1}Conclusiones}{33}{section.7.1}
+\contentsline {section}{\numberline {7.2}Trabajo futuro}{33}{section.7.2}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{36}{chapter*.29}
+\contentsline {chapter}{Definiciones}{37}{section*.30}
+\contentsline {part}{Ap\IeC {\'e}ndices}{39}{part.1}
+\contentsline {chapter}{\numberline {A}Definici\IeC {\'o}n de la sintaxis de condiciones}{41}{appendix.Alph1}

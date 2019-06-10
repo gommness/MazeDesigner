@@ -16,7 +16,7 @@ private:
 
 // methods
 public:
-    CompositeCondition(const QString &input, KeyRepository * repo = nullptr);
+    CompositeCondition(const QString &input, KeyRepository * repo = nullptr, bool sat = true);
     CompositeCondition(const QJsonObject & jobj, KeyRepository * repo = nullptr);
     ~CompositeCondition() override;
     bool validate() const override;

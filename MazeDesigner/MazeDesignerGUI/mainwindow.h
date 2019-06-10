@@ -13,6 +13,8 @@
 #include "../Canvas/roomcanvas.h"
 #include "instancecanvas.h"
 #include "roomlistwidget.h"
+#include "console.h"
+#include "doorconditionconsole.h"
 #include "../Keys/keyrepository.h"
 
 namespace Ui {
@@ -41,6 +43,7 @@ private slots:
     void exportDesign();
 
     void selectDesignTab(int index);
+    void selectConditionTab();
 
 private:
     void saveFile(const QString & str);
@@ -63,8 +66,8 @@ private:
     QHBoxLayout * mainLayout = nullptr;
     QVBoxLayout * editionLayout = nullptr;
     QTabWidget * textTabs = nullptr;
-    QTextEdit * textDoorEditor = nullptr;
-    QTextEdit * console = nullptr;
+    DoorConditionConsole * textDoorEditor = nullptr;
+    Console * console = nullptr;
     QStackedLayout * leftDisplay = nullptr;
     QLabel * roomsTableDisplay = nullptr;
     QWidget *widget = nullptr;

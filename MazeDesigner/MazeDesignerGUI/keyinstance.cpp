@@ -28,6 +28,11 @@ QString KeyInstance::instanceInfo() const
     return output;
 }
 
+QPointF KeyInstance::instancePosition() const
+{
+    return this->center();
+}
+
 KeyInstance KeyInstance::fromJson(const QJsonObject &json, const KeyRepository & repo)
 {
     int jsonId;

@@ -19,7 +19,7 @@ class InstanceCanvas : public QWidget
     Q_OBJECT
 signals:
     void select(const SelectableInstance & inst);
-    //void selectDoor(const DoorInstance & door);
+    void selectDoor(DoorInstance & door);
     void clearSelection();
 public:
     /**
@@ -124,6 +124,7 @@ private:
     QRectF * startToken = nullptr;
     QPointF * start = nullptr;
     QPointF * end = nullptr;
+    QList<SelectableInstance*> path;
 
     friend class DesignGraph;
 };

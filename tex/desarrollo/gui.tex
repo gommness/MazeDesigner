@@ -1,3 +1,31 @@
+En la fase de desarrollo de la interfaz gráfica de usuario se han integrado todas las componentes en una única interfaz. Resultando en un aspecto como el que se observa en las figuras \ref{FIG:DEV:INTERFAZ} y \ref{FIG:DEV:INTERFAZINFERIOR}.
+Además de esto, se han desarrollado las funcionalidades de persistencia y de exportación a un proyecto de \textit{GameMaker Studio 2}. Estas funcionalidades se han hecho accesibles a través de la barra de menú superior, así como mediante una serie de atajos de teclado, tal y como se ilustra en la figura \ref{FIG:DEV:ACCIONES}.
+
+La persistencia se lleva a cabo guardando y leyendo ficheros con extensión \textit{.maze} cuyo contenido es un documento \textit{JSON}.
+
+En cuanto a la exportación, se exportan los \dfnpl{nivel} declarados a ficheros de extensión \textit{.yy} compatibles con la estructura de directorios y de proyecto de \textit{GameMaker Studio 2}, de manera que, como se muestra en la figura \ref{FIG:DEV:GMS2}, el motor puede abrir los \dfnpl{nivel} creados con la herramienta \textit{MazeDesigner}.
+
+\begin{figure}{FIG:DEV:INTERFAZ}{Capturas diversas de la interfaz, mostrando distintas pestañas.}
+	\subfigure[SBFIG:DEV:INTERFAZMAIN]{Esta es la interfaz en la que se inicia el programa, con la pestaña de edición de \dfnpl{espacio-jugable} la lista de llaves y la consola auxiliar en la parte inferior.}{\image{9cm}{}{capturas/captura-design-canvas-interfaz}} \quad
+	\subfigure[SBFIG:DEV:INTERFAZROOMS]{Esta es la interfaz que resulta al entrar en la pestaña de declaración de \dfnpl{nivel}. Además de mostrar en el \textit{canvas} los declarados, el menú lateral pasa a mostrar también información de los mismos.}{\image{9cm}{}{capturas/captura-edicion-room-interfaz}} \quad
+	\subfigure[SBFIG:DEV:INTERFAZINSTANCIAS]{Esta es la interfaz que resulta al entrar en la pestaña de instanciación, en la que se muestran todas las instancias de llaves y puertas creadas, así como el token de comienzo colocado.}{\image{9cm}{}{capturas/captura-creacion-token-interfaz}}
+\end{figure}
+
+\begin{figure}{FIG:DEV:INTERFAZINFERIOR}{En la parte inferior de la interfaz se muestra una consola auxiliar y una interfaz para la declaración de las condiciones de las puertas.}
+	\subfigure[SBFIG:DEV:INTERFAZCONSOLA]{Esta pestaña es una consola auxiliar con un campo de texto de solo lectura en el que se muestra información sobre las instancias seleccionadas y otros mensajes enviados por la aplicación.}{\image{9cm}{}{capturas/captura-consola-interfaz}} \quad
+	\subfigure[SBFIG:DEV:INTERFAZCONDICIONES]{Esta pestaña es un formulario para declarar las condiciones que se asignan a una puerta seleccionada.}{\image{9cm}{}{capturas/captura-condiciones-puerta-interfaz}}
+\end{figure}
+
+\begin{figure}{FIG:DEV:ACCIONES}{Interfaz que muestra una lista de acciones que puede realizar la aplicación, junto con sus atajos de teclado si es que la acción en cuestión tiene alguno asociado.}
+	\image{9cm}{}{capturas/captura-acciones}
+\end{figure}
+
+\begin{figure}{FIG:DEV:GMS2}{En la parte inferior de la interfaz se muestra una consola auxiliar y una interfaz para la declaración de las condiciones de las puertas.}
+\subfigure[SBFIG:DEV:GMS2DESIGN]{El diseño mostrando uno de los \dfnpl{nivel} declarados.}{\image{6cm}{}{capturas/captura-design-room}} \quad
+	\subfigure[SBFIG:DEV:GMS2ROOM]{El \dfn{nivel} declarado en la sub-figura \ref{SBFIG:DEV:GMS2DESIGN}.}{\image{6cm}{}{capturas/captura-gms2-room}}
+\end{figure}
+
+\begin{comment}
 En esta etapa se han integrado todas las componentes las unas con las otras, dejando componentes vacías que serían sustituídas en la etapa siguiente.
 
 En la interfaz gráfica, se siguieron las maquetas planteadas, dividiendo el área de trabajo en 3 zonas, con tamaños diferentes atendiendo a su función e importancia a la hora de trabajar en el diseño.
@@ -11,3 +39,4 @@ Se han proporcionado interfaces de comunicación entre los distintos módulos y 
 También en esta etapa se ha desarrollado el módulo que se encarga de exportar el diseño al motor \textit{GameMaker Studio 2} para continuar con el desarrollo del juego en esa herramienta.
 
 Finalmente, se han realizado pruebas de consistencia entre las distintas componentes, que involucraban, por ejemplo, que cambios ocasionados en una componente afectaran a otra. Por ejemplo, al eliminar espacio de juego del canvas, si hubiera alguna llave en dicho espacio eliminado, esta tendría que ser eliminada también. Otro ejemplo es que al eliminar un modelo de llave, todas las llaves instanciadas con ese modelo deberían ser eliminadas a su vez.
+\end{comment}
