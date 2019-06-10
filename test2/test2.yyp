@@ -1,16 +1,12 @@
 {
+    "IsDnDProject": false,
+    "configs": [
+    ],
     "id": "908406fc-ef87-4abb-95a5-25890681ba14",
     "modelName": "GMProject",
     "mvc": "1.0",
-    "IsDnDProject": false,
-    "configs": [
-        
-    ],
     "option_ecma": false,
     "parentProject": {
-        "id": "9ffe5057-4c02-472d-8759-150b7ff7b35c",
-        "modelName": "GMProjectParent",
-        "mvc": "1.0",
         "alteredResources": [
             {
                 "Key": "ed6a955d-5826-4f98-a450-10b414266c27",
@@ -25,8 +21,10 @@
             }
         ],
         "hiddenResources": [
-            
         ],
+        "id": "9ffe5057-4c02-472d-8759-150b7ff7b35c",
+        "modelName": "GMProjectParent",
+        "mvc": "1.0",
         "projectPath": "${base_project}"
     },
     "resources": [
@@ -183,6 +181,14 @@
             }
         },
         {
+            "Key": "d294a7ca-286e-4672-9aca-685c04610c7f",
+            "Value": {
+                "id": "6f911510-72e9-4f39-85f6-f8ab0f3a8237",
+                "resourcePath": "rooms\\roomTemplate\\roomTemplate.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
             "Key": "e1742a7c-c517-4bf6-8bbf-5046099e7dc5",
             "Value": {
                 "id": "d6998f29-d0f7-4dd6-923e-29b8c480002e",
@@ -197,10 +203,25 @@
                 "resourcePath": "rooms\\myRoom\\myRoom.yy",
                 "resourceType": "GMRoom"
             }
+        },
+        {
+            "Key": "f72afd62-0e2f-4e03-875a-7d35e3995a7e",
+            "Value": {
+                "id": "0351203e-9558-43e2-8e83-1d34a2aa0cfc",
+                "resourcePath": "rooms\\exported1\\exported1.yy",
+                "resourceType": "GMRoom"
+            }
+        },
+        {
+            "Key": "159407e3-c089-4306-b3b7-cfea75704ac9",
+            "Value": {
+                "id": "c12e7796-cd93-4125-aded-99b2596ebde5",
+                "resourcePath": "rooms\\exported2\\exported2.yy",
+                "resourceType": "GMRoom"
+            }
         }
     ],
     "script_order": [
-        
     ],
     "tutorial": ""
 }

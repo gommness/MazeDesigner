@@ -6,6 +6,7 @@
 
 // Class's json templates initialization:
 const QJsonDocument Exporter::roomTemplate = QJsonDocument::fromJson(readFile(ROOMTEMPLATEPATH));
+const QJsonDocument Exporter::roomResourceTemplate = QJsonDocument::fromJson(readFile(ROOMRESOURCETEMPLATE));
 const QJsonObject Exporter::solidInstanceTemplate = QJsonDocument::fromJson(readFile(INSTANCETEMPLATEPATH)).object();
 const QString Exporter::objWallName = "obj_wall";
 
@@ -20,7 +21,8 @@ void Exporter::exportDesign(const QString & filename, const Canvas &canvas, cons
     QFileInfo file(filename);
     for(auto room = roomCanvas.roomList.begin(); room != roomCanvas.roomList.end(); room++){ // loop through all rooms
         if(room->isExportable()){
-            QJsonDocument jDoc(roomToGameMakerRoom(objId, canvas.grid.getSize(), design, *room));
+            QJsonObject obj = roomToGameMakerRoom(objId, canvas.grid.getSize(), design, *room);
+            QJsonDocument jDoc(obj);
             QString roomFolderPath = file.path()+QDir::separator()+"rooms"+QDir::separator()+room->getName();
             //if the directory does not exist, we must create it before creating the room
             if(!QDir(roomFolderPath).exists()){
@@ -30,6 +32,7 @@ void Exporter::exportDesign(const QString & filename, const Canvas &canvas, cons
             roomFile.open(QIODevice::WriteOnly);
             roomFile.write(jDoc.toJson());
             roomFile.close();
+            insertRoomInProject(filename, obj["id"].toString(), room->getName());
         }
     }
 }
@@ -72,8 +75,8 @@ QJsonObject Exporter::roomToGameMakerRoom(const QString & objId,  const int &gri
 
     tmp = output["roomSettings"].toObject();
     tmp["id"] = UUID();
-    tmp["height"] = cellHeight * room.height()/gridSize;
-    tmp["width"] = cellWidth * room.width()/gridSize;
+    tmp["Height"] = cellHeight * room.height()/gridSize;
+    tmp["Width"] = cellWidth * room.width()/gridSize;
     output["roomSettings"] = tmp;
 
     // inserting the views
@@ -124,20 +127,47 @@ QJsonObject Exporter::createSolidInstance(const QString & instanceId, const QStr
 {
     QJsonObject output = QJsonObject(Exporter::solidInstanceTemplate);
     output["id"] = instanceId;
-    output["ObjId"] = objId;
+    output["objId"] = objId;
     //obtain random name for instance
     std::stringstream sstream;
     sstream << std::hex << QRandomGenerator::global()->generate();
     std::string result = sstream.str();
     QString name = "inst_" + QString::fromStdString(result);
     qDebug() << "grid size: "<<gridSize;
-    output["x"] = rect.x()-origin.x();
-    output["y"] = rect.y()-origin.y();
+    output["x"] = cellWidth*(rect.x()-origin.x())/gridSize;
+    output["y"] = cellHeight*(rect.y()-origin.y())/gridSize;
     output["scaleX"] = rect.width()/gridSize;
     output["scaleY"] = rect.height()/gridSize;
     output["name"] = name;
     output["name_with_no_file_rename"] = name;
     return output;
+}
+
+void Exporter::insertRoomInProject(const QString &projectPath, const QString &uuid, const QString &roomName)
+{
+    QJsonObject project = QJsonDocument::fromJson(readFile(projectPath)).object();
+    QJsonArray resources = project["resources"].toArray();
+    QJsonObject content;
+    for(auto res = resources.begin(); res != resources.end(); res++){
+        content = (*res).toObject();
+        if(content["Key"] == uuid){
+            return;
+        }
+    }
+    QJsonObject room(Exporter::roomResourceTemplate.object());
+    room.insert("Key", uuid);
+    QJsonObject value;
+    value.insert("id", UUID());
+    value.insert("resourcePath", "rooms\\"+roomName+"\\"+roomName+".yy");
+    value.insert("resourceType", "GMRoom");
+    room.insert("Value", value);
+    resources.append(room);
+    project["resources"] = resources;
+    QJsonDocument output(project);
+    QFile projectFile(projectPath);
+    projectFile.open(QIODevice::WriteOnly);
+    projectFile.write(output.toJson());
+    projectFile.close();
 }
 
 bool Exporter::copyRecursively(QString sourceFolder, QString destFolder)
@@ -185,7 +215,7 @@ QString Exporter::getOrCreateObject(const QString &filename, const QString &objN
     QJsonObject json = jDoc.object();
 
     QJsonArray resources = json["resources"].toArray();
-    QString expectedResPath = "objects\\\\"+objName+"\\\\"+objName+".yy";
+    QString expectedResPath = "objects\\"+objName+"\\"+objName+".yy";
     for(auto res = resources.begin(); res != resources.end(); res++){
         QJsonObject obj = res->toObject();
         //if the project already had a obj_wall, then we return its uuid

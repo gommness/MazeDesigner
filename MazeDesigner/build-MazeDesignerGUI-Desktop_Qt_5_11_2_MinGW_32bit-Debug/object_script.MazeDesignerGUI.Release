@@ -13,12 +13,17 @@ INPUT(
 ./release\keynameeditor.o
 ./release\keyrepository.o
 ./release\common.o
+./release\condition.o
+./release\simplecondition.o
+./release\compositecondition.o
 ./release\instancecanvas.o
 ./release\doorinstance.o
 ./release\keyinstance.o
 ./release\selectableinstance.o
 ./release\roomlistwidget.o
 ./release\exporter.o
+./release\console.o
+./release\doorconditionconsole.o
 ./release\moc_mainwindow.o
 ./release\moc_canvas.o
 ./release\moc_grid.o
@@ -29,5 +34,8 @@ INPUT(
 ./release\moc_keynameeditor.o
 ./release\moc_keyrepository.o
 ./release\moc_instancecanvas.o
+./release\moc_doorinstance.o
 ./release\moc_roomlistwidget.o
+./release\moc_console.o
+./release\moc_doorconditionconsole.o
 );
