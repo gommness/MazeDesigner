@@ -1,0 +1,14 @@
+En el diseño de juegos de tipo mazmorra es común utilizar un patrón de diseño de niveles unidireccional para enseñar al jugador, sin que este lo note, cómo funciona una mecánica de juego recién introducida.
+Para ilustrar cómo se realiza esto, se emplea un ejemplo clásico, que ha sido imitado a lo largo de los años en múltiples videojuegos. Dicho ejemplo se explica en la figura \ref{FIG:AP:TUTORIAL}.
+
+\begin{figure}{FIG:AP:TUTORIAL}{Escenario del videojuego \textit{Metroid\cite{metroid} (Nintendo, 1986)}. La imagen ha sido editada para realizar una enumeración en base a la cual se explica el patrón relativo a este apéndice. En este escenario, el jugador llega desde la parte derecha de la pantalla, encontrandose con la estructura sólida que vemos entre \textbf{2} y \textbf{4}. Dado que \textbf{4} es un túnel demasiado pequeño para que el jugador quepa, accederá a este área subiendo por \textbf{1} yasta alcanzar \textbf{2} y descender hacia \textbf{3}. En este punto, el jugador queda atrapado, pues su salto no es suficientemente alto como para alcanzar \textbf{2} desde \textbf{3}. Afortunadamente, en \textbf{3} hay un \dfn{power-up} denominado \textit{morph ball} que, en ese juego, permite al jugador pasar por túneles estrechos como \textbf{4}. Así pues, la única forma que el jugador tiene para salir de ahí y continuar con el juego, es utilizar el objeto que acaba de adquirir, aprendiendo la nueva mecánica de juego introducida por dicho \dfn{power-up}.}
+	\image{10cm}{}{imagenes/OriginalMorph}
+\end{figure}
+
+Como se puede estudiar de este ejemplo, se ha utilizado una transición unidireccional para dejar atrapado al jugador en una zona determinada. La única forma que tiene para escapar de dicha zona es mediante el uso de una mecánica nueva, de manera que los diseñadores se aseguran de que el jugador aprende cómo funciona esta mecánica sin que el jugador se de cuenta de que le están enseñando.
+
+La abstracción lógica de este patrón se ilustra en la figura \ref{FIG:AP:TUTORIALLOGICA}.
+
+\begin{figure}{FIG:AP:TUTORIALLOGICA}{Abstracción lógica del patrón tratado en este apéndice. En este esquema se asume que el nodo B contiene el power-up necesario para viajar desde B hasta A.}
+	\image{6cm}{}{imagenes/tutorial-logica}
+\end{figure}

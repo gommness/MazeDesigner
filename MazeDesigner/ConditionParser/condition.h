@@ -12,6 +12,7 @@ public:
     KeyRepository *keyRepo = nullptr;
 
     Condition(bool sat = true, KeyRepository * repo = nullptr);
+    Condition(const Condition & other);
     virtual ~Condition() {}
     virtual bool validate() const;
     virtual bool isSatisfiable() const;

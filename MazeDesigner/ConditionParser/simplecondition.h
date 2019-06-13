@@ -17,6 +17,7 @@ public:
     SimpleCondition(QString number, QString key, KeyRepository * repo = nullptr, bool sat = true);
     SimpleCondition(QString string, KeyRepository * repo = nullptr, bool sat = true);
     SimpleCondition(const QJsonObject & jObj, KeyRepository * repo = nullptr);
+    SimpleCondition(const SimpleCondition & other);
     bool validate() const override;
     bool operator ==(const SimpleCondition & cond) const;
     static const SimpleCondition & emptyCondition();

@@ -26,6 +26,9 @@ public:
      * @param point the point in space where the key instance will be created
      */
     KeyInstance(const Key & model, const QPointF & point);
+    KeyInstance(const QJsonObject & json, const KeyRepository & repo);
+    KeyInstance(KeyInstance & other);
+    KeyInstance & operator =(KeyInstance & other);
     ~KeyInstance() override {}
     QPolygonF boundPolygon() const override;
     QString instanceInfo() const override;
@@ -38,7 +41,6 @@ public:
      * @param repo the KeyRepository holding Key models
      * @return the newly created KeyInstance
      */
-    static KeyInstance fromJson(const QJsonObject & json, const KeyRepository & repo);
     /**
      * @brief toJson creates a json object holding the necessary information to reconstruct this object.
      * Essentially serializing itself
@@ -51,7 +53,7 @@ public:
      */
     int getId();
     QString toString() const;
-    const Key model;
+    const Key getModel() const;
 private:
     /**
      * @brief KeyInstance private constructor to force giving a id and not do it automatically. see above
@@ -69,7 +71,10 @@ private:
      */
     KeyInstance(int id, const Key & model, const QPointF & point);
 
+    void setCoordsFromPoint(const QPointF & point);
+
     static int ID;
+    Key model;
     int id;
 friend class InstanceCanvas;
 };

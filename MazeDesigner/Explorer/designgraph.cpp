@@ -21,8 +21,6 @@ DesignGraph::DesignGraph(InstanceCanvas &canvas)
         QPair<QPointF, QPointF> pointPair = (*door)->separation();
         Transition * tran = new Transition();
 
-        TODO("SET THE CONDITION OF THE TRANSITION");
-
         for(auto node = nodes.begin(); node != nodes.end(); node++){
 
             // check if the node we are iterating through contains one or both of the points of the separation
@@ -40,6 +38,8 @@ DesignGraph::DesignGraph(InstanceCanvas &canvas)
             // if the transition is well-formed, then we add it our list of transitions
             transitions.append(tran);
             tran->node1->transitions.append(tran); // and add the transition to the origin node's transition list
+            tran->condition = new SimpleCondition((*door)->getCondition1()); // finally, set the transition condition to a NEW cond
+            // is important that the transition contains a new condition because the condition will be exploration-dependent modified
         }
     }
     // now we have all nodes and transitions between them. Now the only thing left is to give the nodes the items that are
@@ -73,10 +73,35 @@ DesignGraph::DesignGraph(InstanceCanvas &canvas)
 
 DesignGraph::DesignGraph(DesignGraph &other)
 {
-    this->nodes.append(other.nodes);
-    this->transitions.append(other.transitions);
-    this->inventory = new Inventory(*other.inventory);
-    this->current = other.current;
+    // we have to iterate through all the nodes that other has
+    for(auto node = other.nodes.begin(); node != other.nodes.end(); node++){
+        //check if we have already collected this node (can happen bc something later)
+        RegionNode * nodeOrigin = this->getNode(**node);
+        if(nodeOrigin == nullptr){ // if it was not collected, create and collect it
+            nodeOrigin = new RegionNode(**node);
+            this->nodes.append(nodeOrigin);
+        }
+        // now we iterate through all the node's transitions
+        for(auto tran = (*node)->transitions.begin(); tran != (*node)->transitions.end(); tran++){
+            // check if a neighbour through a given transition has been collected
+            RegionNode * nodeDest = this->getNode(*(*tran)->node2);
+            if(nodeDest == nullptr){ // if it hasn't, create and collect it
+                nodeDest = new RegionNode(*(*tran)->node2);
+                this->nodes.append(nodeDest);
+            }
+            // then, whether it has been previously collected ot no, we create and collect their transition
+            // keep in mind that a node might have multiple transitions to the same node, and we have to copy those too!
+            // so even though we may have collected a node, the transition we are iterating through must be copied
+            Transition * tr = new Transition(nodeOrigin, nodeDest, new SimpleCondition(*(*tran)->condition));
+            nodeOrigin->transitions.append(tr);
+            this->transitions.append(tr);
+        }
+
+    }
+    // this will not create a copy of the items, only will append their references
+    this->inventory = other.inventory;
+    // current node will be the corresponding copied node of other's current node
+    this->current = this->getNode(*other.current);
 }
 
 DesignGraph::~DesignGraph()
@@ -84,4 +109,50 @@ DesignGraph::~DesignGraph()
     for(int i = nodes.length()-1; i >= 0; i--)
         delete nodes[i];
     delete inventory;
+}
+
+QList<DesignGraph *> DesignGraph::expand()
+{
+    QList<DesignGraph *> output;
+    // first: all the transitions from current node to another node
+    for(auto tran = current->transitions.begin(); tran != current->transitions.end(); tran++){
+        TODO("obtener coste de transicion (e.d. de la condicion). Si se puede asumir el coste, realizar la expansion");
+        TODO("al realizar estas expansiones, recordar cambiar las condiciones de las transiciones para que queden abiertas");
+    }
+    // second: all the collection of items
+    for(int i = 0; i < current->items.length(); i++){
+        //create a new search state
+        DesignGraph * graph = new DesignGraph(*this);
+        //add the item to the inventory of the new search state
+        graph->inventory->collect(current->items[i]);
+        //remove the item from the new search state's current node
+        graph->current->items.removeAt(i);
+        output.append(graph);
+    }
+    return output;
+}
+
+bool DesignGraph::operator ==(const DesignGraph &other) const
+{
+    if(transitions.length() != other.transitions.length() || nodes.length() != other.nodes.length())
+        return false;
+    for (int i=0; i<transitions.length(); i++) {
+        if(*transitions[i] != *other.transitions[i])
+            return false;
+    }
+    for(int i=0; i<nodes.length(); i++){
+        if(*nodes[i] != *other.nodes[i])
+            return false;
+    }
+    if(*inventory != *other.inventory)
+        return false;
+    return (*current != *other.current);
+}
+
+RegionNode *DesignGraph::getNode(const RegionNode &node) const
+{
+    for(auto n = nodes.begin(); n != nodes.end(); n++)
+        if(**n == node)
+            return *n;
+    return nullptr;
 }

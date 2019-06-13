@@ -26,7 +26,7 @@
 \BOOKMARK [2][-]{subsection.4.1.1}{Qt}{section.4.1}% 26
 \BOOKMARK [2][-]{subsection.4.1.2}{JSON}{section.4.1}% 27
 \BOOKMARK [2][-]{subsection.4.1.3}{git}{section.4.1}% 28
-\BOOKMARK [2][-]{subsection.4.1.4}{Game Maker Studio 2}{section.4.1}% 29
+\BOOKMARK [2][-]{subsection.4.1.4}{GameMaker Studio 2}{section.4.1}% 29
 \BOOKMARK [1][-]{section.4.2}{M\363dulos y Clases}{chapter.4}% 30
 \BOOKMARK [0][-]{chapter.5}{Desarrollo}{}% 31
 \BOOKMARK [1][-]{section.5.1}{Entornos de desarrollo}{chapter.5}% 32
@@ -47,3 +47,4 @@
 \BOOKMARK [0][-]{section*.34}{Definiciones}{}% 47
 \BOOKMARK [-1][-]{part.1}{Ap\351ndices}{}% 48
 \BOOKMARK [0][-]{appendix.Alph1}{Definici\363n de la sintaxis de condiciones}{part.1}% 49
+\BOOKMARK [0][-]{appendix.Alph2}{Patr\363n de dise\361o de niveles empleado como tutorial}{part.1}% 50

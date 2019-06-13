@@ -66,7 +66,7 @@ void InstanceCanvas::readJson(const QJsonObject &json)
         for(auto jsonKey = jsonArray.begin(); jsonKey != jsonArray.end(); jsonKey++){
             // Oof, I don't like the looks of that static method call (the keyList part looks iffy :( )
             if(jsonKey->isObject()) // no else so that if there is a non-obj entry, we don't freak out
-                keys.append(new KeyInstance(KeyInstance::fromJson(jsonKey->toObject(), *keyList->repo)));
+                keys.append(new KeyInstance(jsonKey->toObject(), *keyList->repo));
         }
     } else {
         throw std::runtime_error("no "+QString(JSONINSTANCESKEYSKEY).toUtf8()+" key found in jsonObject");

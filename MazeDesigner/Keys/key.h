@@ -19,6 +19,7 @@ public:
     QString toString() const;
     QJsonObject toJson();
     bool operator ==(const Key & key) const;
+    Key & operator =(const Key & other);
 private:
     Key(int id);
     static int ID;

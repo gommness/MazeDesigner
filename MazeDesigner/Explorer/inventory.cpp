@@ -8,7 +8,7 @@ Inventory::Inventory()
 Inventory::Inventory(const Inventory &other)
 {
     for(auto item = other.items.begin(); item != other.items.end(); item++){
-        items.append(*item);
+        items.append(new KeyInstance(**item));
     }
 }
 
@@ -24,12 +24,16 @@ Inventory &Inventory::collect(const QList<KeyInstance*> &keys)
     return *this;
 }
 
-Inventory &Inventory::spend(const QString &keyModel)
+Inventory &Inventory::spend(const QString &keyModel, int num)
 {
+    if(num <= 0)
+        return *this;
     for(int i = 0; i < items.length(); i++){
-        if(items[i]->model.getName() == keyModel){
+        if(items[i]->getModel().getName() == keyModel){
             items.removeAt(i);
-            return *this;
+            num--;
+            if(num == 0)
+                return *this;
         }
     }
     return *this;
@@ -42,12 +46,16 @@ Inventory &Inventory::spend(const QList<QString> &keyModels)
     return *this;
 }
 
-Inventory &Inventory::spend(const int &id)
+Inventory &Inventory::spend(const int &id, int num)
 {
+    if(num <= 0)
+        return *this;
     for(int i = 0; i < items.length(); i++){
-        if(items[i]->model.getId() == id){
+        if(items[i]->getModel().getId() == id){
             items.removeAt(i);
-            return *this;
+            num--;
+            if(num == 0)
+                return *this;
         }
     }
     return *this;
@@ -60,11 +68,27 @@ Inventory &Inventory::spend(const QList<int> &ids)
     return *this;
 }
 
-bool Inventory::contains(const int &keyModel)
+bool Inventory::operator ==(const Inventory &other) const
 {
-    for(auto key = items.begin(); key != items.end(); key++)
-        if((*key)->model.getId() == keyModel)
-            return true;
+    return this->items == other.items;
+}
+
+bool Inventory::operator !=(const Inventory &other) const
+{
+    return !(*this == other);
+}
+
+bool Inventory::contains(const int &keyModel, int num)
+{
+    if(num <= 0)
+        return true;
+    for(auto key = items.begin(); key != items.end(); key++){
+        if((*key)->getModel().getId() == keyModel){
+            num--;
+            if(num == 0)
+                return true;
+        }
+    }
     return false;
 }
 
@@ -80,11 +104,17 @@ bool Inventory::contains(const QList<int> &keyModels)
     return false;
 }
 
-bool Inventory::contains(const QString &keyModel)
+bool Inventory::contains(const QString &keyModel, int num)
 {
-    for(auto key = items.begin(); key != items.end(); key++)
-        if((*key)->model.getName() == keyModel)
-            return true;
+    if(num <= 0)
+        return true;
+    for(auto key = items.begin(); key != items.end(); key++){
+        if((*key)->getModel().getName() == keyModel){
+            num--;
+            if(num == 0)
+                return true;
+        }
+    }
     return false;
 }
 
@@ -112,4 +142,5 @@ Inventory &Inventory::operator =(const Inventory &other)
 {
     this->items.clear();
     this->items.append(other.items);
+    return *this;
 }

@@ -3,55 +3,47 @@ Capacity: max_strings=100000, hash_size=100000, hash_prime=85009
 The top-level auxiliary file: tfgtfmthesisuam.aux
 The style file: ieeetr.bst
 Database file #1: tfgtfmthesisuam.bib
-I was expecting a `,' or a `}'---line 22 of file tfgtfmthesisuam.bib
- :  
- :  howpublished = {\url{https://www.mapeditor.org/}},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-I was expecting a `,' or a `}'---line 28 of file tfgtfmthesisuam.bib
- :  
- :  howpublished = {\url{http://www.graphviz.org/}},
-(Error may have been on previous line)
-I'm skipping whatever remains of this entry
-You've used 27 entries,
+Warning--I didn't find a database entry for "Qt"
+Warning--empty institution in json
+You've used 30 entries,
             1876 wiz_defined-function locations,
-            556 strings with 5755 characters,
-and the built_in function-call counts, 3012 in all, are:
-= -- 314
-> -- 27
+            585 strings with 6152 characters,
+and the built_in function-call counts, 3548 in all, are:
+= -- 325
+> -- 63
 < -- 0
-+ -- 27
-- -- 0
-* -- 81
-:= -- 302
-add.period$ -- 50
-call.type$ -- 27
++ -- 40
+- -- 10
+* -- 133
+:= -- 397
+add.period$ -- 34
+call.type$ -- 30
 change.case$ -- 27
 chr.to.int$ -- 0
-cite$ -- 27
-duplicate$ -- 108
-empty$ -- 487
-format.name$ -- 0
-if$ -- 855
+cite$ -- 31
+duplicate$ -- 160
+empty$ -- 554
+format.name$ -- 10
+if$ -- 967
 int.to.chr$ -- 0
-int.to.str$ -- 27
-missing$ -- 0
-newline$ -- 109
-num.names$ -- 0
-pop$ -- 212
+int.to.str$ -- 30
+missing$ -- 10
+newline$ -- 97
+num.names$ -- 7
+pop$ -- 170
 preamble$ -- 1
 purify$ -- 0
 quote$ -- 0
-skip$ -- 90
+skip$ -- 160
 stack$ -- 0
-substring$ -- 0
-swap$ -- 0
+substring$ -- 32
+swap$ -- 14
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
 type$ -- 0
-warning$ -- 0
-while$ -- 0
-width$ -- 29
-write$ -- 212
-(There were 2 error messages)
+warning$ -- 1
+while$ -- 10
+width$ -- 32
+write$ -- 203
+(There were 2 warnings)

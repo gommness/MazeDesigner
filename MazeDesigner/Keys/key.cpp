@@ -90,6 +90,14 @@ bool Key::operator ==(const Key &key) const
     return this->id == key.id;
 }
 
+Key &Key::operator =(const Key &other)
+{
+    this->id = other.id;
+    this->name = other.name;
+    this->powerUp = other.powerUp;
+    return *this;
+}
+
 Key::Key(int id)
 {
     this->id = id;

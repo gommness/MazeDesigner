@@ -59,6 +59,12 @@ SimpleCondition::SimpleCondition(const QJsonObject &jObj, KeyRepository * repo)
     this->keyRepo = repo;
 }
 
+SimpleCondition::SimpleCondition(const SimpleCondition &other) : Condition(other)
+{
+    this->name = other.name;
+    this->value = other.value;
+}
+
 bool SimpleCondition::validate() const
 {
     if(isEmpty())

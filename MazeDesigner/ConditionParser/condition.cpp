@@ -2,6 +2,12 @@
 
 Condition::Condition(bool sat, KeyRepository * repo) : keyRepo(repo), satisfiable(sat) {}
 
+Condition::Condition(const Condition &other)
+{
+    this->keyRepo = other.keyRepo;
+    this->satisfiable = other.satisfiable;
+}
+
 bool Condition::validate() const
 {
     if(!keyRepo)

@@ -1015,6 +1015,8 @@ moc_mainwindow.cpp: ../../../Qt/5.11.1/gcc_64/include/QtWidgets/QMainWindow \
 		../MazeDesignerGUI/roomlistwidget.h \
 		../MazeDesignerGUI/console.h \
 		../MazeDesignerGUI/doorconditionconsole.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QCheckBox \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qcheckbox.h \
 		../MazeDesignerGUI/mainwindow.h \
 		moc_predefs.h \
 		../../../Qt/5.11.1/gcc_64/bin/moc
@@ -2779,6 +2781,12 @@ moc_doorconditionconsole.cpp: ../../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidge
 		../../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QLabel \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QCheckBox \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qcheckbox.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qpushbutton.h \
 		../ConditionParser/compositecondition.h \
 		../ConditionParser/simplecondition.h \
 		../ConditionParser/condition.h \
@@ -3019,6 +3027,8 @@ main.o: ../MazeDesignerGUI/main.cpp ../MazeDesignerGUI/mainwindow.h \
 		../MazeDesignerGUI/roomlistwidget.h \
 		../MazeDesignerGUI/console.h \
 		../MazeDesignerGUI/doorconditionconsole.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QCheckBox \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qcheckbox.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QApplication \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qapplication.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qcoreapplication.h \
@@ -3221,6 +3231,8 @@ mainwindow.o: ../MazeDesignerGUI/mainwindow.cpp ../MazeDesignerGUI/mainwindow.h 
 		../MazeDesignerGUI/roomlistwidget.h \
 		../MazeDesignerGUI/console.h \
 		../MazeDesignerGUI/doorconditionconsole.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QCheckBox \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qcheckbox.h \
 		../MazeDesignerGUI/ui_mainwindow.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QVariant \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QApplication \
@@ -6417,6 +6429,12 @@ doorconditionconsole.o: ../MazeDesignerGUI/doorconditionconsole.cpp ../MazeDesig
 		../../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QLabel \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QCheckBox \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qcheckbox.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qpushbutton.h \
 		../ConditionParser/compositecondition.h \
 		../ConditionParser/simplecondition.h \
 		../ConditionParser/condition.h \
@@ -6444,7 +6462,8 @@ doorconditionconsole.o: ../MazeDesignerGUI/doorconditionconsole.cpp ../MazeDesig
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qlayout.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qgridlayout.h
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/QResizeEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o doorconditionconsole.o ../MazeDesignerGUI/doorconditionconsole.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

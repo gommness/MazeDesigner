@@ -22,6 +22,7 @@ public:
     QList<DesignGraph*> expand();
     double heuristic() const;
     bool operator ==(const DesignGraph & other) const;
+    RegionNode * getNode(const RegionNode & node) const;
 
     QList<RegionNode*> nodes;
     QList<Transition*> transitions;

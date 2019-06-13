@@ -4,20 +4,23 @@
 #include <QList>
 #include <QRegion>
 #include "../MazeDesignerGUI/keyinstance.h"
-#include "../ConditionParser/condition.h"
+#include "../ConditionParser/simplecondition.h"
 #include "../Common/common.h"
 class RegionNode;
 
 class Transition
 {
 public:
-    Transition(RegionNode * node1 = nullptr, RegionNode * node2 = nullptr, Condition * cond = nullptr);
+    Transition(RegionNode * node1 = nullptr, RegionNode * node2 = nullptr, SimpleCondition * cond = nullptr);
+    ~Transition();
 
     bool isValid() const;
+    bool operator ==(const Transition & other) const;
+    bool operator !=(const Transition & other) const;
 
     RegionNode * node1 = nullptr;
     RegionNode * node2 = nullptr;
-    Condition * condition = nullptr;
+    SimpleCondition * condition = nullptr;
 };
 
 class RegionNode
@@ -28,8 +31,10 @@ public:
 
 
     RegionNode(QPolygonF * parent);
+    RegionNode(RegionNode & other);
     ~RegionNode();
-    bool operator ==(const RegionNode &other);
+    bool operator ==(const RegionNode &other) const;
+    bool operator !=(const RegionNode &other) const;
     static RegionNode * fusion(RegionNode &n1, RegionNode &n2);
     bool containsPoint(const QPointF & point) const;
 private:

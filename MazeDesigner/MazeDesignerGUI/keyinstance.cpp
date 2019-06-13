@@ -16,6 +16,21 @@ KeyInstance::KeyInstance(const Key &model, const QPointF & point) : QRectF(point
     id = KeyInstance::ID;
 }
 
+KeyInstance::KeyInstance(KeyInstance &other)
+{
+    *this = other;
+}
+
+KeyInstance &KeyInstance::operator =(KeyInstance &other)
+{
+    this->id = other.id;
+    this->model = other.model;
+    qreal x1,y1,x2,y2;
+    other.getCoords(&x1, &y1, &x2, &y2);
+    this->setCoords(x1,y1,x2,y2);
+    return *this;
+}
+
 QPolygonF KeyInstance::boundPolygon() const
 {
     return QPolygonF(*this);
@@ -33,7 +48,7 @@ QPointF KeyInstance::instancePosition() const
     return this->center();
 }
 
-KeyInstance KeyInstance::fromJson(const QJsonObject &json, const KeyRepository & repo)
+KeyInstance::KeyInstance(const QJsonObject &json, const KeyRepository & repo)
 {
     int jsonId;
     Key model;
@@ -59,8 +74,10 @@ KeyInstance KeyInstance::fromJson(const QJsonObject &json, const KeyRepository &
     } else {
         throw std::runtime_error("no coords for key instance found in jsonObject");
     }
-    KeyInstance output(jsonId, model, coords);
-    return output;
+    this->id = jsonId;
+    this->model = model;
+    //x-8,y-8,16,16
+    this->setCoordsFromPoint(coords);
 }
 
 QJsonObject KeyInstance::toJson()
@@ -83,6 +100,11 @@ QString KeyInstance::toString() const
     return output;
 }
 
+const Key KeyInstance::getModel() const
+{
+    return model;
+}
+
 KeyInstance::KeyInstance(int id, const Key &model, const qreal &x, const qreal &y) : QRectF(x-8,y-8,16,16), model(model)
 {
     this->id = id;
@@ -92,4 +114,9 @@ KeyInstance::KeyInstance(int id, const Key &model, const QPointF &point) : QRect
     model(model)
 {
     this->id = id;
+}
+
+void KeyInstance::setCoordsFromPoint(const QPointF &point)
+{
+    this->setCoords(point.x()-8, point.y()-8, point.x()+16, point.x()+16);
 }
