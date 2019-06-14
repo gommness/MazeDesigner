@@ -14,12 +14,15 @@ Inventory::Inventory(const Inventory &other)
 
 Inventory &Inventory::collect(KeyInstance *key)
 {
+    updateCounts(key);
     items.append(key);
     return *this;
 }
 
 Inventory &Inventory::collect(const QList<KeyInstance*> &keys)
 {
+    for(auto k = keys.begin(); k != keys.end(); k++)
+        updateCounts(*k);
     items.append(keys);
     return *this;
 }
@@ -30,6 +33,7 @@ Inventory &Inventory::spend(const QString &keyModel, int num)
         return *this;
     for(int i = 0; i < items.length(); i++){
         if(items[i]->getModel().getName() == keyModel){
+            updateCounts(items[i]);
             items.removeAt(i);
             num--;
             if(num == 0)
@@ -51,6 +55,7 @@ Inventory &Inventory::spend(const int &id, int num)
     if(num <= 0)
         return *this;
     for(int i = 0; i < items.length(); i++){
+        updateCounts(items[i]);
         if(items[i]->getModel().getId() == id){
             items.removeAt(i);
             num--;
@@ -63,9 +68,20 @@ Inventory &Inventory::spend(const int &id, int num)
 
 Inventory &Inventory::spend(const QList<int> &ids)
 {
-    for(auto key = ids.begin(); key != ids.end(); key++)
+    for(auto key = ids.begin(); key != ids.end(); key++){
         spend(*key);
+    }
     return *this;
+}
+
+Inventory &Inventory::spend(Condition::Cost &costs)
+{
+    return this->spend(costs.first->getId(), static_cast<int>(costs.second));
+}
+
+bool Inventory::canAfford(Condition::Cost &costs)
+{
+    return this->contains(costs.first->getId(), static_cast<int>(costs.second));
 }
 
 bool Inventory::operator ==(const Inventory &other) const
@@ -130,6 +146,21 @@ bool Inventory::contains(const QList<QString> &keyModels)
     return false;
 }
 
+int Inventory::numberOfConsumables() const
+{
+    return nKeys;
+}
+
+int Inventory::numberOfPowerUps() const
+{
+    return nPows;
+}
+
+int Inventory::length() const
+{
+    return items.length();
+}
+
 QString Inventory::toString() const
 {
     QString output = "[";
@@ -142,5 +173,15 @@ Inventory &Inventory::operator =(const Inventory &other)
 {
     this->items.clear();
     this->items.append(other.items);
+    this->nKeys = other.nKeys;
+    this->nPows = other.nPows;
     return *this;
+}
+
+void Inventory::updateCounts(const KeyInstance *key, int number)
+{
+    if(key->getModel().isPowerUp())
+        nPows += number;
+    else
+        nKeys += number;
 }

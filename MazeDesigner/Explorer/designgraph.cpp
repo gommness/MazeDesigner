@@ -116,8 +116,21 @@ QList<DesignGraph *> DesignGraph::expand()
     QList<DesignGraph *> output;
     // first: all the transitions from current node to another node
     for(auto tran = current->transitions.begin(); tran != current->transitions.end(); tran++){
-        TODO("obtener coste de transicion (e.d. de la condicion). Si se puede asumir el coste, realizar la expansion");
-        TODO("al realizar estas expansiones, recordar cambiar las condiciones de las transiciones para que queden abiertas");
+        // we get the list of all posible costs to travel through this transition
+        Condition::CostList costs = (*tran)->getCost();
+        for(auto cost = costs.begin(); cost != costs.end(); cost++){ // iterate through all the possible costs we could spend
+            if(inventory->canAfford(*cost)){ // if we can afford a cost
+                // create a new search state
+                DesignGraph * graph = new DesignGraph(*this);
+                // in this new search state, spend the costs of traveling
+                graph->inventory->spend(*cost);
+                // finally, update the transition's condition, so that it remains open only in this new search state
+                delete graph->getTransition(**tran)->condition; // transition allways stores conditions in dynamic mem, so delete it
+                graph->getTransition(**tran)->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
+                graph->simplify();
+                output.append(graph);
+            }
+        }
     }
     // second: all the collection of items
     for(int i = 0; i < current->items.length(); i++){
@@ -127,8 +140,40 @@ QList<DesignGraph *> DesignGraph::expand()
         graph->inventory->collect(current->items[i]);
         //remove the item from the new search state's current node
         graph->current->items.removeAt(i);
+        graph->simplify();
         output.append(graph);
     }
+    return output;
+}
+
+void DesignGraph::simplify()
+{
+    QList<QList<RegionNode*>> stronglyConnectedComponents = tarjanAlgorithm();
+    for(auto component = stronglyConnectedComponents.begin(); component != stronglyConnectedComponents.end(); component++){
+        fuse(*component);
+    }
+}
+
+void DesignGraph::destroyNode(RegionNode *node)
+{
+    nodes.removeOne(node);
+    delete node;
+}
+
+double DesignGraph::heuristic() const
+{
+    static double powerUpWeight = 5;
+    static double consumableWeight = 3;
+    static double itemWeight = 2;
+    static double nodesWeight = 4;
+
+    double output = 1;
+    output += inventory->numberOfPowerUps() * powerUpWeight;
+    output += inventory->numberOfConsumables() * consumableWeight;
+    output += current->items.length() * itemWeight;
+    output += current->transitions.length() * nodesWeight;
+    output += current->getOpenTransitions().length() * nodesWeight;
+    output -= nodes.length() * nodesWeight;
     return output;
 }
 
@@ -156,3 +201,74 @@ RegionNode *DesignGraph::getNode(const RegionNode &node) const
             return *n;
     return nullptr;
 }
+
+Transition *DesignGraph::getTransition(const Transition &transition) const
+{
+    for(auto t = transitions.begin(); t != transitions.end(); t++)
+        if(**t == transition)
+            return *t;
+    return nullptr;
+}
+
+int DesignGraph::size() const
+{
+    return nodes.length();
+}
+
+void DesignGraph::fuse(QList<RegionNode *> component)
+{
+    RegionNode * fused = component[0];
+    for(int i = 1; i < component.length(); i++){
+        fused = RegionNode::fusion(*fused, *component[i]);
+        destroyNode(component[i]);
+    }
+    destroyNode(component[0]);
+}
+
+QList<QList<RegionNode *> > DesignGraph::tarjanAlgorithm()
+{
+    QList<QList<RegionNode *> > output;
+
+    int index = 0;
+    QStack<RegionNode *> stack;
+    QHash<RegionNode *, int> indexes;
+    QHash<RegionNode *, int> lowLinks;
+    for(auto node = nodes.begin(); node != nodes.end(); node++){
+        if(!indexes.contains(*node))
+           output.append(stronglyConnect(*node, stack, indexes, lowLinks, index));
+    }
+    return output;
+}
+
+QList<RegionNode *> DesignGraph::stronglyConnect(RegionNode *node, QStack<RegionNode *> &stack, QHash<RegionNode *, int> &indexes,
+                                                 QHash<RegionNode *, int> &lowLinks, int &index)
+{
+    indexes.insert(node, index);
+    lowLinks.insert(node, index);
+    index++;
+    stack.push(node);
+
+    QList<Transition*> openTransitions = node->getOpenTransitions();
+    for(auto t = openTransitions.begin(); t != openTransitions.end(); t++){
+        RegionNode * endNode = (*t)->node2;
+        if(!indexes.contains(endNode)){
+            stronglyConnect(endNode, stack, indexes, lowLinks, index);
+            lowLinks[node] = qMin(lowLinks[node], lowLinks[endNode]);
+        } else if(stack.contains(endNode)){
+            lowLinks[node] = qMin(lowLinks[node], indexes[endNode]);
+        }
+    }
+
+    QList<RegionNode *> output;
+    if(lowLinks[node] == indexes[node]){
+        RegionNode * aux;
+        do{
+            aux = stack.pop();
+            output.append(aux);
+        }while(aux != node);
+        // we can compare pointers and not contents since it is an exploration of graph of the same searchState
+        // and comparing pointers is way faster than comparing contents
+    }
+    return output;
+}
+

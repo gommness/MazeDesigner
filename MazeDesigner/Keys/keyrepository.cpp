@@ -64,6 +64,14 @@ const Key &KeyRepository::keyWithId(int ID) const
     return Key::invalidKey();
 }
 
+const Key &KeyRepository::keyWithName(const QString &name) const
+{
+    for(auto key = begin(); key != end(); key++)
+        if(key->getName() == name)
+            return *key;
+    return Key::invalidKey();
+}
+
 void KeyRepository::writeJson(QJsonObject &json)
 {
     QJsonObject wrapper;

@@ -9,6 +9,8 @@
 class Condition
 {
 public:
+    typedef QPair<const Key*, uint> Cost;
+    typedef QList<Cost> CostList;
     KeyRepository *keyRepo = nullptr;
 
     Condition(bool sat = true, KeyRepository * repo = nullptr);
@@ -16,11 +18,12 @@ public:
     virtual ~Condition() {}
     virtual bool validate() const;
     virtual bool isSatisfiable() const;
+    virtual CostList getCost() const;
     static const Condition & emptyCondition();
     static const Condition & unsatCondition();
     virtual bool isEmpty() const;
     virtual void setKeyRepository(KeyRepository *map);
-    virtual KeyRepository * getNameSpace();
+    virtual const KeyRepository * getRepository();
     virtual QString toString() const;
     virtual bool operator ==(const Condition & other) const;
     virtual QJsonObject toJson() const;

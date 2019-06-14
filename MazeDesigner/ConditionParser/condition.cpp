@@ -20,6 +20,11 @@ bool Condition::isSatisfiable() const
     return satisfiable;
 }
 
+Condition::CostList Condition::getCost() const
+{
+    return Condition::CostList();
+}
+
 const Condition &Condition::emptyCondition()
 {
     const static Condition output;
@@ -42,7 +47,7 @@ void Condition::setKeyRepository(KeyRepository *map)
     keyRepo = map;
 }
 
-KeyRepository * Condition::getNameSpace()
+const KeyRepository * Condition::getRepository()
 {
     return keyRepo;
 }

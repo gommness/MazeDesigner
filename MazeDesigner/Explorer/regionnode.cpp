@@ -34,21 +34,32 @@ bool RegionNode::operator !=(const RegionNode &other) const
     return !(*this == other);
 }
 
-RegionNode *RegionNode::fusion(RegionNode &n1, RegionNode &n2)
+RegionNode *RegionNode::fusion(const RegionNode &n1, const RegionNode &n2)
 {
+    // create the union bewtween the two polygons of the fused nodes
     QPolygonF region = QPolygonF(n1.parent->united(*n2.parent));
     RegionNode * output = new RegionNode(&region);
+    // give all the items contained in both nodes to the fused node, since it will have both items from n1 and from n2
     output->items.append(n1.items);
     output->items.append(n2.items);
-    output->transitions.append(n1.transitions);
-    output->transitions.append(n2.transitions);
-    for(int i = 0; i < output->transitions.length(); i++){
-        if(*output->transitions[i]->node1 == n1 || *output->transitions[i]->node1 == n2){
-            output->transitions[i]->node1 = output;
+    QList<Transition*> ts; // auxiliary transition list.
+    // store all transitions, starting either in n1 or n2.
+    ts.append(n1.transitions);
+    ts.append(n2.transitions);
+    // now we'll prepare all the transitions for the fused node
+    for(int i = 0; i < ts.length(); i++){
+        // for each transition (either starting in n1 or n2) create a new one
+        // the starting point of the new transition will be the fused node anyways so don't worry
+        // now if the transition ended in either n1 or n2, we'd have to modify the transition so that it ends in the fused node
+        // note that the end points of the transition might end in a different third node, thus we HAVE to make this comparation
+        RegionNode * dest;
+        if(*ts[i]->node2 == n1 || *ts[i]->node2 == n2){
+            dest = output;
+        } else {
+            dest = ts[i]->node2;
         }
-        if(*output->transitions[i]->node2 == n1 || *output->transitions[i]->node2 == n2){
-            output->transitions[i]->node2 = output;
-        }
+        SimpleCondition * newCond = new SimpleCondition(*ts[i]->condition); // copy the condition into a new one
+        output->transitions.append(new Transition(output, dest, newCond)); // create the transition and insert it into the transitions of the fused node
     }
     return output;
 }
@@ -56,6 +67,15 @@ RegionNode *RegionNode::fusion(RegionNode &n1, RegionNode &n2)
 bool RegionNode::containsPoint(const QPointF &point) const
 {
     return parent->containsPoint(point, Qt::FillRule::OddEvenFill);
+}
+
+QList<Transition *> RegionNode::getOpenTransitions() const
+{
+    QList<Transition*> output;
+    for(auto t = transitions.begin(); t != transitions.end(); t++)
+        if((*t)->isOpen())
+            output.append(*t);
+    return output;
 }
 
 uint RegionNode::qHash(const RegionNode &key)
@@ -76,6 +96,18 @@ Transition::~Transition()
 bool Transition::isValid() const
 {
     return node1 != nullptr && node2 != nullptr && (condition == nullptr || condition->validate());
+}
+
+bool Transition::isOpen() const
+{
+    return condition == nullptr || condition->isEmpty();
+}
+
+Condition::CostList Transition::getCost() const
+{
+    if(condition == nullptr)
+        return Condition::CostList();
+    return condition->getCost();
 }
 
 bool Transition::operator ==(const Transition &other) const

@@ -20,6 +20,7 @@ public:
     bool contains(const QString & keyname) const;
     bool contains(int ID) const;
     const Key & keyWithId(int ID) const;
+    const Key & keyWithName(const QString & name) const;
     void writeJson(QJsonObject & json);
     void readJson(const QJsonObject & json);
 signals:

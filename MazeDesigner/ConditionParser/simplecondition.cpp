@@ -4,14 +4,14 @@
 // syntax: [have] [<number>] <item>
 
 SimpleCondition::SimpleCondition(QString number, QString key, KeyRepository* repo, bool sat)
-    : Condition(sat, repo), name(key), value(number) {}
+    : Condition(sat, repo), name(key), value(number.toUInt()) {}
 
 SimpleCondition::SimpleCondition(QString condition, KeyRepository* repo, bool sat)
 {
     satisfiable = sat;
     keyRepo = repo;
     name = "";
-    value = "";
+    value = 0;
 
     QRegExp exp("[ ]");
     QStringList list = condition.split(exp, QString::SkipEmptyParts);
@@ -25,10 +25,13 @@ SimpleCondition::SimpleCondition(QString condition, KeyRepository* repo, bool sa
     else
         name = ""; // the empty name means the empty condition, which is allways true
 
+    bool ok = false;
     if(size >= 2)
-        value = list[size-2]; // not the last word, but the word before the last
+        value = list[size-2].toUInt(&ok); // not the last word, but the word before the last
+        if(!ok)
+            value = 0;
     else
-        value = "1"; // value is not required in the syntax. if omitted, then the condition assumes it means have 1 <item>
+        value = 1; // value is not required in the syntax. if omitted, then the condition assumes it means have 1 <item>
 }
 
 SimpleCondition::SimpleCondition(const QJsonObject &jObj, KeyRepository * repo)
@@ -43,7 +46,7 @@ SimpleCondition::SimpleCondition(const QJsonObject &jObj, KeyRepository * repo)
         QStringList cond = jObj["condition"].toString().split(" ");
         if(cond.length() < 2)
             throw std::runtime_error("malformed condition");
-        value = cond[0];
+        value = cond[0].toUInt();
         name = cond[1];
     } else {
         throw std::runtime_error("malformed condition");
@@ -74,9 +77,15 @@ bool SimpleCondition::validate() const
     bool output = validateName();
     if(!output)
         throw ConditionError::UnknownIdentifier(name.toStdString());
-    output &= validateValue();
-    if(!output)
-        throw ConditionError::Malformed("value \""+value.toStdString()+"\" is not numeric");
+    return output;
+}
+
+Condition::CostList SimpleCondition::getCost() const
+{
+    Condition::CostList output;
+    Key key = keyRepo->keyWithName(name);
+    if(key.isValid())
+        output.append(Cost(&key, value));
     return output;
 }
 
@@ -124,11 +133,3 @@ bool SimpleCondition::validateName() const
     return keyRepo->contains(name); // the name either exists in the nameSpace or this is the empty condition
 }
 
-bool SimpleCondition::validateValue() const
-{
-    if(value.isEmpty())
-        return true;
-    bool ok;
-    value.toDouble(&ok);
-    return ok; // true if the value can be converted to a number
-}

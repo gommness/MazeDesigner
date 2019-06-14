@@ -9,7 +9,7 @@ class SimpleCondition : public Condition
 public:
     QString name;
     // QString comparator;
-    QString value;
+    uint value;
 private:
 
 /// methods
@@ -19,6 +19,7 @@ public:
     SimpleCondition(const QJsonObject & jObj, KeyRepository * repo = nullptr);
     SimpleCondition(const SimpleCondition & other);
     bool validate() const override;
+    virtual CostList getCost() const override;
     bool operator ==(const SimpleCondition & cond) const;
     static const SimpleCondition & emptyCondition();
     static const SimpleCondition & unsatCondition();
@@ -29,7 +30,6 @@ public:
     QJsonObject toJson() const override;
 private:
     bool validateName() const;
-    bool validateValue() const;
 };
 
 #endif // CONDITION_H
