@@ -37,7 +37,7 @@ public:
     ~RegionNode();
     bool operator ==(const RegionNode &other) const;
     bool operator !=(const RegionNode &other) const;
-    static RegionNode * fusion(const RegionNode &n1, const RegionNode &n2);
+    static RegionNode * fusion(QList<RegionNode *> & nodes);
     bool containsPoint(const QPointF & point) const;
     QList<Transition *> getOpenTransitions() const;
 private:
@@ -45,6 +45,12 @@ private:
     bool checkConnexion(QHash<RegionNode*, QList<RegionNode*>> & map);
 
     QPolygonF *parent;
+    // the next attributes are required for the Tarjan's strongly connected components algorithm
+    int index = -1;
+    int lowLink = -1;
+    bool onStack = false;
+
+    friend class DesignGraph;
 };
 
 

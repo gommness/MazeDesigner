@@ -38,9 +38,9 @@ public:
 private:
     void fuse(QList<RegionNode*>);
     QList<QList<RegionNode *>> tarjanAlgorithm();
-    QList<RegionNode*> stronglyConnect(RegionNode * node, QStack<RegionNode *> & stack, QHash<RegionNode *, int> & indexes,
-                                       QHash<RegionNode *, int> & lowLinks, int & index);
+    QList<RegionNode*> stronglyConnect(RegionNode * node, QStack<RegionNode *> & stack, int & index);
     bool checkConnexion() const;
 };
+
 
 #endif // DESIGNGRAPH_H

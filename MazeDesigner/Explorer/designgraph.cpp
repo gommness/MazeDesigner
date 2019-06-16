@@ -217,12 +217,21 @@ int DesignGraph::size() const
 
 void DesignGraph::fuse(QList<RegionNode *> component)
 {
-    RegionNode * fused = component[0];
-    for(int i = 1; i < component.length(); i++){
-        fused = RegionNode::fusion(*fused, *component[i]);
-        destroyNode(component[i]);
+    RegionNode * fused = RegionNode::fusion(component);
+    for(int i = 0; i < component.length(); i++){
+        // we have to do dirty work to make sure that no transition is un-stable and delete all unused
+        for(int i = transitions.length()-1; i >= 0; i--){
+            // if any transition starts in a node that was fused, then delete it.
+            if(transitions[i]->node1 == component[i]){
+                delete transitions[i];
+                transitions.removeAt(i);
+            } // otherwise, if it ends AND does not start in a node that was fused, then update the destination to the newly fused node
+            else if(transitions[i]->node2 == component[i])
+                transitions[i]->node2 = fused;
+        }
+        destroyNode(component[i]); // destroy nodes from the graph, not the component (memory will be free'd anyways
     }
-    destroyNode(component[0]);
+    nodes.append(fused); // finaly, append the fused node
 }
 
 QList<QList<RegionNode *> > DesignGraph::tarjanAlgorithm()
@@ -231,36 +240,34 @@ QList<QList<RegionNode *> > DesignGraph::tarjanAlgorithm()
 
     int index = 0;
     QStack<RegionNode *> stack;
-    QHash<RegionNode *, int> indexes;
-    QHash<RegionNode *, int> lowLinks;
     for(auto node = nodes.begin(); node != nodes.end(); node++){
-        if(!indexes.contains(*node))
-           output.append(stronglyConnect(*node, stack, indexes, lowLinks, index));
+        if((*node)->index == -1)
+           output.append(stronglyConnect(*node, stack, index));
     }
     return output;
 }
 
-QList<RegionNode *> DesignGraph::stronglyConnect(RegionNode *node, QStack<RegionNode *> &stack, QHash<RegionNode *, int> &indexes,
-                                                 QHash<RegionNode *, int> &lowLinks, int &index)
+QList<RegionNode *> DesignGraph::stronglyConnect(RegionNode *node, QStack<RegionNode *> &stack, int &index)
 {
-    indexes.insert(node, index);
-    lowLinks.insert(node, index);
+    node->index = index;
+    node->lowLink = index;
     index++;
     stack.push(node);
+    node->onStack = true;
 
     QList<Transition*> openTransitions = node->getOpenTransitions();
     for(auto t = openTransitions.begin(); t != openTransitions.end(); t++){
         RegionNode * endNode = (*t)->node2;
-        if(!indexes.contains(endNode)){
-            stronglyConnect(endNode, stack, indexes, lowLinks, index);
-            lowLinks[node] = qMin(lowLinks[node], lowLinks[endNode]);
-        } else if(stack.contains(endNode)){
-            lowLinks[node] = qMin(lowLinks[node], indexes[endNode]);
+        if(endNode->index == -1){
+            stronglyConnect(endNode, stack, index);
+            node->lowLink = qMin(node->lowLink, endNode->lowLink);
+        } else if(endNode->onStack){
+            node->lowLink = qMin(node->lowLink, endNode->index);
         }
     }
 
     QList<RegionNode *> output;
-    if(lowLinks[node] == indexes[node]){
+    if(node->lowLink == node->lowLink){
         RegionNode * aux;
         do{
             aux = stack.pop();

@@ -1,15 +1,13 @@
 INPUT(
-./debug\main.o
-./debug\colorlisteditor.o
 ./debug\keynameeditor.o
 ./debug\keyispowerupeditor.o
 ./debug\keyrepository.o
 ./debug\key.o
 ./debug\keylistwidget.o
 ./debug\keyeditorwidget.o
-./debug\moc_colorlisteditor.o
 ./debug\moc_keynameeditor.o
 ./debug\moc_keyispowerupeditor.o
+./debug\moc_keyrepository.o
 ./debug\moc_keylistwidget.o
 ./debug\moc_keyeditorwidget.o
 );

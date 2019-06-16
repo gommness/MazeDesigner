@@ -241,6 +241,17 @@ release/moc_canvas.cpp: ../../MazeDesigner/Canvas/grid.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/QPainter \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpainter.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtextoption.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QScrollArea \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qframe.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonObject \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonobject.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Common/common.h \
+		../../MazeDesigner/Common/common_global.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QDebug \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QPointF \
 		../../MazeDesigner/Canvas/canvas.h \
 		release/moc_predefs.h \
 		E:/Qt/5.11.2/mingw53_32/bin/moc.exe
@@ -471,6 +482,17 @@ release/moc_mainwindow.cpp: E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QMainWindo
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/QPainter \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpainter.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtextoption.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QScrollArea \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qframe.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonObject \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonobject.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Common/common.h \
+		../../MazeDesigner/Common/common_global.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QDebug \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QPointF \
 		../../MazeDesigner/Canvas/mainwindow.h \
 		release/moc_predefs.h \
 		E:/Qt/5.11.2/mingw53_32/bin/moc.exe
@@ -588,6 +610,17 @@ release/moc_roomcanvas.cpp: ../../MazeDesigner/Canvas/canvas.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/QPainter \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpainter.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtextoption.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QScrollArea \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qframe.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonObject \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonobject.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Common/common.h \
+		../../MazeDesigner/Common/common_global.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QDebug \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QPointF \
 		../../MazeDesigner/Canvas/room.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtCore/QRect \
 		E:/Qt/5.11.2/mingw53_32/include/QtCore/QString \
@@ -731,8 +764,29 @@ release/canvas.o: ../../MazeDesigner/Canvas/canvas.cpp ../../MazeDesigner/Canvas
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/QPainter \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpainter.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtextoption.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QScrollArea \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qframe.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonObject \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonobject.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Common/common.h \
+		../../MazeDesigner/Common/common_global.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtCore/QDebug \
-		E:/Qt/5.11.2/mingw53_32/include/QtCore/QLineF
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QPointF \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QLineF \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QSizePolicy \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QHBoxLayout \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qboxlayout.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qlayout.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qlayoutitem.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qgridlayout.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QVariant \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonArray \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonarray.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonDocument \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsondocument.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\canvas.o ..\..\MazeDesigner\Canvas\canvas.cpp
 
 release/grid.o: ../../MazeDesigner/Canvas/grid.cpp ../../MazeDesigner/Canvas/grid.h \
@@ -844,7 +898,10 @@ release/grid.o: ../../MazeDesigner/Canvas/grid.cpp ../../MazeDesigner/Canvas/gri
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpainter.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtextoption.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpen.h \
-		E:/Qt/5.11.2/mingw53_32/include/QtCore/QDebug
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/QMouseEvent \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QDebug \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QtMath \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qmath.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\grid.o ..\..\MazeDesigner\Canvas\grid.cpp
 
 release/main.o: ../../MazeDesigner/Canvas/main.cpp ../../MazeDesigner/Canvas/mainwindow.h \
@@ -964,6 +1021,17 @@ release/main.o: ../../MazeDesigner/Canvas/main.cpp ../../MazeDesigner/Canvas/mai
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/QPainter \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpainter.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtextoption.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QScrollArea \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qframe.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonObject \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonobject.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Common/common.h \
+		../../MazeDesigner/Common/common_global.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QDebug \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QPointF \
 		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QApplication \
 		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qapplication.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtCore/qcoreapplication.h \
@@ -1085,6 +1153,17 @@ release/mainwindow.o: ../../MazeDesigner/Canvas/mainwindow.cpp ../../MazeDesigne
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/QPainter \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpainter.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtextoption.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QScrollArea \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qframe.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonObject \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonobject.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Common/common.h \
+		../../MazeDesigner/Common/common_global.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QDebug \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QPointF \
 		../../MazeDesigner/Canvas/mainwindow.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QMainWindow \
 		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qmainwindow.h \
@@ -1152,7 +1231,95 @@ release/room.o: ../../MazeDesigner/Canvas/room.cpp ../../MazeDesigner/Canvas/roo
 		E:/Qt/5.11.2/mingw53_32/include/QtCore/qstringliteral.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtCore/qstringalgorithms.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtCore/qstringview.h \
-		E:/Qt/5.11.2/mingw53_32/include/QtCore/qstringbuilder.h
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qstringbuilder.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonObject \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonobject.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonvalue.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qiterator.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qpair.h \
+		../../MazeDesigner/Canvas/canvas.h \
+		../../MazeDesigner/Canvas/grid.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QPoint \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QWidget \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qwidget.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qtwidgetsglobal.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtguiglobal.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtgui-config.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qtwidgets-config.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qwindowdefs.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qobjectdefs.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qobjectdefs_impl.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qwindowdefs_win.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qobject.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qlist.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qalgorithms.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qhashfunctions.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qbytearraylist.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qstringlist.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qregexp.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qstringmatcher.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qcoreevent.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qscopedpointer.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qmetatype.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qvarlengtharray.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qcontainerfwd.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qobject_impl.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpaintdevice.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpalette.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qcolor.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qrgb.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qrgba64.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qbrush.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qvector.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qmatrix.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpolygon.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qregion.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qdatastream.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qiodevice.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qline.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtransform.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpainterpath.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qimage.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpixelformat.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpixmap.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qsharedpointer.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qshareddata.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qhash.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qsharedpointer_impl.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qfont.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qfontmetrics.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qfontinfo.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qsizepolicy.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qcursor.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qkeysequence.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qevent.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qvariant.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qmap.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qdebug.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qtextstream.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qlocale.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qset.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qcontiguouscache.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qurl.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qurlquery.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qfile.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qfiledevice.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qvector2d.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtouchdevice.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/QPen \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpen.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/QPaintEvent \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/QPainter \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpainter.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtextoption.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QScrollArea \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qframe.h \
+		../../MazeDesigner/Common/common.h \
+		../../MazeDesigner/Common/common_global.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QDebug \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QPointF
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\room.o ..\..\MazeDesigner\Canvas\room.cpp
 
 release/roomcanvas.o: ../../MazeDesigner/Canvas/roomcanvas.cpp ../../MazeDesigner/Canvas/roomcanvas.h \
@@ -1268,9 +1435,22 @@ release/roomcanvas.o: ../../MazeDesigner/Canvas/roomcanvas.cpp ../../MazeDesigne
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/QPainter \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qpainter.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtGui/qtextoption.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/QScrollArea \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qabstractscrollarea.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtWidgets/qframe.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonObject \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonobject.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonvalue.h \
+		../../MazeDesigner/Common/common.h \
+		../../MazeDesigner/Common/common_global.h \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QDebug \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QPointF \
 		../../MazeDesigner/Canvas/room.h \
 		E:/Qt/5.11.2/mingw53_32/include/QtCore/QRect \
-		E:/Qt/5.11.2/mingw53_32/include/QtCore/QString
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QString \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/QJsonArray \
+		E:/Qt/5.11.2/mingw53_32/include/QtCore/qjsonarray.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o release\roomcanvas.o ..\..\MazeDesigner\Canvas\roomcanvas.cpp
 
 release/shape.o: ../../MazeDesigner/Canvas/shape.cpp ../../MazeDesigner/Canvas/shape.h \

@@ -34,32 +34,34 @@ bool RegionNode::operator !=(const RegionNode &other) const
     return !(*this == other);
 }
 
-RegionNode *RegionNode::fusion(const RegionNode &n1, const RegionNode &n2)
+RegionNode *RegionNode::fusion(QList<RegionNode *> &nodes)
 {
-    // create the union bewtween the two polygons of the fused nodes
-    QPolygonF region = QPolygonF(n1.parent->united(*n2.parent));
+    QPolygonF region;
     RegionNode * output = new RegionNode(&region);
-    // give all the items contained in both nodes to the fused node, since it will have both items from n1 and from n2
-    output->items.append(n1.items);
-    output->items.append(n2.items);
     QList<Transition*> ts; // auxiliary transition list.
-    // store all transitions, starting either in n1 or n2.
-    ts.append(n1.transitions);
-    ts.append(n2.transitions);
+    // create the union bewtween the polygons of the fused nodes
+    // give all the items contained in nodes to the fused node, since it will have the items from every node
+    // store all transitions starting from any of the nodes, in the auxiliary list
+    for(auto node = nodes.begin(); node != nodes.end(); node++){
+        region = (*node)->parent->united(region);
+        output->items.append((*node)->items);
+        ts.append((*node)->transitions);
+    }
     // now we'll prepare all the transitions for the fused node
     for(int i = 0; i < ts.length(); i++){
-        // for each transition (either starting in n1 or n2) create a new one
+        // for each transition (starting in any of the nodes to be fused) create a new one
         // the starting point of the new transition will be the fused node anyways so don't worry
-        // now if the transition ended in either n1 or n2, we'd have to modify the transition so that it ends in the fused node
+        // now if the transition ended in a node of the list, we'd have to modify the transition so that it ends in the fused node
         // note that the end points of the transition might end in a different third node, thus we HAVE to make this comparation
         RegionNode * dest;
-        if(*ts[i]->node2 == n1 || *ts[i]->node2 == n2){
-            dest = output;
+        if(nodes.contains(ts[i]->node2)){ // if the destination node (2) of the previous transition contains a node in our list
+            dest = output; // then the destination node is none other than this newly created fused node
         } else {
-            dest = ts[i]->node2;
+            dest = ts[i]->node2; // if it is some other node, then just copy that
         }
         SimpleCondition * newCond = new SimpleCondition(*ts[i]->condition); // copy the condition into a new one
-        output->transitions.append(new Transition(output, dest, newCond)); // create the transition and insert it into the transitions of the fused node
+        // create the transition and insert it into the transitions of the fused node
+        output->transitions.append(new Transition(output, dest, newCond));
     }
     return output;
 }
