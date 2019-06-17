@@ -1,42 +1,40 @@
 %%\begin{functional}
-	\item \textbf{Dibujar \textit{espacios jugables}}\newline
-		El usuario, en el contexto de \textit{diseño} debe poder dibujar \textit{espacios jugables} en el canvas haciendo click en un punto del canvas y soltando el click en otro.
+	\item \textbf{Dibujar \dfnpl{espacio-jugable}.}\newline
+		El usuario, en el contexto de diseño, debe poder dibujar \dfnpl{espacio-jugable} en el \textit{canvas} haciendo \textit{click} en un punto del \textit{canvas} y soltando el \textit{click} en otro.
 		\begin{functional}
-			\item \textbf{Anexión de \textit{espacios jugables}}\newline
-				Si el conjunto de los \textit{espacios jugables} que intersecan con el recién creado es no vacío, entonces se realizará la unión de los \textit{espacios jugables} preexistentes y el nuevo \textit{espacio jugable}
-			\item \textbf{Indexación de \textit{espacios jugables}}\newline
-				Todo \textit{espacio jugable} debe ser indexado por una estructura para su futura transformación en grafo.
-			\item \textbf{Vértices de un \textit{espacio jugable}}\newline
-				Para todo \textit{espacio jugable} deben definirse sus vértices en el canvas.
-			\item \textbf{Grid de coordenadas}
-				Los vértices de todo \textit{espacio jugable} deben pertenecer a un \textit{grid} de coordenadas.
+			\item \textbf{Anexión de \dfnpl{espacio-jugable}.}\newline
+				Si el conjunto de los \dfnpl{espacio-jugable} que intersecan con el recién creado es no vacío, entonces se realizará la unión de los \dfnpl{espacio-jugable} preexistentes y el nuevo \dfn{espacio-jugable}
+			\item \textbf{Indexación de \dfnpl{espacio-jugable}.}\newline
+				Todo \dfn{espacio-jugable} debe ser indexado por una estructura para su futura transformación en grafo.
+			\item \textbf{Grid de coordenadas.}\newline
+				Los vértices de todo polígono que conforme un \dfn{espacio-jugable} deben estar ajustados a una rejilla de coordenadas.
 		\end{functional}
-	\item \textbf{Eliminación de espacios jugables}\newline
-		El usuario debe poder extraer áreas rectangulares de un \textit{espacio jugable}, de manera que el resultado respete la definición de \textit{espacio jugable}.
-	\item \textbf{Crear un elemento bloqueador}\newline
-		El usuario debe poder crear un elemento bloqueador dibujando una línea en el canvas.
+	\item \textbf{Eliminación de \dfnpl{espacio-jugable}.}\newline
+		El usuario debe poder extraer áreas rectangulares de un \dfn{espacio-jugable}, de manera que el resultado sea un polígono con ángulos de 90 grados o de 270 grados.
+	\item \textbf{Crear un elemento bloqueador.}\newline
+		El usuario debe poder crear un elemento bloqueador dibujando una línea en el \textit{canvas}.
 		\begin{functional}
-			\item \textbf{Especificación del tipo de elemento bloqueador}\newline
-				El elemento bloqueador creado por defecto será de tipo bidireccional, con ambas condiciones siendo la condición vacía.
-			\item \textbf{Localización válida para elementos bloqueadores}\newline
+			\item \textbf{Condición de apertura.}
+				Todo elemento bloqueador debe tener asignada una condición de apertura. Por defecto, la condición vacía.
+			\item \textbf{Localización válida para elementos bloqueadores.}\newline
 				El elemento bloqueador creado debe estar contenido en su totalidad dentro de los espacios jugables.
-			\item \textbf{Direcciones permitidas para elementos  bloqueadores}\newline
+			\item \textbf{Direcciones permitidas para elementos  bloqueadores.}\newline
 				El elemento bloqueador creado solo puede tener una dirección totalmente vertical o totalmente horizontal.
-			\item \textbf{Cálculo de vecindad al crear un elemento bloqueador}\newline
-				A la hora de realizar una exploración, en el caso de que la creación de un elemento bloqueador divida un \textit{espacio jugable} en dos, se han de indexar estos dos nuevos \textit{espacios jugables} y se ha de definir su vecindad teniendo en cuenta el tipo de elemento bloqueador y sus condiciones de apertura.
+			\item \textbf{Cálculo de vecindad al crear un elemento bloqueador.}\newline
+				A la hora de realizar una exploración, en el caso de que la creación de un elemento bloqueador divida un \dfn{espacio-jugable} en dos, se han de indexar estos dos nuevos \dfnpl{espacio-jugable} y se ha de definir su vecindad teniendo en cuenta el tipo de elemento bloqueador y sus condiciones de apertura.
 		\end{functional}
-	\item \textbf{Seleccionar un elemento bloqueador}\newline
-		El usuario debe poder seleccionar un elemento bloqueador preexistente del canvas.
-	\item \textbf{Eliminar un elemento bloqueador}\newline
-		El usuario debe poder eliminar un elemento bloqueador preexistente del canvas.
-	\item \textbf{Crear un elemento llave}\newline
-		El usuario debe poder crear un elemento llave, instanciando un modelo de llave en el canvas.
-	\item \textbf{Seleccionar un elemento llave}\newline
-		El usuario debe poder seleccionar una instancia de llave del canvas.
-	\item \textbf{Eliminar un elemento llave}\newline
-		El usuario debe poder eliminar una instancia de llave del canvas.
-	\item \textbf{Zoom}\newline
-		El usuario debe poder acercar y alejar la vista que tiene del canvas.
-	\item \textbf{Desplazar vista}\newline
-		El usuario debe poder desplazar la vista que tiene del canvas.
+	\item \textbf{Seleccionar un elemento bloqueador.}\newline
+		El usuario debe poder seleccionar un elemento bloqueador preexistente del \textit{canvas}.
+	\item \textbf{Eliminar un elemento bloqueador.}\newline
+		El usuario debe poder eliminar un elemento bloqueador preexistente del \textit{canvas}.
+	\item \textbf{Crear un elemento llave.}\newline
+		El usuario debe poder crear un elemento llave, instanciando un modelo de llave en el \textit{canvas}.
+	\item \textbf{Seleccionar un elemento llave.}\newline
+		El usuario debe poder seleccionar una instancia de llave del \textit{canvas}.
+	\item \textbf{Eliminar un elemento llave.}\newline
+		El usuario debe poder eliminar una instancia de llave del \textit{canvas}.
+	\item \textbf{Zoom.}\newline
+		El usuario debe poder acercar y alejar la vista que tiene del \textit{canvas}.
+	\item \textbf{Desplazar vista.}\newline
+		El usuario debe poder desplazar la vista que tiene del \textit{canvas}.
 %%\end{functional}

@@ -1,14 +1,14 @@
 En la fase de desarrollo de la interfaz gráfica de usuario se han integrado todas las componentes en una única interfaz. Resultando en un aspecto como el que se observa en las figuras \ref{FIG:DEV:INTERFAZ} y \ref{FIG:DEV:INTERFAZINFERIOR}.
 
 \begin{figure}{FIG:DEV:INTERFAZ}{Capturas diversas de la interfaz, mostrando distintas pestañas.}
-	\subfigure[SBFIG:DEV:INTERFAZMAIN]{Esta es la interfaz en la que se inicia el programa, con la pestaña de edición de \dfnpl{espacio-jugable} la lista de llaves y la consola auxiliar en la parte inferior.}{\image{9cm}{}{capturas/captura-design-canvas-interfaz}} \quad
-	\subfigure[SBFIG:DEV:INTERFAZROOMS]{Esta es la interfaz que resulta al entrar en la pestaña de declaración de \dfnpl{nivel}. Además de mostrar en el \textit{canvas} los declarados, el menú lateral pasa a mostrar también información de los mismos.}{\image{9cm}{}{capturas/captura-edicion-room-interfaz}} \quad
-	\subfigure[SBFIG:DEV:INTERFAZINSTANCIAS]{Esta es la interfaz que resulta al entrar en la pestaña de instanciación, en la que se muestran todas las instancias de llaves y puertas creadas, así como el token de comienzo colocado.}{\image{9cm}{}{capturas/captura-creacion-token-interfaz}}
+	\subfigure[SBFIG:DEV:INTERFAZMAIN]{Esta es la interfaz en la que se inicia el programa, con la pestaña de edición de \dfnpl{espacio-jugable} la lista de llaves y la consola auxiliar en la parte inferior.}{\image{7cm}{}{capturas/captura-design-canvas-interfaz}} \quad
+	\subfigure[SBFIG:DEV:INTERFAZROOMS]{Esta es la interfaz que resulta al entrar en la pestaña de declaración de \dfnpl{nivel}. Además de mostrar en el \textit{canvas} los declarados, el menú lateral pasa a mostrar también información de los mismos.}{\image{7cm}{}{capturas/captura-edicion-room-interfaz}} \quad
+	\subfigure[SBFIG:DEV:INTERFAZINSTANCIAS]{Esta es la interfaz que resulta al entrar en la pestaña de instanciación, en la que se muestran todas las instancias de llaves y puertas creadas, así como el token de comienzo colocado.}{\image{7cm}{}{capturas/captura-creacion-token-interfaz}}
 \end{figure}
 
 \begin{figure}{FIG:DEV:INTERFAZINFERIOR}{En la parte inferior de la interfaz se muestra una consola auxiliar y una interfaz para la declaración de las condiciones de las puertas.}
-	\subfigure[SBFIG:DEV:INTERFAZCONSOLA]{Esta pestaña es una consola auxiliar con un campo de texto de solo lectura en el que se muestra información sobre las instancias seleccionadas y otros mensajes enviados por la aplicación.}{\image{9cm}{}{capturas/captura-consola-interfaz}} \quad
-	\subfigure[SBFIG:DEV:INTERFAZCONDICIONES]{Esta pestaña es un formulario para declarar las condiciones que se asignan a una puerta seleccionada.}{\image{9cm}{}{capturas/captura-condiciones-puerta-interfaz}}
+	\subfigure[SBFIG:DEV:INTERFAZCONSOLA]{Esta pestaña es una consola auxiliar con un campo de texto de solo lectura en el que se muestra información sobre las instancias seleccionadas y otros mensajes enviados por la aplicación.}{\image{8cm}{}{capturas/captura-consola-interfaz}} \quad
+	\subfigure[SBFIG:DEV:INTERFAZCONDICIONES]{Esta pestaña es un formulario para declarar las condiciones que se asignan a una puerta seleccionada.}{\image{8cm}{}{capturas/captura-condiciones-puerta-interfaz}}
 \end{figure}
 
 Además de esto, se han desarrollado las funcionalidades de persistencia y de exportación a un proyecto de \textit{GameMaker Studio 2}. Estas funcionalidades se han hecho accesibles a través de la barra de menú superior, así como mediante una serie de atajos de teclado, tal y como se ilustra en la figura \ref{FIG:DEV:ACCIONES}.
@@ -19,11 +19,11 @@ Además de esto, se han desarrollado las funcionalidades de persistencia y de ex
 
 La persistencia se lleva a cabo guardando y leyendo ficheros con extensión \textit{.maze} cuyo contenido es un documento \textit{JSON}.
 
-En cuanto a la exportación, se exportan los \dfnpl{nivel} declarados a ficheros de extensión \textit{.yy} compatibles con la estructura de directorios y de proyecto de \textit{GameMaker Studio 2}, de manera que, como se muestra en la figura \ref{FIG:DEV:GMS2}, el motor puede abrir los \dfnpl{nivel} creados con la herramienta \textit{MazeDesigner}.
+En cuanto a la exportación, se exportan los \dfnpl{nivel} declarados a ficheros de extensión \textit{.yy} compatibles con la estructura de directorios y de proyecto de \textit{GameMaker Studio 2}, de manera que, como se muestra en la figura \ref{FIG:DEV:GMS2}, el motor puede abrir los \dfnpl{nivel} creados con la herramienta \textit{MazeDesigner}. Además de crear o editar los ficheros \textit{.yy} que contienen los \dfnpl{nivel}, se ha de modificar también el fichero raíz del proyecto de \textit{GameMaker Studio 2} para incluir estas nuevas habitaciones como recursos nuevos, así como crear otros ficheros \textit{.yy} conteniendo otros recursos necesarios para la exportación (tales como objetos de bloques sólidos, que componen las paredes de los \dfnpl{nivel} exportados).
 
 \begin{figure}{FIG:DEV:GMS2}{En la parte inferior de la interfaz se muestra una consola auxiliar y una interfaz para la declaración de las condiciones de las puertas.}
-	\subfigure[SBFIG:DEV:GMS2DESIGN]{El diseño mostrando de los \dfnpl{nivel} declarados.}{\image{10cm}{}{capturas/captura-export-design}} \quad
-	\subfigure[SBFIG:DEV:GMS2ROOM]{Los \dfnpl{nivel} declarados en la sub-figura \ref{SBFIG:DEV:GMS2DESIGN} vistos desde el motor \textit{GameMaker Studio 2}. En el caso del motor, se ha escogido el color amarillo para representar los sólidos, que como se puede ver, coinciden con las regiones no jugables de los \dfnpl{nivel} declarados.}{\image{10cm}{}{capturas/captura-export-room}}
+	\subfigure[SBFIG:DEV:GMS2DESIGN]{El diseño mostrando de los \dfnpl{nivel} declarados.}{\image{7cm}{}{capturas/captura-export-design}} \quad
+	\subfigure[SBFIG:DEV:GMS2ROOM]{Los \dfnpl{nivel} declarados en la sub-figura \ref{SBFIG:DEV:GMS2DESIGN} vistos desde el motor \textit{GameMaker Studio 2}. En el caso del motor, se ha escogido el color amarillo para representar los sólidos, que como se puede ver, coinciden con las regiones no jugables de los \dfnpl{nivel} declarados.}{\image{7cm}{}{capturas/captura-export-room}}
 \end{figure}
 
 \begin{comment}

@@ -1,60 +1,18 @@
 \begin{thebibliography}{10}
 
-\bibitem{supermetroid}
-``Nintendo's page for super metroid.''
-  \url{https://www.nintendo.es/Juegos/Super-Nintendo/Super-Metroid-279613.html}.
+\bibitem{qt1}
+A.~Ezust and P.~Ezust, {\em An introduction to design patterns in C++ with Qt
+  4}.
+\newblock Prentice-Hall, 2007.
 
-\bibitem{cavestory}
-``Cave story - doukutsu monogatari.'' \url{https://www.cavestory.org/}.
-
-\bibitem{ori}
-``Ori and the blind forest main page.''
-  \url{https://www.orithegame.com/blind-forest/}.
-
-\bibitem{hollowknight}
-``Hollow knight main page.'' \url{https://hollowknight.com/}.
-
-\bibitem{photoshop}
-``Photoshop main page.'' \url{https://www.photoshop.com/}.
-
-\bibitem{gimp}
-``Gimp - the free and open source image editor.'' \url{https://www.gimp.org/}.
-
-\bibitem{paintdotnet}
-``Paint dot net main page.'' \url{https://www.getpaint.net/}.
-
-\bibitem{tiled}
-``Tiled - your free, easy to use and flexible level editor.''
-  \url{https://www.mapeditor.org/}.
-
-\bibitem{graphviz}
-``Graphviz - graph visualization software.'' \url{http://www.graphviz.org/}.
-
-\bibitem{haskell-diagrams}
-``diagrams: Embedded domain-specific language for declarative vector
-  graphics.'' \url{http://hackage.haskell.org/package/diagrams}.
-
-\bibitem{finite-state-machine-designer}
-``Finite state machine designer.'' \url{http://madebyevan.com/fsm/}.
-
-\bibitem{construct}
-``Construct 3 - game making software.'' \url{https://www.construct.net/en}.
+\bibitem{qt2}
+J.~Blanchette and M.~Summerfield, {\em C++ GUI programming with Qt 4}.
+\newblock Prentice Hall Professional, 2006.
 
 \bibitem{xna4}
 O.~Denninger and J.~Schimmel, ``Game programming and xna in software
   engineering education,'' {\em Proceedings of Computer Games and Allied
   Technology (CGAT08)}, 2008.
-
-\bibitem{monogame}
-``Monogame - one framework for creating powerful cross-platform games.''
-  \url{http://www.monogame.net/}.
-
-\bibitem{unity}
-``Unity for all.'' \url{https://unity.com}.
-
-\bibitem{unreal}
-``Unreal engine - make something unreal with the most powerful creation
-  engine.'' \url{https://www.unrealengine.com/en-US/}.
 
 \bibitem{gamemaker}
 J.~L. Ford~Jr, {\em Getting Started with Game Maker}.
@@ -70,15 +28,6 @@ J.~L. Ford~Jr, {\em Getting Started with Game Maker}.
 \bibitem{qtDoc}
 ``official qt documentation.'' \url{https://doc.qt.io/}.
 
-\bibitem{qt1}
-A.~Ezust and P.~Ezust, {\em An introduction to design patterns in C++ with Qt
-  4}.
-\newblock Prentice-Hall, 2007.
-
-\bibitem{qt2}
-J.~Blanchette and M.~Summerfield, {\em C++ GUI programming with Qt 4}.
-\newblock Prentice Hall Professional, 2006.
-
 \bibitem{qml}
 S.~Huang, {\em Qt 5 Blueprints}.
 \newblock Packt Publishing Ltd, 2015.
@@ -90,24 +39,18 @@ D.~Spinellis, ``Git,'' {\em IEEE software}, vol.~29, no.~3, pp.~100--101, 2012.
 T.~Bray, ``The javascript object notation (json) data interchange format,''
   tech. rep., 2017.
 
-\bibitem{jsonecma}
-``The json data interchange syntax.''
-  \url{http://www.ecma-international.org/publications/files/ECMA-ST/ECMA-404.pdf}.
+\bibitem{NUUTILA19949}
+E.~Nuutila and E.~Soisalon-Soininen, ``On finding the strongly connected
+  components in a directed graph,'' {\em Information Processing Letters},
+  vol.~49, no.~1, pp.~9 -- 14, 1994.
 
-\bibitem{github}
-``The world's leading software development platform · github.''
-  \url{https://github.com/}.
+\bibitem{russell2016artificial}
+S.~J. Russell and P.~Norvig, {\em Artificial intelligence: a modern approach}.
+\newblock Malaysia; Pearson Education Limited,, 2016.
 
-\bibitem{bitbucket}
-``Bitbucket | the git solution for professional teams.''
-  \url{https://bitbucket.org/}.
-
-\bibitem{texstudio}
-``integrated writing environment for creating latex documents.''
-  \url{https://www.texstudio.org/}.
-
-\bibitem{metroid}
-``Nintendo's page for metroid.''
-  \url{https://www.nintendo.es/Juegos/NES/Metroid--275726.html}.
+\bibitem{nilsson1998artificial}
+N.~J. Nilsson and N.~J. Nilsson, {\em Artificial intelligence: a new
+  synthesis}.
+\newblock Morgan Kaufmann, 1998.
 
 \end{thebibliography}

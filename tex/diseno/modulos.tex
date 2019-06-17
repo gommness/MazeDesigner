@@ -1,16 +1,16 @@
 Los módulos que componen la aplicación atienden a las distintas áreas de los requisitos funcionales, cada uno cubriendo varios de ellos. Estos módulos son:
 \begin{itemize}
-	\item \textbf{Llaves} que se encarga de cubrir todas las funcionalidades descritas en la subsección \ref{SUBSEC:REQLLAVES}.
-	\item \textbf{Habitaciones} que se encarga de cubrir las funcionalidades descritas en la subsección \ref{SUBSEC:REQCONEXION} a excepción del requisito \ref{PARTICULAR:REQUISITO31}.
+	\item \textbf{Llaves} que se encarga de cubrir todas las funcionalidades descritas en la subsección \ref{SUBSEC:REQLLAVES}. Este módulo permite la creación, edición y eliminación de modelos de llaves que serán utilizados más adelante por otros módulos.
+	\item \textbf{Habitaciones} que se encarga de cubrir las funcionalidades descritas en la subsección \ref{SUBSEC:REQCONEXION} a excepción del requisito \ref{PARTICULAR:REQUISITO31}. Este módulo se permite la declaración de regiones del espacio jugable como niveles, que serán más adelante exportados a ficheros de \textit{GameMaker Studio 2}. También permite renombrar dichas habitaciones, eliminarlas y definir si serán o no exportadas.
 	\item \textbf{Canvas} que se encarga de cubrir todas las funcionalidades descritas en la subsección \ref{SUBSEC:REQCANVAS}. Para esto se han desarrollado 4 submódulos:
 	\begin{itemize}
-		\item \textbf{Grid} que se encarga de la gestión espacial del módulo, esto es, traduce coordenadas del cursor obtenidas a través del sistema de eventos de Qt a coordenadas lógicas del diseño, aplicando transformaciones de desplazamiento y de zoom.
+		\item \textbf{Grid} que se encarga de la gestión espacial del módulo, esto es, traduce coordenadas del cursor obtenidas a través del sistema de eventos de Qt a coordenadas lógicas del diseño, aplicando transformaciones de desplazamiento y de zoom, a la vez que provee de una rejilla que se utiliza como base en el resto de los submódulos del \textit{canvas}.
 		\item \textbf{Design Canvas} que se encarga de todas las funcionalidades referentes a la creación de \dfnpl{espacio-jugable}. Este submódulo depende del submódulo Grid.
 		\item \textbf{Room Canvas} que permite la declaración de ciertas regiones del diseño como \dfnpl{pantalla}. Este submódulo depende del módulo Habitaciones así como del submódulo Grid.
 		\item \textbf{Instance Canvas} que permite la instanciación de modelos de llaves en el canvas, así como la de puertas y de un token de comienzo a que sirve como punto de partida para la exploración. Este submódulo depende del módulo Llaves así como del submódulo Grid.
 	\end{itemize}
-	\item \textbf{Condiciones} que se encarga de cubrir las funcionalidades descritas en la subsección \ref{SUBSEC:REQCONDICIONES}.
-	\item \textbf{Exportación} que se encarga de cubrir la funcionalidad del requisito \ref{PARTICULAR:REQUISITO31}.
+	\item \textbf{Condiciones} que se encarga de cubrir las funcionalidades descritas en la subsección \ref{SUBSEC:REQCONDICIONES}. Este módulo permite la interpretación de condiciones escritas por el usuario siguiendo una sintaxis particular (ver apéndice \ref{CAP:APCONDICIONES}).
+	\item \textbf{Exportación} que se encarga de cubrir la funcionalidad del requisito \ref{PARTICULAR:REQUISITO31}, es decir, permite exportar los diseños creados en la aplicación a ficheros que el motor \textit{GameMaker Studio 2} utiliza como \dfnpl{pantalla}.
 	\item \textbf{Exploración} que se encarga de cubrir las funcionalidades descritas en la subsección \ref{SUBSEC:REQCOMPLETITUD}. Este módulo depende de los módulos Canvas, Condiciones y Llaves.
 	\item \textbf{Interfaz Gráfica} que se encarga de integrar todos los módulos en una interfaz de usuario, manifestando las funcionalidades del resto de módulos. Así mismo, la interfaz cumple con las funcionalidades descritas en la subsección \ref{SUBSEC:REQCONTEXTO}.
 \end{itemize}

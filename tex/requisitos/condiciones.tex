@@ -1,12 +1,16 @@
-\item \textbf{Edición de condiciones de apertura}\newline
+\item \textbf{Edición de condiciones de apertura.}\newline
 	Cuando el usuario haya seleccionado un elemento bloqueador, debe ser capaz de describir las condiciones bajo las cuales este se abrirá.
 	\begin{functional}
-		\item \textbf{Sintaxis del lenguaje}\newline
-			Las condiciones deben seguir la sintaxis definida en el apéndice \ref{CAP:APCONDICIONES}
-		\item \textbf{Condición vacía}\newline
+		\item \textbf{Sintaxis del lenguaje.}\newline
+			Las condiciones deben seguir una sintaxis determinada (ver apéndice \ref{CAP:APCONDICIONES})
+		\item \textbf{Condición vacía.}\newline
 			La condición vacía del lenguaje se interpreta como una satisfacible siempre.
-		\item \textbf{Orden de precedencia}\newline
+		\item \textbf{Condiciones no satisfacibles}\newline
+			Deben poder crearse condiciones no satisfacibles.
+		\item \textbf{Orden de precedencia.}\newline
 			A la hora de evaluar una expresión del lenguaje, se debe respetar el orden de precedencia habitual: resolución del contenido de los paréntesis primero y conexión de izquierda a derecha.
 	\end{functional}
-\item \textbf{Sintetización de condiciones}\newline
-	El sistema debe ser capaz de sintetizar las condiciones escritas por el usuario, siguiendo la sintaxis del lenguaje de descripción de condiciones, en clases compatibles con las aristas de un grafo, para inducir en estos una exploración condicionada.
+\item \textbf{Sintetización de condiciones.}\newline
+	El sistema debe ser capaz de sintetizar las condiciones escritas por el usuario para ser asignadas a otros elementos del sistema.
+\item \textbf{Listas de costes}\newline
+	Una condición debe poder calcular la lista o listas de objetos llave requeridos para ser satisfecha.

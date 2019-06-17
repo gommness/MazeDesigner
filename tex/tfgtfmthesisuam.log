@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.4)  12 JUN 2019 18:09
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.4)  17 JUN 2019 03:28
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1149,15 +1149,15 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 ))
 \verbatim@out=\write5
-runsystem(touch w18-test-20196121089.tex)...disabled (restricted).
+runsystem(touch w18-test-2019617208.tex)...disabled (restricted).
 
-runsystem(rm -f w18-test-20196121089.tex)...disabled (restricted).
+runsystem(rm -f w18-test-2019617208.tex)...disabled (restricted).
 
 runsystem(rm -f "tfgtfmthesisuam.gnuploterrors")...disabled (restricted).
 
 runsystem(mkdir -p "gnuplottex")...disabled (restricted).
 
-runsystem(touch "gnuplottex/w18-test-20196121089.tex")...disabled (restricted).
+runsystem(touch "gnuplottex/w18-test-2019617208.tex")...disabled (restricted).
 
 
 
@@ -1971,14 +1971,14 @@ Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \myem=\skip148
 \mypt=\skip149
 \c@@ploti=\count403
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 430.
-Package hyperref Info: Option `unicode' set `false' on input line 430.
-Package hyperref Info: Option `pdftoolbar' set `true' on input line 430.
-Package hyperref Info: Option `pdfmenubar' set `true' on input line 430.
-Package hyperref Info: Option `pdffitwindow' set `false' on input line 430.
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 430.
-Package hyperref Info: Option `colorlinks' set `true' on input line 430.
-Package hyperref Info: Option `breaklinks' set `true' on input line 430.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 449.
+Package hyperref Info: Option `unicode' set `false' on input line 449.
+Package hyperref Info: Option `pdftoolbar' set `true' on input line 449.
+Package hyperref Info: Option `pdfmenubar' set `true' on input line 449.
+Package hyperref Info: Option `pdffitwindow' set `false' on input line 449.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 449.
+Package hyperref Info: Option `colorlinks' set `true' on input line 449.
+Package hyperref Info: Option `breaklinks' set `true' on input line 449.
 
 Colors defined
 \exposa=\skip150
@@ -2157,7 +2157,7 @@ Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.15} (current compat level: 1.13).
 
 \AtBeginShipoutBox=\box109
-Package hyperref Info: Link coloring OFF on input line 48.
+Package hyperref Info: Link coloring ON on input line 48.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -2174,636 +2174,22 @@ LaTeX Info: Redefining \nameref on input line 48.
 \@outlinefile=\write23
 \openout6 = `tfgtfmthesisuam.out'.
 
-LaTeX Font Info:    Try loading font information for OT1+ptm on input line 48.
-
-(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
-File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
-)
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (433.18774pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (268.87672pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (73.48502pt too wide) has occurred while \output is active
-[]
- []
-
-LaTeX Font Info:    Try loading font information for T1+pxss on input line 48.
-(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/t1pxss.fd
-File: t1pxss.fd 2000/12/14 v1.0
-)
-LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 10.44997pt on input line 48.
-LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 16.41594pt on input line 48.
-LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
-(Font)              scaled to size 16.41594pt on input line 48.
-LaTeX Font Info:    Calculating math sizes for size <11> on input line 48.
-
-
-LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 48.
-
-
-LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
-(Font)              size <5> substituted on input line 48.
-
-
-LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
-(Font)              size <5> substituted on input line 48.
-
 LaTeX Font Info:    Try loading font information for T1+pxr on input line 48.
+
 (/usr/share/texlive/texmf-dist/tex/latex/pxfonts/t1pxr.fd
 File: t1pxr.fd 2000/12/14 v1.0
 )
-LaTeX Font Info:    Font shape `T1/pxr/b/n' in size <25> not available
-(Font)              Font shape `T1/pxr/bx/n' tried instead on input line 48.
-LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 11.39996pt on input line 48.
-LaTeX Font Info:    Font shape `T1/txss/m/n' will be
-(Font)              scaled to size 7.59998pt on input line 48.
-LaTeX Font Info:    Try loading font information for TS1+txss on input line 48.
-
-
-(/usr/share/texlive/texmf-dist/tex/latex/txfonts/ts1txss.fd
-File: ts1txss.fd 2000/12/15 v3.1
-)
-LaTeX Font Info:    Font shape `TS1/txss/m/n' will be
-(Font)              scaled to size 7.59998pt on input line 48.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 48.
-\openout6 = `tfgtfmthesisuam.mw'.
-
- [1{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map}
-
-
- </usr/share/texmf/tex/latex/tfgtfmthesisuam/logoUAMw.png> </usr/share/texmf/te
-x/latex/tfgtfmthesisuam/campusEx.png> </usr/share/texmf/tex/latex/tfgtfmthesisu
-am/epsfoto.png>] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.xdy'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.xdy'.
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 48.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-
-[2
-
-] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
 LaTeX Font Info:    Font shape `T1/pxr/b/n' in size <12> not available
 (Font)              Font shape `T1/pxr/bx/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `T1/pxr/b/n' in size <14.4> not available
 (Font)              Font shape `T1/pxr/bx/n' tried instead on input line 48.
 LaTeX Font Info:    Font shape `T1/pxr/b/n' in size <20.74> not available
 (Font)              Font shape `T1/pxr/bx/n' tried instead on input line 48.
+LaTeX Font Info:    Try loading font information for OT1+ptm on input line 48.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1ptm.fd
+File: ot1ptm.fd 2001/06/04 font definitions for OT1/ptm.
+)
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 48.
 Package babel Info: Redefining spanish shorthand >>
@@ -2830,10 +2216,469 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 48.
 \openout6 = `tfgtfmthesisuam.mw'.
 
- [3 </usr/share/texmf/tex/latex/tfgtfmthesisuam/logoEPS.png (PNG copy)> </usr/s
-hare/texmf/tex/latex/tfgtfmthesisuam/logoUAM.png>]
-(./tfgtfmthesisuam.mw)
+ [1
+
+
+{/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map} </usr/share/texmf/tex/latex
+/tfgtfmthesisuam/logoEPS.png (PNG copy)> </usr/share/texmf/tex/latex/tfgtfmthes
+isuam/logoUAM.png>] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.xdy'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.xdy'.
 
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 48.
@@ -2861,7 +2706,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 48.
 \openout6 = `tfgtfmthesisuam.mw'.
 
- [4] (./tfgtfmthesisuam.mw)
+ [2] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 LaTeX Font Info:    Font shape `T1/txss/m/it' in size <11> not available
@@ -2894,7 +2739,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 48.
 \openout6 = `tfgtfmthesisuam.mw'.
 
- [5] (./tfgtfmthesisuam.mw)
+ [3] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 Package babel Info: Redefining spanish shorthand <<
@@ -2924,20 +2769,96 @@ Package babel Info: Redefining spanish shorthand "?
 \openout6 = `tfgtfmthesisuam.mw'.
 
 
-[6
+[4
 
 ] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
+LaTeX Font Info:    Try loading font information for T1+pxss on input line 48.
+
+(/usr/share/texlive/texmf-dist/tex/latex/pxfonts/t1pxss.fd
+File: t1pxss.fd 2000/12/14 v1.0
+)
 LaTeX Font Info:    Font shape `T1/pxss/b/sc' in size <32> not available
 (Font)              Font shape `T1/pxss/bx/sc' tried instead on input line 48.
- (./inicio/resumen.tex)
+
+(./inicio/resumen.tex)
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
  []
 
 LaTeX Font Info:    Font shape `T1/txss/m/sc' will be
 (Font)              scaled to size 10.44997pt on input line 48.
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 48.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+[5] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 48.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 48.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+ [6
+
+] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+ (./inicio/abstract.tex)
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -3003,7 +2924,27 @@ Package babel Info: Redefining spanish shorthand "?
 ] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
- (./inicio/abstract.tex)
+ (./tfgtfmthesisuam.toc
+LaTeX Info: Redefining \. on input line 1.
+LaTeX Info: Redefining \% on input line 1.
+Package cleveref Info: loaded `spanish' language definitions on input line 1.
+LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
+(Font)              scaled to size 10.44997pt on input line 2.
+LaTeX Font Info:    Calculating math sizes for size <11> on input line 2.
+
+
+LaTeX Font Warning: Font shape `OT1/cmr/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 2.
+
+
+LaTeX Font Warning: Font shape `OML/cmm/m/it' in size <5.5> not available
+(Font)              size <5> substituted on input line 2.
+
+
+LaTeX Font Warning: Font shape `OMS/cmsy/m/n' in size <5.5> not available
+(Font)              size <5> substituted on input line 2.
+
+
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
  []
@@ -3014,109 +2955,37 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 48.
+(babel)             in language  on input line 34.
 \openout6 = `tfgtfmthesisuam.mw'.
 
 [9] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 48.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 48.
-\openout6 = `tfgtfmthesisuam.mw'.
-
- [10
-
-] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
- (./tfgtfmthesisuam.toc
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-Package cleveref Info: loaded `spanish' language definitions on input line 1.
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 34.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 34.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-[11] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
 LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
+(Font)              scaled to size 11.39996pt on input line 49.
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
 (Font)              scaled to size 11.39996pt on input line 49.
 )
 \tf@toc=\write24
@@ -3158,30 +3027,23 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 48.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[12] (./tfgtfmthesisuam.mw)
+[10] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
- (./tfgtfmthesisuam.loa)
-\tf@loa=\write25
-\openout6 = `tfgtfmthesisuam.loa'.
-
+LaTeX Font Info:    Font shape `T1/txss/bx/n' will be
+(Font)              scaled to size 16.41594pt on input line 48.
  (./tfgtfmthesisuam.lol)
-\tf@lol=\write26
+\tf@lol=\write25
 \openout6 = `tfgtfmthesisuam.lol'.
-
-
-(./tfgtfmthesisuam.ltb)
-\tf@ltb=\write27
-\openout6 = `tfgtfmthesisuam.ltb'.
-
- (./tfgtfmthesisuam.loe)
-\tf@loe=\write28
-\openout6 = `tfgtfmthesisuam.loe'.
 
  (./tfgtfmthesisuam.lof
 LaTeX Info: Redefining \. on input line 1.
 LaTeX Info: Redefining \% on input line 1.
 Package cleveref Info: loaded `spanish' language definitions on input line 1.
+)
+\tf@lof=\write26
+\openout6 = `tfgtfmthesisuam.lof'.
+
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -3193,62 +3055,36 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 47.
+(babel)             in language  on input line 50.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[13
+[11
 
 ] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
-)
-\tf@lof=\write29
-\openout6 = `tfgtfmthesisuam.lof'.
-
- (./tfgtfmthesisuam.lot
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-Package cleveref Info: loaded `spanish' language definitions on input line 1.
-)
-\tf@lot=\write30
-\openout6 = `tfgtfmthesisuam.lot'.
-
- (./tfgtfmthesisuam.ltb)
-\tf@ltb=\write31
-\openout6 = `tfgtfmthesisuam.ltb'.
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 50.
 Package babel Info: Redefining spanish shorthand >>
@@ -3275,7 +3111,9 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 50.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[14] (./tfgtfmthesisuam.mw)
+ [12
+
+] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 
@@ -3306,7 +3144,14 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 51.
  (./introduccion/motivacion.tex
+LaTeX Font Info:    Try loading font information for OT1+pcr on input line 1.
+
+(/usr/share/texlive/texmf-dist/tex/latex/psnfss/ot1pcr.fd
+File: ot1pcr.fd 2001/06/04 font definitions for OT1/pcr.
+)
 Figure imagenes/super-metroid with width data
+LaTeX Font Info:    Font shape `T1/txss/m/n' will be
+(Font)              scaled to size 7.59998pt on input line 3.
 LaTeX Font Info:    Try loading font information for T1+ptm on input line 3.
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1ptm.fd
 File: t1ptm.fd 2001/06/04 font definitions for T1/ptm.
@@ -3365,9 +3210,7 @@ l.14
      
 \openout6 = `tfgtfmthesisuam.mw'.
 
- [1
-
-] (./tfgtfmthesisuam.mw)
+ [1] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -3410,9 +3253,11 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 52.
  (./introduccion/objetivos.tex
-LaTeX Info: Redefining \. on input line 4.
-LaTeX Info: Redefining \% on input line 4.
-Package cleveref Info: loaded `spanish' language definitions on input line 4.
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 3.
+LaTeX Info: Redefining \% on input line 3.
+Package cleveref Info: loaded `spanish' language definitions on input line 3.
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -3424,39 +3269,39 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.4 
-    
+l.3 L
+     a herramienta debe ser capaz de explorar el diseño creado por el usuar...
 \openout6 = `tfgtfmthesisuam.mw'.
 
- [2 <./img/imagenes/super-metroid.jpeg> <./img/imagenes/cave-story.png (PNG cop
-y)> <./img/imagenes/ori.jpg> <./img/imagenes/hollow-knight.jpg>]
+[2 <./img/imagenes/super-metroid.jpeg> <./img/imagenes/cave-story.png (PNG copy
+)> <./img/imagenes/ori.jpg> <./img/imagenes/hollow-knight.jpg>]
 (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
@@ -3468,17 +3313,9 @@ y)> <./img/imagenes/ori.jpg> <./img/imagenes/hollow-knight.jpg>]
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-LaTeX Info: Redefining \. on input line 4.
-LaTeX Info: Redefining \% on input line 4.
-Package cleveref Info: loaded `spanish' language definitions on input line 4.
+LaTeX Info: Redefining \. on input line 3.
+LaTeX Info: Redefining \% on input line 3.
+Package cleveref Info: loaded `spanish' language definitions on input line 3.
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -3490,38 +3327,32 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 4.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 4.
-pdfTeX warning (ext4): destination with the same identifier (name{page.3}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.4 
-    
+(babel)             in language  on input line 3.
 \openout6 = `tfgtfmthesisuam.mw'.
 
- [3 <./img/imagenes/super-metroid-map.jpg>] (./tfgtfmthesisuam.mw)
+[3 <./img/imagenes/super-metroid-map.jpg>] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -3535,9 +3366,6 @@ l.4
 
 Begining enumeration
 Ending enumeration
-
-LaTeX Warning: Citation `Qt' on page 4 undefined on input line 14.
-
 )
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 53.
@@ -3592,16 +3420,17 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 55.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 55.
-pdfTeX warning (ext4): destination with the same identifier (name{page.4}) has 
-been already used, duplicate ignored
-<to be read again> 
-                   \relax 
-l.55 ...{Estado del Arte\label{CAP:ESTADODELARTE}}
-                                                  {estadodelarte/introduccion}
 \openout6 = `tfgtfmthesisuam.mw'.
 
-
 [4] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -3703,6 +3532,76 @@ Package babel Info: Redefining spanish shorthand "?
 Begining enumeration
 Ending enumeration
 )
+LaTeX Info: Redefining \. on input line 58.
+LaTeX Info: Redefining \% on input line 58.
+Package cleveref Info: loaded `spanish' language definitions on input line 58.
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 58.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 58.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+[6] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 58.
 Package babel Info: Redefining spanish shorthand >>
@@ -3717,6 +3616,111 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 58.
  (./estadodelarte/logico.tex
 Begining enumeration
+Ending enumeration
+)
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 59.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 59.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 59.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 59.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 59.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 59.
+ (./estadodelarte/motoresyentornos.tex
+Begining enumeration
+LaTeX Info: Redefining \. on input line 6.
+LaTeX Info: Redefining \% on input line 6.
+Package cleveref Info: loaded `spanish' language definitions on input line 6.
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 6.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 6.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+[7] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+
+Ending enumeration
+)
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 60.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 60.
+ (./estadodelarte/cpp.tex)
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 61.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 61.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 61.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 61.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 61.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 61.
+ (./estadodelarte/conclusiones.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
 LaTeX Info: Redefining \. on input line 3.
 LaTeX Info: Redefining \% on input line 3.
 Package cleveref Info: loaded `spanish' language definitions on input line 3.
@@ -3756,182 +3760,6 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 3.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[6] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-
-Ending enumeration
-)
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 59.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 59.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 59.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 59.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 59.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 59.
- (./estadodelarte/motoresyentornos.tex
-Begining enumeration
-Ending enumeration
-)
-Underfull \vbox (badness 1082) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 60.
-LaTeX Info: Redefining \% on input line 60.
-Package cleveref Info: loaded `spanish' language definitions on input line 60.
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 60.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-[7] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 60.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 60.
- (./estadodelarte/cpp.tex)
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 61.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 61.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 61.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 61.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 61.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 61.
-
-(./estadodelarte/conclusiones.tex)
-LaTeX Info: Redefining \. on input line 63.
-LaTeX Info: Redefining \% on input line 63.
-Package cleveref Info: loaded `spanish' language definitions on input line 63.
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 63.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 63.
-\openout6 = `tfgtfmthesisuam.mw'.
-
 [8] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
@@ -3959,10 +3787,7 @@ Package babel Info: Redefining spanish shorthand "?
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
+)
 LaTeX Info: Redefining \. on input line 63.
 LaTeX Info: Redefining \% on input line 63.
 Package cleveref Info: loaded `spanish' language definitions on input line 63.
@@ -4003,6 +3828,10 @@ Package babel Info: Redefining spanish shorthand "?
 \openout6 = `tfgtfmthesisuam.mw'.
 
 [9] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
 \openout6 = `tfgtfmthesisuam.mw'.
 
 Package babel Info: Redefining spanish shorthand <<
@@ -4170,10 +3999,6 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 68.
  (./requisitos/contexto.tex
 Begining enumeration
-LaTeX Font Info:    Font shape `T1/txss/bx/it' in size <9> not available
-(Font)              Font shape `T1/txss/bx/sl' tried instead on input line 5.
-LaTeX Font Info:    Font shape `T1/txss/bx/sl' will be
-(Font)              scaled to size 8.54997pt on input line 5.
 Ending enumeration
 )
 Package babel Info: Redefining spanish shorthand <<
@@ -4246,6 +4071,62 @@ Package babel Info: Redefining spanish shorthand "?
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
 
 Ending enumeration
 )
@@ -4261,10 +4142,10 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 70.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 70.
- (./requisitos/llaves.tex
-LaTeX Info: Redefining \. on input line 16.
-LaTeX Info: Redefining \% on input line 16.
-Package cleveref Info: loaded `spanish' language definitions on input line 16.
+ (./requisitos/llaves.tex)
+LaTeX Info: Redefining \. on input line 71.
+LaTeX Info: Redefining \% on input line 71.
+Package cleveref Info: loaded `spanish' language definitions on input line 71.
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -4276,29 +4157,29 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 16.
+(babel)             in language  on input line 71.
 \openout6 = `tfgtfmthesisuam.mw'.
 
 [13] (./tfgtfmthesisuam.mw)
@@ -4316,7 +4197,14 @@ Package babel Info: Redefining spanish shorthand "?
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
-)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 71.
 Package babel Info: Redefining spanish shorthand >>
@@ -4436,10 +4324,10 @@ Package babel Info: Redefining spanish shorthand "?
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
+LaTeX Font Info:    Font shape `T1/txss/bx/it' in size <9> not available
+(Font)              Font shape `T1/txss/bx/sl' tried instead on input line 12.
+LaTeX Font Info:    Font shape `T1/txss/bx/sl' will be
+(Font)              scaled to size 8.54997pt on input line 12.
 
 Begining enumeration
 Ending enumeration
@@ -4513,6 +4401,14 @@ Package babel Info: Redefining spanish shorthand "?
 \openout6 = `tfgtfmthesisuam.mw'.
 
 [15] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -4618,6 +4514,9 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 84.
  (./diseno/json.tex
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
  []
@@ -4654,10 +4553,6 @@ Package babel Info: Redefining spanish shorthand "?
 \openout6 = `tfgtfmthesisuam.mw'.
 
 [17] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -4728,7 +4623,11 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 85.
 
-(./diseno/git.tex)
+(./diseno/git.tex
+LaTeX Font Info:    Try loading font information for TS1+ptm on input line 2.
+ (/usr/share/texlive/texmf-dist/tex/latex/psnfss/ts1ptm.fd
+File: ts1ptm.fd 2001/06/04 font definitions for TS1/ptm.
+))
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand >>
@@ -4741,7 +4640,8 @@ Package babel Info: Redefining spanish shorthand "!
 (babel)             in language  on input line 86.
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 86.
- (./diseno/GMS2.tex)
+
+(./diseno/GMS2.tex)
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 88.
 Package babel Info: Redefining spanish shorthand >>
@@ -4756,10 +4656,9 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 88.
  (./diseno/modulos.tex
 Begining itemize
-Begining itemize
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
-Package cleveref Info: loaded `spanish' language definitions on input line 8.
+LaTeX Info: Redefining \. on input line 3.
+LaTeX Info: Redefining \% on input line 3.
+Package cleveref Info: loaded `spanish' language definitions on input line 3.
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -4771,29 +4670,29 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 3.
 \openout6 = `tfgtfmthesisuam.mw'.
 
 [19] (./tfgtfmthesisuam.mw)
@@ -4816,6 +4715,7 @@ Package babel Info: Redefining spanish shorthand "?
 \openout6 = `tfgtfmthesisuam.mw'.
 
 
+Begining itemize
 Ending itemize
 Ending itemize
 Figure imagenes/diagrama-modulos with width data
@@ -4860,7 +4760,15 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 91.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[20 <./img/imagenes/diagrama-modulos.png>] (./tfgtfmthesisuam.mw)
+[20] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -4910,8 +4818,21 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 91.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[21 <./img/imagenes/diagrama-clases.png>] (./tfgtfmthesisuam.mw)
+[21 <./img/imagenes/diagrama-modulos.png>] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
+
+LaTeX Info: Redefining \. on input line 91.
+LaTeX Info: Redefining \% on input line 91.
+Package cleveref Info: loaded `spanish' language definitions on input line 91.
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
 
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 91.
@@ -4939,10 +4860,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 91.
 \openout6 = `tfgtfmthesisuam.mw'.
 
- [22
-
-]
-(./tfgtfmthesisuam.mw)
+[22 <./img/imagenes/diagrama-clases.png>] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 
@@ -5036,7 +4954,9 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 2.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[23] (./tfgtfmthesisuam.mw)
+[23
+
+] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -5136,78 +5056,6 @@ o-2.png> <./img/capturas/captura-movimiento-1.png> <./img/capturas/captura-zoom
 Figure capturas/captura-menu-llaves with width data
 Figure capturas/captura-tabla-niveles with width data
 Figure capturas/captura-room-canvas with width data
-LaTeX Info: Redefining \. on input line 18.
-LaTeX Info: Redefining \% on input line 18.
-Package cleveref Info: loaded `spanish' language definitions on input line 18.
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 18.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 18.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-[25 <./img/capturas/captura-design-canvas.png> <./img/capturas/captura-menu-lla
-ves.png>] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-
 Figure capturas/captura-instanciacion-llaves with width data
 Figure capturas/captura-instanciacion-puerta with width data
 Figure capturas/captura-creacion-token with width data
@@ -5228,225 +5076,6 @@ Package babel Info: Redefining spanish shorthand "?
 Figure capturas/captura-design-canvas-interfaz with width data
 Figure capturas/captura-edicion-room-interfaz with width data
 Figure capturas/captura-creacion-token-interfaz with width data
-Figure capturas/captura-consola-interfaz with width data
-Figure capturas/captura-condiciones-puerta-interfaz with width data
-Figure capturas/captura-acciones with width data
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
-Package cleveref Info: loaded `spanish' language definitions on input line 23.
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 23.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-[26 <./img/capturas/captura-tabla-niveles.png> <./img/capturas/captura-room-can
-vas.png> <./img/capturas/captura-instanciacion-llaves.png>]
-(./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
-Package cleveref Info: loaded `spanish' language definitions on input line 23.
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 23.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-[27 <./img/capturas/captura-instanciacion-puerta.png> <./img/capturas/captura-c
-reacion-token.png>] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
-Package cleveref Info: loaded `spanish' language definitions on input line 23.
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 23.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-[28 <./img/capturas/captura-design-canvas-interfaz.png> <./img/capturas/captura
--edicion-room-interfaz.png> <./img/capturas/captura-creacion-token-interfaz.png
->] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-LaTeX Info: Redefining \. on input line 23.
-LaTeX Info: Redefining \% on input line 23.
-Package cleveref Info: loaded `spanish' language definitions on input line 23.
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 23.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 23.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-[29 <./img/capturas/captura-consola-interfaz.png> <./img/capturas/captura-condi
-ciones-puerta-interfaz.png> <./img/capturas/captura-acciones.png>]
-(./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-
-Figure capturas/captura-export-design with width data
-Figure capturas/captura-export-room with width data
-)
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 104.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 104.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 104.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 104.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 104.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 104.
- (./desarrollo/condiciones.tex
 LaTeX Info: Redefining \. on input line 7.
 LaTeX Info: Redefining \% on input line 7.
 Package cleveref Info: loaded `spanish' language definitions on input line 7.
@@ -5486,8 +5115,8 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 7.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[30 <./img/capturas/captura-export-design.png> <./img/capturas/captura-export-r
-oom.png>] (./tfgtfmthesisuam.mw)
+[25 <./img/capturas/captura-design-canvas.png> <./img/capturas/captura-menu-lla
+ves.png>] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -5514,7 +5143,218 @@ oom.png>] (./tfgtfmthesisuam.mw)
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
+\openout6 = `tfgtfmthesisuam.mw'.
 
+\openout6 = `tfgtfmthesisuam.mw'.
+
+LaTeX Info: Redefining \. on input line 7.
+LaTeX Info: Redefining \% on input line 7.
+Package cleveref Info: loaded `spanish' language definitions on input line 7.
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 7.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 7.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+[26 <./img/capturas/captura-tabla-niveles.png> <./img/capturas/captura-room-can
+vas.png> <./img/capturas/captura-instanciacion-llaves.png> <./img/capturas/capt
+ura-instanciacion-puerta.png> <./img/capturas/captura-creacion-token.png>]
+(./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+
+Figure capturas/captura-consola-interfaz with width data
+Figure capturas/captura-condiciones-puerta-interfaz with width data
+Figure capturas/captura-acciones with width data
+Figure capturas/captura-export-design with width data
+Figure capturas/captura-export-room with width data
+)
+LaTeX Info: Redefining \. on input line 104.
+LaTeX Info: Redefining \% on input line 104.
+Package cleveref Info: loaded `spanish' language definitions on input line 104.
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 104.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+[27 <./img/capturas/captura-design-canvas-interfaz.png> <./img/capturas/captura
+-edicion-room-interfaz.png> <./img/capturas/captura-creacion-token-interfaz.png
+>] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+LaTeX Info: Redefining \. on input line 104.
+LaTeX Info: Redefining \% on input line 104.
+Package cleveref Info: loaded `spanish' language definitions on input line 104.
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 104.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+[28 <./img/capturas/captura-consola-interfaz.png> <./img/capturas/captura-condi
+ciones-puerta-interfaz.png> <./img/capturas/captura-acciones.png> <./img/captur
+as/captura-export-design.png> <./img/capturas/captura-export-room.png>]
+(./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 104.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 104.
+ (./desarrollo/condiciones.tex
 Figure capturas/captura-diseno with width data
 Figure capturas/captura-grafo-disenno-1 with width data
 
@@ -5528,9 +5368,9 @@ Underfull \hbox (badness 10000) in paragraph at lines 16--17
  []
 
 Begining itemize
-LaTeX Info: Redefining \. on input line 36.
-LaTeX Info: Redefining \% on input line 36.
-Package cleveref Info: loaded `spanish' language definitions on input line 36.
+LaTeX Info: Redefining \. on input line 27.
+LaTeX Info: Redefining \% on input line 27.
+Package cleveref Info: loaded `spanish' language definitions on input line 27.
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -5542,33 +5382,37 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 36.
+(babel)             in language  on input line 27.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[31 <./img/capturas/captura-diseno.png> <./img/capturas/captura-grafo-disenno-1
+[29 <./img/capturas/captura-diseno.png> <./img/capturas/captura-grafo-disenno-1
 .png>] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -5586,7 +5430,104 @@ Figure capturas/fusion-ejemplo-1-2 with width data
 Figure capturas/fusion-ejemplo-2-1 with width data
 Figure capturas/fusion-ejemplo-2-2 with width data
 
-Underfull \hbox (badness 10000) in paragraph at lines 62--64
+Underfull \vbox (badness 10000) has occurred while \output is active []
+
+LaTeX Info: Redefining \. on input line 68.
+LaTeX Info: Redefining \% on input line 68.
+Package cleveref Info: loaded `spanish' language definitions on input line 68.
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 68.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+[30] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+LaTeX Info: Redefining \. on input line 68.
+LaTeX Info: Redefining \% on input line 68.
+Package cleveref Info: loaded `spanish' language definitions on input line 68.
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+
+Overfull \hbox (2.21538pt too wide) has occurred while \output is active
+ []
+ []
+
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 68.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 68.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+[31 <./img/capturas/fusion-ejemplo-1-1.png> <./img/capturas/fusion-ejemplo-1-2.
+png> <./img/capturas/fusion-ejemplo-2-1.png> <./img/capturas/fusion-ejemplo-2-2
+.png>] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 69--71
 
  []
 
@@ -5610,12 +5551,9 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 105.
  (./desarrollo/dificultades.tex
 Begining itemize
-
-Underfull \vbox (badness 1478) has occurred while \output is active []
-
-LaTeX Info: Redefining \. on input line 3.
-LaTeX Info: Redefining \% on input line 3.
-Package cleveref Info: loaded `spanish' language definitions on input line 3.
+LaTeX Info: Redefining \. on input line 4.
+LaTeX Info: Redefining \% on input line 4.
+Package cleveref Info: loaded `spanish' language definitions on input line 4.
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -5627,36 +5565,33 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[32] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
+[32 <./img/capturas/captura-diseno.png> <./img/capturas/captura-condicion-incum
+plida.png>] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -5667,9 +5602,13 @@ Package babel Info: Redefining spanish shorthand "?
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
-LaTeX Info: Redefining \. on input line 3.
-LaTeX Info: Redefining \% on input line 3.
-Package cleveref Info: loaded `spanish' language definitions on input line 3.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+LaTeX Info: Redefining \. on input line 4.
+LaTeX Info: Redefining \% on input line 4.
+Package cleveref Info: loaded `spanish' language definitions on input line 4.
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -5681,34 +5620,33 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 4.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[33 <./img/capturas/fusion-ejemplo-1-1.png> <./img/capturas/fusion-ejemplo-1-2.
-png> <./img/capturas/fusion-ejemplo-2-1.png> <./img/capturas/fusion-ejemplo-2-2
-.png>] (./tfgtfmthesisuam.mw)
+[33 <./img/capturas/captura-diseno.png> <./img/capturas/captura-grafo-disenno-1
+.png> <./img/capturas/captura-camino-erroneo.png>] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 
@@ -5754,88 +5692,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 107.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[34 <./img/capturas/captura-diseno.png> <./img/capturas/captura-condicion-incum
-plida.png>] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-LaTeX Info: Redefining \. on input line 107.
-LaTeX Info: Redefining \% on input line 107.
-Package cleveref Info: loaded `spanish' language definitions on input line 107.
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 107.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-[35 <./img/capturas/captura-diseno.png> <./img/capturas/captura-grafo-disenno-1
-.png> <./img/capturas/captura-camino-erroneo.png>] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 107.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 107.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-
-[36
-
-] (./tfgtfmthesisuam.mw)
+[34] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 
@@ -5902,7 +5759,9 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 10.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[37] (./tfgtfmthesisuam.mw)
+[35
+
+] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -5985,7 +5844,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 113.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[38] (./tfgtfmthesisuam.mw)
+[36] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -6075,7 +5934,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 4.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[39
+[37
 
 ] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -6142,7 +6001,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[40] (./tfgtfmthesisuam.mw)
+[38] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -6153,99 +6012,59 @@ Package babel Info: Redefining spanish shorthand "?
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
-LaTeX Font Info:    Try loading font information for T1+pcr on input line 5.
+LaTeX Font Info:    Try loading font information for T1+pcr on input line 23.
 
 (/usr/share/texlive/texmf-dist/tex/latex/psnfss/t1pcr.fd
 File: t1pcr.fd 2001/06/04 font definitions for T1/pcr.
-)
-Underfull \hbox (badness 10000) in paragraph at lines 4--6
-[]\T1/txss/m/n/11 ``Nintendo's pa-ge for su-per me-troid.'' []$\T1/pcr/m/n/11 h
-ttps : / / www . nintendo . es / Juegos /
- []
-
-
-Underfull \hbox (badness 1028) in paragraph at lines 34--36
-[]\T1/txss/m/n/11 ``diagrams: Em-bed-ded domain-specific lan-gua-ge for de-cla-
-ra-ti-ve vec-tor grap-hics.'' []$\T1/pcr/m/n/11 http : / /
- []
-
-
-Underfull \hbox (badness 1097) in paragraph at lines 49--51
-[]\T1/txss/m/n/11 ``Monogame - one fra-me-work for crea-ting po-wer-ful cross-p
-latform ga-mes.'' []$\T1/pcr/m/n/11 http : / / www .
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 94--96
-[]\T1/txss/m/n/11 ``The json da-ta in-ter-chan-ge syn-tax.'' []$\T1/pcr/m/n/11 
-http : / / www . ecma-[]international . org /
- []
-
-LaTeX Font Info:    Font shape `TS1/txss/m/n' will be
-(Font)              scaled to size 10.44997pt on input line 98.
+))
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 117.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 117.
+
+(./tfgtfmthesisuam.gls
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 1.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 101.
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 1.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 1.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[41
+ [39
 
 ] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
+\openout6 = `tfgtfmthesisuam.mw'.
 
-Underfull \hbox (badness 10000) in paragraph at lines 110--112
-[]\T1/txss/m/n/11 ``Nintendo's pa-ge for me-troid.'' []$\T1/pcr/m/n/11 https : 
-/ / www . nintendo . es / Juegos / NES /
- []
-
-)
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 117.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 117.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 117.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 117.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 117.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 117.
- (./tfgtfmthesisuam.gls
-LaTeX Info: Redefining \. on input line 1.
-LaTeX Info: Redefining \% on input line 1.
-Package cleveref Info: loaded `spanish' language definitions on input line 1.
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
-
-
-Overfull \hbox (2.21538pt too wide) has occurred while \output is active
- []
- []
+\openout6 = `tfgtfmthesisuam.mw'.
 
 Package babel Info: Redefining spanish shorthand <<
 (babel)             in language  on input line 1.
@@ -6273,11 +6092,9 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 1.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[42] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
+ [40
 
-\openout6 = `tfgtfmthesisuam.mw'.
-
+] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 Package babel Info: Redefining spanish shorthand <<
@@ -6334,8 +6151,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 86.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[43
-
+[41
 
 ] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -6411,7 +6227,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 117.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[44] (./tfgtfmthesisuam.mw)
+[42] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -6471,7 +6287,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 117.
 \openout6 = `tfgtfmthesisuam.mw'.
 
- [45
+ [43
 
 ] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -6506,7 +6322,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 117.
 \openout6 = `tfgtfmthesisuam.mw'.
 
- [46]
+ [44]
 (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
@@ -6570,7 +6386,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 120.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[47
+[45
 
 ] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -6605,7 +6421,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 120.
 \openout6 = `tfgtfmthesisuam.mw'.
 
- [48
+ [46
 
 ] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -6665,7 +6481,7 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 9.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[49 <./img/imagenes/OriginalMorph.png>] (./tfgtfmthesisuam.mw)
+[47 <./img/imagenes/OriginalMorph.png>] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -6723,347 +6539,17 @@ Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 123.
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[50 <./img/imagenes/tutorial-logica.png>] (./tfgtfmthesisuam.mw)
+[48 <./img/imagenes/tutorial-logica.png>] (./tfgtfmthesisuam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 
 No file tfgtfmthesisuam.ind.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 123.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-[51
-
-
-] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Overfull \hbox (173.27327pt too wide) has occurred while \output is active
-[]
- []
-
-
-Underfull \vbox (badness 10000) has occurred while \output is active []
-
-
-Underfull \hbox (badness 10000) has occurred while \output is active
-[]
- []
-
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 123.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 123.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-[52 </usr/share/texmf/tex/latex/tfgtfmthesisuam/logoUAMw.png>]
-(./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 123.
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 123.
- (./tfgtfmthesisuam.aux
+(./tfgtfmthesisuam.aux
 LaTeX Info: Redefining \. on input line 31.
 LaTeX Info: Redefining \% on input line 31.
 Package cleveref Info: loaded `spanish' language definitions on input line 31.
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -7590,14 +7076,11 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
 \openout6 = `tfgtfmthesisuam.out'.
 
 Package rerunfilecheck Info: File `tfgtfmthesisuam.out' has not changed.
-(rerunfilecheck)             Checksum: F3E5D2C36E611F55E1AD78FF109E8AE0;3390.
+(rerunfilecheck)             Checksum: A806233F331CFF6DDC0E420479089E27;3390.
 
 
 LaTeX Font Warning: Size substitutions with differences
 (Font)              up to 0.5pt have occurred.
-
-
-LaTeX Warning: There were undefined references.
 
 \openout6 = `tfgtfmthesisuam.idx'.
 
@@ -7607,52 +7090,45 @@ LaTeX Warning: There were undefined references.
 
 \openout6 = `tfgtfmthesisuam.toc'.
 
-\openout6 = `tfgtfmthesisuam.loa'.
-
 \openout6 = `tfgtfmthesisuam.lol'.
-
-\openout6 = `tfgtfmthesisuam.ltb'.
-
-\openout6 = `tfgtfmthesisuam.loe'.
 
 \openout6 = `tfgtfmthesisuam.lof'.
 
-\openout6 = `tfgtfmthesisuam.lot'.
-
-\openout6 = `tfgtfmthesisuam.ltb'.
-
  ) 
 Here is how much of TeX's memory you used:
- 55324 strings out of 492982
- 1199862 string characters out of 6134897
- 1673295 words of memory out of 5000000
- 57298 multiletter control sequences out of 15000+600000
- 623969 words of font info for 135 fonts, out of 8000000 for 9000
+ 55296 strings out of 492982
+ 1199726 string characters out of 6134897
+ 1674151 words of memory out of 5000000
+ 57311 multiletter control sequences out of 15000+600000
+ 613903 words of font info for 123 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 69i,9n,105p,10417b,1667s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/
-fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-s
-uper/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfont
-s/cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cm
-mi9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb>
-</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/sh
-are/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/public/txfonts/rtxbsssc.pfb></usr/share/texlive/tex
-mf-dist/fonts/type1/public/txfonts/rtxsssc.pfb></usr/share/texmf/fonts/type1/pu
-blic/cm-super/sfbi0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx08
-00.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/t
-exmf/fonts/type1/public/cm-super/sfti0800.pfb></usr/share/texlive/texmf-dist/fo
-nts/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw
-/helvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uh
-vb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></u
-sr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/tex
-live/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-d
-ist/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1
-/urw/times/utmri8a.pfb>
-Output written on tfgtfmthesisuam.pdf (66 pages, 5640316 bytes).
+ 69i,12n,105p,10417b,1667s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not ex
+ist, replaced by a fixed one
+
+{/usr/share/texlive/texmf-dist/fonts/enc/dvips/base/8r.enc}{/usr/share/texmf/fo
+nts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fonts/enc/dvips/cm-sup
+er/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/
+cm/cmmi6.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi
+9.pfb></usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr6.pfb></
+usr/share/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmr9.pfb></usr/shar
+e/texlive/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy9.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/public/txfonts/rtxbsssc.pfb></usr/share/texlive/texmf
+-dist/fonts/type1/public/txfonts/rtxsssc.pfb></usr/share/texmf/fonts/type1/publ
+ic/cm-super/sfbi0800.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfbx0800
+.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfrm0800.pfb></usr/share/tex
+mf/fonts/type1/public/cm-super/sfti0800.pfb></usr/share/texlive/texmf-dist/font
+s/type1/urw/courier/ucrr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/h
+elvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb
+8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr
+/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvr8a.pfb></usr/share/texli
+ve/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dis
+t/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
+rw/times/utmri8a.pfb>
+Output written on tfgtfmthesisuam.pdf (60 pages, 4363847 bytes).
 PDF statistics:
- 1277 PDF objects out of 1440 (max. 8388607)
- 1070 compressed objects within 11 object streams
- 356 named destinations out of 1000 (max. 500000)
- 653 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1263 PDF objects out of 1440 (max. 8388607)
+ 1069 compressed objects within 11 object streams
+ 351 named destinations out of 1000 (max. 500000)
+ 633 words of extra memory for PDF output out of 10000 (max. 10000000)
 

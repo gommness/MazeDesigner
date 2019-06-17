@@ -1,7 +1,7 @@
 \babel@toc {spanish}{}
 \contentsline {chapter}{\numberline {1}Introducci\IeC {\'o}n}{1}{chapter.1}
 \contentsline {section}{\numberline {1.1}Motivaci\IeC {\'o}n}{1}{section.1.1}
-\contentsline {section}{\numberline {1.2}Objetivos}{2}{section.1.2}
+\contentsline {section}{\numberline {1.2}Objetivos}{4}{section.1.2}
 \contentsline {section}{\numberline {1.3}Estructura}{4}{section.1.3}
 \contentsline {chapter}{\numberline {2}Estado del Arte}{5}{chapter.2}
 \contentsline {section}{\numberline {2.1}Videojuegos de tipo Mazmorra}{6}{section.2.1}
@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {2.3}Dise\IeC {\~n}o L\IeC {\'o}gico}{7}{section.2.3}
 \contentsline {section}{\numberline {2.4}Motores y Entornos}{7}{section.2.4}
 \contentsline {section}{\numberline {2.5}C++ y Qt}{8}{section.2.5}
-\contentsline {section}{\numberline {2.6}Conclusiones}{8}{section.2.6}
+\contentsline {section}{\numberline {2.6}Conclusiones}{9}{section.2.6}
 \contentsline {chapter}{\numberline {3}Definici\IeC {\'o}n del proyecto}{11}{chapter.3}
 \contentsline {section}{\numberline {3.1}Alcance}{11}{section.3.1}
 \contentsline {section}{\numberline {3.2}Requisitos funcionales}{11}{section.3.2}
@@ -25,27 +25,27 @@
 \contentsline {chapter}{\numberline {4}Dise\IeC {\~n}o}{17}{chapter.4}
 \contentsline {section}{\numberline {4.1}Tecnolog\IeC {\'\i }as y Est\IeC {\'a}ndares}{17}{section.4.1}
 \contentsline {subsection}{\numberline {4.1.1}Qt}{17}{subsection.4.1.1}
-\contentsline {subsection}{\numberline {4.1.2}JSON}{17}{subsection.4.1.2}
+\contentsline {subsection}{\numberline {4.1.2}JSON}{19}{subsection.4.1.2}
 \contentsline {subsection}{\numberline {4.1.3}git}{19}{subsection.4.1.3}
 \contentsline {subsection}{\numberline {4.1.4}GameMaker Studio 2}{19}{subsection.4.1.4}
-\contentsline {section}{\numberline {4.2}M\IeC {\'o}dulos y Clases}{19}{section.4.2}
+\contentsline {section}{\numberline {4.2}M\IeC {\'o}dulos y Clases}{20}{section.4.2}
 \contentsline {chapter}{\numberline {5}Desarrollo}{23}{chapter.5}
 \contentsline {section}{\numberline {5.1}Entornos de desarrollo}{23}{section.5.1}
 \contentsline {section}{\numberline {5.2}Desarrollo de los m\IeC {\'o}dulos}{23}{section.5.2}
 \contentsline {subsection}{\numberline {5.2.1}Canvas}{24}{subsection.5.2.1}
 \contentsline {subsection}{\numberline {5.2.2}Llaves, habitaciones y persistencia}{25}{subsection.5.2.2}
-\contentsline {subsection}{\numberline {5.2.3}Interfaz gr\IeC {\'a}fica}{26}{subsection.5.2.3}
-\contentsline {subsection}{\numberline {5.2.4}Condiciones y exploraci\IeC {\'o}n del dise\IeC {\~n}o}{30}{subsection.5.2.4}
-\contentsline {section}{\numberline {5.3}Dificultades encontradas}{34}{section.5.3}
-\contentsline {chapter}{\numberline {6}Integraci\IeC {\'o}n, pruebas y resultados}{37}{chapter.6}
-\contentsline {section}{\numberline {6.1}Pruebas unitarias}{37}{section.6.1}
-\contentsline {section}{\numberline {6.2}Pruebas de integraci\IeC {\'o}n}{38}{section.6.2}
-\contentsline {section}{\numberline {6.3}Resultados}{38}{section.6.3}
-\contentsline {chapter}{\numberline {7}Conclusiones y trabajo futuro}{39}{chapter.7}
-\contentsline {section}{\numberline {7.1}Conclusiones}{39}{section.7.1}
-\contentsline {section}{\numberline {7.2}Trabajo futuro}{39}{section.7.2}
-\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{42}{chapter*.33}
-\contentsline {chapter}{Definiciones}{43}{section*.34}
-\contentsline {part}{Ap\IeC {\'e}ndices}{45}{part.1}
-\contentsline {chapter}{\numberline {A}Definici\IeC {\'o}n de la sintaxis de condiciones}{47}{appendix.Alph1}
-\contentsline {chapter}{\numberline {B}Patr\IeC {\'o}n de dise\IeC {\~n}o de niveles empleado como tutorial}{49}{appendix.Alph2}
+\contentsline {subsection}{\numberline {5.2.3}Interfaz gr\IeC {\'a}fica}{27}{subsection.5.2.3}
+\contentsline {subsection}{\numberline {5.2.4}Condiciones y exploraci\IeC {\'o}n del dise\IeC {\~n}o}{29}{subsection.5.2.4}
+\contentsline {section}{\numberline {5.3}Dificultades encontradas}{32}{section.5.3}
+\contentsline {chapter}{\numberline {6}Integraci\IeC {\'o}n, pruebas y resultados}{35}{chapter.6}
+\contentsline {section}{\numberline {6.1}Pruebas unitarias}{35}{section.6.1}
+\contentsline {section}{\numberline {6.2}Pruebas de integraci\IeC {\'o}n}{36}{section.6.2}
+\contentsline {section}{\numberline {6.3}Resultados}{36}{section.6.3}
+\contentsline {chapter}{\numberline {7}Conclusiones y trabajo futuro}{37}{chapter.7}
+\contentsline {section}{\numberline {7.1}Conclusiones}{37}{section.7.1}
+\contentsline {section}{\numberline {7.2}Trabajo futuro}{37}{section.7.2}
+\contentsline {chapter}{Bibliograf\IeC {\'\i }a}{39}{chapter*.28}
+\contentsline {chapter}{Definiciones}{41}{section*.29}
+\contentsline {part}{Ap\IeC {\'e}ndices}{43}{part.1}
+\contentsline {chapter}{\numberline {A}Definici\IeC {\'o}n de la sintaxis de condiciones}{45}{appendix.Alph1}
+\contentsline {chapter}{\numberline {B}Patr\IeC {\'o}n de dise\IeC {\~n}o de niveles empleado como tutorial}{47}{appendix.Alph2}
