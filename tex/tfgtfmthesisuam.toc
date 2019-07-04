@@ -9,7 +9,7 @@
 \contentsline {section}{\numberline {2.3}Dise\IeC {\~n}o L\IeC {\'o}gico}{7}{section.2.3}
 \contentsline {section}{\numberline {2.4}Motores y Entornos}{7}{section.2.4}
 \contentsline {section}{\numberline {2.5}C++ y Qt}{8}{section.2.5}
-\contentsline {section}{\numberline {2.6}Conclusiones}{9}{section.2.6}
+\contentsline {section}{\numberline {2.6}Conclusiones sobre tecnolog\IeC {\'\i }a}{9}{section.2.6}
 \contentsline {chapter}{\numberline {3}Definici\IeC {\'o}n del proyecto}{11}{chapter.3}
 \contentsline {section}{\numberline {3.1}Alcance}{11}{section.3.1}
 \contentsline {section}{\numberline {3.2}Requisitos funcionales}{11}{section.3.2}

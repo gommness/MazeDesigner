@@ -13,7 +13,7 @@
 class DesignGraph
 {
 public:
-    DesignGraph(InstanceCanvas & canvas);
+    DesignGraph(const InstanceCanvas & canvas);
     DesignGraph(DesignGraph & other);
     ~DesignGraph();
 
@@ -29,13 +29,16 @@ public:
     RegionNode * getNode(const RegionNode & node) const;
     Transition * getTransition(const Transition & transition) const;
     int size() const;
+    bool isValid() const;
 
     QList<RegionNode*> nodes;
     QList<Transition*> transitions;
+    QList<SelectableInstance *> instances;
     Inventory * inventory;
     RegionNode * current;
 
 private:
+    static uint qHash(const DesignGraph &key);
     void fuse(QList<RegionNode*>);
     QList<QList<RegionNode *>> tarjanAlgorithm();
     QList<RegionNode*> stronglyConnect(RegionNode * node, QStack<RegionNode *> & stack, int & index);

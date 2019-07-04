@@ -36,10 +36,21 @@ SimpleCondition::SimpleCondition(QString condition, KeyRepository* repo, bool sa
 
 SimpleCondition::SimpleCondition(const QJsonObject &jObj, KeyRepository * repo)
 {
+    this->keyRepo = repo;
+
     if(jObj.contains("satisfiable") && jObj["satisfiable"].isBool()){
         this->satisfiable = jObj["satisfiable"].toBool();
     } else {
         this->satisfiable = true;
+    }
+
+    if(jObj.contains("empty") && jObj["empty"].isBool()){
+        if(jObj["empty"].toBool()){
+            *this = SimpleCondition::emptyCondition();
+            return;
+        }
+    } else {
+        throw std::runtime_error("malformed condition");
     }
 
     if(jObj.contains("condition") && jObj["condition"].isString()){
@@ -51,15 +62,6 @@ SimpleCondition::SimpleCondition(const QJsonObject &jObj, KeyRepository * repo)
     } else {
         throw std::runtime_error("malformed condition");
     }
-
-    if(jObj.contains("empty") && jObj["empty"].isBool()){
-        if(jObj["empty"].toBool())
-            *this = SimpleCondition::emptyCondition();
-    } else {
-        throw std::runtime_error("malformed condition");
-    }
-
-    this->keyRepo = repo;
 }
 
 SimpleCondition::SimpleCondition(const SimpleCondition &other) : Condition(other)
@@ -114,7 +116,7 @@ bool SimpleCondition::isEmpty() const
 QString SimpleCondition::toString() const
 {
     if(!isEmpty())
-        return QString(value +" " + name);
+        return QString(QString::number(value) +" " + name);
     else
         return QString("");
 }

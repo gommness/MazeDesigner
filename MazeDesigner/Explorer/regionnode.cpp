@@ -43,6 +43,7 @@ RegionNode *RegionNode::fusion(QList<RegionNode *> &nodes)
     // give all the items contained in nodes to the fused node, since it will have the items from every node
     // store all transitions starting from any of the nodes, in the auxiliary list
     for(auto node = nodes.begin(); node != nodes.end(); node++){
+        qDebug() << (*node)->parent->isEmpty();
         region = (*node)->parent->united(region);
         output->items.append((*node)->items);
         ts.append((*node)->transitions);
@@ -61,7 +62,7 @@ RegionNode *RegionNode::fusion(QList<RegionNode *> &nodes)
         }
         SimpleCondition * newCond = new SimpleCondition(*ts[i]->condition); // copy the condition into a new one
         // create the transition and insert it into the transitions of the fused node
-        output->transitions.append(new Transition(output, dest, newCond));
+        output->transitions.append(new Transition(output, dest, ts[i]->door, newCond));
     }
     return output;
 }
@@ -85,7 +86,8 @@ uint RegionNode::qHash(const RegionNode &key)
     return (static_cast<uint>(key.items.length())+1)*(static_cast<uint>(key.transitions.length())+1);
 }
 
-Transition::Transition(RegionNode *node1, RegionNode *node2, SimpleCondition *cond) : node1(node1), node2(node2), condition(cond)
+Transition::Transition(RegionNode *node1, RegionNode *node2, DoorInstance *door, SimpleCondition * cond)
+    : node1(node1), node2(node2), door(door), condition(cond)
 {
 
 }

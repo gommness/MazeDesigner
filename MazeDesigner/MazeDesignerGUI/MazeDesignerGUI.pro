@@ -42,6 +42,7 @@ SOURCES += \
         ../ConditionParser/condition.cpp \
         ../ConditionParser/simplecondition.cpp \
         ../ConditionParser/compositecondition.cpp \
+        ../Explorer/*.cpp \
     instancecanvas.cpp \
     doorinstance.cpp \
     keyinstance.cpp \

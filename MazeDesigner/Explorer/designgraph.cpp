@@ -1,6 +1,7 @@
 #include "designgraph.h"
+#include <QtMath>
 
-DesignGraph::DesignGraph(InstanceCanvas &canvas)
+DesignGraph::DesignGraph(const InstanceCanvas &canvas)
 {
     // build the QPainterPath to substract later
     QPainterPath path;
@@ -20,6 +21,7 @@ DesignGraph::DesignGraph(InstanceCanvas &canvas)
     for(auto door = canvas.doors.begin(); door != canvas.doors.end(); door++){
         QPair<QPointF, QPointF> pointPair = (*door)->separation();
         Transition * tran = new Transition();
+        tran->door = *door;
 
         for(auto node = nodes.begin(); node != nodes.end(); node++){
 
@@ -92,7 +94,7 @@ DesignGraph::DesignGraph(DesignGraph &other)
             // then, whether it has been previously collected ot no, we create and collect their transition
             // keep in mind that a node might have multiple transitions to the same node, and we have to copy those too!
             // so even though we may have collected a node, the transition we are iterating through must be copied
-            Transition * tr = new Transition(nodeOrigin, nodeDest, new SimpleCondition(*(*tran)->condition));
+            Transition * tr = new Transition(nodeOrigin, nodeDest, (*tran)->door, new SimpleCondition(*(*tran)->condition));
             nodeOrigin->transitions.append(tr);
             this->transitions.append(tr);
         }
@@ -102,6 +104,7 @@ DesignGraph::DesignGraph(DesignGraph &other)
     this->inventory = other.inventory;
     // current node will be the corresponding copied node of other's current node
     this->current = this->getNode(*other.current);
+    this->instances.append(other.instances);
 }
 
 DesignGraph::~DesignGraph()
@@ -124,6 +127,8 @@ QList<DesignGraph *> DesignGraph::expand()
                 DesignGraph * graph = new DesignGraph(*this);
                 // in this new search state, spend the costs of traveling
                 graph->inventory->spend(*cost);
+                // insert the door into the instances of the search
+                graph->instances.append((*tran)->door);
                 // finally, update the transition's condition, so that it remains open only in this new search state
                 delete graph->getTransition(**tran)->condition; // transition allways stores conditions in dynamic mem, so delete it
                 graph->getTransition(**tran)->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
@@ -136,6 +141,8 @@ QList<DesignGraph *> DesignGraph::expand()
     for(int i = 0; i < current->items.length(); i++){
         //create a new search state
         DesignGraph * graph = new DesignGraph(*this);
+        //add the collected instance to the list
+        graph->instances.append(current->items[i]);
         //add the item to the inventory of the new search state
         graph->inventory->collect(current->items[i]);
         //remove the item from the new search state's current node
@@ -213,6 +220,16 @@ Transition *DesignGraph::getTransition(const Transition &transition) const
 int DesignGraph::size() const
 {
     return nodes.length();
+}
+
+bool DesignGraph::isValid() const
+{
+    return current != nullptr;
+}
+
+uint DesignGraph::qHash(const DesignGraph &graph)
+{
+    return static_cast<uint>(qFloor(graph.heuristic()));
 }
 
 void DesignGraph::fuse(QList<RegionNode *> component)

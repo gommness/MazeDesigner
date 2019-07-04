@@ -4,6 +4,7 @@
 #include "../Common/common.h"
 #include "exporter.h"
 #include <QFileDialog>
+#include "../Explorer/explorationtree.h"
 
 #include <QDebug>
 #include <QJsonDocument>
@@ -117,6 +118,8 @@ void MainWindow::saveAsDesign()
 
 void MainWindow::validateDesign()
 {
+    QList<SelectableInstance*> output = ExplorationTree::explore(*instanceCanvas);
+    qDebug() << "EXPLORATION ENDED :::" << output.size();
 }
 
 void MainWindow::exportDesign()

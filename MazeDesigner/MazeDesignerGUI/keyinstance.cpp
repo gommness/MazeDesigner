@@ -85,7 +85,7 @@ QJsonObject KeyInstance::toJson()
     QJsonObject output;
     output.insert("ID", id);
     output.insert("model", model.getId());
-    output.insert("coords", QString(POINTFORMAT).arg(x()).arg(y()));
+    output.insert("coords", QString(POINTFORMAT).arg(center().x()).arg(center().y()));
     return output;
 }
 
@@ -118,5 +118,5 @@ KeyInstance::KeyInstance(int id, const Key &model, const QPointF &point) : QRect
 
 void KeyInstance::setCoordsFromPoint(const QPointF &point)
 {
-    this->setCoords(point.x()-8, point.y()-8, point.x()+16, point.x()+16);
+    this->setCoords(point.x()-8, point.y()-8, point.x()+8, point.y()+8);
 }

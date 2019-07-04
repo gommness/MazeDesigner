@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.4)  17 JUN 2019 03:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.18 (TeX Live 2017/Debian) (preloaded format=pdflatex 2019.3.4)  18 JUN 2019 02:13
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -1149,15 +1149,15 @@ Package etexcmds Info: Could not find \expanded.
 (etexcmds)             In the latter case, load this package earlier.
 ))
 \verbatim@out=\write5
-runsystem(touch w18-test-2019617208.tex)...disabled (restricted).
+runsystem(touch w18-test-2019618133.tex)...disabled (restricted).
 
-runsystem(rm -f w18-test-2019617208.tex)...disabled (restricted).
+runsystem(rm -f w18-test-2019618133.tex)...disabled (restricted).
 
 runsystem(rm -f "tfgtfmthesisuam.gnuploterrors")...disabled (restricted).
 
 runsystem(mkdir -p "gnuplottex")...disabled (restricted).
 
-runsystem(touch "gnuplottex/w18-test-2019617208.tex")...disabled (restricted).
+runsystem(touch "gnuplottex/w18-test-2019618133.tex")...disabled (restricted).
 
 
 
@@ -1971,14 +1971,14 @@ Package: lipsum 2014/07/27 v1.3 150 paragraphs of Lorem Ipsum dummy text
 \myem=\skip148
 \mypt=\skip149
 \c@@ploti=\count403
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 449.
-Package hyperref Info: Option `unicode' set `false' on input line 449.
-Package hyperref Info: Option `pdftoolbar' set `true' on input line 449.
-Package hyperref Info: Option `pdfmenubar' set `true' on input line 449.
-Package hyperref Info: Option `pdffitwindow' set `false' on input line 449.
-Package hyperref Info: Option `pdfnewwindow' set `true' on input line 449.
-Package hyperref Info: Option `colorlinks' set `true' on input line 449.
-Package hyperref Info: Option `breaklinks' set `true' on input line 449.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 430.
+Package hyperref Info: Option `unicode' set `false' on input line 430.
+Package hyperref Info: Option `pdftoolbar' set `true' on input line 430.
+Package hyperref Info: Option `pdfmenubar' set `true' on input line 430.
+Package hyperref Info: Option `pdffitwindow' set `false' on input line 430.
+Package hyperref Info: Option `pdfnewwindow' set `true' on input line 430.
+Package hyperref Info: Option `colorlinks' set `true' on input line 430.
+Package hyperref Info: Option `breaklinks' set `true' on input line 430.
 
 Colors defined
 \exposa=\skip150
@@ -2157,7 +2157,7 @@ Package pgfplots notification 'compat/show suggested version=true': you might b
 enefit from \pgfplotsset{compat=1.15} (current compat level: 1.13).
 
 \AtBeginShipoutBox=\box109
-Package hyperref Info: Link coloring ON on input line 48.
+Package hyperref Info: Link coloring OFF on input line 48.
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2016/05/21 v2.44 Cross-referencing by name of section
 
@@ -3240,24 +3240,11 @@ LaTeX Font Info:    Font shape `T1/txss/m/it' in size <9> not available
 LaTeX Font Info:    Font shape `T1/txss/m/sl' will be
 (Font)              scaled to size 8.54997pt on input line 19.
 )
-Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 52.
-Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 52.
-Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 52.
-Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 52.
-Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 52.
-Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 52.
- (./introduccion/objetivos.tex
 Underfull \vbox (badness 10000) has occurred while \output is active []
 
-LaTeX Info: Redefining \. on input line 3.
-LaTeX Info: Redefining \% on input line 3.
-Package cleveref Info: loaded `spanish' language definitions on input line 3.
+LaTeX Info: Redefining \. on input line 52.
+LaTeX Info: Redefining \% on input line 52.
+Package cleveref Info: loaded `spanish' language definitions on input line 52.
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -3269,53 +3256,53 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 pdfTeX warning (ext4): destination with the same identifier (name{page.2}) has 
 been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.3 L
-     a herramienta debe ser capaz de explorar el diseño creado por el usuar...
+l.52 	\section{Objetivos\label{SEC:OBJETIVOS}}
+                                              {introduccion/objetivos}
 \openout6 = `tfgtfmthesisuam.mw'.
 
-[2 <./img/imagenes/super-metroid.jpeg> <./img/imagenes/cave-story.png (PNG copy
-)> <./img/imagenes/ori.jpg> <./img/imagenes/hollow-knight.jpg>]
-(./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
+ [2 <./img/imagenes/super-metroid.jpeg> <./img/imagenes/cave-story.png (PNG cop
+y)> <./img/imagenes/ori.jpg> <./img/imagenes/hollow-knight.jpg>] (./tfgtfmthesi
+suam.mw)
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
-LaTeX Info: Redefining \. on input line 3.
-LaTeX Info: Redefining \% on input line 3.
-Package cleveref Info: loaded `spanish' language definitions on input line 3.
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+LaTeX Info: Redefining \. on input line 52.
+LaTeX Info: Redefining \% on input line 52.
+Package cleveref Info: loaded `spanish' language definitions on input line 52.
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -3327,29 +3314,29 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 3.
+(babel)             in language  on input line 52.
 \openout6 = `tfgtfmthesisuam.mw'.
 
 [3 <./img/imagenes/super-metroid-map.jpg>] (./tfgtfmthesisuam.mw)
@@ -3363,7 +3350,20 @@ Package babel Info: Redefining spanish shorthand "?
 
 \openout6 = `tfgtfmthesisuam.mw'.
 
+Package babel Info: Redefining spanish shorthand <<
+(babel)             in language  on input line 52.
+Package babel Info: Redefining spanish shorthand >>
+(babel)             in language  on input line 52.
+Package babel Info: Redefining spanish shorthand "=
+(babel)             in language  on input line 52.
+Package babel Info: Redefining spanish shorthand "~
+(babel)             in language  on input line 52.
+Package babel Info: Redefining spanish shorthand "!
+(babel)             in language  on input line 52.
+Package babel Info: Redefining spanish shorthand "?
+(babel)             in language  on input line 52.
 
+(./introduccion/objetivos.tex
 Begining enumeration
 Ending enumeration
 )
@@ -3672,6 +3672,10 @@ Package babel Info: Redefining spanish shorthand "?
 \openout6 = `tfgtfmthesisuam.mw'.
 
 [7] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -4250,9 +4254,9 @@ Package babel Info: Redefining spanish shorthand "!
 Package babel Info: Redefining spanish shorthand "?
 (babel)             in language  on input line 73.
  (./requisitos/conexion.tex
-LaTeX Info: Redefining \. on input line 8.
-LaTeX Info: Redefining \% on input line 8.
-Package cleveref Info: loaded `spanish' language definitions on input line 8.
+LaTeX Info: Redefining \. on input line 10.
+LaTeX Info: Redefining \% on input line 10.
+Package cleveref Info: loaded `spanish' language definitions on input line 10.
 
 Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
@@ -4264,32 +4268,40 @@ Overfull \hbox (2.21538pt too wide) has occurred while \output is active
  []
 
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand <<
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand >>
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand "=
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand "~
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand "!
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 Package babel Info: Redefining spanish shorthand "?
-(babel)             in language  on input line 8.
+(babel)             in language  on input line 10.
 \openout6 = `tfgtfmthesisuam.mw'.
 
 [14] (./tfgtfmthesisuam.mw)
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
+\openout6 = `tfgtfmthesisuam.mw'.
+
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -4401,14 +4413,6 @@ Package babel Info: Redefining spanish shorthand "?
 \openout6 = `tfgtfmthesisuam.mw'.
 
 [15] (./tfgtfmthesisuam.mw)
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
-\openout6 = `tfgtfmthesisuam.mw'.
-
 \openout6 = `tfgtfmthesisuam.mw'.
 
 \openout6 = `tfgtfmthesisuam.mw'.
@@ -7076,7 +7080,7 @@ Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 123.
 \openout6 = `tfgtfmthesisuam.out'.
 
 Package rerunfilecheck Info: File `tfgtfmthesisuam.out' has not changed.
-(rerunfilecheck)             Checksum: A806233F331CFF6DDC0E420479089E27;3390.
+(rerunfilecheck)             Checksum: 1788BDF74A51C734BA1913281688420D;3410.
 
 
 LaTeX Font Warning: Size substitutions with differences
@@ -7096,11 +7100,11 @@ LaTeX Font Warning: Size substitutions with differences
 
  ) 
 Here is how much of TeX's memory you used:
- 55296 strings out of 492982
- 1199726 string characters out of 6134897
- 1674151 words of memory out of 5000000
- 57311 multiletter control sequences out of 15000+600000
- 613903 words of font info for 123 fonts, out of 8000000 for 9000
+ 55298 strings out of 492982
+ 1199787 string characters out of 6134897
+ 1674241 words of memory out of 5000000
+ 57313 multiletter control sequences out of 15000+600000
+ 614410 words of font info for 124 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
  69i,12n,105p,10417b,1667s stack positions out of 5000i,500n,10000p,200000b,80000s
 pdfTeX warning (dest): name{Hfootnote.20} has been referenced but does not ex
@@ -7125,10 +7129,10 @@ elvetic/uhvb8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/urw/helvetic/uhvb
 ve/texmf-dist/fonts/type1/urw/palatino/uplb8a.pfb></usr/share/texlive/texmf-dis
 t/fonts/type1/urw/times/utmr8a.pfb></usr/share/texlive/texmf-dist/fonts/type1/u
 rw/times/utmri8a.pfb>
-Output written on tfgtfmthesisuam.pdf (60 pages, 4363847 bytes).
+Output written on tfgtfmthesisuam.pdf (60 pages, 4362548 bytes).
 PDF statistics:
  1263 PDF objects out of 1440 (max. 8388607)
  1069 compressed objects within 11 object streams
- 351 named destinations out of 1000 (max. 500000)
+ 350 named destinations out of 1000 (max. 500000)
  633 words of extra memory for PDF output out of 10000 (max. 10000000)
 

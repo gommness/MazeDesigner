@@ -93,8 +93,14 @@ QJsonObject DoorInstance::toJson() const
     output.insert("ID", id);
     output.insert("point1", QString(POINTFORMAT).arg(p1().x()).arg(p1().y()));
     output.insert("point2", QString(POINTFORMAT).arg(p2().x()).arg(p2().y()));
-    output.insert("condition1", condition1->toJson());
-    output.insert("condition2", condition2->toJson());
+    if(condition1 != nullptr)
+        output.insert("condition1", condition1->toJson());
+    else
+        output.insert("condition1", SimpleCondition::emptyCondition().toJson());
+    if(condition2 != nullptr)
+        output.insert("condition2", condition2->toJson());
+    else
+        output.insert("condition2", SimpleCondition::emptyCondition().toJson());
     return output;
 }
 

@@ -4,6 +4,7 @@
 #include <QList>
 #include <QRegion>
 #include "../MazeDesignerGUI/keyinstance.h"
+#include "../MazeDesignerGUI/doorinstance.h"
 #include "../ConditionParser/simplecondition.h"
 #include "../Common/common.h"
 class RegionNode;
@@ -11,7 +12,8 @@ class RegionNode;
 class Transition
 {
 public:
-    Transition(RegionNode * node1 = nullptr, RegionNode * node2 = nullptr, SimpleCondition * cond = nullptr);
+    Transition(RegionNode * node1 = nullptr, RegionNode * node2 = nullptr,
+               DoorInstance * door = nullptr, SimpleCondition * cond = nullptr);
     ~Transition();
 
     bool isValid() const;
@@ -22,6 +24,7 @@ public:
 
     RegionNode * node1 = nullptr;
     RegionNode * node2 = nullptr;
+    DoorInstance * door = nullptr;
     SimpleCondition * condition = nullptr;
 };
 
