@@ -22,8 +22,8 @@ MainWindow::MainWindow(QWidget *parent) :
     createMenus();
 
     setWindowTitle(tr("Menus"));
-    setMinimumSize(160, 160);
-    resize(480, 320);
+    setMinimumSize(800, 600);
+    resize(800, 600);
 
     //this->setLayout(&mainLayout);
 }
@@ -119,6 +119,7 @@ void MainWindow::saveAsDesign()
 void MainWindow::validateDesign()
 {
     QList<SelectableInstance*> output = ExplorationTree::explore(*instanceCanvas);
+    instanceCanvas->updateErrorPath(output);
     qDebug() << "EXPLORATION ENDED :::" << output.size();
 }
 

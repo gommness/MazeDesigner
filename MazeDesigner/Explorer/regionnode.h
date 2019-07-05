@@ -47,7 +47,7 @@ private:
     static uint qHash(const RegionNode &key);
     bool checkConnexion(QHash<RegionNode*, QList<RegionNode*>> & map);
 
-    QPolygonF *parent;
+    QSet<QPolygonF*> parents;
     // the next attributes are required for the Tarjan's strongly connected components algorithm
     int index = -1;
     int lowLink = -1;

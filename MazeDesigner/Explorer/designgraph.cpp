@@ -8,7 +8,7 @@ DesignGraph::DesignGraph(const InstanceCanvas &canvas)
     for(auto door = canvas.doors.begin(); door != canvas.doors.end(); door++)
         path.addPolygon((*door)->boundPolygon());
     // remove the simplified path (just in case) of doors to be substracted
-    QList<QPolygonF> shapes = canvas.design->shapes.subtracted(path.simplified()).simplified().toFillPolygons();
+    shapes = canvas.design->shapes.subtracted(path.simplified()).simplified().toFillPolygons();
     // now shapes is the list of polygons that we'll use to create the DesignGraph!
     // we'll loop through all those polygons in order to create all RegionNodes
     for(auto poly = shapes.begin(); poly != shapes.end(); poly++){
@@ -20,29 +20,8 @@ DesignGraph::DesignGraph(const InstanceCanvas &canvas)
     // the nodes. when a node contains a point of the separation, we set it to be one of the nodes of the transition
     for(auto door = canvas.doors.begin(); door != canvas.doors.end(); door++){
         QPair<QPointF, QPointF> pointPair = (*door)->separation();
-        Transition * tran = new Transition();
-        tran->door = *door;
-
-        for(auto node = nodes.begin(); node != nodes.end(); node++){
-
-            // check if the node we are iterating through contains one or both of the points of the separation
-            if((*node)->containsPoint(pointPair.first))
-                tran->node1 = *node;
-            if ((*node)->containsPoint(pointPair.second))
-                tran->node2 = *node;
-
-            if(tran->isValid()) // when both nodes have been found, it makes no sense to keep iterating. we break out of the loop
-                break;
-        }
-        if(!tran->isValid()){ // if on the loop, for whatever reason we could not create a valid transition, free its memory
-            delete tran;
-        } else {
-            // if the transition is well-formed, then we add it our list of transitions
-            transitions.append(tran);
-            tran->node1->transitions.append(tran); // and add the transition to the origin node's transition list
-            tran->condition = new SimpleCondition((*door)->getCondition1()); // finally, set the transition condition to a NEW cond
-            // is important that the transition contains a new condition because the condition will be exploration-dependent modified
-        }
+        addTransition(pointPair.first, pointPair.second, (*door)->getCondition1(), *door);
+        addTransition(pointPair.second, pointPair.first, (*door)->getCondition2(), *door);
     }
     // now we have all nodes and transitions between them. Now the only thing left is to give the nodes the items that are
     // contained in their polygons AND set the current node to the one that contains the startToken. Then init the empty inventory
@@ -121,19 +100,31 @@ QList<DesignGraph *> DesignGraph::expand()
     for(auto tran = current->transitions.begin(); tran != current->transitions.end(); tran++){
         // we get the list of all posible costs to travel through this transition
         Condition::CostList costs = (*tran)->getCost();
-        for(auto cost = costs.begin(); cost != costs.end(); cost++){ // iterate through all the possible costs we could spend
-            if(inventory->canAfford(*cost)){ // if we can afford a cost
-                // create a new search state
-                DesignGraph * graph = new DesignGraph(*this);
-                // in this new search state, spend the costs of traveling
-                graph->inventory->spend(*cost);
-                // insert the door into the instances of the search
-                graph->instances.append((*tran)->door);
-                // finally, update the transition's condition, so that it remains open only in this new search state
-                delete graph->getTransition(**tran)->condition; // transition allways stores conditions in dynamic mem, so delete it
-                graph->getTransition(**tran)->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
-                graph->simplify();
-                output.append(graph);
+        if(costs.isEmpty()){ // if it does not cost anything to perform the transition
+            // create a new search state
+            DesignGraph * graph = new DesignGraph(*this);
+            // insert the door into the instances of the search
+            graph->instances.append((*tran)->door);
+            // finally, update the transition's condition, so that it remains open only in this new search state
+            delete graph->getTransition(**tran)->condition; // transition allways stores conditions in dynamic mem, so delete it
+            graph->getTransition(**tran)->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
+            graph->simplify();
+            output.append(graph);
+        } else {
+            for(auto cost = costs.begin(); cost != costs.end(); cost++){ // iterate through all the possible costs we could spend
+                if(inventory->canAfford(*cost)){ // if we can afford a cost
+                    // create a new search state
+                    DesignGraph * graph = new DesignGraph(*this);
+                    // in this new search state, spend the costs of traveling
+                    graph->inventory->spend(*cost);
+                    // insert the door into the instances of the search
+                    graph->instances.append((*tran)->door);
+                    // finally, update the transition's condition, so that it remains open only in this new search state
+                    delete graph->getTransition(**tran)->condition; // transition allways stores conditions in dynamic mem, so delete it
+                    graph->getTransition(**tran)->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
+                    graph->simplify();
+                    output.append(graph);
+                }
             }
         }
     }
@@ -198,7 +189,7 @@ bool DesignGraph::operator ==(const DesignGraph &other) const
     }
     if(*inventory != *other.inventory)
         return false;
-    return (*current != *other.current);
+    return (*current == *other.current);
 }
 
 RegionNode *DesignGraph::getNode(const RegionNode &node) const
@@ -232,19 +223,51 @@ uint DesignGraph::qHash(const DesignGraph &graph)
     return static_cast<uint>(qFloor(graph.heuristic()));
 }
 
+void DesignGraph::addTransition(const QPointF &p1, const QPointF &p2, const SimpleCondition &cond, DoorInstance * door)
+{
+    Transition * tran = new Transition();
+    tran->door = door;
+
+    for(auto node = nodes.begin(); node != nodes.end(); node++){
+
+        // check if the node we are iterating through contains one or both of the points of the separation
+        if((*node)->containsPoint(p1))
+            tran->node1 = *node;
+        if ((*node)->containsPoint(p2))
+            tran->node2 = *node;
+
+        if(tran->isValid()) // when both nodes have been found, it makes no sense to keep iterating. we break out of the loop
+            break;
+    }
+    if(!tran->isValid()){ // if on the loop, for whatever reason we could not create a valid transition, free its memory
+        delete tran;
+    } else {
+        // if the transition is well-formed, then we add it our list of transitions
+        transitions.append(tran);
+        tran->node1->transitions.append(tran); // and add the transition to the origin node's transition list
+        tran->condition = new SimpleCondition(cond); // finally, set the transition condition to a NEW cond
+        // is important that the transition contains a new condition because the condition will be exploration-dependent modified
+    }
+}
+
 void DesignGraph::fuse(QList<RegionNode *> component)
 {
+    if(component.length() == 1)
+        return;
     RegionNode * fused = RegionNode::fusion(component);
     for(int i = 0; i < component.length(); i++){
         // we have to do dirty work to make sure that no transition is un-stable and delete all unused
-        for(int i = transitions.length()-1; i >= 0; i--){
+        if(this->current == component[i])
+            this->current = fused;
+        component[i]->transitions.clear(); // so that we do not delete a transition twice
+        for(int j = transitions.length()-1; j >= 0; j--){
             // if any transition starts in a node that was fused, then delete it.
-            if(transitions[i]->node1 == component[i]){
-                delete transitions[i];
-                transitions.removeAt(i);
+            if(transitions[j]->node1 == component[i]){
+                delete transitions[j];
+                transitions.removeAt(j);
             } // otherwise, if it ends AND does not start in a node that was fused, then update the destination to the newly fused node
-            else if(transitions[i]->node2 == component[i])
-                transitions[i]->node2 = fused;
+            else if(transitions[j]->node2 == component[i])
+                transitions[j]->node2 = fused;
         }
         destroyNode(component[i]); // destroy nodes from the graph, not the component (memory will be free'd anyways
     }

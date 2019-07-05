@@ -41,6 +41,8 @@ public:
      */
     void readJson(const QJsonObject & json);
 
+    void updateErrorPath(QList<SelectableInstance*> & path);
+
 protected:
     /**
      * @brief showEvent handles the show event

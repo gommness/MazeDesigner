@@ -1,10 +1,13 @@
 #include "regionnode.h"
 
-RegionNode::RegionNode(QPolygonF *parent) : parent(parent) {}
+RegionNode::RegionNode(QPolygonF *parent) {
+    parents.insert(parent);
+    //parents.append(parent);
+}
 
 RegionNode::RegionNode(RegionNode &other)
 {
-    parent = other.parent;
+    parents.unite(other.parents);
     for(auto key = other.items.begin(); key != other.items.end(); key++){
         // we do not create copies of the instances, since we only care for the references
         this->items.append(*key);
@@ -22,11 +25,19 @@ RegionNode::~RegionNode() {
 
 bool RegionNode::operator ==(const RegionNode &other) const
 {
-    bool output = this->parent == other.parent;
+    if(this->parents.size() != other.parents.size())
+        return false;
+    //bool output;//  = this->parents == other.parents;
+    auto parentList = parents.toList();
+    auto otherParents = other.parents.toList();
+    for(int i = 0; i < parentList.size(); i++)
+        if(*parentList[i] != *otherParents[i])
+            return false;
+
     // README watch out. if the list are not ordered in the same way, then they are considered not equal
     // also, remember that the KeyInstances stored in our lists are allways the same, thus reference equallity is good enough
-    output &= this->items == other.items;
-    return output;
+    return this->items == other.items;
+    //return output;
 }
 
 bool RegionNode::operator !=(const RegionNode &other) const
@@ -43,8 +54,10 @@ RegionNode *RegionNode::fusion(QList<RegionNode *> &nodes)
     // give all the items contained in nodes to the fused node, since it will have the items from every node
     // store all transitions starting from any of the nodes, in the auxiliary list
     for(auto node = nodes.begin(); node != nodes.end(); node++){
-        qDebug() << (*node)->parent->isEmpty();
-        region = (*node)->parent->united(region);
+        qDebug() << (*node)->parents.isEmpty();
+        output->parents.unite((*node)->parents);
+        //output->parents.append((*node)->parents);
+        //region = (*node)->parent->united(region);
         output->items.append((*node)->items);
         ts.append((*node)->transitions);
     }
@@ -69,7 +82,13 @@ RegionNode *RegionNode::fusion(QList<RegionNode *> &nodes)
 
 bool RegionNode::containsPoint(const QPointF &point) const
 {
-    return parent->containsPoint(point, Qt::FillRule::OddEvenFill);
+    bool output = false;
+    for(auto poly = parents.begin(); poly != parents.end(); poly++){
+        output = (*poly)->containsPoint(point, Qt::FillRule::OddEvenFill);
+        if(output == false)
+            return false;
+    }
+    return output;
 }
 
 QList<Transition *> RegionNode::getOpenTransitions() const
@@ -118,8 +137,14 @@ bool Transition::operator ==(const Transition &other) const
 {
     // README remember to check equality on content and not pointers. this is actually very important
     bool output = *this->condition == *other.condition;
+    qDebug()<<"-----------------------TRANSITION COMPARATION----------------------------------";
+    qDebug() << "condition"<<this->condition->toString()<<"equal to"<<other.condition->toString()<<"?"<<output;
     output &= *this->node1 == *other.node1;
+    qDebug() << "node"<<node1<<"equal to"<<other.node1<<"?"<<output;
     output &= *this->node2 == *other.node2;
+    qDebug() << "node"<<node2<<"equal to"<<other.node2<<"?"<<output;
+    qDebug() <<"is transition"<<this<<" equalto "<<&other<<"???"<<output;
+    qDebug()<<"...............................................................................";
     return output;
 }
 

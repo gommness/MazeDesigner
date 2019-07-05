@@ -16,6 +16,7 @@ INPUT(
 ./release\condition.o
 ./release\simplecondition.o
 ./release\compositecondition.o
+./release\*.o
 ./release\instancecanvas.o
 ./release\doorinstance.o
 ./release\keyinstance.o

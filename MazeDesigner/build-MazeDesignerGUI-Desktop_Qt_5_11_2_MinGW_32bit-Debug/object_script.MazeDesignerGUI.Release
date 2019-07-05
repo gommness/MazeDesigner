@@ -16,6 +16,10 @@ INPUT(
 ./release\condition.o
 ./release\simplecondition.o
 ./release\compositecondition.o
+./release\designgraph.o
+./release\explorationtree.o
+./release\inventory.o
+./release\regionnode.o
 ./release\instancecanvas.o
 ./release\doorinstance.o
 ./release\keyinstance.o

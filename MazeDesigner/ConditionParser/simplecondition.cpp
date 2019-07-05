@@ -85,9 +85,11 @@ bool SimpleCondition::validate() const
 Condition::CostList SimpleCondition::getCost() const
 {
     Condition::CostList output;
-    Key key = keyRepo->keyWithName(name);
-    if(key.isValid())
-        output.append(Cost(&key, value));
+    if(!this->isEmpty()){
+        Key key = keyRepo->keyWithName(name);
+        if(key.isValid())
+            output.append(Cost(&key, value));
+    }
     return output;
 }
 

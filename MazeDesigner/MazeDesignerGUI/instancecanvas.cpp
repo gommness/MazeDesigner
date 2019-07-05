@@ -121,6 +121,13 @@ void InstanceCanvas::readJson(const QJsonObject &json)
     this->startToken = startToken;
 }
 
+void InstanceCanvas::updateErrorPath(QList<SelectableInstance *> &path)
+{
+    this->path.clear();
+    this->path.append(path);
+    update();
+}
+
 void InstanceCanvas::showEvent(QShowEvent *)
 {
     design->show();
@@ -206,8 +213,8 @@ void InstanceCanvas::mousePressEvent(QMouseEvent *event)
                     emit selectDoor(*door);
                 }
                 //DELETEME {
-                path.append(selected);
-                update();
+                //path.append(selected);
+                //update();
                 //DELETEME }
                 emit select(*selected);
             } else { // if there is no selection, then we create a key

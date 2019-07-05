@@ -34,11 +34,13 @@ public:
     QList<RegionNode*> nodes;
     QList<Transition*> transitions;
     QList<SelectableInstance *> instances;
+    QList<QPolygonF> shapes;
     Inventory * inventory;
     RegionNode * current;
 
 private:
     static uint qHash(const DesignGraph &key);
+    void addTransition(const QPointF & p1, const QPointF & p2, const SimpleCondition & cond, DoorInstance * door);
     void fuse(QList<RegionNode*>);
     QList<QList<RegionNode *>> tarjanAlgorithm();
     QList<RegionNode*> stronglyConnect(RegionNode * node, QStack<RegionNode *> & stack, int & index);

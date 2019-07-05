@@ -16,6 +16,7 @@ INPUT(
 ./debug\condition.o
 ./debug\simplecondition.o
 ./debug\compositecondition.o
+./debug\*.o
 ./debug\instancecanvas.o
 ./debug\doorinstance.o
 ./debug\keyinstance.o
