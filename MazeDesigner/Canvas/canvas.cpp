@@ -284,7 +284,7 @@ void Canvas::readJson(const QJsonObject &json)
         }
     }
     //README do we have to free memory????
-    shapes = aux;
+    shapes = aux.simplified();
 }
 
 QPainterPath Canvas::getDesign() const

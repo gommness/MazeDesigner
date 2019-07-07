@@ -20,8 +20,10 @@ DesignGraph::DesignGraph(const InstanceCanvas &canvas)
     // the nodes. when a node contains a point of the separation, we set it to be one of the nodes of the transition
     for(auto door = canvas.doors.begin(); door != canvas.doors.end(); door++){
         QPair<QPointF, QPointF> pointPair = (*door)->separation();
-        addTransition(pointPair.first, pointPair.second, (*door)->getCondition1(), *door);
-        addTransition(pointPair.second, pointPair.first, (*door)->getCondition2(), *door);
+        if((*door)->getCondition1().isSatisfiable())
+            addTransition(pointPair.first, pointPair.second, (*door)->getCondition1(), *door);
+        if((*door)->getCondition2().isSatisfiable())
+            addTransition(pointPair.second, pointPair.first, (*door)->getCondition2(), *door);
     }
     // now we have all nodes and transitions between them. Now the only thing left is to give the nodes the items that are
     // contained in their polygons AND set the current node to the one that contains the startToken. Then init the empty inventory
@@ -106,8 +108,9 @@ QList<DesignGraph *> DesignGraph::expand()
             // insert the door into the instances of the search
             graph->instances.append((*tran)->door);
             // finally, update the transition's condition, so that it remains open only in this new search state
-            delete graph->getTransition(**tran)->condition; // transition allways stores conditions in dynamic mem, so delete it
-            graph->getTransition(**tran)->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
+            Transition *aux = graph->getTransition(**tran);
+            delete aux->condition; // transition allways stores conditions in dynamic mem, so delete it
+            aux->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
             graph->simplify();
             output.append(graph);
         } else {
@@ -120,8 +123,9 @@ QList<DesignGraph *> DesignGraph::expand()
                     // insert the door into the instances of the search
                     graph->instances.append((*tran)->door);
                     // finally, update the transition's condition, so that it remains open only in this new search state
-                    delete graph->getTransition(**tran)->condition; // transition allways stores conditions in dynamic mem, so delete it
-                    graph->getTransition(**tran)->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
+                    Transition *aux = graph->getTransition(**tran);
+                    delete aux->condition; // transition allways stores conditions in dynamic mem, so delete it
+                    aux->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
                     graph->simplify();
                     output.append(graph);
                 }

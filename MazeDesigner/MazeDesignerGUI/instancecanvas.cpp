@@ -41,7 +41,7 @@ void InstanceCanvas::writeJson(QJsonObject &json) const
     json.insert(JSONINSTANCESKEY, instances);
 }
 
-void InstanceCanvas::readJson(const QJsonObject &json)
+void InstanceCanvas::readJson(const QJsonObject &json, KeyRepository * repo)
 {
     int keysMaxId;
     int doorsMaxId;
@@ -84,7 +84,7 @@ void InstanceCanvas::readJson(const QJsonObject &json)
         QJsonArray jsonArray = jsonInstances[JSONINSTANCESDOORSKEY].toArray();
         for(auto jsonDoor = jsonArray.begin(); jsonDoor != jsonArray.end(); jsonDoor++){
             if(jsonDoor->isObject()) // no else so that if there is a non-obj entry, we don't freak out
-                doors.append(new DoorInstance(jsonDoor->toObject()));
+                doors.append(new DoorInstance(jsonDoor->toObject(), repo));
         }
     } else {
         throw std::runtime_error("no "+QString(JSONINSTANCESDOORSKEY).toUtf8()+" key found in jsonObject");

@@ -37,10 +37,22 @@ void DoorConditionConsole::onDoorSelected(DoorInstance &door)
 {
     onClearSelection();
     //firs we disconnect the signals to avoid a signal feedback loop
-    if(door.condition1 != nullptr)
+    //sat1->setCheckState(Qt::CheckState::Unchecked);
+    //sat2->setCheckState(Qt::CheckState::Unchecked);
+    if(door.condition1 != nullptr){
         condition1->setText(door.condition1->toString());
-    if(door.condition2 != nullptr)
+        if(door.condition1->isSatisfiable())
+            sat1->setCheckState(Qt::CheckState::Checked);
+        else
+            sat1->setCheckState(Qt::CheckState::Unchecked);
+    }
+    if(door.condition2 != nullptr){
         condition2->setText(door.condition2->toString());
+        if(door.condition2->isSatisfiable())
+            sat2->setCheckState(Qt::CheckState::Checked);
+        else
+            sat2->setCheckState(Qt::CheckState::Unchecked);
+    }
     selected = &door;
     connectSignals();
 }
@@ -49,6 +61,8 @@ void DoorConditionConsole::onClearSelection()
 {
     disconnectSignals();
     selected = nullptr;
+    sat1->setCheckState(Qt::CheckState::Unchecked);
+    sat2->setCheckState(Qt::CheckState::Unchecked);
     condition1->setText("");
     condition2->setText("");
 }

@@ -63,7 +63,7 @@ void MainWindow::openDesign()
     roomListWidget->load();
     keyRepo->readJson(jObj);
     keyListWidget->load();
-    instanceCanvas->readJson(jObj);
+    instanceCanvas->readJson(jObj, keyRepo);
     designTabs->tabBar()->setCurrentIndex(index);
     designCanvas->update(); // yeah wtf, otherwise, the canvas would not be updated
     /*

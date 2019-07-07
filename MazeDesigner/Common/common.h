@@ -14,6 +14,8 @@
 #define TODO(x) void(0)
 #endif
 
+#define DEBUG(x) qDebug()<<"DEBUG ("<<__FILE__<<" line: "<<__LINE__<<") :"<< x
+
 namespace json {
     /**
      * @brief parsePoint parses a string into a point

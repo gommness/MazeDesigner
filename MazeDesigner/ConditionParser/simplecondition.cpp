@@ -29,7 +29,7 @@ SimpleCondition::SimpleCondition(QString condition, KeyRepository* repo, bool sa
     if(size >= 2)
         value = list[size-2].toUInt(&ok); // not the last word, but the word before the last
         if(!ok)
-            value = 0;
+            value = 1;
     else
         value = 1; // value is not required in the syntax. if omitted, then the condition assumes it means have 1 <item>
 }

@@ -52,7 +52,7 @@ bool DoorInstance::contains(const QPointF &point) const
     return area.containsPoint(point, Qt::FillRule::OddEvenFill);
 }
 
-DoorInstance::DoorInstance(const QJsonObject &json)
+DoorInstance::DoorInstance(const QJsonObject &json, KeyRepository * repo)
 {
     int id;
     QLineF line;
@@ -72,12 +72,12 @@ DoorInstance::DoorInstance(const QJsonObject &json)
     }
 
     if(json.contains("condition1") && json["condition1"].isObject()){
-        condition1 = new SimpleCondition(json["condition1"].toObject());
+        condition1 = new SimpleCondition(json["condition1"].toObject(), repo);
     } else {
         throw std::runtime_error("missing condition for door instance in jsonObject");
     }
     if(json.contains("condition2") && json["condition2"].isObject()){
-        condition2 = new SimpleCondition(json["condition2"].toObject());
+        condition2 = new SimpleCondition(json["condition2"].toObject(), repo);
     } else {
         delete condition1;
         throw std::runtime_error("missing condition for door instance in jsonObject");

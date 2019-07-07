@@ -35,7 +35,7 @@ public:
      * @param json the json to parse
      * @return the doorInstance represented by the json
      */
-    DoorInstance(const QJsonObject & json);
+    DoorInstance(const QJsonObject & json, KeyRepository * repo);
     /**
      * @brief toJson creates a QJsonObject holding the information if the object
      * @return said JsonObject

@@ -39,7 +39,7 @@ public:
      * @brief readJson initializes all data from a json object
      * @param json the json object that holds all the necessary information
      */
-    void readJson(const QJsonObject & json);
+    void readJson(const QJsonObject & json, KeyRepository * repo);
 
     void updateErrorPath(QList<SelectableInstance*> & path);
 

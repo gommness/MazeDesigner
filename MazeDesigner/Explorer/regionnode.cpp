@@ -136,12 +136,18 @@ Condition::CostList Transition::getCost() const
 bool Transition::operator ==(const Transition &other) const
 {
     // README remember to check equality on content and not pointers. this is actually very important
-    bool output = *this->condition == *other.condition;
+    bool output;
+    if(this->condition == nullptr && other.condition == nullptr)
+        output = true;
+    else if(this->condition != nullptr && other.condition != nullptr)
+        output = *this->condition == *other.condition;
+    else
+        return false;
     qDebug()<<"-----------------------TRANSITION COMPARATION----------------------------------";
-    qDebug() << "condition"<<this->condition->toString()<<"equal to"<<other.condition->toString()<<"?"<<output;
-    output &= *this->node1 == *other.node1;
+    qDebug() << "condition"<<this->condition<<"equal to"<<other.condition<<"?"<<output;
+    output &= (!this->node1 && !other.node1)||(this->node1 && other.node1 && *this->node1 == *other.node1);
     qDebug() << "node"<<node1<<"equal to"<<other.node1<<"?"<<output;
-    output &= *this->node2 == *other.node2;
+    output &= (!this->node2 && !other.node2)||(this->node2 && other.node2 && *this->node2 == *other.node2);
     qDebug() << "node"<<node2<<"equal to"<<other.node2<<"?"<<output;
     qDebug() <<"is transition"<<this<<" equalto "<<&other<<"???"<<output;
     qDebug()<<"...............................................................................";
