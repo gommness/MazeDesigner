@@ -143,14 +143,14 @@ bool Transition::operator ==(const Transition &other) const
         output = *this->condition == *other.condition;
     else
         return false;
-    qDebug()<<"-----------------------TRANSITION COMPARATION----------------------------------";
-    qDebug() << "condition"<<this->condition<<"equal to"<<other.condition<<"?"<<output;
+    //qDebug()<<"-----------------------TRANSITION COMPARATION----------------------------------";
+    //qDebug() << "condition"<<this->condition<<"equal to"<<other.condition<<"?"<<output;
     output &= (!this->node1 && !other.node1)||(this->node1 && other.node1 && *this->node1 == *other.node1);
-    qDebug() << "node"<<node1<<"equal to"<<other.node1<<"?"<<output;
+    //qDebug() << "node"<<node1<<"equal to"<<other.node1<<"?"<<output;
     output &= (!this->node2 && !other.node2)||(this->node2 && other.node2 && *this->node2 == *other.node2);
-    qDebug() << "node"<<node2<<"equal to"<<other.node2<<"?"<<output;
-    qDebug() <<"is transition"<<this<<" equalto "<<&other<<"???"<<output;
-    qDebug()<<"...............................................................................";
+    //qDebug() << "node"<<node2<<"equal to"<<other.node2<<"?"<<output;
+    //qDebug() <<"is transition"<<this<<" equalto "<<&other<<"???"<<output;
+    //qDebug()<<"...............................................................................";
     return output;
 }
 

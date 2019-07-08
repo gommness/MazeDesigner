@@ -55,8 +55,8 @@ Inventory &Inventory::spend(const int &id, int num)
     if(num <= 0)
         return *this;
     for(int i = 0; i < items.length(); i++){
-        updateCounts(items[i]);
         if(items[i]->getModel().getId() == id){
+            updateCounts(items[i],-1);
             items.removeAt(i);
             num--;
             if(num == 0)
@@ -79,9 +79,10 @@ Inventory &Inventory::spend(Condition::Cost &costs)
     return this->spend(costs.first->getId(), static_cast<int>(costs.second));
 }
 
-bool Inventory::canAfford(Condition::Cost &costs)
+bool Inventory::canAfford(const int id, uint n)
 {
-    return this->contains(costs.first->getId(), static_cast<int>(costs.second));
+    DEBUG("costs:"<<id);
+    return this->contains(id, static_cast<int>(n));
 }
 
 bool Inventory::operator ==(const Inventory &other) const
@@ -98,8 +99,9 @@ bool Inventory::contains(const int &keyModel, int num)
 {
     if(num <= 0)
         return true;
-    for(auto key = items.begin(); key != items.end(); key++){
-        if((*key)->getModel().getId() == keyModel){
+    for(int i = 0;i < items.length();i++){
+    //for(auto key = items.begin(); key != items.end(); key++){
+        if(items[i]->getModel().getId() == keyModel){
             num--;
             if(num == 0)
                 return true;

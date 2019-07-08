@@ -82,7 +82,8 @@ DesignGraph::DesignGraph(DesignGraph &other)
 
     }
     // this will not create a copy of the items, only will append their references
-    this->inventory = other.inventory;
+    this->inventory = new Inventory;
+    *this->inventory = *other.inventory;
     // current node will be the corresponding copied node of other's current node
     this->current = this->getNode(*other.current);
     this->instances.append(other.instances);
@@ -109,21 +110,27 @@ QList<DesignGraph *> DesignGraph::expand()
             graph->instances.append((*tran)->door);
             // finally, update the transition's condition, so that it remains open only in this new search state
             Transition *aux = graph->getTransition(**tran);
+            graph->current = aux->node2;
             delete aux->condition; // transition allways stores conditions in dynamic mem, so delete it
             aux->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
             graph->simplify();
             output.append(graph);
         } else {
-            for(auto cost = costs.begin(); cost != costs.end(); cost++){ // iterate through all the possible costs we could spend
-                if(inventory->canAfford(*cost)){ // if we can afford a cost
+            for(int i = 0; i < costs.length(); i++){
+            //for(auto cost = costs.begin(); cost != costs.end(); cost++){ // iterate through all the possible costs we could spend
+                Condition::Cost c(costs.at(i));
+                int id = c.first->getId();
+                uint number = c.second;
+                if(inventory->canAfford(id, number)){ // if we can afford a cost
                     // create a new search state
                     DesignGraph * graph = new DesignGraph(*this);
                     // in this new search state, spend the costs of traveling
-                    graph->inventory->spend(*cost);
+                    graph->inventory->spend(id, number);
                     // insert the door into the instances of the search
                     graph->instances.append((*tran)->door);
                     // finally, update the transition's condition, so that it remains open only in this new search state
                     Transition *aux = graph->getTransition(**tran);
+                    graph->current = aux->node2;
                     delete aux->condition; // transition allways stores conditions in dynamic mem, so delete it
                     aux->condition = new SimpleCondition(SimpleCondition::emptyCondition());// create empty cond
                     graph->simplify();
@@ -154,6 +161,7 @@ void DesignGraph::simplify()
     for(auto component = stronglyConnectedComponents.begin(); component != stronglyConnectedComponents.end(); component++){
         fuse(*component);
     }
+    resetTarjanNodeStates();
 }
 
 void DesignGraph::destroyNode(RegionNode *node)
@@ -289,6 +297,15 @@ QList<QList<RegionNode *> > DesignGraph::tarjanAlgorithm()
            output.append(stronglyConnect(*node, stack, index));
     }
     return output;
+}
+
+void DesignGraph::resetTarjanNodeStates()
+{
+    for(auto node = nodes.begin(); node != nodes.end(); node++){
+        (*node)->index = -1;
+        (*node)->onStack = false;
+        (*node)->lowLink = -1;
+    }
 }
 
 QList<RegionNode *> DesignGraph::stronglyConnect(RegionNode *node, QStack<RegionNode *> &stack, int &index)

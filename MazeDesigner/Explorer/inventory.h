@@ -17,7 +17,7 @@ public:
     Inventory & spend(const int & id, int num = 1);
     Inventory & spend(const QList<int> & ids);
     Inventory & spend(Condition::Cost & costs);
-    bool canAfford(Condition::Cost & costs);
+    bool canAfford(const int id, uint n);
     bool operator ==(const Inventory & other) const;
     bool operator !=(const Inventory & other) const;
     bool contains(const int & keyModel, int num = 1);
