@@ -1,7 +1,8 @@
 #include "regionnode.h"
 
 RegionNode::RegionNode(QPolygonF *parent) {
-    parents.insert(parent);
+    if(parent != nullptr && !parent->isEmpty())
+        parents.insert(parent);
     //parents.append(parent);
 }
 
@@ -54,7 +55,6 @@ RegionNode *RegionNode::fusion(QList<RegionNode *> &nodes)
     // give all the items contained in nodes to the fused node, since it will have the items from every node
     // store all transitions starting from any of the nodes, in the auxiliary list
     for(auto node = nodes.begin(); node != nodes.end(); node++){
-        qDebug() << (*node)->parents.isEmpty();
         output->parents.unite((*node)->parents);
         //output->parents.append((*node)->parents);
         //region = (*node)->parent->united(region);
@@ -67,6 +67,9 @@ RegionNode *RegionNode::fusion(QList<RegionNode *> &nodes)
         // the starting point of the new transition will be the fused node anyways so don't worry
         // now if the transition ended in a node of the list, we'd have to modify the transition so that it ends in the fused node
         // note that the end points of the transition might end in a different third node, thus we HAVE to make this comparation
+        if(nodes.contains(ts[i]->node1) && nodes.contains(ts[i]->node2) && ts[i]->condition->isEmpty())
+            continue;
+
         RegionNode * dest;
         if(nodes.contains(ts[i]->node2)){ // if the destination node (2) of the previous transition contains a node in our list
             dest = output; // then the destination node is none other than this newly created fused node
@@ -100,6 +103,16 @@ QList<Transition *> RegionNode::getOpenTransitions() const
     return output;
 }
 
+void RegionNode::removeTransition(Transition *t)
+{
+    for(int i = 0; i < transitions.length(); i++){
+        if(transitions[i] == t){
+            transitions.removeAt(i);
+            return;
+        }
+    }
+}
+
 uint RegionNode::qHash(const RegionNode &key)
 {
     return (static_cast<uint>(key.items.length())+1)*(static_cast<uint>(key.transitions.length())+1);
@@ -123,7 +136,7 @@ bool Transition::isValid() const
 
 bool Transition::isOpen() const
 {
-    return condition == nullptr || condition->isEmpty();
+    return condition == nullptr || (condition->isEmpty() && condition->isSatisfiable());
 }
 
 Condition::CostList Transition::getCost() const

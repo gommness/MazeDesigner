@@ -67,6 +67,7 @@ SOURCES       = ../../MazeDesigner/MazeDesignerGUI/main.cpp \
 		../../MazeDesigner/ConditionParser/condition.cpp \
 		../../MazeDesigner/ConditionParser/simplecondition.cpp \
 		../../MazeDesigner/ConditionParser/compositecondition.cpp \
+		../Explorer/*.cpp \
 		../../MazeDesigner/MazeDesignerGUI/instancecanvas.cpp \
 		../../MazeDesigner/MazeDesignerGUI/doorinstance.cpp \
 		../../MazeDesigner/MazeDesignerGUI/keyinstance.cpp \
@@ -97,6 +98,7 @@ OBJECTS       = main.o \
 		condition.o \
 		simplecondition.o \
 		compositecondition.o \
+		*.o \
 		instancecanvas.o \
 		doorinstance.o \
 		keyinstance.o \
@@ -336,6 +338,7 @@ DIST          = ../../MazeDesigner/key.png \
 		../../MazeDesigner/ConditionParser/condition.cpp \
 		../../MazeDesigner/ConditionParser/simplecondition.cpp \
 		../../MazeDesigner/ConditionParser/compositecondition.cpp \
+		../Explorer/*.cpp \
 		../../MazeDesigner/MazeDesignerGUI/instancecanvas.cpp \
 		../../MazeDesigner/MazeDesignerGUI/doorinstance.cpp \
 		../../MazeDesigner/MazeDesignerGUI/keyinstance.cpp \
@@ -758,7 +761,7 @@ distdir: FORCE
 	$(COPY_FILE) --parents $(DIST) $(DISTDIR)/
 	$(COPY_FILE) --parents ../../../Qt/5.11.1/gcc_64/mkspecs/features/data/dummy.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../../MazeDesigner/MazeDesignerGUI/mainwindow.h ../Canvas/*.h ../Keys/*.h ../ConditionParser/*.h ../../MazeDesigner/MazeDesignerGUI/instancecanvas.h ../../MazeDesigner/MazeDesignerGUI/doorinstance.h ../../MazeDesigner/MazeDesignerGUI/keyinstance.h ../../MazeDesigner/MazeDesignerGUI/selectableinstance.h ../../MazeDesigner/MazeDesignerGUI/roomlistwidget.h ../../MazeDesigner/MazeDesignerGUI/exporter.h ../../MazeDesigner/MazeDesignerGUI/console.h ../../MazeDesigner/MazeDesignerGUI/doorconditionconsole.h $(DISTDIR)/
-	$(COPY_FILE) --parents ../../MazeDesigner/MazeDesignerGUI/main.cpp ../../MazeDesigner/MazeDesignerGUI/mainwindow.cpp ../../MazeDesigner/Canvas/canvas.cpp ../../MazeDesigner/Canvas/grid.cpp ../../MazeDesigner/Canvas/room.cpp ../../MazeDesigner/Canvas/roomcanvas.cpp ../../MazeDesigner/Canvas/shape.cpp ../../MazeDesigner/Keys/keylistwidget.cpp ../../MazeDesigner/Keys/key.cpp ../../MazeDesigner/Keys/keyeditorwidget.cpp ../../MazeDesigner/Keys/keyispowerupeditor.cpp ../../MazeDesigner/Keys/keynameeditor.cpp ../../MazeDesigner/Keys/keyrepository.cpp ../../MazeDesigner/Common/common.cpp ../../MazeDesigner/ConditionParser/condition.cpp ../../MazeDesigner/ConditionParser/simplecondition.cpp ../../MazeDesigner/ConditionParser/compositecondition.cpp ../../MazeDesigner/MazeDesignerGUI/instancecanvas.cpp ../../MazeDesigner/MazeDesignerGUI/doorinstance.cpp ../../MazeDesigner/MazeDesignerGUI/keyinstance.cpp ../../MazeDesigner/MazeDesignerGUI/selectableinstance.cpp ../../MazeDesigner/MazeDesignerGUI/roomlistwidget.cpp ../../MazeDesigner/MazeDesignerGUI/exporter.cpp ../../MazeDesigner/MazeDesignerGUI/console.cpp ../../MazeDesigner/MazeDesignerGUI/doorconditionconsole.cpp $(DISTDIR)/
+	$(COPY_FILE) --parents ../../MazeDesigner/MazeDesignerGUI/main.cpp ../../MazeDesigner/MazeDesignerGUI/mainwindow.cpp ../../MazeDesigner/Canvas/canvas.cpp ../../MazeDesigner/Canvas/grid.cpp ../../MazeDesigner/Canvas/room.cpp ../../MazeDesigner/Canvas/roomcanvas.cpp ../../MazeDesigner/Canvas/shape.cpp ../../MazeDesigner/Keys/keylistwidget.cpp ../../MazeDesigner/Keys/key.cpp ../../MazeDesigner/Keys/keyeditorwidget.cpp ../../MazeDesigner/Keys/keyispowerupeditor.cpp ../../MazeDesigner/Keys/keynameeditor.cpp ../../MazeDesigner/Keys/keyrepository.cpp ../../MazeDesigner/Common/common.cpp ../../MazeDesigner/ConditionParser/condition.cpp ../../MazeDesigner/ConditionParser/simplecondition.cpp ../../MazeDesigner/ConditionParser/compositecondition.cpp ../Explorer/*.cpp ../../MazeDesigner/MazeDesignerGUI/instancecanvas.cpp ../../MazeDesigner/MazeDesignerGUI/doorinstance.cpp ../../MazeDesigner/MazeDesignerGUI/keyinstance.cpp ../../MazeDesigner/MazeDesignerGUI/selectableinstance.cpp ../../MazeDesigner/MazeDesignerGUI/roomlistwidget.cpp ../../MazeDesigner/MazeDesignerGUI/exporter.cpp ../../MazeDesigner/MazeDesignerGUI/console.cpp ../../MazeDesigner/MazeDesignerGUI/doorconditionconsole.cpp $(DISTDIR)/
 	$(COPY_FILE) --parents ../../MazeDesigner/MazeDesignerGUI/mainwindow.ui $(DISTDIR)/
 
 
@@ -985,6 +988,8 @@ moc_mainwindow.cpp: ../../../Qt/5.11.1/gcc_64/include/QtWidgets/QMainWindow \
 		../../MazeDesigner/MazeDesignerGUI/roomlistwidget.h \
 		../../MazeDesigner/MazeDesignerGUI/console.h \
 		../../MazeDesigner/MazeDesignerGUI/doorconditionconsole.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QCheckBox \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qcheckbox.h \
 		../../MazeDesigner/MazeDesignerGUI/mainwindow.h \
 		moc_predefs.h \
 		../../../Qt/5.11.1/gcc_64/bin/moc
@@ -1703,6 +1708,12 @@ moc_doorconditionconsole.cpp: ../../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidge
 		../../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QLabel \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QCheckBox \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qcheckbox.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../MazeDesigner/ConditionParser/compositecondition.h \
 		../../MazeDesigner/ConditionParser/simplecondition.h \
 		../../MazeDesigner/ConditionParser/condition.h \
@@ -1943,6 +1954,8 @@ main.o: ../../MazeDesigner/MazeDesignerGUI/main.cpp ../../MazeDesigner/MazeDesig
 		../../MazeDesigner/MazeDesignerGUI/roomlistwidget.h \
 		../../MazeDesigner/MazeDesignerGUI/console.h \
 		../../MazeDesigner/MazeDesignerGUI/doorconditionconsole.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QCheckBox \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qcheckbox.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QApplication \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qapplication.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qcoreapplication.h \
@@ -2145,6 +2158,8 @@ mainwindow.o: ../../MazeDesigner/MazeDesignerGUI/mainwindow.cpp ../../MazeDesign
 		../../MazeDesigner/MazeDesignerGUI/roomlistwidget.h \
 		../../MazeDesigner/MazeDesignerGUI/console.h \
 		../../MazeDesigner/MazeDesignerGUI/doorconditionconsole.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QCheckBox \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qcheckbox.h \
 		../../MazeDesigner/MazeDesignerGUI/ui_mainwindow.h \
 		../../../Qt/5.11.1/gcc_64/include/QtCore/QVariant \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QApplication \
@@ -2169,7 +2184,17 @@ mainwindow.o: ../../MazeDesigner/MazeDesignerGUI/mainwindow.cpp ../../MazeDesign
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qfileinfo.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QFileDialog \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qfiledialog.h \
-		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qdialog.h
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qdialog.h \
+		../../MazeDesigner/Explorer/explorationtree.h \
+		../../MazeDesigner/Explorer/designgraph.h \
+		../../MazeDesigner/Explorer/regionnode.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/QList \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/QRegion \
+		../../MazeDesigner/Explorer/inventory.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/QPainterPath \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QStack \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/qstack.h \
+		../../../Qt/5.11.1/gcc_64/include/QtCore/QHash
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o mainwindow.o ../../MazeDesigner/MazeDesignerGUI/mainwindow.cpp
 
 canvas.o: ../../MazeDesigner/Canvas/canvas.cpp ../../MazeDesigner/Canvas/canvas.h \
@@ -4329,6 +4354,9 @@ compositecondition.o: ../../MazeDesigner/ConditionParser/compositecondition.cpp 
 		../../../Qt/5.11.1/gcc_64/include/QtCore/qjsonarray.h
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o compositecondition.o ../../MazeDesigner/ConditionParser/compositecondition.cpp
 
+*.o: ../Explorer/*.cpp 
+	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o *.o ../Explorer/*.cpp
+
 instancecanvas.o: ../../MazeDesigner/MazeDesignerGUI/instancecanvas.cpp ../../MazeDesigner/MazeDesignerGUI/instancecanvas.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QWidget \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qwidget.h \
@@ -5341,6 +5369,12 @@ doorconditionconsole.o: ../../MazeDesigner/MazeDesignerGUI/doorconditionconsole.
 		../../../Qt/5.11.1/gcc_64/include/QtGui/qpen.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QLabel \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qlabel.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QCheckBox \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qcheckbox.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qabstractbutton.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/qicon.h \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/QPushButton \
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qpushbutton.h \
 		../../MazeDesigner/ConditionParser/compositecondition.h \
 		../../MazeDesigner/ConditionParser/simplecondition.h \
 		../../MazeDesigner/ConditionParser/condition.h \
@@ -5368,7 +5402,8 @@ doorconditionconsole.o: ../../MazeDesigner/MazeDesignerGUI/doorconditionconsole.
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qlayout.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qlayoutitem.h \
 		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qboxlayout.h \
-		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qgridlayout.h
+		../../../Qt/5.11.1/gcc_64/include/QtWidgets/qgridlayout.h \
+		../../../Qt/5.11.1/gcc_64/include/QtGui/QResizeEvent
 	$(CXX) -c $(CXXFLAGS) $(INCPATH) -o doorconditionconsole.o ../../MazeDesigner/MazeDesignerGUI/doorconditionconsole.cpp
 
 moc_mainwindow.o: moc_mainwindow.cpp 

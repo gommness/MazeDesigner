@@ -43,6 +43,7 @@ public:
     static RegionNode * fusion(QList<RegionNode *> & nodes);
     bool containsPoint(const QPointF & point) const;
     QList<Transition *> getOpenTransitions() const;
+    void removeTransition(Transition * t);
 private:
     static uint qHash(const RegionNode &key);
     bool checkConnexion(QHash<RegionNode*, QList<RegionNode*>> & map);

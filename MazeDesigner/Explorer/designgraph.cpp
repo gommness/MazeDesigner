@@ -268,13 +268,14 @@ void DesignGraph::fuse(QList<RegionNode *> component)
         return;
     RegionNode * fused = RegionNode::fusion(component);
     for(int i = 0; i < component.length(); i++){
-        // we have to do dirty work to make sure that no transition is un-stable and delete all unused
-        if(this->current == component[i])
+        if(this->current == component[i])//if current node was one of the fused nodes, then update it to the fused cluster of nodes
             this->current = fused;
+        // we have to do dirty work to make sure that no transition is un-stable and delete all unused
         component[i]->transitions.clear(); // so that we do not delete a transition twice
-        for(int j = transitions.length()-1; j >= 0; j--){
+        for(int j = transitions.length()-1; j >= 0; j--){ // loop through the design's transitions
             // if any transition starts in a node that was fused, then delete it.
             if(transitions[j]->node1 == component[i]){
+                transitions[j]->node1->removeTransition(transitions[j]);//remove the current transition from its source node's list of transitions //i
                 delete transitions[j];
                 transitions.removeAt(j);
             } // otherwise, if it ends AND does not start in a node that was fused, then update the destination to the newly fused node
@@ -328,10 +329,11 @@ QList<RegionNode *> DesignGraph::stronglyConnect(RegionNode *node, QStack<Region
     }
 
     QList<RegionNode *> output;
-    if(node->lowLink == node->lowLink){
+    if(node->lowLink == node->index){
         RegionNode * aux;
         do{
             aux = stack.pop();
+            aux->onStack = false;
             output.append(aux);
         }while(aux != node);
         // we can compare pointers and not contents since it is an exploration of graph of the same searchState

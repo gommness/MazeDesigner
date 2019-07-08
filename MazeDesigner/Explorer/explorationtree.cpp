@@ -15,6 +15,7 @@ QList<SelectableInstance *> ExplorationTree::explore(const InstanceCanvas &canva
         current = openNodes.takeAt(0);
         exploredNodes.append(current);
         if(current->size() == 1){ // the "well designed" condition
+            output.clear();
             continue;
         }
         QList<DesignGraph *>  expansions = current->expand();
@@ -25,6 +26,7 @@ QList<SelectableInstance *> ExplorationTree::explore(const InstanceCanvas &canva
         removeRepeated(exploredNodes, expansions); // remove search states repeated
         openNodes.append(expansions); // the new nodes are nodes to be explored
         std::sort(openNodes.begin(), openNodes.begin(), ExplorationTree::heuristicLessThan); // sort the nodes by their heuristic
+        output = current->instances;
     }
     return output;
 }
